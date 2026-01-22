@@ -1,0 +1,19 @@
+Número,Nombre,Código,Descripción,Duración (minutos),Duración (horas)
+1,Triple XP 7d,charm_xpx3_7,Receive 200% more experience for your mutants per fight for 7 days,1440,24h
+2,Tickets x25,material_energy25,Campaign Passes x25,720,12h
+3,Quadruple Regeneration 3d,charm_regenx4_3,Increase your mutants health regeneration by 300% for 3 days,1440,24h
+4,Challenge Token,material_event_token,Use this token in the Challenge Hall to win exclusive rewards!,180,3h
+5,Tickets x5,material_energy5,Campaign Passes x5,1800,30h
+6,Double XP 3d,charm_xpx2_3,Receive 100% more experience for your mutants per fight for 3 days,600,10h
+7,Critical Strikes 3d,charm_critical_3,Increase the chance of your Mutants landing a critical hit by 50% for 3 days,900,15h
+8,Tickets x25,material_energy25,Campaign Passes x25,2160,36h
+9,Jackpot Token,material_jackpot_token,Use this token in the Mutants Slots and try to win the Super Jackpot,1140,19h
+10,Anti-Critical Shield 1d,charm_anticritical_1,Reduce the risk of receiving critical hits on your mutants by 75% for 1 day,720,12h
+11,Reactor Token,material_gacha_token,Each Token allows you to win an exclusive Mutant from the Mutant Reactor.,180,3h
+12,Triple XP 3d,charm_xpx3_3,Receive 200% more experience for your mutants per fight for 3 days,1080,18h
+13,Double Regeneration 7d,charm_regenx2_7,Increase your mutants health regeneration by 100% for 7 days,2520,42h
+14,Critical Strikes 7d,charm_critical_7,increase the chance of your Mutants landing a critical hit by 50% for 7 days,900,15h
+15,Anti-Critical Shield 3d,charm_anticritical_3,Reduce the risk of receiving critical hits on your mutants by 75% for 3 days,720,12h
+16,Tickets x25,material_energy25,Campaign Passes x25,1440,24h
+17,Jackpot Token,material_jackpot_token,Use this token in the Mutants Slots and try to win the Super Jackpot,2160,36h
+18,Double Regeneration 3d,charm_regenx2_3,Increase your mutants health regeneration by 100% for 3 days,2160,36h

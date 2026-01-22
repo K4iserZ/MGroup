@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutants Group - All you need!</title>
+    <link rel="icon" href="icon/new_icon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                <span>🧬</span>
+                <span>MggGroup</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="mainNav">
+                <a href="#" class="nav-link active" data-page="home">Home</a>
+                <a href="#" class="nav-link" data-page="incentivos">Crafting Incentives</a>
+                <a href="#" class="nav-link" data-page="info">Information</a>
+            </nav>
+
+            <div class="timezone-selector">
+                <label for="timezoneSelect">🌍 Timezone:</label>
+                <select id="timezoneSelect">
+                    <option value="auto">Auto-detect</option>
+                    <optgroup label="Americas">
+                        <option value="America/Lima">Peru (UTC-5)</option>
+                        <option value="America/New_York">USA East (UTC-5/-4)</option>
+                        <option value="America/Chicago">USA Central (UTC-6/-5)</option>
+                        <option value="America/Denver">USA Mountain (UTC-7/-6)</option>
+                        <option value="America/Los_Angeles">USA West (UTC-8/-7)</option>
+                        <option value="America/Buenos_Aires">Argentina (UTC-3)</option>
+                        <option value="America/Sao_Paulo">Brazil (UTC-3/-2)</option>
+                        <option value="America/Mexico_City">Mexico (UTC-6/-5)</option>
+                    </optgroup>
+                    <optgroup label="Europe">
+                        <option value="Europe/London">United Kingdom (UTC+0/+1)</option>
+                        <option value="Europe/Paris">Central Europe (UTC+1/+2)</option>
+                        <option value="Europe/Madrid">Spain (UTC+1/+2)</option>
+                        <option value="Europe/Berlin">Germany (UTC+1/+2)</option>
+                    </optgroup>
+                    <optgroup label="Asia">
+                        <option value="Asia/Tokyo">Japan (UTC+9)</option>
+                        <option value="Asia/Shanghai">China (UTC+8)</option>
+                        <option value="Asia/Bangkok">Thailand (UTC+7)</option>
+                        <option value="Asia/Hong_Kong">Hong Kong (UTC+8)</option>
+                    </optgroup>
+                    <optgroup label="Oceania">
+                        <option value="Australia/Sydney">Australia (UTC+10/+11)</option>
+                    </optgroup>
+                </select>
+                <span class="auto-detect" id="detectedTimezone"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HOME PAGE -->
+        <div id="home" class="page-content active">
+            <div class="hero">
+                <h1>🧬 Welcome to MggGroup</h1>
+                <p>Your ultimate gaming companion and community hub</p>
+                <button class="btn-primary" onclick="showPage('incentivos')">Explore Features</button>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 2rem; border-radius: 10px; border: 2px solid #e94560;">
+                    <h3 style="color: #e94560; margin-bottom: 1rem;">🎮 Gaming Tools</h3>
+                    <p style="color: #bdc3c7;">Access powerful tools designed to enhance your gaming experience across all platforms.</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 2rem; border-radius: 10px; border: 2px solid #3498db;">
+                    <h3 style="color: #3498db; margin-bottom: 1rem;">👥 Community</h3>
+                    <p style="color: #bdc3c7;">Join thousands of players, share strategies, and stay connected with the gaming community.</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 2rem; border-radius: 10px; border: 2px solid #2ecc71;">
+                    <h3 style="color: #2ecc71; margin-bottom: 1rem;">📊 Real-Time Data</h3>
+                    <p style="color: #bdc3c7;">Get real-time updates, schedules, and exclusive information tailored to your timezone.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- INCENTIVOS PAGE -->
+        <div id="incentivos" class="page-content">
+            <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                    <h2 style="color: #e94560; margin-bottom: 1rem; font-size: 2rem;">🕳️ Black Hole Extras</h2>
+                    <p style="color: #bdc3c7; font-size: 1.05rem;">Track all Black Hole event extras with real-time countdowns. Get instant notifications for limited-time bonus items, special crafting tokens, and exclusive rewards synchronized to your timezone.</p>
+                </div>
+                <div style="flex: 1; min-width: 200px; text-align: center;">
+                    <img src="image/picto_crafting.png" alt="Crafting Icon" style="max-width: 100%; height: auto; max-height: 150px; filter: drop-shadow(0 0 10px rgba(233, 69, 96, 0.5));">
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 1.5rem; border-radius: 10px; border: 2px solid #3498db; margin-bottom: 2rem;">
+                <label for="searchIncentive" style="color: #3498db; font-weight: bold; margin-right: 1rem;">🔍 Search Incentive:</label>
+                <select id="searchIncentive" style="background: #16213e; color: #ecf0f1; border: 2px solid #3498db; padding: 0.6rem 1rem; border-radius: 5px; cursor: pointer; font-size: 0.95rem; min-width: 300px; font-weight: 500;">
+                    <option value="">Select an incentive...</option>
+                </select>
+            </div>
+            
+            <div id="searchResultsContainer"></div>
+            <div id="currentIncentiveContainer"></div>
+            <div class="incentivos-container" id="incentivosContainer">
+                <!-- Se llenará con JavaScript -->
+            </div>
+            <div id="loadMoreSection"></div>
+        </div>
+
+        <!-- INFO PAGE -->
+        <div id="info" class="page-content">
+            <h2 style="color: #e94560; margin-bottom: 2rem; font-size: 2rem;">Information</h2>
+            <div class="info-content">
+                <h2>How it works?</h2>
+                <p>This site displays all Mutants crafting incentives with schedules and dates based on your local timezone.</p>
+                
+                <h2 style="margin-top: 2rem;">Timezone Configuration</h2>
+                <p>You can use the timezone selector in the header to:</p>
+                <ul>
+                    <li><strong>Auto-detect:</strong> Automatically detects your timezone based on your location</li>
+                    <li><strong>Manual:</strong> Select your country or region from the list</li>
+                </ul>
+
+                <div class="timezone-info">
+                    <p><strong>Current timezone:</strong></p>
+                    <p class="current-timezone" id="currentTimezoneInfo">Loading...</p>
+                </div>
+
+                <h2 style="margin-top: 2rem;">Incentive Status</h2>
+                <ul>
+                    <li><strong style="color: #2ecc71;">Active:</strong> The incentive is currently in progress</li>
+                    <li><strong style="color: #3498db;">Upcoming:</strong> The incentive will begin in the future</li>
+                    <li><strong style="color: #e74c3c;">Expired:</strong> The incentive has already ended</li>
+                </ul>
+
+                <h2 style="margin-top: 2rem;">Base Timezone</h2>
+                <p>All base schedules are in <strong>Peru Timezone (UTC-5)</strong> and are automatically converted to your selected timezone.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🧬 About MggGroup</h3>
+                <p>Leading provider of gaming tools and community services. Dedicated to enhancing player experience across multiple platforms.</p>
+            </div>
+            <div class="footer-section">
+                <h3>📊 Quick Links</h3>
+                <p><a href="#">Mutants Game</a></p>
+                <p><a href="#">Community</a></p>
+                <p><a href="#">Support</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>📧 Contact</h3>
+                <p>Email: <a href="mailto:info@mgggroup.com">info@mgggroup.com</a></p>
+                <p>Discord: <a href="#">Join Server</a></p>
+            </div>
+            <p>&copy; 2026 MggGroup. All rights reserved. | Mutants Crafting Incentives Tracker</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

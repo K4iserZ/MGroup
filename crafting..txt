@@ -1,0 +1,21 @@
+NombreCorto - codigo imagen (convertir todo a minusculas) - Nombre - Tiempo en minutos - Horas
+Triple Experiencia		Charm_Xpx3_7		(Inicio)	1440	24h
+Tickets x25		Material_Energy25		Campaign Passes x25	720	12h
+Cuadruples Regeneacio		Charm_Regenx4_3		Quadruple Regeneration	1440	24h
+Ficha Reto		Material_Event_Token		Challenge Token	180	3h
+Tickets x5		Material_Energy5		Campaign Passes x5	1800	30h
+Doble Experiencia		Charm_Xpx2_3		Double XP	600	10h
+Critico 3		Charm_Critical_3		Critical Strikes	900	15h
+Tickets x25		Material_Energy25		Campaign Passes x25	2160	36h
+Jackpot Token		Material_Jackpot_Token		Jackpot Token	1140	19h
+Anticritico		Charm_Anticritical_1		Anti-Critical Shield	720	12h
+Reactor		Material_Gacha_Token		Reactor Token	180	3h
+Triple Experiencia		Charm_Xpx3_3		Triple XP	1080	18h
+Doble Regeneración		Charm_Regenx2_7		Double Regeneration	2520	42h
+Criticos		Charm_Critical_7		Critical Strikes	900	15h
+Anticritico		Charm_Anticritical_3		Anti-Critical Shield	720	12h
+Tickets x25		Material_Energy25		Campaign Passes x25	1440	24h
+Jackpot Token		Material_Jackpot_Token		Jackpot Token	2160	36h
+Cuadruples Regeneracion		Charm_Regenx2_3		Double Regeneration	2160	36h
+
+El siguiente incentido será "Cuadruples Regeneracion" el último de toda la lista que empieza: 22/01 19:00 y temrina 24/01 07:00
