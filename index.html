@@ -26,39 +26,6 @@
                 <a href="#" class="nav-link" data-page="incentivos">Crafting Incentives</a>
                 <a href="#" class="nav-link" data-page="info">Information</a>
             </nav>
-
-            <div class="timezone-selector">
-                <label for="timezoneSelect">🌍 Timezone:</label>
-                <select id="timezoneSelect">
-                    <option value="auto">Auto-detect</option>
-                    <optgroup label="Americas">
-                        <option value="America/Lima">Peru (UTC-5)</option>
-                        <option value="America/New_York">USA East (UTC-5/-4)</option>
-                        <option value="America/Chicago">USA Central (UTC-6/-5)</option>
-                        <option value="America/Denver">USA Mountain (UTC-7/-6)</option>
-                        <option value="America/Los_Angeles">USA West (UTC-8/-7)</option>
-                        <option value="America/Buenos_Aires">Argentina (UTC-3)</option>
-                        <option value="America/Sao_Paulo">Brazil (UTC-3/-2)</option>
-                        <option value="America/Mexico_City">Mexico (UTC-6/-5)</option>
-                    </optgroup>
-                    <optgroup label="Europe">
-                        <option value="Europe/London">United Kingdom (UTC+0/+1)</option>
-                        <option value="Europe/Paris">Central Europe (UTC+1/+2)</option>
-                        <option value="Europe/Madrid">Spain (UTC+1/+2)</option>
-                        <option value="Europe/Berlin">Germany (UTC+1/+2)</option>
-                    </optgroup>
-                    <optgroup label="Asia">
-                        <option value="Asia/Tokyo">Japan (UTC+9)</option>
-                        <option value="Asia/Shanghai">China (UTC+8)</option>
-                        <option value="Asia/Bangkok">Thailand (UTC+7)</option>
-                        <option value="Asia/Hong_Kong">Hong Kong (UTC+8)</option>
-                    </optgroup>
-                    <optgroup label="Oceania">
-                        <option value="Australia/Sydney">Australia (UTC+10/+11)</option>
-                    </optgroup>
-                </select>
-                <span class="auto-detect" id="detectedTimezone"></span>
-            </div>
         </div>
     </header>
 
@@ -104,6 +71,40 @@
                 <select id="searchIncentive" style="background: #16213e; color: #ecf0f1; border: 2px solid #3498db; padding: 0.6rem 1rem; border-radius: 5px; cursor: pointer; font-size: 0.95rem; min-width: 300px; font-weight: 500;">
                     <option value="">Select an incentive...</option>
                 </select>
+            </div>
+
+            <!-- Moved the timezone selector from the header to the Crafting Incentives section -->
+            <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 1.5rem; border-radius: 10px; border: 2px solid #3498db; margin-bottom: 2rem;">
+                <label for="timezoneSelect" style="color: #3498db; font-weight: bold; margin-right: 1rem;">🌍 Timezone:</label>
+                <select id="timezoneSelect" style="background: #16213e; color: #ecf0f1; border: 2px solid #3498db; padding: 0.6rem 1rem; border-radius: 5px; cursor: pointer; font-size: 0.95rem; min-width: 300px; font-weight: 500;">
+                    <option value="auto">Auto-detect</option>
+                    <optgroup label="Americas">
+                        <option value="America/Lima">Peru (UTC-5)</option>
+                        <option value="America/New_York">USA East (UTC-5/-4)</option>
+                        <option value="America/Chicago">USA Central (UTC-6/-5)</option>
+                        <option value="America/Denver">USA Mountain (UTC-7/-6)</option>
+                        <option value="America/Los_Angeles">USA West (UTC-8/-7)</option>
+                        <option value="America/Buenos_Aires">Argentina (UTC-3)</option>
+                        <option value="America/Sao_Paulo">Brazil (UTC-3/-2)</option>
+                        <option value="America/Mexico_City">Mexico (UTC-6/-5)</option>
+                    </optgroup>
+                    <optgroup label="Europe">
+                        <option value="Europe/London">United Kingdom (UTC+0/+1)</option>
+                        <option value="Europe/Paris">Central Europe (UTC+1/+2)</option>
+                        <option value="Europe/Madrid">Spain (UTC+1/+2)</option>
+                        <option value="Europe/Berlin">Germany (UTC+1/+2)</option>
+                    </optgroup>
+                    <optgroup label="Asia">
+                        <option value="Asia/Tokyo">Japan (UTC+9)</option>
+                        <option value="Asia/Shanghai">China (UTC+8)</option>
+                        <option value="Asia/Bangkok">Thailand (UTC+7)</option>
+                        <option value="Asia/Hong_Kong">Hong Kong (UTC+8)</option>
+                    </optgroup>
+                    <optgroup label="Oceania">
+                        <option value="Australia/Sydney">Australia (UTC+10/+11)</option>
+                    </optgroup>
+                </select>
+                <span class="auto-detect" id="detectedTimezone"></span>
             </div>
             
             <div id="searchResultsContainer"></div>
