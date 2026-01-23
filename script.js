@@ -138,7 +138,7 @@ const ultimoIncentivoPeru = new Date('2026-01-09T01:00:00Z');
 
 let selectedTimezone = 'auto';
 let currentTimezone = null;
-let loadedCycles = 1;
+let loadedIncentives = 5; // Cargar 5 inicialmente (Expirado - Activo - 3 próximos)
 
 // Translations
 const translations = {
@@ -530,10 +530,10 @@ function updateIncentivosDisplay() {
     const now = new Date();
     let currentIncentive = null;
     let lastExpiredIncentive = null;
-    let showExpired = false;
-    const totalIncentivosToShow = incentivosData.length * loadedCycles;
+    let renderedCount = 0;
+    let hasRenderedExpired = false;
 
-    for (let totalIndex = 0; totalIndex < totalIncentivosToShow; totalIndex++) {
+    for (let totalIndex = 0; totalIndex < incentivosData.length * 5 && renderedCount < loadedIncentives; totalIndex++) {
         const index = totalIndex % incentivosData.length;
         const incentivo = incentivosData[index];
         const cycleNumber = Math.floor(totalIndex / incentivosData.length);
@@ -568,7 +568,6 @@ function updateIncentivosDisplay() {
                 durationStr,
                 index: index + 1
             };
-            showExpired = true; // Mostrar el expirado anterior cuando encontremos el activo
         }
 
         // Guardar el último expirado
@@ -584,17 +583,49 @@ function updateIncentivosDisplay() {
             };
         }
 
-        // Renderizar solo: último expirado (si hay activo), activo, y todos los futuros
-        if ((status.status === 'expired' && showExpired && lastExpiredIncentive) || 
-            status.status === 'active' || 
-            status.status === 'upcoming') {
+        // Renderizar el expirado PRIMERO (una sola vez, antes de activo y upcoming)
+        if (lastExpiredIncentive && !hasRenderedExpired && (status.status === 'active' || status.status === 'upcoming')) {
+            const expiredCard = document.createElement('div');
+            expiredCard.className = `incentivo-card expired`;
             
-            // Si es expirado, solo renderizar si es el último antes del activo
-            if (status.status === 'expired' && !currentIncentive) {
-                // No renderizar expirados hasta que encontremos el activo
-                startDate = new Date(endDate);
-                continue;
-            }
+            const imageUrl = `https://s-ak.kobojo.com/mutants/assets/thumbnails/${lastExpiredIncentive.incentivo.codigo}.png`;
+            
+            expiredCard.innerHTML = `
+                <div class="status-badge status-expired">${t('expired_badge')}</div>
+                <div class="incentivo-icon">
+                    <img src="${imageUrl}" alt="${lastExpiredIncentive.incentivo.nombre}" onerror="this.parentElement.innerHTML='<span class=\'fallback\'>${lastExpiredIncentive.incentivo.icono}</span>'">
+                </div>
+                <div class="incentivo-name">
+                    ⏱️ ${lastExpiredIncentive.incentivo.nombre}
+                    <span style="font-size: 0.8rem; color: #95a5a6; margin-left: 0.5rem;">#${lastExpiredIncentive.index + 1}</span>
+                </div>
+                <div class="incentivo-description">${lastExpiredIncentive.incentivo.descripcion}</div>
+                
+                <div class="incentivo-duration">
+                    <div class="duration-label">${t('duration')}</div>
+                    <div class="duration-value">${lastExpiredIncentive.durationStr}</div>
+                </div>
+
+                <div class="incentivo-dates">
+                    <div class="date-label">${t('start')}</div>
+                    <div class="date-value">${lastExpiredIncentive.startConverted.date} ${lastExpiredIncentive.startConverted.time}</div>
+                    <div class="date-label" style="margin-top: 0.5rem;">${t('end')}</div>
+                    <div class="date-value">${lastExpiredIncentive.endConverted.date} ${lastExpiredIncentive.endConverted.time}</div>
+                </div>
+
+                <div class="countdown">
+                    <div class="countdown-label">${t('finished')}</div>
+                    <div class="countdown-value">✅ ${t('finished')}</div>
+                </div>
+            `;
+            
+            container.insertBefore(expiredCard, container.firstChild);
+            renderedCount++;
+            hasRenderedExpired = true;
+        }
+
+        // Renderizar activo y próximos
+        if (status.status === 'active' || status.status === 'upcoming') {
 
             // Crear tarjeta
             const card = document.createElement('div');
@@ -608,7 +639,7 @@ function updateIncentivosDisplay() {
                     <img src="${imageUrl}" alt="${incentivo.nombre}" onerror="this.parentElement.innerHTML='<span class=\'fallback\'>${incentivo.icono}</span>'">
                 </div>
                 <div class="incentivo-name">
-                    ${status.status === 'expired' ? '⏱️ ' : ''}${incentivo.nombre}
+                    ${incentivo.nombre}
                     <span style="font-size: 0.8rem; color: #95a5a6; margin-left: 0.5rem;">#${index + 1}</span>
                 </div>
                 <div class="incentivo-description">${incentivo.descripcion}</div>
@@ -634,6 +665,7 @@ function updateIncentivosDisplay() {
             `;
 
             container.appendChild(card);
+            renderedCount++; // Contar solo los renderizados
         }
 
         // Siguiente incentivo comienza cuando termina el actual
@@ -678,15 +710,15 @@ function updateIncentivosDisplay() {
                 ${t('load_more')}
             </button>
             <div class="load-more-status">
-                ${t('showing')} ${loadedCycles * incentivosData.length} ${t('incentives_count')}
+                ${t('showing')} ${loadedIncentives} ${t('incentives_count')}
             </div>
         </div>
     `;
 }
 
-// Cargar más ciclos
+// Cargar más incentivos
 function loadMoreIncentivos() {
-    loadedCycles += 1;
+    loadedIncentives += 4; // Agregar 4 más cada vez
     updateIncentivosDisplay();
 }
 
