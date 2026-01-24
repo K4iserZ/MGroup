@@ -722,6 +722,166 @@ function loadMoreIncentivos() {
     updateIncentivosDisplay();
 }
 
+/* ======================================
+   MUTANTS FUNCTIONALITY
+   ====================================== */
+
+// Parse CSV y crear objeto de mutantes
+let mutantsData = [];
+
+async function loadMutantsData() {
+    try {
+        const response = await fetch('Stats.csv');
+        const csvText = await response.text();
+        parseMutantsCSV(csvText);
+        initMutantsSection();
+    } catch (error) {
+        console.error('Error loading mutants data:', error);
+    }
+}
+
+function parseMutantsCSV(csvText) {
+    const lines = csvText.split('\n');
+    if (lines.length < 2) return;
+
+    const headers = lines[0].split('|');
+    
+    for (let i = 1; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!line) continue;
+
+        const values = line.split('|');
+        if (values.length < 3) continue;
+
+        const mutant = {
+            specimen: values[0].trim(),
+            name: values[1].trim(),
+            speed: parseInt(values[2]) || 0,
+            odds: parseInt(values[3]) || 0,
+            dna: values[4]?.trim() || '',
+            life: parseInt(values[5]) || 0,
+            incubMin: parseInt(values[6]) || 0,
+            atk1: values[7]?.trim() || '',
+            atk1p: values[8]?.trim() || '',
+            atk2: values[9]?.trim() || '',
+            atk2p: values[10]?.trim() || '',
+            bank: parseInt(values[11]) || 0,
+            unlockattack: values[12]?.trim() || '',
+            type: values[13]?.trim() || '',
+            recipe: values[14]?.trim() || '',
+            abilities: values[15]?.trim() || '',
+            abilityPct1: values[16]?.trim() || '',
+            abilityPct2: values[17]?.trim() || '',
+            orbSlots: values[18]?.trim() || ''
+        };
+
+        mutantsData.push(mutant);
+    }
+}
+
+function initMutantsSection() {
+    const searchInput = document.getElementById('mutantSearchInput');
+    const genFilter = document.getElementById('genFilter');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const selectedGen = genFilter.value;
+        filterAndDisplayMutants(searchTerm, selectedGen);
+    });
+
+    if (genFilter) {
+        genFilter.addEventListener('change', (e) => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedGen = e.target.value;
+            filterAndDisplayMutants(searchTerm, selectedGen);
+        });
+    }
+
+    // Mostrar todos los mutantes inicialmente
+    filterAndDisplayMutants('', '');
+}
+
+function filterAndDisplayMutants(searchTerm, selectedGen = '') {
+    const container = document.getElementById('mutantsContainer');
+    if (!container) return;
+
+    let filtered = mutantsData;
+    
+    // Filtrar por gen (por el campo DNA que contiene A, AA, AB, B, BA, etc)
+    if (selectedGen) {
+        filtered = filtered.filter(m => m.dna.startsWith(selectedGen));
+    }
+    
+    // Filtrar por búsqueda
+    if (searchTerm) {
+        filtered = filtered.filter(m => 
+            m.name.toLowerCase().includes(searchTerm) ||
+            m.specimen.toLowerCase().includes(searchTerm)
+        );
+    }
+
+    container.innerHTML = '';
+
+    if (filtered.length === 0) {
+        container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: #95a5a6; padding: 2rem;">No mutants found</div>';
+        return;
+    }
+
+    filtered.forEach(mutant => {
+        const card = createMutantCard(mutant);
+        container.appendChild(card);
+    });
+}
+
+function createMutantCard(mutant) {
+    const card = document.createElement('div');
+    card.className = 'mutant-card';
+    
+    const imageUrl = `https://s-ak.kobojo.com/mutants/assets/thumbnails/${mutant.specimen.toLowerCase()}.png`;
+    
+    card.innerHTML = `
+        <div class="mutant-image">
+            <img src="${imageUrl}" alt="${mutant.name}" onerror="this.parentElement.innerHTML='<div class=\'mutant-image-fallback\'>🧬</div>'">
+        </div>
+        <div class="mutant-name">${mutant.name}</div>
+        <div class="mutant-specimen">${mutant.specimen}</div>
+        <div class="mutant-type">${mutant.dna || 'N/A'}</div>
+    `;
+    
+    card.addEventListener('click', () => openMutantModal(mutant));
+    
+    return card;
+}
+
+function openMutantModal(mutant) {
+    const modal = document.getElementById('mutantModal');
+    const content = document.getElementById('mutantDetailsContent');
+    
+    content.innerHTML = `
+        <div style="text-align: center; padding: 2rem;">
+            <h2 style="color: #e94560; font-size: 2rem; margin-bottom: 1rem;">🚧 En Desarrollo</h2>
+            <p style="color: #bdc3c7; font-size: 1.1rem;">Esta funcionalidad está siendo desarrollada.</p>
+            <p style="color: #95a5a6; margin-top: 1rem;">Mutante: <strong style="color: #3498db;">${mutant.name}</strong></p>
+        </div>
+    `;
+    
+    modal.style.display = 'flex';
+}
+
+function closeMutantModal() {
+    const modal = document.getElementById('mutantModal');
+    modal.style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+    const modal = document.getElementById('mutantModal');
+    if (e.target === modal) {
+        closeMutantModal();
+    }
+});
+
 // Actualizar cada segundo
 setInterval(() => {
     updateIncentivosDisplay();
@@ -733,3 +893,4 @@ populateSearchSelector();
 updatePageText();
 updateIncentivosDisplay();
 updateCurrentTimezoneInfo();
+loadMutantsData();

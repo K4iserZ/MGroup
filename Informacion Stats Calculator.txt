@@ -1,0 +1,47 @@
+Level= 100+10*(LevelIngresado - 1)
+LifeF=(Life*BonusStar*Level*Adjust)/1000000
+Atk1F=(atk1p*BonusStar*Level*Adjust)/1000000
+Atk2F=(atk2p*BonusStar*Level*Adjust)/1000000
+AbilityF=Atk1F*abilityPct2
+Adjust= 100
+SpeedF=10/(Speed/100)
+BonusReactor=Necesita Archivo gacha
+BonusStar:100+Valor de la Estrella Seleccionada(Stars)
+Stars:
+enlace de imagen: https://s-ak.kobojo.com/mutants/assets/mobile/thumbnails/star_platinum.png
+base de la estrella poner debajo de la estrella: https://s-ak.kobojo.com/mutants/assets/mobile/hud/mutopedia/btn_black.png
+Platinum=100
+Gold=75
+Silver=30
+Bronze=10
+Basic=0
+Imagen Mutante:
+https://s-ak.kobojo.com/mutants/assets/thumbnails/specimen_ba_12.png
+Principales genes:
+https://s-ak.kobojo.com/mutants/assets/mobile/hud/fight_ui/gene_c.png
+Si uno de los ataques es múltiple usar:
+Imagen de gen encima y el siguiente enlace un poco a la derecha de la imagen del gen:
+https://s-ak.kobojo.com/mutants/assets/mobile/hud/fight_ui/atk_multiple.png
+Habilidad:
+https://s-ak.kobojo.com/mutants/assets/mobile/hud/icons/ability_retaliate.png
+(Se puede saber que habilidad es desde la columna de "abilities"
+Iconos:
+Vida: https://s-ak.kobojo.com/mutants/assets/mobile/hud/common_files/icon_hp.png
+Velocidad:https://s-ak.kobojo.com/mutants/assets/mobile/hud/common_files/icon_speed.png
+Créditos: https://s-ak.kobojo.com/mutants/assets/thumbnails/softcurrency.png
+Type: https://s-ak.kobojo.com/mutants/assets/mobile/hud/m_m_m/icon_legendary.png
+usar de type si no hay nada no poner imagen
+
+Manera de mostrar:
+Name
+Stars
+Thumnbails Image
+Genes
+Nivel
+Type imagen
+LifeF
+Imagen primer gen (o múltiple según diga) y valor del atkp1
+imagen segundo gen  (o múltiple según diga) y valor del atkp2
+Imagen de habilidad y en valor
+Imagen velocidad y el valor
+Imagen créditos y el valor

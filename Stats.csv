@@ -1,0 +1,712 @@
+﻿Specimen|Name|Speed|odds|dna|Life|incubMin|atk1|atk1p|atk2|atk2p|bank|unlockattack|Type|reciper|abilities|abilityPct1|abilityPct2|orbSlots
+Specimen_A_01| Robot|250|40| A|1819|5| 274:AOE| 413:AOE| 549| 825|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| | | 1:ability_shield;2:ability_shield_plus|20|30| n;s:20h
+Specimen_AA_01| Android|150|40| AA|1550|60| 345| 519| 199:AOE| 298:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| | | 1:ability_shield;2:ability_shield_plus|20|30| n;s:20h
+Specimen_AB_01| Dead Bot|140|80| AB|1197|10| 254| 382| 254| 382|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| | | 1:ability_shield;2:ability_shield_plus|20|30| n
+Specimen_AC_01| Stealth Bot|200|20| AC|1431|10| 391| 587| 391| 587|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| | | 1:ability_shield;2:ability_shield_plus|20|45| n;s:20h
+Specimen_AD_01| Beetle Bot|290|80| AD|1838|240| 657| 987| 657| 987|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| | | 1:ability_shield;2:ability_shield_plus|20|30| n
+Specimen_AE_01| Colossus|230|80| AE|1656|420| 495| 744| 495| 744|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| | | 1:ability_shield;2:ability_shield_plus|20|40| n
+Specimen_AF_01| Deus Machina|190|20| AF|1395|1440| 368| 552| 368| 552|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| | | 1:ability_shield;2:ability_shield_plus|20|50| n;s:20h
+Specimen_B_01| Zombie|160|40| B|1425|5| 331| 496| 331| 496|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| | | 1:ability_regen;2:ability_regen_plus|25|35| n;s:20h
+Specimen_BA_01| Zomborg|220|20| BA|1846|10| 439| 659| 439| 659|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| | | 1:ability_regen;2:ability_regen_plus|30|55| n;s:20h
+Specimen_BB_01| Leech Lord|240|40| BB|2151|60| 609| 914| 349:AOE| 525:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| | | 1:ability_regen;2:ability_regen_plus|30|55| n;s:20h
+Specimen_BC_01| Dire Despot|270|80| BC|1919|10| 559| 840| 559| 840|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| | | 1:ability_regen;2:ability_regen_plus|30|48| n
+Specimen_BD_01| Undead Dragon|280|20| BD|1950|720| 584| 877| 584| 877|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| | | 1:ability_regen;2:ability_regen_plus|25|48| n;s:20h
+Specimen_BE_01| Ghostmonaut|260|80| BE|1981|420| 576| 864| 576| 864|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| | | 1:ability_regen;2:ability_regen_plus|25|48| n
+Specimen_BF_01| Baron Lundi|200|80| BF|1750|600| 419| 629| 419| 629|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| | | 1:ability_regen;2:ability_regen_plus|30|55| n
+Specimen_C_01| Warrior|180|40| C|1516|5| 380| 571| 380| 571|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| | | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;s:20h
+Specimen_CA_01| Enforcer|240|80| CA|1567|10| 485| 728| 485| 728|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| | | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n
+Specimen_CB_01| Blade Banshee|160|20| CB|1280|10| 299| 450| 299| 450|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| | | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;s:20h
+Specimen_CC_01| Nordic Knightmare|210|40| CC|1843|60| 515| 774| 296:AOE| 444:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| | | 1:ability_retaliate;2:ability_retaliate_plus|-15|-40| n;s:20h
+Specimen_CD_01| Honey Bunny|90|80| CD|1085|240| 181| 271| 181| 271|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| | | 1:ability_retaliate;2:ability_retaliate_plus|-15|-20| n
+Specimen_CE_01| Martian Marauder|115|20| CE|1109|1260| 210| 345| 210| 345|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| | | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;s:20h
+Specimen_CF_01| Valkyrie|200|80| CF|1556|600| 417| 625| 417| 625|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| | | 1:ability_retaliate;2:ability_retaliate_plus|-15|-44| n
+Specimen_D_01| Beast|200|40| D|1613|180| 426| 640| 426| 640|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| | | 1:ability_slash;2:ability_slash_plus|-20|-30| n;s:20h
+Specimen_DA_01| ReptoÃ¯d|150|20| DA|1492|720| 298| 485| 298| 485|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| | | 1:ability_slash;2:ability_slash_plus|-20|-40| n;s:20h
+Specimen_DB_01| Cerberus|170|80| DB|1485|240| 320| 481| 320| 481|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| | | 1:ability_slash;2:ability_slash_plus|-20|-55| n
+Specimen_DC_01| Rakshasa|140|20| DC|1444|720| 275| 414| 275| 414|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| | | 1:ability_slash;2:ability_slash_plus|-20|-50| n;s:20h
+Specimen_DD_01| Kaiju Kitty|180|40| DD|1859|360| 431| 646| 248:AOE| 373:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| | | 1:ability_slash;2:ability_slash_plus|-20|-50| n;s:20h
+Specimen_DE_01| Parasite Queen|130|80| DE|1316|540| 231| 347| 231| 347|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| | | 1:ability_slash;2:ability_slash_plus|-20|-70| n
+Specimen_DF_01| Dracus Nobilis|300|20| DF|1882|1440| 639| 960| 639| 960|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| | | 1:ability_slash;2:ability_slash_plus|-20|-40| n;s:20h
+Specimen_E_01| Alien|90|40| E|1049|360| 165| 250| 165| 250|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| | | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;s:20h
+Specimen_EA_01| Planet Cleaner|280|20| EA|1802|1260| 632| 950| 632| 950|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| | | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;s:20h
+Specimen_EB_01| Tutti Gooey|230|20| EB|1648|1260| 499| 749| 499| 749|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| | | 1:ability_strengthen;2:ability_strengthen_plus|20|35| n;s:20h
+Specimen_EC_01| Bounty Bug|190|80| EC|1403|420| 366| 549| 366| 549|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| | | 1:ability_strengthen;2:ability_strengthen_plus|20|35| n
+Specimen_ED_01| Xenos|120|20| ED|1151|1440| 232| 350| 232| 350|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| | | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;s:20h
+Specimen_EE_01| Astro Surfer|260|40| EE|2025|720| 671| 1006| 385:AOE| 579:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| | | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;s:20h
+Specimen_EF_01| Nebulon|170|80| EF|1318|900| 322| 484| 322| 484|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| | | 1:ability_strengthen;2:ability_strengthen_plus|20|35| n
+Specimen_F_01| Demon|210|40| F|1627|540| 461| 690| 461| 690|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| | | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;s:20h
+Specimen_FA_01| Techno TaoÃ¯st|250|80| FA|1590|600| 512| 769| 512| 769|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| | | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n
+Specimen_FB_01| Grim Reapress|290|20| FB|1829|1440| 660| 992| 660| 992|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| | | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;s:20h
+Specimen_FC_01| Gandolphus|110|20| FC|1137|1440| 204| 377| 204| 377|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| | | 1:ability_weaken;2:ability_weaken_plus|-15|-40| n;s:20h
+Specimen_FD_01| Medusa|220|80| FD|1507|720| 436| 654| 436| 654|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| | | 1:ability_weaken;2:ability_weaken_plus|-20|-25| n
+Specimen_FE_01| C'thlig|270|20| FE|1645|1440| 563| 844| 563| 844|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| | | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;s:20h
+Specimen_FF_01| Pit Lord|300|40| FF|2583|1080| 949| 1424| 545:AOE| 820:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| | | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;s:20h
+Specimen_A_02| Weak Robot|353|0| A|500|180| 60| 138| 276| 525|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| | | 1:ability_shield;2:ability_shield_plus|20|30| n;s:20h
+Specimen_B_02| Weak Zombie|268|0| B|400|180| 150| 315| 252| 327|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| | | 1:ability_regen;2:ability_regen_plus|25|35| n;s:20h
+Specimen_C_02| Weak Warrior|275|0| C|300|180| 150| 375| 300| 372|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| | | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;s:20h
+Specimen_AA_02| Goliath|260|0| AA|3676|60| 1199| 1999| 689:AOE| 1334:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| CAPTAINPEACE| | 1:ability_shield;2:ability_shield_plus|20|40| n;n;s
+Specimen_AB_02| The Darkseer|240|120| AB|1554|360| 490| 735| 490| 735|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| RECIPE| CB_02xAC_02+FB_01xAF_01| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s:20h
+Specimen_AC_02| Captain Wrenchfury|210|120| AC|2342|360| 474| 811| 474| 811|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| RECIPE| AA_01xCE_01+BA_02xCB_02| 1:ability_regen;2:ability_regen_plus|30|60| n;n;s:20h
+Specimen_AD_02| Monocerus|190|2| AD|1577|180| 420| 631| 420| 631|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| | 1:ability_shield;2:ability_shield_plus|20|44| n;n;s
+Specimen_AE_02| Libraro|110|0| AE|2546|60| 308| 614| 308| 614|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| ZODIAC| | 1:ability_shield;2:ability_shield_plus|23|40| n;n;s
+Specimen_AF_02| Virgon|95|0| AF|1931|60| 255| 583| 255| 583|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| ZODIAC| | 1:ability_shield;2:ability_shield_plus|30|70| n;n;s
+Specimen_BA_02| Terrordoll|130|120| BA|1739|360| 236| 374| 236| 374|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| RECIPE| CB_02xAC_01+BD_01xDA_01| 1:ability_retaliate;2:ability_retaliate_plus|-15|-28| n;n;s:20h
+Specimen_BB_02| Crypt Wraith|140|80| BB|1758|60| 339| 509| 195:AOE| 291:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| PVP| BB_02x[A-F][A-F]_*+BB_02x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|50| n;n;s:20h
+Specimen_BC_02| Captain Bag â€˜Oâ€™ Bones|180|120| BC|1351|360| 347| 520| 347| 520|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| RECIPE| AB_02xAC_02+BD_01xCC_01| 1:ability_strengthen;2:ability_strengthen_plus|20|35| n;n;s:20h
+Specimen_BD_02| Cancernia|210|0| BD|2449|60| 636| 1184| 636| 1184|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| ZODIAC| | 1:ability_regen;2:ability_regen_plus|30|65| n;n;s
+Specimen_BE_02| Caprika|150|0| BE|1837|60| 531| 1055| 531| 1055|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| ZODIAC| | 1:ability_regen;2:ability_regen_plus|30|60| n;n;s
+Specimen_BF_02| Lichlock|110|80| BF|2111|60| 220| 331| 220| 331|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| PVP| BF_02x[A-F][A-F]_*+BF_02x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|54| n;n;s:20h
+Specimen_CA_02| Interceptrix|140|120| CA|1189|360| 257| 385| 257| 385|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| RECIPE| BC_02xBA_02+FC_01xAF_01| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s:20h
+Specimen_CB_02| Bushi|260|120| CB|1770|360| 540| 811| 540| 811|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| RECIPE| BA_01xAC_01+EB_01xCE_01| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s:20h
+Specimen_CC_02| Buck Maurice|300|3| CC|2920|180| 996| 1508| 593:AOE| 889:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| LEGEND| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-22| n;n;s
+Specimen_CD_02| Sagittaurius|200|0| CD|1855|60| 740| 1330| 740| 1330|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| ZODIAC| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-30| n;n;s
+Specimen_CE_02| Geminium|230|0| CE|2503|60| 706| 1060| 706| 1060|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| ZODIAC| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-40| n;n;s
+Specimen_CF_02| Thor|290|2| CF|1917|180| 700| 1050| 700| 1050|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| LEGEND| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_DA_02| Arachno|270|80| DA|2208|60| 641| 808| 641| 808|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| PVP| DA_02x[A-F][A-F]_*+DA_02x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-80| n;n;s:20h
+Specimen_DB_02| Zombat|85|80| DB|1145|60| 162| 243| 162| 243|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| PVP| DB_02x[A-F][A-F]_*+DB_02x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-80| n;n;s:20h
+Specimen_DC_02| Leohart|240|0| DC|2155|60| 799| 1314| 799| 1314|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| ZODIAC| | 1:ability_slash;2:ability_slash_plus|-20|-45| n;n;s
+Specimen_DD_02| Master Splitter|260|80| DD|2120|60| 711| 1068| 409:AOE| 614:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| PVP| DD_02x[A-F][A-F]_*+DD_02x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s:20h
+Specimen_DE_02| Cosmo Kong|230|2| DE|1762|180| 491| 737| 491| 737|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| LEGEND| | 1:ability_slash;2:ability_slash_plus|-20|-50| n;n;s
+Specimen_DF_02| Satyr Shaman|150|80| DF|1457|60| 295| 444| 295| 444|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| PVP| DF_02x[A-F][A-F]_*+DF_02x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-50| n;n;s:20h
+Specimen_EA_02| Sentry|160|2| EA|1445|180| 342| 515| 342| 515|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| LEGEND| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EB_02| Sirenia|130|80| EB|1295|60| 269| 473| 269| 473|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| PVP| EB_02x[A-F][A-F]_*+EB_02x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|40| n;n;s:20h
+Specimen_EC_02| Behemoth|280|80| EC|1753|60| 622| 934| 622| 934|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| PVP| EC_02x[A-F][A-F]_*+EC_02x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s:20h
+Specimen_ED_02| Shell Shock|220|80| ED|1570|60| 465| 699| 465| 699|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| PVP| ED_02x[A-F][A-F]_*+ED_02x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|35| n;n;s:20h
+Specimen_EE_02| Supernovus|190|80| EE|1830|60| 488| 733| 280:AOE| 420:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| PVP| EE_02x[A-F][A-F]_*+EE_02x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|35| n;n;s:20h
+Specimen_EF_02| Mr Marvelous|200|0| EF|2986|60| 438| 616| 438| 616|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| GACHA| | 1:ability_strengthen;2:ability_strengthen_plus|30|60| n;n;s
+Specimen_FA_02| Mekali|150|80| FA|1407|60| 320| 481| 320| 481|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| PVP| FA_02x[A-F][A-F]_*+FA_02x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s:20h
+Specimen_FB_02| Prince Scorpion|175|0| FB|2568|60| 524| 930| 524| 930|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| ZODIAC| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FC_02| Captain Peace|250|0| FC|3290|60| 1074| 1609| 1074| 1609|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| CAPTAINPEACE| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FD_02| Horus|115|120| FD|1257|720| 234| 564| 234| 564|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| RECIPE| ED_01xFE_01+DF_01xFF_01| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s:20h
+Specimen_FE_02| Azuria|170|80| FE|1386|60| 342| 513| 342| 513|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| PVP| FE_02x[A-F][A-F]_*+FE_02x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s:20h
+Specimen_FF_02| Retribution|180|80| FF|1781|60| 456| 686| 263:AOE| 394:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| PVP| FF_02x[A-F][A-F]_*+FF_02x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s:20h
+Specimen_AA_03| H.U.M.A.N.|200|1| AA|1878|180| 518| 778| 298:AOE| 448:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| | 1:ability_shield;2:ability_shield_plus|20|40| n;n;s
+Specimen_AB_03| Xenarach|190|80| AB|1464|60| 390| 586| 390| 586|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| PVP| AB_03x[A-F][A-F]_*+AB_03x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|40| n;n;s:20h
+Specimen_AC_03| Dezinger|290|2| AC|2394|180| 696| 1024| 696| 1024|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| LEGEND| | 1:ability_shield;2:ability_shield_plus|25|40| n;n;s
+Specimen_AD_03| Taurider|100|0| AD|1712|60| 395| 815| 395| 815|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| ZODIAC| | 1:ability_shield;2:ability_shield_plus|27|35| n;n;s
+Specimen_AE_03| Invadron|280|1| AE|1888|180| 670| 1006| 670| 1006|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| LEGEND| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AF_03| Halbeard|240|20| AF|1966|60| 778| 1167| 778| 1167|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| LEGEND| AF_03x[A-F][A-F]_*+AF_03x[A-F]_*| 1:ability_shield;2:ability_shield_plus|17|25| n;n;s
+Specimen_BA_03| Triple-B|280|2| BA|1982|180| 639| 960| 639| 960|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| | 1:ability_regen;2:ability_regen_plus|30|48| n;n;s
+Specimen_BB_03| Cursed Rider|100|3| BB|2080|180| 228| 319| 133:AOE| 198:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| | 1:ability_regen;2:ability_regen_plus|30|45| n;n;s
+Specimen_BC_03| Micky Krueger|130|20| BC|1414|60| 331| 497| 331| 497|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| LEGEND| BC_03x[A-F][A-F]_*+BC_03x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|50| n;n;s
+Specimen_BD_03| Scare Bear|160|1| BD|1501|180| 328| 494| 328| 494|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| | 1:ability_regen;2:ability_regen_plus|35|50| n;n;s
+Specimen_BE_03| Humongous|210|80| BE|1838|60| 473| 710| 473| 710|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| PVP| BE_03x[A-F][A-F]_*+BE_03x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s:20h
+Specimen_BF_03| Rammerhead|270|0| BF|2987|60| 883| 1551| 883| 1551|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| ZODIAC| | 1:ability_regen;2:ability_regen_plus|30|45| n;n;s
+Specimen_CA_03| General Chaos|190|80| CA|1464|60| 390| 586| 390| 586|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| PVP| CA_03x[A-F][A-F]_*+CA_03x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-40| n;n;s:20h
+Specimen_CB_03| Ragnar|210|2| CB|1577|180| 455| 683| 455| 683|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| LEGEND| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-40| n;n;s
+Specimen_CC_03| Zena|90|20| CC|846|60| 352| 501| 177:AOE| 350:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| LEGEND| CC_03x[A-F][A-F]_*+CC_03x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-20| n;n;s
+Specimen_CD_03| Haggis|270|80| CD|1860|60| 641| 961| 641| 961|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| PVP| CD_03x[A-F][A-F]_*+CD_03x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s:20h
+Specimen_CE_03| Galactic Guardian|290|1| CE|1780|180| 650| 975| 650| 975|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| LEGEND| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CF_03| Tinker Blade|110|20| CF|746|60| 220| 746| 220| 746|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| LEGEND| CF_03x[A-F][A-F]_*+CF_03x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_DA_03| Mantidroid|220|120| DA|1755|360| 475| 981| 475| 981|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| RECIPE| FD_02xCA_02+DC_01xAC_01| 1:ability_regen;2:ability_regen_plus|25|42| n;n;s:20h
+Specimen_DB_03| Cobrakai|260|2| DB|1856|180| 569| 854| 569| 854|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| LEGEND| | 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DC_03| Gargantus|210|0| DC|1914|60| 501| 802| 501| 802|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| GACHA| | 1:ability_slash;2:ability_slash_plus|-50|-75| n;n;s
+Specimen_DD_03| Psychoboar|120|20| DD|1803|60| 283| 425| 164:AOE| 245:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| LEGEND| DD_03x[A-F][A-F]_*+DD_03x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DE_03| Slashog|100|80| DE|1204|60| 182| 275| 182| 275|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| PVP| DE_03x[A-F][A-F]_*+DE_03x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-70| n;n;s:20h
+Specimen_DF_03| Absolem|220|2| DF|1772|180| 481| 721| 481| 721|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| LEGEND| | 1:ability_slash;2:ability_slash_plus|-20|-50| n;n;s
+Specimen_EA_03| Exo Fish|115|0| EA|1665|60| 381| 731| 381| 731|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| ZODIAC| | 1:ability_strengthen;2:ability_strengthen_plus|22|40| n;n;s
+Specimen_EB_03| The Devourer|290|120| EB|2073|720| 637| 1084| 637| 1084|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| RECIPE| FE_03xBA_02+EA_01xBA_01| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s:20h
+Specimen_EC_03| Star Trooper|90|1| EC|1184|180| 233| 367| 233| 367|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| LEGEND| | 1:ability_strengthen;2:ability_strengthen_plus|16|24| n;n;s
+Specimen_ED_03| Wampara|250|2| ED|1714|180| 557| 836| 557| 836|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EE_03| Master Oida|140|3| EE|1568|180| 339| 509| 195:AOE| 291:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| LEGEND| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EF_03| Aquapunzel|275|0| EF|3089|60| 858| 1288| 858| 1288|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| ZODIAC| | 1:ability_strengthen;2:ability_strengthen_plus|20|35| n;n;s
+Specimen_FA_03| Bazzinger|200|20| FA|1502|60| 414| 622| 414| 622|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| LEGEND| FA_03x[A-F][A-F]_*+FA_03x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FB_03| Anubis|230|2| FB|1725|180| 529| 794| 529| 794|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| LEGEND| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FC_03| Oriax|280|0| FC|3944|60| 1187| 1780| 1187| 1780|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| CAPTAINPEACE| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FD_03| Ivory Hanzo|270|0| FD|1924|60| 879| 1545| 879| 1545|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| GACHA| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FE_03| Astro Magician|230|20| FE|1602|60| 491| 737| 491| 737|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| LEGEND| FE_03x[A-F][A-F]_*+FE_03x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FF_03| Blood Berry|130|3| FF|1922|180| 313| 469| 180:AOE| 270:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| LEGEND| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_A_03| Garuda|120|0| A|3196|60| 432| 876| 248:AOE| 548:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| SEASONAL| | 1:ability_shield;2:ability_shield_plus|20|45| n;n;s
+Specimen_B_03| Jack O'Lantern|140|0| B|2851|60| 519| 781| 300:AOE| 450:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| SEASONAL| | 1:ability_regen;2:ability_regen_plus|30|50| n;n;s
+Specimen_C_03| Cryonos|250|0| C|3265|60| 1064| 1597| 612:AOE| 918:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| SEASONAL| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_03| Easter Gunny|240|0| D|4218|60| 1414| 2123| 708:AOE| 1061:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| SEASONAL| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_03| Ceres|79|20| E|1455|60| 155| 255| 90:AOE| 134:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| LEGEND| E_03x[A-F][A-F]_*+E_03x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|25| n;n;s
+Specimen_F_03| Snowmage|160|0| F|2591|60| 615| 922| 354:AOE| 529:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| SEASONAL| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_AA_04| Tri-Klops|120|20| AA|1543|60| 283| 425| 164:AOE| 245:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| AA_04x[A-F][A-F]_*+AA_04x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|35| n;n;s
+Specimen_AB_04| Commander Ender|260|20| AB|1846|60| 569| 854| 569| 854|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| LEGEND| AB_04x[A-F][A-F]_*+AB_04x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|38| n;n;s
+Specimen_AC_04| The Plumber|170|0| AC|2419|60| 595| 893| 595| 893|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| VIDEOGAME| | 1:ability_shield;2:ability_shield_plus|20|40| n;n;s
+Specimen_AD_04| Deathcon 1|140|20| AD|1553|60| 336| 504| 336| 504|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_04x[A-F][A-F]_*+AD_04x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AE_04| Supraman X|150|0| AE|2423|60| 551| 827| 551| 827|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| VIDEOGAME| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AF_04| Autonorush|90|20| AF|1655|60| 162| 265| 162| 265|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| LEGEND| AF_04x[A-F][A-F]_*+AF_04x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|40| n;n;s
+Specimen_BA_04| The Experiment|180|20| BA|1595|60| 365| 549| 365| 549|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_04x[A-F][A-F]_*+BA_04x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BB_04| The Boogey Girl|100|20| BB|1538|60| 255| 384| 146:AOE| 220:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| BB_04x[A-F][A-F]_*+BB_04x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_BC_04| George Washington|300|0| BC|3926|60| 1284| 1927| 1284| 1927|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| SEASONAL| | 1:ability_regen;2:ability_regen_plus|30|48| n;n;s
+Specimen_BD_04| Lady Harpy|100|20| BD|1154|60| 226| 340| 226| 340|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_04x[A-F][A-F]_*+BD_04x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_BE_04| Commodore Le Shark|290|120| BE|2195|360| 882| 1323| 882| 1323|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| RECIPE| EB_03xBC_02+CB_01xCE_01| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s:20h
+Specimen_BF_04| Galactic Emperor|160|0| BF|2094|60| 361| 543| 361| 543|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| GACHA| | 1:ability_regen;2:ability_regen_plus|55|80| n;n;s
+Specimen_CA_04| Project X27|80|20| CA|960|60| 157| 326| 157| 326|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| LEGEND| CA_04x[A-F][A-F]_*+CA_04x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CB_04| Leonidas|240|20| CB|1777|60| 516| 774| 516| 774|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| LEGEND| CB_04x[A-F][A-F]_*+CB_04x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CC_04| Lara|110|0| CC|2851|60| 435| 654| 251:AOE| 375:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| VIDEOGAME| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CD_04| Battle Toad|90|20| CD|1713|60| 177| 268| 177| 268|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| LEGEND| CD_04x[A-F][A-F]_*+CD_04x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-20|-25| n;n;s
+Specimen_CE_04| Apex|180|20| CE|1610|60| 201| 315| 201| 315|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| LEGEND| CE_04x[A-F][A-F]_*+CE_04x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|90|130| n;n;s
+Specimen_CF_04| Azog|250|20| CF|1846|60| 600| 900| 600| 900|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| LEGEND| CF_04x[A-F][A-F]_*+CF_04x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_DA_04| Rhino Squadron|250|20| DA|1953|60| 585| 878| 585| 878|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| LEGEND| DA_04x[A-F][A-F]_*+DA_04x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DB_04| Louis XVI|220|0| DB|3210|60| 979| 1572| 979| 1572|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| SEASONAL| | 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DC_04| CÃ©zanne|290|20| DC|1917|60| 700| 1050| 700| 1050|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| LEGEND| DC_04x[A-F][A-F]_*+DC_04x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DD_04| Cernunnos|210|20| DD|1924|60| 549| 824| 315:AOE| 475:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| LEGEND| DD_04x[A-F][A-F]_*+DD_04x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-50| n;n;s
+Specimen_DE_04| Genshiryoku|280|20| DE|1913|60| 622| 934| 622| 934|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| LEGEND| DE_04x[A-F][A-F]_*+DE_04x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DF_04| Kontiki|270|20| DF|1887|60| 595| 892| 595| 892|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| LEGEND| DF_04x[A-F][A-F]_*+DF_04x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_EA_04| Brick McGole|150|20| EA|1397|60| 318| 478| 318| 478|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| LEGEND| EA_04x[A-F][A-F]_*+EA_04x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EB_04| Ghost Killer|150|20| EB|1648|60| 375| 563| 375| 563|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| LEGEND| EB_04x[A-F][A-F]_*+EB_04x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EC_04| Santactopus|170|0| EC|2595|60| 639| 959| 639| 959|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| SEASONAL| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_ED_04| Rakk 'n' Ruin|80|0| ED|1669|60| 335| 515| 335| 515|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|25|40| n;n;s
+Specimen_EE_04| Flying Jordson|220|20| EE|1963|60| 581| 874| 335:AOE| 501:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| LEGEND| EE_04x[A-F][A-F]_*+EE_04x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|35| n;n;s
+Specimen_EF_04| Mephisto|135|20| EF|1329|60| 268| 666| 268| 666|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| LEGEND| EF_04x[A-F][A-F]_*+EF_04x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_FA_04| Banker|200|0| FA|2635|60| 728| 1092| 728| 1092|210| 1:1:f;2:5:a;2p:15:a;1p:10:f| CAPTAINPEACE| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FB_04| Wicked Witch|240|20| FB|1763|60| 556| 834| 556| 834|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| LEGEND| FB_04x[A-F][A-F]_*+FB_04x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FC_04| Mexihcatl|210|0| FC|2445|60| 698| 1048| 698| 1048|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| SEASONAL| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FD_04| Buranka|200|20| FD|1484|60| 383:AOE| 575:AOE| 383:AOE| 575:AOE|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| LEGEND| FD_04x[A-F][A-F]_*+FD_04x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FE_04| Space Princess|140|20| FE|1254|60| 271| 407| 271| 407|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| LEGEND| FE_04x[A-F][A-F]_*+FE_04x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FF_04| Monolith|220|20| FF|2126|60| 600| 805| 346:AOE| 518:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| LEGEND| FF_04x[A-F][A-F]_*+FF_04x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_A_04| No Name|300|0| A|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| SEASONAL| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_B_04| Crow|200|0| B|3531|60| 865| 1299| 496:AOE| 746:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| SEASONAL| | 1:ability_regen;2:ability_regen_plus|35|50| n;n;s
+Specimen_C_04| No Name|300|0| C|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| SEASONAL| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_04| No Name|300|0| D|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| SEASONAL| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_04| No Name|300|0| E|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| SEASONAL| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_04| Leprechaun|190|0| F|3512|60| 584:AOE| 877:AOE| 643:AOE| 965:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| SEASONAL| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_AA_05| Thunderstruck|170|80| AA|1875|60| 741| 1116| 428:AOE| 641:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| PVP| AA_05x[A-F][A-F]_*+AA_05x[A-F]_*| 1:ability_shield;2:ability_shield_plus|30|50| n;n;s:20h
+Specimen_AB_05| Neo-Urban XIII\n|300|0| AB|2552|60| 558| 1384| 558| 1384|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| GACHA| | 1:ability_strengthen;2:ability_strengthen_plus|12|33| n;n;s
+Specimen_AC_05| Cyber Punk|130|20| AC|1362|60| 250| 375| 250| 375|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| LEGEND| AC_05x[A-F][A-F]_*+AC_05x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-60| n;n;s
+Specimen_AD_05| Cyber Croc|230|20| AD|1932|60| 546| 821| 546| 821|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_05x[A-F][A-F]_*+AD_05x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-50| n;n;s
+Specimen_AE_05| CyberSlug|200|120| AE|1877|360| 423| 682| 423| 682|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| RECIPE| AB_02xBE_04+AE_01xFE_01| 1:ability_slash;2:ability_slash_plus|-30|-50| n;n;s:20h
+Specimen_AF_05| Abraham Lincoln|300|0| AF|3424|60| 1284| 1927| 1284| 1927|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| SEASONAL| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_BA_05| Doctor Blaw|250|20| BA|1834|60| 542| 813| 542| 813|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_05x[A-F][A-F]_*+BA_05x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|48| n;n;s
+Specimen_BB_05| Soul Eater|290|20| BB|2375|60| 813| 1219| 468:AOE| 701:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| PVP| BB_05x[A-F][A-F]_*+BB_05x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|48| n;n;s
+Specimen_BC_05| Psycho Chainsawer|220|20| BC|1727|60| 465| 699| 465| 699|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| LEGEND| BC_05x[A-F][A-F]_*+BC_05x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BD_05| Bulldozer|240|20| BD|1800|120| 516| 774| 516| 774|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_05x[A-F][A-F]_*+BD_05x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BE_05| Nyrlatoth|190|20| BE|1810|60| 420| 631| 420| 631|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_05x[A-F][A-F]_*+BE_05x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BF_05| Britany|300|20| BF|1952|60| 585:AOE| 877:AOE| 585:AOE| 877:AOE|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| LEGEND| BF_05x[A-F][A-F]_*+BF_05x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|48| n;n;s
+Specimen_CA_05| Challengeer|150|20| CA|1297|60| 295| 444| 295| 444|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| LEGEND| CA_05x[A-F][A-F]_*+CA_05x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CB_05| Cupid|200|0| CB|3472|60| 926| 1432| 926| 1432|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| SEASONAL| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-30| n;n;s
+Specimen_CC_05| Shin Hakuho|270|20| CC|2309|60| 744| 1115| 428:AOE| 643:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| PVP| CC_05x[A-F][A-F]_*+CC_05x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|38| n;n;s:20h
+Specimen_CD_05| Hog the Ripper|310|0| CD|4580|120| 1633| 2549| 1633| 2549|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| CAPTAINPEACE| | 1:ability_retaliate;2:ability_retaliate_plus|-13|-20| n;n;s
+Specimen_CE_05| Sun-Duke|158|0| CE|1405|60| 531| 996| 531| 996|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| GACHA| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_CF_05| Akuso Monk|140|20| CF|1511|60| 292| 438| 292| 438|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| LEGEND| CF_05x[A-F][A-F]_*+CF_05x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DA_05| Fennec Plus Ultra|170|20| DA|1777|60| 368| 553| 368| 553|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| LEGEND| DA_05x[A-F][A-F]_*+DA_05x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-45| n;n;s
+Specimen_DB_05| Brawler|290|0| DB|3152|60| 1150| 1727| 1150| 1727|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| VIDEOGAME| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_DC_05| Monkey King|160|20| DC|1605|60| 342| 515| 342| 515|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| LEGEND| DC_05x[A-F][A-F]_*+DC_05x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DD_05| Dilophoraptor|115|80| DD|1003|60| 283| 644| 164:AOE| 322:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| PVP| DD_05x[A-F][A-F]_*+DD_05x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s:20h
+Specimen_DE_05| Exo Cookie|300|20| DE|1915|60| 696| 1046| 696| 1046|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| LEGEND| DE_05x[A-F][A-F]_*+DE_05x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DF_05| Dragons' Mother|125|20| DF|1050|60| 584| 876| 584| 876|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| LEGEND| DF_05x[A-F][A-F]_*+DF_05x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-10|-15| n;n;s
+Specimen_EA_05| King Steven|180|20| EA|1695|60| 435| 684| 435| 684|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| LEGEND| EA_05x[A-F][A-F]_*+EA_05x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-40| n;n;s
+Specimen_EB_05| Undead Soldier|270|20| EB|1860|60| 641| 961| 641| 961|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| LEGEND| EB_05x[A-F][A-F]_*+EB_05x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EC_05| Space Hunter|230|20| EC|1602|60| 491| 737| 491| 737|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| LEGEND| EC_05x[A-F][A-F]_*+EC_05x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|32| n;n;s
+Specimen_ED_05| Crawlorax|280|20| ED|1753|60| 622| 934| 622| 934|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| ED_05x[A-F][A-F]_*+ED_05x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EE_05| Selendis|120|20| EE|1444|60| 281| 551| 161:AOE| 275:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| PVP| EE_05x[A-F][A-F]_*+EE_05x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EF_05| Kraken|260|20| EF|1905|60| 587| 881| 587| 881|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| LEGEND| EF_05x[A-F][A-F]_*+EF_05x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|38| n;n;s
+Specimen_FA_05| Shadow Shaman|190|20| FA|1464|60| 390| 586| 390| 586|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| LEGEND| FA_05x[A-F][A-F]_*+FA_05x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FB_05| Bones â€˜nâ€™ Roses|190|20| FB|1844|60| 446| 695| 446| 695|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| LEGEND| FB_05x[A-F][A-F]_*+FB_05x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-20| n;n;s
+Specimen_FC_05| Yelda|170|0| FC|2605|60| 641| 962| 641| 962|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| VIDEOGAME| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FD_05| Shinigami Painter|150|20| FD|1297|60| 295| 444| 295| 444|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| LEGEND| FD_05x[A-F][A-F]_*+FD_05x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FE_05| Nebulus|180|0| FE|3354|60| 616| 1255| 616| 1255|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| ZODIAC| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FF_05| Glubber|140|20| FF|1831|60| 568| 860| 399:AOE| 600:AOE|42| 1:1:neutre;2:5:neutre;1p:10:neutre;2p:15:neutre| LEGEND| FF_05x[A-F][A-F]_*+FF_05x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-23| n;n;s
+Specimen_A_05| Bounty Hunter|210|20| A|1922|60| 515| 774| 303:AOE| 454:AOE|105| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| LEGEND| A_05x[A-F][A-F]_*+A_05x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|40| n;n;s
+Specimen_B_05| Drudge Zombie|150|20| B|2230|60| 507| 915| 507| 915|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| LEGEND| B_05x[A-F][A-F]_*+B_05x[A-F]_*| 1:ability_regen;2:ability_regen_plus|35|60| n;n;s
+Specimen_C_05| Barbarian|235|20| C|2382|60| 877| 1405| 877| 1405|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| LEGEND| C_05x[A-F][A-F]_*+C_05x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-20|-40| n;n;s
+Specimen_D_05| No Name|300|0| D|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| SEASONAL| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_05| No Name|300|0| E|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| SEASONAL| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_05| No Name|300|0| F|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| SEASONAL| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AA_06| Hercules|300|20| AA|2258|60| 845| 1269| 485:AOE| 729:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| PVP| AA_06x[A-F][A-F]_*+AA_06x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AB_06| Drusella|110|20| AB|1422|60| 264| 535| 264| 535|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| LEGEND| AB_06x[A-F][A-F]_*+AB_06x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AC_06| Viper|170|20| AC|1788|60| 631| 946| 631| 946|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| HEROIC| AC_06x[A-F][A-F]_*+AC_06x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|52| n;n;n;s
+Specimen_AD_06| Bio-Hedgehog|280|20| AD|2286|60| 796| 1188| 796| 1188|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_06x[A-F][A-F]_*+AD_06x[A-F]_*| 1:ability_shield;2:ability_shield_plus|26|41| n;n;s
+Specimen_AE_06| Marv|140|20| AE|1423|60| 271| 468| 271| 468|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| LEGEND| AE_06x[A-F][A-F]_*+AE_06x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AF_06| Eva's Replication|110|0| AF|2633|60| 439| 738| 439| 738|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| CAPTAINPEACE| | 1:ability_weaken;2:ability_weaken_plus|-20|-35| n;n;s
+Specimen_BA_06| Z-0|260|20| BA|1980|60| 747| 1122| 747| 1122|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_06x[A-F][A-F]_*+BA_06x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-16|-27| n;n;s
+Specimen_BB_06| The Glutton|230|20| BB|2164|60| 611| 920| 351:AOE| 529:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| PVP| BB_06x[A-F][A-F]_*+BB_06x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BC_06| Dandy Bones|250|20| BC|1831|60| 543| 815| 543| 815|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| LEGEND| BC_06x[A-F][A-F]_*+BC_06x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|48| n;n;s
+Specimen_BD_06| Mur'Ghoul|190|20| BD|1912|60| 428| 644| 428| 644|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_06x[A-F][A-F]_*+BD_06x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BE_06| Apophis|130|20| BE|1541|60| 264| 395| 264| 395|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_06x[A-F][A-F]_*+BE_06x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_BF_06| The King of Mimphys|220|20| BF|1680|60| 510| 766| 510| 766|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| LEGEND| BF_06x[A-F][A-F]_*+BF_06x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|48| n;n;s
+Specimen_CA_06| RA-DK-Bot|280|20| CA|2321|60| 630| 1176| 630| 1176|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| LEGEND| CA_06x[A-F][A-F]_*+CA_06x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CB_06| Scarlett|180|0| CB|2813|60| 720| 1432| 720| 1432|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| CAPTAINPEACE| | 1:ability_retaliate;2:ability_retaliate_plus|-25|-45| n;n;s
+Specimen_CC_06| El Gringo|100|20| CC|1395|60| 238| 454| 134:AOE| 203:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| PVP| CC_06x[A-F][A-F]_*+CC_06x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-20|-25| n;n;s
+Specimen_CD_06| Sir Puggington|290|20| CD|2868|60| 699| 1049| 699| 1049|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| LEGEND| CD_06x[A-F][A-F]_*+CD_06x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|37| n;n;s
+Specimen_CE_06| Iron Eagle|160|20| CE|1337|60| 328| 493| 328| 318:AOE|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| LEGEND| CE_06x[A-F][A-F]_*+CE_06x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CF_06| Uncle Sam|270|0| CF|3469|120| 1197| 1856| 1197| 1856|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| SEASONAL| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_DA_06| Tricera Tank|310|20| DA|1973|60| 758| 1137| 758| 1137|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| LEGEND| DA_06x[A-F][A-F]_*+DA_06x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_DB_06| Breaver|140|20| DB|1253|60| 271| 407| 271| 407|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| LEGEND| DB_06x[A-F][A-F]_*+DB_06x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_DC_06| Grannyvore|270|20| DC|2130|60| 633| 951| 633| 951|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| LEGEND| DC_06x[A-F][A-F]_*+DC_06x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|38| n;n;s
+Specimen_DD_06| Kangaboo|140|20| DD|1566|60| 339| 509| 214:AOE| 335:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| PVP| DD_06x[A-F][A-F]_*+DD_06x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_DE_06| Darwin|170|0| DE|3315|60| 718| 1088| 718| 1088|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|22|38| n;n;s
+Specimen_DF_06| Saber|190|0| DF|3187|60| 848| 1272| 848| 1272|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| CAPTAINPEACE| | 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_EA_06| Krunk|240|20| EA|1803|60| 568| 853| 568| 853|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| LEGEND| EA_06x[A-F][A-F]_*+EA_06x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EB_06| Garlog|225|0| EB|1963|60| 861| 1316| 861| 1316|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| GACHA| | 1:ability_strengthen;2:ability_strengthen_plus|30|45| n;n;s
+Specimen_EC_06| Zeus|90|0| EC|940|60| 471| 639| 471| 639|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| GACHA| | 1:ability_strengthen;2:ability_strengthen_plus|25|40| n;n;s
+Specimen_ED_06| Kitty Perry|150|20| ED|1227|60| 311| 466| 311| 466|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| ED_06x[A-F][A-F]_*+ED_06x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EE_06| Rakkti Queen|200|20| EE|2033|60| 510| 765| 294:AOE| 440:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| LEGEND| EE_06x[A-F][A-F]_*+EE_06x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|35| n;n;s
+Specimen_EF_06| Mandor|170|20| EF|1417|60| 489| 734| 489| 734|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| LEGEND| EF_06x[A-F][A-F]_*+EF_06x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|22|40| n;n;s
+Specimen_FA_06| Lily|170|0| FA|2247|60| 536| 804| 536| 804|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| GACHA| | 1:ability_weaken;2:ability_weaken_plus|-20|-45| n;n;s
+Specimen_FB_06| Sorceress|100|20| FB|1145|60| 248| 522| 248| 522|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| LEGEND| FB_06x[A-F][A-F]_*+FB_06x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-20| n;n;s
+Specimen_FC_06| Wind Spirit|80|20| FC|655|60| 196| 263| 196| 263|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| HEROIC| FC_06x[A-F][A-F]_*+FC_06x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-30|-50| n;n;n;s
+Specimen_FD_06| Kung Chow|240|20| FD|1706|60| 512| 769| 512| 769|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| LEGEND| FD_06x[A-F][A-F]_*+FD_06x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-17|-26| n;n;s
+Specimen_FE_06| Puppetron|210|20| FE|1685|60| 440| 714| 440| 714|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| LEGEND| FE_06x[A-F][A-F]_*+FE_06x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-13|-22| n;n;s
+Specimen_FF_06| Namaste|167|20| FF|1716|60| 416| 628| 284:AOE| 495:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| LEGEND| FF_06x[A-F][A-F]_*+FF_06x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-19|-30| n;n;s
+Specimen_A_06| No Name|300|0| A|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| SEASONAL| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_B_06| No Name|300|0| B|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| SEASONAL| | 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_C_06| No Name|300|0| C|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| SEASONAL| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_06| No Name|300|0| D|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| SEASONAL| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_06| No Name|300|0| E|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| SEASONAL| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_06| No Name|300|0| F|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| SEASONAL| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AA_07| Project 3V3|110|20| AA|1235|60| 274| 715| 156:AOE| 411:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| AA_07x[A-F][A-F]_*+AA_07x[A-F]_*| 1:ability_shield;2:ability_shield_plus|25|50| n;n;s
+Specimen_AB_07| Crusher|250|0| AB|3210|60| 979| 1872| 979| 1872|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| CAPTAINPEACE| | 1:ability_regen;2:ability_regen_plus|30|45| n;n;s
+Specimen_AC_07| Robo Fuerte|250|0| AC|2181|60| 856| 1284| 856| 1284|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| GACHA| | 1:ability_slash;2:ability_slash_plus|-30|-50| n;n;s
+Specimen_AD_07| Fuel Wasp|130|20| AD|2211|60| 266| 400| 266| 400|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_07x[A-F][A-F]_*+AD_07x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|40| n;n;s
+Specimen_AE_07| Alfie|300|20| AE|1722|60| 787| 1183| 787| 1183|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| LEGEND| AE_07x[A-F][A-F]_*+AE_07x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_AF_07| Bounda|300|20| AF|2155|60| 824| 1237| 824| 1237|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| HEROIC| AF_07x[A-F][A-F]_*+AF_07x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-25|-35| n;n;n;s
+Specimen_BA_07| Peekaboo|165|20| BA|2042|60| 374| 662| 374| 662|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_07x[A-F][A-F]_*+BA_07x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BB_07| Necroparasyte|150|20| BB|2219|60| 308| 461| 175:AOE| 265:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| BB_07x[A-F][A-F]_*+BB_07x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BC_07| Muddypeat|220|20| BC|1752|60| 694| 1013| 694| 1013|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| LEGEND| BC_07x[A-F][A-F]_*+BC_07x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-18|-33| n;n;s
+Specimen_BD_07| The Primal|180|0| BD|2622|60| 516| 974| 516| 974|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| GACHA| | 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BE_07| Nezarim|240|20| BE|1746|60| 590| 949| 590| 949|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_07x[A-F][A-F]_*+BE_07x[A-F]_*| 1:ability_regen;2:ability_regen_plus|35|50| n;n;s
+Specimen_BF_07| Mushbark|240|20| BF|1738|60| 575| 955| 575| 955|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| LEGEND| BF_07x[A-F][A-F]_*+BF_07x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_CA_07| Rocky Botboa|310|20| CA|2431|60| 732| 1100| 732| 1100|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| LEGEND| CA_07x[A-F][A-F]_*+CA_07x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|38| n;n;s
+Specimen_CB_07| The Skeleton King|160|20| CB|1670|60| 621| 1052| 621| 1052|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| HEROIC| CB_07x[A-F][A-F]_*+CB_07x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|50| n;n;n;s
+Specimen_CC_07| Spartac|300|0| CC|4630|60| 1800| 2700| 899:AOE| 1261:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| CAPTAINPEACE| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_CD_07| Jack Ice|290|0| CD|4154|60| 1188| 1782| 1188| 1782|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| CAPTAINPEACE| | 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_CE_07| Aran|230|20| CE|1423|60| 895| 1494| 895| 1494|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| HEROIC| CE_07x[A-F][A-F]_*+CE_07x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;n;s
+Specimen_CF_07| Big Santa|210|0| CF|3306|60| 946| 1418| 946| 1418|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| SEASONAL| | 1:ability_retaliate;2:ability_retaliate_plus|-20|-35| n;n;s
+Specimen_DA_07| Pugnisher|79|20| DA|1384|60| 185| 278| 185| 278|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| LEGEND| DA_07x[A-F][A-F]_*+DA_07x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|40| n;n;s
+Specimen_DB_07| Lord Dragon|95|20| DB|995|60| 207| 303| 207| 303|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| HEROIC| DB_07x[A-F][A-F]_*+DB_07x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-25|-85| n;n;n;s
+Specimen_DC_07| Noren|260|0| DC|4338|60| 1460| 2194| 1460| 2194|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| CAPTAINPEACE| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DD_07| Baloonies|160|20| DD|1764|60| 454| 684| 260:AOE| 391:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| LEGEND| DD_07x[A-F][A-F]_*+DD_07x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DE_07| Captain Turk E.|185|20| DE|1926|60| 456| 684| 456| 684|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| LEGEND| DE_07x[A-F][A-F]_*+DE_07x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-15|-33| n;n;s
+Specimen_DF_07| The Chimera|270|20| DF|1872|60| 587| 1326| 587| 1326|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| LEGEND| DF_07x[A-F][A-F]_*+DF_07x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_EA_07| Captain Patriot|210|20| EA|2726|60| 479| 777| 479| 719|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| LEGEND| EA_07x[A-F][A-F]_*+EA_07x[A-F]_*| 1:ability_shield;2:ability_shield_plus|23|38| n;n;s
+Specimen_EB_07| Starminator|175|20| EB|1794|60| 388| 633| 388| 633|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| LEGEND| EB_07x[A-F][A-F]_*+EB_07x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|35| n;n;s
+Specimen_EC_07| Starscream|250|20| EC|1622|60| 580| 870| 580| 870|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| LEGEND| EC_07x[A-F][A-F]_*+EC_07x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_ED_07| Paramic|120|20| ED|1634|60| 220| 332| 220| 332|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| ED_07x[A-F][A-F]_*+ED_07x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|50| n;n;s
+Specimen_EE_07| Marship Mallow|150|20| EE|1756|60| 361| 543| 208:AOE| 310:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| PVP| EE_07x[A-F][A-F]_*+EE_07x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EF_07| Kal Wayne|220|20| EF|1887|60| 497| 746| 497| 746|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| LEGEND| EF_07x[A-F][A-F]_*+EF_07x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|32| n;n;s
+Specimen_FA_07| Dr. Frost|225|20| FA|2117|60| 515| 860| 515| 860|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| LEGEND| FA_07x[A-F][A-F]_*+FA_07x[A-F]_*| 1:ability_shield;2:ability_shield_plus|25|45| n;n;s
+Specimen_FB_07| The Fates|170|20| FB|1813|60| 311| 567| 311| 567|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| LEGEND| FB_07x[A-F][A-F]_*+FB_07x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-17|-28| n;n;s
+Specimen_FC_07| Amarok|140|20| FC|1389|60| 299| 450| 299| 450|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| LEGEND| FC_07x[A-F][A-F]_*+FC_07x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FD_07| Phoenix|250|1000| FD|2016|60| 5| 1355| 5| 1355|42| 1:1:f;2:1:d;2p:15:d;1p:15:f| HEROIC| FD_07x[A-F][A-F]_*+FD_07x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|45| n;n;n;s
+Specimen_FE_07| Bug's King|200|20| FE|1802|60| 496| 746| 496| 746|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| LEGEND| FE_07x[A-F][A-F]_*+FE_07x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-18|-28| n;n;s
+Specimen_FF_07| Geomega|290|0| FF|4093|60| 1493| 2439| 746:AOE| 1719:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| CAPTAINPEACE| | 1:ability_weaken;2:ability_weaken_plus|-15|-22| n;n;s
+Specimen_A_07| No Name|300|0| A|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| SEASONAL| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_B_07| No Name|300|0| B|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| SEASONAL| | 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_C_07| No Name|300|0| C|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| SEASONAL| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_07| No Name|300|0| D|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| SEASONAL| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_07| No Name|300|0| E|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| SEASONAL| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_07| No Name|300|0| F|1824|60| 684| 1026| 342:AOE| 513:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| SEASONAL| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AA_08| R0B-H4N Sentinel|180|20| AA|1909|60| 604| 1208| 409:AOE| 621:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| AA_08x[A-F][A-F]_*+AA_08x[A-F]_*| 1:ability_shield;2:ability_shield_plus|25|45| n;n;s
+Specimen_AB_08| High Gravelord|160|20| AB|1533|60| 332| 791| 332| 791|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| LEGEND| AB_08x[A-F][A-F]_*+AB_08x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-22|-33| n;n;s
+Specimen_AC_08| Blender|140|20| AC|1225|60| 291| 437| 291| 437|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| LEGEND| AC_08x[A-F][A-F]_*+AC_08x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-20|-30| n;n;s
+Specimen_AD_08| Kitty Ranger|150|20| AD|1616|60| 314| 472| 314| 472|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_08x[A-F][A-F]_*+AD_08x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_AE_08| Andromeda|140|20| AE|1065|60| 455| 661| 455| 661|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| HEROIC| AE_08x[A-F][A-F]_*+AE_08x[A-F]_*| 1:ability_shield;2:ability_shield_plus|50|80| n;n;n;s
+Specimen_AF_08| H0ud1n1|130|20| AF|1693|60| 402| 603| 402| 603|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| LEGEND| AF_08x[A-F][A-F]_*+AF_08x[A-F]_*| 1:ability_shield;2:ability_shield_plus|15|20| n;n;s
+Specimen_BA_08| Naraxis|170|20| BA|1848|60| 335| 543| 335| 543|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_08x[A-F][A-F]_*+BA_08x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|60| n;n;s
+Specimen_BB_08| Plague Witch|210|20| BB|1798|60| 389| 795| 228:AOE| 484:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| BB_08x[A-F][A-F]_*+BB_08x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BC_08| Thrann|250|20| BC|1482|60| 539| 962| 539| 962|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| LEGEND| BC_08x[A-F][A-F]_*+BC_08x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-22|-35| n;n;s
+Specimen_BD_08| Runt and Cerebro|210|20| BD|1657|60| 471| 707| 471| 707|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_08x[A-F][A-F]_*+BD_08x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-50| n;n;s
+Specimen_BE_08| Dug Dario|220|20| BE|1929|60| 500| 751| 500| 751|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_08x[A-F][A-F]_*+BE_08x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BF_08| Van Helsing|210|20| BF|1913|60| 519| 810| 519| 810|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| LEGEND| BF_08x[A-F][A-F]_*+BF_08x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_CA_08| Makino|120|20| CA|931|60| 243| 786| 243| 786|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| LEGEND| CA_08x[A-F][A-F]_*+CA_08x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CB_08| Wrath|270|20| CB|1463|60| 1020| 1530| 1020| 1530|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| LEGEND| CB_08x[A-F][A-F]_*+CB_08x[A-F]_*| 1:ability_shield;2:ability_shield_plus|22|35| n;n;s
+Specimen_CC_08| Yokozuna|130|20| CC|1594|60| 329| 493| 189:AOE| 281:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| PVP| CC_08x[A-F][A-F]_*+CC_08x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_CD_08| Drall|250|20| CD|2752|60| 668| 1002| 668| 1002|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| LEGEND| CD_08x[A-F][A-F]_*+CD_08x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CE_08| Nameless King|215|20| CE|1551|60| 622| 933| 622| 933|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| LEGEND| CE_08x[A-F][A-F]_*+CE_08x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|37| n;n;s
+Specimen_CF_08| Wynn|300|20| CF|2195|60| 723| 1085| 723| 1085|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| LEGEND| CF_08x[A-F][A-F]_*+CF_08x[A-F]_*| 1:ability_regen;2:ability_regen_plus|27|37| n;n;s
+Specimen_DA_08| Asaylan|200|20| DA|1266|60| 805| 1206| 805| 1206|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| HEROIC| DA_08x[A-F][A-F]_*+DA_08x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-50|-100| n;n;n;s
+Specimen_DB_08| Deadnosaur|280|20| DB|2032|60| 615| 923| 615| 923|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| LEGEND| DB_08x[A-F][A-F]_*+DB_08x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DC_08| Sanik|170|20| DC|2369|60| 367| 551| 367| 551|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| LEGEND| DC_08x[A-F][A-F]_*+DC_08x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-40|-60| n;n;s
+Specimen_DD_08| Rhinotaure|250|20| DD|3134|60| 668| 1053| 334:AOE| 650:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| LEGEND| DD_08x[A-F][A-F]_*+DD_08x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-15|-25| n;n;s
+Specimen_DE_08| Cosmopandas|110|20| DE|1023|60| 199| 585| 199| 585|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| LEGEND| DE_08x[A-F][A-F]_*+DE_08x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_DF_08| Chantecler|280|20| DF|1982|60| 987| 1381| 987| 1381|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| HEROIC| DF_08x[A-F][A-F]_*+DF_08x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;n;s
+Specimen_EA_08| Lady Liberty|260|0| EA|3665|60| 1228| 1842| 1228| 1842|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| SEASONAL| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EB_08| Dr. Nucleus|260|0| EB|4234|60| 1518| 2227| 1518| 2227|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EC_08| Spectre|120|20| EC|687|60| 533| 852| 533| 852|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| HEROIC| EC_08x[A-F][A-F]_*+EC_08x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|22|33| n;n;n;s
+Specimen_ED_08| Sgt. Pandamonium|140|20| ED|1526|60| 425| 637| 425| 637|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| ED_08x[A-F][A-F]_*+ED_08x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_EE_08| Golemagnus|290|20| EE|2415|60| 800| 1201| 459:AOE| 690:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| LEGEND| EE_08x[A-F][A-F]_*+EE_08x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EF_08| Seiyatsu|100|0| EF|2183|60| 381| 872| 381| 872|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| CAPTAINPEACE| | 1:ability_retaliate;2:ability_retaliate_plus|-17|-25| n;n;s
+Specimen_FA_08| FootBot|160|20| FA|1453|60| 311| 469| 311| 469|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| LEGEND| FA_08x[A-F][A-F]_*+FA_08x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FB_08| Gozer|200|20| FB|1879|60| 403| 724| 403| 724|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| LEGEND| FB_08x[A-F][A-F]_*+FB_08x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_FC_08| Kudamono|200|20| FC|1722|60| 507| 761| 507| 761|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| LEGEND| FC_08x[A-F][A-F]_*+FC_08x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FD_08| Omikami|260|20| FD|1857|60| 569| 852| 569| 852|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| LEGEND| FD_08x[A-F][A-F]_*+FD_08x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_FE_08| Majin Zam|290|20| FE|1932|60| 640| 961| 640| 961|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| LEGEND| FE_08x[A-F][A-F]_*+FE_08x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FF_08| Firestorm|160|20| FF|1640|60| 425| 640| 245:AOE| 368:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| LEGEND| FF_08x[A-F][A-F]_*+FF_08x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_A_08| No Name|300|20| A|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| LEGEND| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_B_08| No Name|300|20| B|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| LEGEND| | 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_C_08| No Name|300|20| C|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| LEGEND| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_08| No Name|300|20| D|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| LEGEND| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_08| No Name|300|20| E|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| LEGEND| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_08| No Name|300|20| F|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| LEGEND| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AA_09| H.U.N.T.3.R|130|20| AA|1938|60| 453| 679| 260:AOE| 391:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| AA_09x[A-F][A-F]_*+AA_09x[A-F]_*| 1:ability_shield;2:ability_shield_plus|10|15| n;n;s
+Specimen_AB_09| Grumpy Claus|230|0| AB|3760|60| 1119| 1679| 1119| 1679|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| SEASONAL| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AC_09| Optimus Zord|160|20| AC|1761|60| 310| 567| 310| 567|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| LEGEND| AC_09x[A-F][A-F]_*+AC_09x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_AD_09| Carcinus Gigas|190|20| AD|2569|60| 583| 873| 583| 873|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_09x[A-F][A-F]_*+AD_09x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|35| n;n;s
+Specimen_AE_09| Centaurus|190|20| AE|2383|60| 443| 741| 443| 741|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| LEGEND| AE_09x[A-F][A-F]_*+AE_09x[A-F]_*| 1:ability_shield;2:ability_shield_plus|22|40| n;n;s
+Specimen_AF_09| Steam Warlord|225|20| AF|2415|60| 606| 906| 606| 906|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| HEROIC| AF_09x[A-F][A-F]_*+AF_09x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-30|-45| n;n;n;s
+Specimen_BA_09| Excavalypse|300|20| BA|2312|60| 814| 1221| 814| 1221|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_09x[A-F][A-F]_*+BA_09x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|48| n;n;s
+Specimen_BB_09| Frankenhuahua|110|20| BB|1571|60| 344| 515| 148:AOE| 296:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| BB_09x[A-F][A-F]_*+BB_09x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|60| n;n;s
+Specimen_BC_09| The Collector|260|20| BC|2138|60| 675| 1012| 675| 1012|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| LEGEND| BC_09x[A-F][A-F]_*+BC_09x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|48| n;n;s
+Specimen_BD_09| Hellmaw|140|20| BD|1499|60| 282| 453| 282| 453|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_09x[A-F][A-F]_*+BD_09x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-50| n;n;s
+Specimen_BE_09| Pyrothrope|220|20| BE|1924|60| 529| 863| 529| 863|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_09x[A-F][A-F]_*+BE_09x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-25| n;n;s
+Specimen_BF_09| Calaca|270|0| BF|4348|60| 1469| 2204| 1469| 2204|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| CAPTAINPEACE| | 1:ability_regen;2:ability_regen_plus|35|50| n;n;s
+Specimen_CA_09| Big Bo$$|290|0| CA|4157|60| 1515| 2273| 1515| 2273|300| 1:1:c;2:5:a;2p:15:a;1p:10:c| CAPTAINPEACE| CA_09x[A-F][A-F]_*+CA_09x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_CB_09| Jane Saw|240|20| CB|2174|60| 617| 926| 617| 926|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| LEGEND| CB_09x[A-F][A-F]_*+CB_09x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|45| n;n;s
+Specimen_CC_09| Lancelot|180|20| CC|1650|60| 954| 1431| 358:AOE| 715:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| LEGEND| CC_09x[A-F][A-F]_*+CC_09x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-35| n;n;s
+Specimen_CD_09| Mon-Key Crew|150|20| CD|1471|60| 341| 897| 341| 897|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| LEGEND| CD_09x[A-F][A-F]_*+CD_09x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-12|-23| n;n;s
+Specimen_CE_09| Tsar Bomba|230|20| CE|1867|60| 608| 911| 608| 911|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| LEGEND| CE_09x[A-F][A-F]_*+CE_09x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-40| n;n;s
+Specimen_CF_09| The Keymaster|280|20| CF|1860|60| 698| 1040| 698| 1040|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| LEGEND| CF_09x[A-F][A-F]_*+CF_09x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_DA_09| Sound Killah|290|0| DA|2136|60| 1358| 2009| 1358| 2009|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| GACHA| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_DB_09| Horax|260|20| DB|2028|60| 673| 1010| 673| 1010|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| LEGEND| DB_09x[A-F][A-F]_*+DB_09x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DC_09| Master Shinzo|120|20| DC|1563|60| 269| 406| 269| 406|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| LEGEND| DC_09x[A-F][A-F]_*+DC_09x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DD_09| Mister T-Ger|130|20| DD|1754|60| 329| 493| 195:AOE| 296:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| PVP| DD_09x[A-F][A-F]_*+DD_09x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DE_09| Zigmo|120|20| DE|1467|60| 219| 329| 219| 329|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| LEGEND| DE_09x[A-F][A-F]_*+DE_09x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-55| n;n;s
+Specimen_DF_09| Quetzalcoatl|200|20| DF|1746|60| 437| 657| 437| 657|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| LEGEND| DF_09x[A-F][A-F]_*+DF_09x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-50| n;n;s
+Specimen_EA_09| Captain Gorn|170|20| EA|1836|60| 400| 600| 400| 600|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| LEGEND| EA_09x[A-F][A-F]_*+EA_09x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-50| n;n;s
+Specimen_EB_09| Queen Sylvidra|280|20| EB|2302|60| 699| 1148| 699| 1148|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| HEROIC| EB_09x[A-F][A-F]_*+EB_09x[A-F]_*| 1:ability_regen;2:ability_regen_plus|40|60| n;n;n;s
+Specimen_EC_09| Shieldcalibur|210|20| EC|2011|60| 519| 780| 519| 780|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| LEGEND| EC_09x[A-F][A-F]_*+EC_09x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-40| n;n;s
+Specimen_ED_09| Rox McRain|120|20| ED|1397|60| 264| 396| 264| 396|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| ED_09x[A-F][A-F]_*+ED_09x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EE_09| Megastral|280|20| EE|2539|60| 900| 1351| 451:AOE| 675:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| LEGEND| EE_09x[A-F][A-F]_*+EE_09x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EF_09| Mage Ryzafredd|240|20| EF|1864|60| 590| 884| 590| 884|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| LEGEND| EF_09x[A-F][A-F]_*+EF_09x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_FA_09| Zenguru|200|20| FA|1785|60| 484| 727| 484| 727|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| LEGEND| FA_09x[A-F][A-F]_*+FA_09x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FB_09| Hadeath|240|20| FB|2297|60| 689| 1035| 689| 1035|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| LEGEND| FB_09x[A-F][A-F]_*+FB_09x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_FC_09| Gorthaur the Cruel|300|0| FC|1937|60| 1291| 1937| 1291| 1937|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| GACHA| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FD_09| Draco Mage|250|20| FD|1752|60| 579| 870| 579| 870|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| LEGEND| FD_09x[A-F][A-F]_*+FD_09x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FE_09| Xeleroth|290|20| FE|2145|60| 769| 1153| 769| 1153|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| LEGEND| FE_09x[A-F][A-F]_*+FE_09x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FF_09| Liquidator|215|20| FF|2279|60| 669| 1123| 384:AOE| 575:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| LEGEND| FF_09x[A-F][A-F]_*+FF_09x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_A_09| No Name|300|20| A|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| LEGEND| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_B_09| No Name|300|20| B|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| LEGEND| | 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_C_09| No Name|300|20| C|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| LEGEND| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_09| No Name|300|20| D|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| LEGEND| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_09| No Name|300|20| E|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| LEGEND| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_09| No Name|300|20| F|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| LEGEND| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AA_10| ED-404|250|20| AA|2888|60| 950| 1425| 554:AOE| 841:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| AA_10x[A-F][A-F]_*+AA_10x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AB_10| S-K-Venger|290|20| AB|2125|60| 890| 1395| 890| 1395|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| LEGEND| AB_10x[A-F][A-F]_*+AB_10x[A-F]_*| 1:ability_shield;2:ability_shield_plus|22|35| n;n;s
+Specimen_AC_10| Sergeant Dusk|200|20| AC|1814|60| 786| 1287| 786| 1287|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| HEROIC| AC_10x[A-F][A-F]_*+AC_10x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-25|-40| n;n;n;s
+Specimen_AD_10| Hippopotank|290|20| AD|2477|60| 820| 1229| 820| 1229|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_10x[A-F][A-F]_*+AD_10x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AE_10| Akai-Bot|200|0| AE|4200|60| 1041| 1562| 1041| 1562|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|30|45| n;n;s
+Specimen_AF_10| El Veneno|180|20| AF|1733|60| 399| 622| 399| 622|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| LEGEND| AF_10x[A-F][A-F]_*+AF_10x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|35| n;n;s
+Specimen_BA_10| Hellsaw|245|20| BA|2585|60| 732| 1098| 732| 1098|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_10x[A-F][A-F]_*+BA_10x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|55| n;n;s
+Specimen_BB_10| T-3rr0r|170|20| BB|2840|60| 440| 691| 253:AOE| 404:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| BB_10x[A-F][A-F]_*+BB_10x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_BC_10| King Lulu|290|20| BC|1981|60| 1113| 1644| 1113| 1644|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| HEROIC| BC_10x[A-F][A-F]_*+BC_10x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|40| n;n;n;s
+Specimen_BD_10| Waryena|290|20| BD|2222|60| 806| 1210| 806| 1210|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_10x[A-F][A-F]_*+BD_10x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_BE_10| Overkill|290|20| BE|2208|60| 924| 1386| 924| 1386|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_10x[A-F][A-F]_*+BE_10x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|25|37| n;n;s
+Specimen_BF_10| The Undertaker|300|0| BF|2657|60| 951| 1426| 951| 1426|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| GACHA| | 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_CA_10| Altaris|300|20| CA|2315|60| 1238| 1907| 1238| 1907|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| HEROIC| CA_10x[A-F][A-F]_*+CA_10x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|35| n;n;n;s
+Specimen_CB_10| Frankendwarf|260|20| CB|2169|60| 720| 1080| 720| 1080|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| LEGEND| CB_10x[A-F][A-F]_*+CB_10x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_CC_10| Urgan|260|20| CC|2406|60| 1126| 1599| 569:AOE| 853:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| LEGEND| CC_10x[A-F][A-F]_*+CC_10x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-20| n;n;s
+Specimen_CD_10| Men'ki Guard|110|20| CD|1350|60| 405| 607| 405| 607|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| LEGEND| CD_10x[A-F][A-F]_*+CD_10x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-25|-60| n;n;s
+Specimen_CE_10| Captain Achabe|130|0| CE|3550|60| 667| 1130| 667| 1130|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| CAPTAINPEACE| | 1:ability_retaliate;2:ability_retaliate_plus|-13|-20| n;n;s
+Specimen_CF_10| Arelvam|120|20| CF|1977|60| 305| 456| 305| 456|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| LEGEND| CF_10x[A-F][A-F]_*+CF_10x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-30| n;n;s
+Specimen_DA_10| Hawkeye|140|20| DA|1408|60| 334| 643| 334| 643|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| LEGEND| DA_10x[A-F][A-F]_*+DA_10x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-45| n;n;s
+Specimen_DB_10| Buffalor|280|20| DB|2030|60| 923| 1417| 923| 1417|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| LEGEND| DB_10x[A-F][A-F]_*+DB_10x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-40| n;n;s
+Specimen_DC_10| Krampus|220|20| DC|2111|60| 624| 935| 624| 935|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| LEGEND| DC_10x[A-F][A-F]_*+DC_10x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-40| n;n;s
+Specimen_DD_10| Kameo|120|20| DD|1710|60| 416| 628| 245:AOE| 374:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| LEGEND| DD_10x[A-F][A-F]_*+DD_10x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-45| n;n;s
+Specimen_DE_10| Mad Mike|160|20| DE|1591|60| 611| 917| 611| 917|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| HEROIC| DE_10x[A-F][A-F]_*+DE_10x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-25|-45| n;n;n;s
+Specimen_DF_10| Gwenn|150|20| DF|1847|60| 353| 532| 353| 532|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| LEGEND| DF_10x[A-F][A-F]_*+DF_10x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|32| n;n;s
+Specimen_EA_10| Space Surfer|260|0| EA|4455|60| 1638| 2407| 1638| 2407|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|13|20| n;n;s
+Specimen_EB_10| Gakarian|155|20| EB|1939|60| 458| 717| 458| 717|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| LEGEND| EB_10x[A-F][A-F]_*+EB_10x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EC_10| Gamallia|200|20| EC|1385|60| 660| 1005| 660| 1005|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| LEGEND| EC_10x[A-F][A-F]_*+EC_10x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|32| n;n;s
+Specimen_ED_10| Angry Pork|230|20| ED|1977|60| 566| 954| 566| 954|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| ED_10x[A-F][A-F]_*+ED_10x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|40| n;n;s
+Specimen_EE_10| Extra Terrorcycle|140|20| EE|2125|60| 469| 703| 270:AOE| 404:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| LEGEND| EE_10x[A-F][A-F]_*+EE_10x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-28|-42| n;n;s
+Specimen_EF_10| Divastator|150|20| EF|1555|60| 336| 520| 336| 520|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| LEGEND| EF_10x[A-F][A-F]_*+EF_10x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-30|-50| n;n;s
+Specimen_FA_10| Mimi Timebender|90|20| FA|983|60| 398| 547| 398| 547|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| LEGEND| FA_10x[A-F][A-F]_*+FA_10x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-10|-20| n;n;s
+Specimen_FB_10| Yggdrasil|260|20| FB|2617|60| 746| 1155| 746| 1155|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| HEROIC| FB_10x[A-F][A-F]_*+FB_10x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;n;s
+Specimen_FC_10| Hephaestus|260|20| FC|2114|60| 698| 1049| 698| 1049|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| LEGEND| FC_10x[A-F][A-F]_*+FC_10x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_FD_10| Master Paw|290|0| FD|3683|60| 1342| 2016| 1342| 2016|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| COMMUNITY| | 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_FE_10| Bahamut|150|20| FE|1707|60| 361| 543| 361| 543|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| LEGEND| FE_10x[A-F][A-F]_*+FE_10x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|45| n;n;s
+Specimen_FF_10| Bregbeam|300|20| FF|3250|60| 1139| 1708| 575:AOE| 863:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| LEGEND| FF_10x[A-F][A-F]_*+FF_10x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-25| n;n;s
+Specimen_A_10| No Name|300|20| A|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| LEGEND| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_B_10| No Name|300|20| B|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| LEGEND| | 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_C_10| No Name|300|20| C|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| LEGEND| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_10| No Name|300|20| D|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| LEGEND| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_10| No Name|300|20| E|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| LEGEND| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_10| No Name|300|20| F|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| LEGEND| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AA_11| TriAD|100|20| AA|1191|60| 275| 398| 145:AOE| 355:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| AA_11x[A-F][A-F]_*+AA_11x[A-F]_*| 1:ability_shield;2:ability_shield_plus|50|95| n;n;s
+Specimen_AB_11| Enviro Mk III|170|20| AB|2026|60| 516| 774| 339:AOE| 498:AOE|42| 1:1:a;2:5:b;1p:10:a;2p:15:b| LEGEND| AB_11x[A-F][A-F]_*+AB_11x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-25|-25| n;n;s
+Specimen_AC_11| Spin Fury|95|20| AC|855|60| 378| 584| 378| 584|42| 1:1:a;2:5:c;1p:10:a;2p:15:c| HEROIC| AC_11x[A-F][A-F]_*+AC_11x[A-F]_*| 1:ability_shield;2:ability_shield_plus|15|20| n;n;n;s
+Specimen_AD_11| Hatching Mecharachnidian|125|0| AD|2951|60| 605| 605:AOE| 701| 1052|42| 1:1:a;2:5:d;1p:10:a;2p:15:d| CAPTAINPEACE| | 1:ability_slash;2:ability_slash_plus|-10|-40| n;n;s
+Specimen_AE_11| Mix0-Logist|190|20| AE|2172|60| 735| 1480| 735| 735:AOE|42| 1:1:a;2:5:e;1p:10:a;2p:15:e| LEGEND| AE_11x[A-F][A-F]_*+AE_11x[A-F]_*| 1:ability_regen;2:ability_regen_plus|12|33| n;n;s
+Specimen_AF_11| Heimdall|130|0| AF|3321|60| 900| 1380| 900| 1380|42| 1:1:a;2:5:f;1p:10:a;2p:15:f| CAPTAINPEACE| | 1:ability_shield;2:ability_shield_plus|16|28| n;n;s
+Specimen_BA_11| Roadmaster|165|20| BA|2689|60| 225:AOE| 458:AOE| 392| 788|42| 1:1:a;2:5:b;1p:10:a;2p:15:b| LEGEND| BA_11x[A-F][A-F]_*+BA_11x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-10|-22| n;n;s
+Specimen_BB_11| The Forgotten One|220|0| BB|5480|60| 1036| 1544| 613:AOE| 959:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| CAPTAINPEACE| | 1:ability_regen;2:ability_regen_plus|38|55| n;n;s
+Specimen_BC_11| Ragefang|80|20| BC|2367|60| 202| 303| 202| 303|42| 1:1:b;2:5:c;1p:10:b;2p:15:c| LEGEND| BC_11x[A-F][A-F]_*+BC_11x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-5|-10| n;n;s
+Specimen_BD_11| Cooktouille|250|20| BD|1920|60| 720| 1080| 720| 1080|42| 1:1:b;2:5:d;1p:10:b;2p:15:d| LEGEND| BD_11x[A-F][A-F]_*+BD_11x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-24|-41| n;n;s
+Specimen_BE_11| Oculys|250|20| BE|2171|60| 1113| 1669| 1113| 1669|42| 1:1:b;2:5:e;1p:10:b;2p:15:e| LEGEND| BE_11x[A-F][A-F]_*+BE_11x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-35| n;n;s
+Specimen_BF_11| Acheron|180|0| BF|2926|60| 1480| 2059| 740:AOE| 1330:AOE|42| 1:1:b;2:5:f;1p:10:b;2p:15:f| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|34|41| n;n;s
+Specimen_CA_11| The Reef|140|0| CA|1277|60| 577| 866| 577| 866|42| 1:1:c;2:5:a;1p:10:c;2p:15:a| GACHA| | 1:ability_strengthen;2:ability_strengthen_plus|8|13| n;n;s
+Specimen_CB_11| Dissension|265|20| CB|2081|60| 827| 1224| 575:AOE| 874:AOE|42| 1:1:c;2:5:b;1p:10:c;2p:15:b| LEGEND| CB_11x[A-F][A-F]_*+CB_11x[A-F]_*| 1:ability_regen;2:ability_regen_plus|10|39| n;n;s
+Specimen_CC_11| Santagonist|200|0| CC|4675|60| 1400| 1941| 700:AOE| 1050:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| CAPTAINPEACE| | 1:ability_retaliate;2:ability_retaliate_plus|-20|-40| n;n;s
+Specimen_CD_11| Sir Bannog|180|20| CD|2127|60| 679| 1018| 679| 1018|42| 1:1:c;2:5:d;1p:10:c;2p:15:d| LEGEND| CD_11x[A-F][A-F]_*+CD_11x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-30|-50| n;n;s
+Specimen_CE_11| Chun-Lei|100|20| CE|875|60| 280| 535| 280| 535|42| 1:1:c;2:5:e;1p:10:c;2p:15:e| LEGEND| CE_11x[A-F][A-F]_*+CE_11x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|21|27| n;n;s
+Specimen_CF_11| Caliburn EX|235|0| CF|4724|60| 1645| 2366| 1645| 2366|42| 1:1:c;2:5:f;1p:10:c;2p:15:f| CAPTAINPEACE| | 1:ability_slash;2:ability_slash_plus|-10|-15| n;n;s
+Specimen_DA_11| The An0maly|120|20| DA|1672|60| 264| 672| 325| 715|42| 1:1:d;2:5:a;1p:10:d;2p:15:a| LEGEND| DA_11x[A-F][A-F]_*+DA_11x[A-F]_*| 1:ability_shield;2:ability_shield_plus|12|36| n;n;s
+Specimen_DB_11| Piwisher|300|0| DB|4072|60| 1450| 2175| 1450| 2175|42| 1:1:d;2:5:b;1p:10:d;2p:15:b| CAPTAINPEACE| | 1:ability_slash;2:ability_slash_plus|-18|-27| n;n;s
+Specimen_DC_11| Spada|140|20| DC|1690|60| 422| 633| 422| 633|42| 1:1:d;2:5:c;1p:10:d;2p:15:c| LEGEND| DC_11x[A-F][A-F]_*+DC_11x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-22|-40| n;n;s
+Specimen_DD_11| Abyssal Terror|150|20| DD|1973|60| 561| 1041| 323:AOE| 783:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| LEGEND| DD_11x[A-F][A-F]_*+DD_11x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-30|-50| n;n;s
+Specimen_DE_11|Drei, Space Corgi|180|20|DE|2124|90|584|1072|584|1072|42| 1:1:d;2:5:e;1p:10:d;2p:15:e| LEGEND| DE_11x[A-F][A-F]_*+DE_11x[A-F]_*|"	1:ability_slash;2:ability_slash_plus"|-12|-40| n;n;s
+Specimen_DF_11| Chocolem|250|0| DF|3487|60| 1309| 1964| 1309| 1964|42| 1:1:d;2:5:f;1p:10:d;2p:15:f| CAPTAINPEACE| | 1:ability_regen;2:ability_regen_plus|20|30| n;n;s
+Specimen_EA_11| Dreadnought|275|0| EA|4488|60| 1511| 2266| 1511| 2266|42| 1:1:a;2:5:e;1p:10:a;2p:15:e| CAPTAINPEACE| | 1:ability_shield;2:ability_shield_plus|25|50| n;n;s
+Specimen_EB_11| Aubraea Mutantula|180|20| EB|1985|60| 528| 892| 528| 892|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| LEGEND| EB_11x[A-F][A-F]_*+EB_11x[A-F]_*| 1:ability_regen;2:ability_regen_plus|27|45| n;n;s
+Specimen_EC_11| Veren Kaeesu|170|0| EC|2731|60| 1194| 1891| 1194| 1891|42| 1:1:e;2:5:c;1p:10:e;2p:15:c| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|25|32| n;n;s
+Specimen_ED_11| Owlock|240|20| ED|1999|60| 830| 1398| 830| 1398|42| 1:1:e;2:5:d;1p:10:e;2p:15:d| LEGEND| ED_11x[A-F][A-F]_*+ED_11x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-30| n;n;s
+Specimen_EE_11| Gestalt Asteroid|160|20| EE|2419|60| 721| 1443| 721| 721:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| LEGEND| EE_11x[A-F][A-F]_*+EE_11x[A-F]_*| 1:ability_regen;2:ability_regen_plus|15|40| n;n;s
+Specimen_EF_11| Dimentio|113|20| EF|1427|60| 353| 1111| 353| 1111|42| 1:1:e;2:5:f;1p:10:e;2p:15:f| LEGEND| EF_11x[A-F][A-F]_*+EF_11x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-10|-23| n;n;s
+Specimen_FA_11| Orion|120|20| FA|422|60| 666| 999| 666| 999|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| HEROIC| FA_11x[A-F][A-F]_*+FA_11x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-8|-10| n;n;n;s
+Specimen_FB_11| Nightmare Aberration|85|20| FB|1482|60| 168:AOE| 252:AOE| 320| 472|42| 1:1:f;2:5:b;1p:10:f;2p:15:b| LEGEND| FB_11x[A-F][A-F]_*+FB_11x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-17|-25| n;n;s
+Specimen_FC_11| Midas|260|20| FC|2445|60| 700| 1239| 700| 1239|105| 1:1:f;2:5:c;1p:10:f;2p:15:c| LEGEND| FC_11x[A-F][A-F]_*+FC_11x[A-F]_*| 1:ability_shield;2:ability_shield_plus|30|50| n;n;s
+Specimen_FD_11| Ishi no ÅŒkami|160|20| FD|1744|60| 330| 782| 330| 782|42| 1:1:f;2:5:d;1p:10:f;2p:15:d| PVP| FD_11x[A-F][A-F]_*+FD_11x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-15|-40| n;n;s
+Specimen_FE_11| Pierrot|210|20| FE|1997|60| 829| 1244| 415:AOE| 622:AOE|42| 1:1:f;2:5:e;1p:10:f;2p:15:e| HEROIC| FE_11x[A-F][A-F]_*+FE_11x[A-F]_*| 1:ability_shield;2:ability_shield_plus|32|48| n;n;n;s
+Specimen_FF_11| Gerard Steelgarden|240|20| FF|2901|60| 975| 1463| 488:AOE| 731:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| HEROIC| FF_11x[A-F][A-F]_*+FF_11x[A-F]_*| 1:ability_shield;2:ability_shield_plus|28|42| n;n;n;s
+Specimen_A_11| No Name|300|20| A|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| LEGEND| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_B_11| No Name|300|20| B|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| LEGEND| | 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_C_11| No Name|300|20| C|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| LEGEND| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_11| No Name|300|20| D|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| LEGEND| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_11| No Name|300|20| E|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| LEGEND| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_11| No Name|300|20| F|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| LEGEND| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AA_12| Cabloid|220|20| AA|3400|60| 870| 1221| 435:AOE| 653:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| AA_12x[A-F][A-F]_*+AA_12x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_AB_12| Unstabot|245|20| AB|2351|60| 844| 1266| 422:AOE| 633:AOE|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| LEGEND| AB_12x[A-F][A-F]_*+AB_12x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_AC_12| Phileas Derocas|230|20| AC|2402|60| 881| 1321| 881| 1321|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| HEROIC| AC_12x[A-F][A-F]_*+AC_12x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-5|-35| n;n;n;s
+Specimen_AD_12| Lepidoptech|135|20| AD|1671|60| 664| 1006| 664| 1006|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_12x[A-F][A-F]_*+AD_12x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-5|-15| n;n;s
+Specimen_AE_12| Tenacity|255|20| AE|2341|60| 949| 1424| 949| 1424|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| LEGEND| AE_12x[A-F][A-F]_*+AE_12x[A-F]_*| 1:ability_shield;2:ability_shield_plus|30|45| n;n;s
+Specimen_AF_12| Dream Defender|165|0| AF|2746|60| 1025| 1966| 1025| 1966|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| CAPTAINPEACE| | 1:ability_weaken;2:ability_weaken_plus|-10|-20| n;n;s
+Specimen_BA_12| Crâ‚¬$u$|290|20| BA|2499|60| 607:AOE| 1311:AOE| 1077| 1782|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_12x[A-F][A-F]_*+BA_12x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-25|-40| n;n;s
+Specimen_BB_12| The Lantern Doctor|210|0| BB|4119|60| 1211| 2016| 606:AOE| 1432:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| CAPTAINPEACE| | 1:ability_weaken;2:ability_weaken_plus|-28|-48| n;n;s
+Specimen_BC_12| Charon|275|0| BC|4851|60| 1432| 2348| 1432| 2348|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| SEASONAL| | 1:ability_weaken;2:ability_weaken_plus|-16|-35| n;n;s
+Specimen_BD_12| Thanaconda|230|20| BD|2093|60| 841| 1361| 841| 1361|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| LEGEND| BD_12x[A-F][A-F]_*+BD_12x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-28|-40| n;n;s
+Specimen_BE_12| Ichorous Slime|290|20| BE|3246|60| 708| 1112| 708| 1112|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_12x[A-F][A-F]_*+BE_12x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|40| n;n;s
+Specimen_BF_12| Desecrated Cleric|215|20| BF|2951|60| 685| 1027| 382:AOE| 576:AOE|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| LEGEND| BF_12x[A-F][A-F]_*+BF_12x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-25|-50| n;n;s
+Specimen_CA_12| Terracotta General|270|20| CA|2234|60| 845| 1467| 464:AOE| 797:AOE|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| LEGEND| CA_12x[A-F][A-F]_*+CA_12x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|15|25| n;n;s
+Specimen_CB_12| Cranequin|260|20| CB|1740|60| 826| 1439| 826| 1239|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| LEGEND| CB_12x[A-F][A-F]_*+CB_12x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-18|-33| n;n;s
+Specimen_CC_12| Scaramouche|120|20| CC|915|60| 590| 935| 386:AOE| 713:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| LEGEND| CC_12x[A-F][A-F]_*+CC_12x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|25| n;n;s
+Specimen_CD_12| Captain Eagle|145|0| CD|3494|60| 1012| 1520| 1012| 1520|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| CAPTAINPEACE| | 1:ability_retaliate;2:ability_retaliate_plus|-20|-30| n;n;s
+Specimen_CE_12| Regulo&Juzya|170|0| CE|2560|60| 1240| 2480| 1240| 2480|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| SEASONAL| | 1:ability_retaliate;2:ability_retaliate_plus|-10|-20| n;n;s
+Specimen_CF_12| Inheritor of the 5 rings|245|20| CF|2996|60| 989| 1483| 989| 1483|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| HEROIC| CF_12x[A-F][A-F]_*+CF_12x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|8|15| n;n;n;s
+Specimen_DA_12| Data Snail|275|20| DA|2995|60| 1085| 1629| 1085| 1629|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| LEGEND| DA_12x[A-F][A-F]_*+DA_12x[A-F]_*| 1:ability_shield;2:ability_shield_plus|25|50| n;n;s
+Specimen_DB_12| Great Tunnelworm|290|0| DB|4021|60| 1182| 1773| 1182| 1773|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| CAPTAINPEACE| | 1:ability_regen;2:ability_regen_plus|25|50| n;n;s
+Specimen_DC_12| Harebrained Underminer|160|0| DC|2453|60| 1344| 2316| 1344| 2316|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| SEASONAL| | 1:ability_slash;2:ability_slash_plus|-10|-40| n;n;s
+Specimen_DD_12| Solar Lampyrion|160|0| DD|4720|60| 1095| 1643| 548:AOE| 821:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| CAPTAINPEACE| | 1:ability_shield;2:ability_shield_plus|25|40| n;n;s
+Specimen_DE_12| Leviathan|240|20| DE|2357|60| 955| 1433| 549:AOE| 823:AOE|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| LEGEND| DE_12x[A-F][A-F]_*+DE_12x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_DF_12| Basilisc&Tarragon|310|0| DF|3333|60| 921| 1381| 921| 1381|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| GACHA| | 1:ability_regen;2:ability_regen_plus|25|38| n;n;s
+Specimen_EA_12| Fix-o-Drone LLK-215|190|20| EA|1986|60| 727| 1135| 727| 1135|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| LEGEND| EA_12x[A-F][A-F]_*+EA_12x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-35| n;n;s
+Specimen_EB_12| Starfarer Medic|150|20| EB|1891|60| 447| 1015| 447| 1015|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| PVP| EB_12x[A-F][A-F]_*+EB_12x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|10|38| n;n;s
+Specimen_EC_12| Stellarian Lithominer|200|20| EC|2134|60| 959| 1538| 959| 1538|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| LEGEND| EC_12x[A-F][A-F]_*+EC_12x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-10|-15| n;n;s
+Specimen_ED_12| Ammonia Atlantica|220|20| ED|2105|60| 947| 1387| 947| 1387|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| ED_12x[A-F][A-F]_*+ED_12x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|38| n;n;s
+Specimen_EE_12| Polaris|190|0| EE|3935|60| 831| 2231| 604:AOE| 1649:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| CAPTAINPEACE| | 1:ability_shield;2:ability_shield_plus|15|48| n;n;s
+Specimen_EF_12| X'astuth|270|20| EF|2242|60| 873| 1259| 873| 1259|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| HEROIC| EF_12x[A-F][A-F]_*+EF_12x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-35|-70| n;n;n;s
+Specimen_FA_12| Ethereal Cybermancer|190|20| FA|2077|60| 668| 1286| 668| 1286|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| LEGEND| FA_12x[A-F][A-F]_*+FA_12x[A-F]_*| 1:ability_regen;2:ability_regen_plus|33|55| n;n;s
+Specimen_FB_12| Maiden of Twilight|320|15| FB|3580|60| 1030| 1437| 1030| 1437|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| HEROIC| FB_12x[A-F][A-F]_*+FB_12x[A-F]_*| 1:ability_regen;2:ability_regen_plus|20|40| n;n;n;s
+Specimen_FC_12| Generalissimo Chocoleon IV|235|0| FC|5099|60| 1010| 1515| 1010| 1515|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| CAPTAINPEACE| | 1:ability_retaliate;2:ability_retaliate_plus|-5|-40| n;n;s
+Specimen_FD_12| Simurgh|120|20| FD|1399|60| 687| 1030| 515| 515:AOE|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| LEGEND| FD_12x[A-F][A-F]_*+FD_12x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-20| n;n;s
+Specimen_FE_12| Algid Exocelestial|240|0| FE|3130|60| 724:AOE| 1486:AOE| 1448| 2172|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| CAPTAINPEACE| | 1:ability_weaken;2:ability_weaken_plus|-10|-22| n;n;s
+Specimen_FF_12| Timeless Archivist|190|20| FF|3046|60| 861| 1208| 516:AOE| 775:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| HEROIC| FF_12x[A-F][A-F]_*+FF_12x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|46| n;n;n;s
+Specimen_A_12| No Name|300|20| A|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| LEGEND| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_B_12| Ossembly|160|20| B|1680|60| 719| 1131| 719| 1131|42| 1:1:neutre;2:5:b;1p:10:neutre;2p:15:b| LEGEND| B_12x[A-F][A-F]_*+B_12x[A-F]_*| 1:ability_regen;2:ability_regen_plus|50|75| n;n;s
+Specimen_C_12| No Name|300|20| C|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| LEGEND| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_12| Howlosaurus|300|20| D|2158|60| 585:AOE| 928:AOE| 924| 1470|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| LEGEND| D_12x[A-F][A-F]_*+D_12x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-22|-40| n;n;s
+Specimen_E_12| Sidereal Explorer|220|20| E|1753|60| 527:AOE| 891:AOE| 542:AOE| 911:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| LEGEND| E_12x[A-F][A-F]_*+E_12x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|15|30| n;n;s
+Specimen_F_12| Summoner|120|20| F|1590|60| 477| 762| 488| 798|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| LEGEND| F_12x[A-F][A-F]_*+F_12x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AA_13| TCB-8566 Trafficroid|170|20| AA|2054|60| 755| 1122| 544:AOE| 845:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| AA_13x[A-F][A-F]_*+AA_13x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AB_13| The Architect|225|20| AB|1911|60| 1132| 1911| 1132| 1911|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| HEROIC| AB_13x[A-F][A-F]_*+AB_13x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-25|-35| n;n;n;s
+Specimen_AC_13| Capsulator MTZ-004|270|0| AC|4356|60| 1345| 2024| 1345| 2024|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| SEASONAL| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-35| n;n;s
+Specimen_AD_13| Myrmidus.exe|210|20| AD|2323|60| 876| 1221| 876| 1221|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_13x[A-F][A-F]_*+AD_13x[A-F]_*| 1:ability_regen;2:ability_regen_plus|27|45| n;n;s
+Specimen_AE_13| Helidrone KxT-271|105|20| AE|681|60| 585| 728| 511| 511:AOE|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| LEGEND| AE_13x[A-F][A-F]_*+AE_13x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-20| n;n;s
+Specimen_AF_13| Epoch Golem|290|20| AF|3480|60| 843| 1113| 843| 1113|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| LEGEND| AF_13x[A-F][A-F]_*+AF_13x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-23|-35| n;n;s
+Specimen_BA_13| The Anarchic|175|20| BA|1488|60| 445| 845:AOE| 445| 1224|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_13x[A-F][A-F]_*+BA_13x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|10|50| n;n;s
+Specimen_BB_13| The Phosphorescent|240|20| BB|2833|60| 1011| 1553| 586:AOE| 1077:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| BB_13x[A-F][A-F]_*+BB_13x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-40| n;n;s
+Specimen_BC_13|The Flaying, MD|200| 20|BC|2020| 60| 730| 1638| 730|1708|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| LEGEND| BC_13x[A-F][A-F]_*+BC_13x[A-F]_*|1:ability_slash;2:ability_slash_plus|-30| -49|n;n;s
+Specimen_BD_13| Bloodsquito|130|20| BD|860|60| 594| 885| 594| 885|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_13x[A-F][A-F]_*+BD_13x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-60|-100| n;n;s
+Specimen_BE_13| Wormhole Traveler|275|20| BE|1503|60|1776|2588|1776|2588|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_13x[A-F][A-F]_*+BE_13x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-15|-20| n;n;s
+Specimen_BF_13| Soul Coalescence|230|0| BF|4547|60| 917| 1771| 917| 1771|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| SEASONAL| | 1:ability_retaliate;2:ability_retaliate_plus|-5|-35| n;n;s
+Specimen_CA_13| Anteros|235|0| CA|3434|60| 976| 1669| 976| 1669|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| SEASONAL| | 1:ability_strengthen;2:ability_strengthen_plus|17|32| n;n;s
+Specimen_CB_13| The Mutiny|250|20| CB|2587|60| 815| 1255| 815| 815:AOE|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| LEGEND| CB_13x[A-F][A-F]_*+CB_13x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|15|40| n;n;s
+Specimen_CC_13| Limitless Friendship|195|20| CC|1983|60| 897| 1584| 677:AOE| 1200:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| LEGEND| CC_13x[A-F][A-F]_*+CC_13x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_CD_13| Bearsikk Siklaest|270|20| CD|2544|60| 815| 1599| 815| 1599|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| LEGEND| CD_13x[A-F][A-F]_*+CD_13x[A-F]_*| 1:ability_shield;2:ability_shield_plus|12|33| n;n;s
+Specimen_CE_13| Atlas|235|20| CE|2331|60| 1033| 1542| 1033| 1542|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| HEROIC| CE_13x[A-F][A-F]_*+CE_13x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|15|35| n;n;n;s
+Specimen_CF_13| Son of the Storm|155|20| CF|2032|60| 797| 1236| 797| 1272|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| LEGEND| CF_13x[A-F][A-F]_*+CF_13x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_DA_13| Dreaming Anthroborg|255|20| DA|2642|60| 634| 971| 634| 971|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| LEGEND| DA_13x[A-F][A-F]_*+DA_13x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|30|45| n;n;s
+Specimen_DB_13| The Bleaching|235|20| DB|2413|60| 1033| 1551| 1033| 1551|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| LEGEND| DB_13x[A-F][A-F]_*+DB_13x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-35| n;n;s
+Specimen_DC_13| Sawmetrodon|285|20| DC|2463|60| 1162| 1844| 1162| 1844|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| LEGEND| DC_13x[A-F][A-F]_*+DC_13x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-25|-42| n;n;s
+Specimen_DD_13| Lama Sensei|150|20| DD|1859|60| 463:AOE| 822:AOE| 812| 1332|42| 1:1:d;2:1:d;2p:10:d;1p:15:d| LEGEND| DD_13x[A-F][A-F]_*+DD_13x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|15|35| n;n;s
+Specimen_DE_13| Oryctolagus Alienicus|125|0| DE|2461|60| 685| 1648| 685| 1648|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| SEASONAL| | 1:ability_weaken;2:ability_weaken_plus|-15|-20| n;n;s
+Specimen_DF_13| Frozen Emperor|220|20| DF|1974|60| 770| 1496| 770| 1155:AOE|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| LEGEND| DF_13x[A-F][A-F]_*+DF_13x[A-F]_*| 1:ability_shield;2:ability_shield_plus|30|45| n;n;s
+Specimen_EA_13| Space Pilgrim|160|20| EA|1972|60| 761| 1244| 761| 984:AOE|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| LEGEND| EA_13x[A-F][A-F]_*+EA_13x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|15|35| n;n;s
+Specimen_EB_13| Xinomas|190|0| EB|3779|60| 910| 1832| 910| 1832|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| CAPTAINPEACE| | 1:ability_shield;2:ability_shield_plus|24|30| n;n;s
+Specimen_EC_13| Hekatoncheiros|295|20| EC|2425|60| 1078| 1842| 1078| 1842|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| LEGEND| EC_13x[A-F][A-F]_*+EC_13x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-20|-35| n;n;s
+Specimen_ED_13| Medinosaur|160|20| ED|1675|60| 1023| 1511| 1023| 1511|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| ED_13x[A-F][A-F]_*+ED_13x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-15|-30| n;n;s
+Specimen_EE_13| Orbital Nexus|255|20| EE|2566|60| 1184| 1661| 821:AOE| 1234:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| HEROIC| EE_13x[A-F][A-F]_*+EE_13x[A-F]_*| 1:ability_shield;2:ability_shield_plus|32|48| n;n;n;s
+Specimen_EF_13| Achernar|165|20| EF|1873|60| 411:AOE| 766:AOE| 822| 1391|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| LEGEND| EF_13x[A-F][A-F]_*+EF_13x[A-F]_*| 1:ability_regen;2:ability_regen_plus|12|30| n;n;s
+Specimen_FA_13| Boreal Helix|175|0| FA|2853|60| 829| 1138| 560:AOE| 844:AOE|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| SEASONAL| | 1:ability_slash;2:ability_slash_plus|-24|-60| n;n;s
+Specimen_FB_13| Candlelight|250|20| FB|2043|60| 741:AOE| 1145:AOE| 741:AOE| 1145:AOE|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| LEGEND| FB_13x[A-F][A-F]_*+FB_13x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|30|40| n;n;s
+Specimen_FC_13| Avalon King|280|20| FC|2084|60| 885| 1844| 885| 1844|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| LEGEND| FC_13x[A-F][A-F]_*+FC_13x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|25|35| n;n;s
+Specimen_FD_13| Tezcatlipoca|225|0| FD|2599|60| 773:AOE| 1474:AOE| 1531| 2547|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| CAPTAINPEACE| | 1:ability_slash;2:ability_slash_plus|-40|-60| n;n;s
+Specimen_FE_13| Vivaldi|160|0| FE|2955|120| 643:AOE| 1045:AOE| 643:AOE| 1045:AOE|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| CAPTAINPEACE| | 1:ability_regen;2:ability_regen_plus|20|30| n;n;s
+Specimen_FF_13| Sakuraboshi|220|20| FF|1948|60| 814| 1421| 581:AOE| 1134:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| LEGEND| FF_13x[A-F][A-F]_*+FF_13x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-40| n;n;s
+Specimen_A_13| Asimov|120|20| A|967|90| 510| 765| 442:AOE| 665:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| HEROIC| A_13x[A-F][A-F]_*+A_13x[A-F]_*| 1:ability_shield;2:ability_shield_plus|10|35| n;n;n;s
+Specimen_B_13|GAR, Zombie Sovereign|270| 20|B|3625| 90| 807| 1311| 574:AOE|886:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| HEROIC| B_13x[A-F][A-F]_*+B_13x[A-F]_*|1:ability_regen;2:ability_regen_plus|35| 50|n;n;n;s
+Specimen_C_13| D'Arathomis|160|20| C|1794|90| 752| 1254| 836| 836:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| HEROIC| C_13x[A-F][A-F]_*+C_13x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-15|-20| n;n;n;s
+Specimen_D_13| Sasquatch|260|20| D|1988|90| 993| 1493| 633:AOE| 896:AOE|42| 1:1:neutre;2:5:d;1p:10:neutre;2p:15:d| HEROIC| D_13x[A-F][A-F]_*+D_13x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-25|-50| n;n;n;s
+Specimen_E_13| Stargazer|180|20| E|1585|90| 833| 1454| 541:AOE| 833:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| HEROIC| E_13x[A-F][A-F]_*+E_13x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;n;s
+Specimen_F_13|Väinämöinen|150|20| F|1713|90| 533| 799| 266:AOE| 399:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| HEROIC| F_13x[A-F][A-F]_*+F_13x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-30|-60| n;n;n;s
+Specimen_AA_99| A00-C0R3-C0NTR0L|200|0| AA|4621|60| 1240| 1861| 752:AOE| 1022:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| CAPTAINPEACE| | 1:ability_shield;2:ability_shield_plus|25|55| n;n;s
+Specimen_AB_99| Battle Simulacrum|285|0| AB|5864|60| 1000| 1421:AOE| 635:AOE| 1421:AOE|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|15|45| n;n;s
+Specimen_AC_99| No Name|200|20| AC|1130|60| 312| 468| 312| 468|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| LEGEND| AC_99x[A-F][A-F]_*+AC_99x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AD_99| No Name|200|20| AD|1130|60| 312| 468| 312| 468|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_99x[A-F][A-F]_*+AD_99x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AE_99| Randonymous|170|0| AE|3566|60| 1248| 2324| 1248| 1489:AOE|43| 1:1:a;2:5:e;2p:15:e;1p:10:a| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|20|32| n;n;s
+Specimen_AF_99| A027441|310|20| AF|2500|60| 780| 1170| 780| 1170|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| LEGEND| AF_99x[A-F][A-F]_*+AF_99x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_BA_99| No Name|200|20| BA|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_99x[A-F][A-F]_*+BA_99x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BB_99| No Name|200|20| BB|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| BB_99x[A-F][A-F]_*+BB_99x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BC_99| No Name|200|20| BC|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| LEGEND| BC_99x[A-F][A-F]_*+BC_99x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BD_99| Tengu|230|20| BD|1977|60| 491| 737| 491| 737|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_99x[A-F][A-F]_*+BD_99x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-40|-60| n;n;s
+Specimen_BE_99| No Name|200|20| BE|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_99x[A-F][A-F]_*+BE_99x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BF_99| No Name|200|20| BF|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| LEGEND| BF_99x[A-F][A-F]_*+BF_99x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_CA_99| Awakened Missy|195|0| CA|2512|60| 1200| 2421| 1200| 2421|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|10|15| n;n;s
+Specimen_CB_99| No Name|200|20| CB|1130|60| 312| 468| 312| 468|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| LEGEND| CB_99x[A-F][A-F]_*+CB_99x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CC_99| No Name|200|20| CC|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| LEGEND| CC_99x[A-F][A-F]_*+CC_99x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CD_99| No Name|200|20| CD|1130|60| 312| 468| 312| 468|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| LEGEND| CD_99x[A-F][A-F]_*+CD_99x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CE_99| Kolossus|285|0| CE|5780|60| 1672| 2508| 1672| 2508|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| CAPTAINPEACE| | 1:ability_retaliate;2:ability_retaliate_plus|-8|-12| n;n;s
+Specimen_CF_99| True Hero Reed|245|0| CF|3597|60| 855:AOE| 1349:AOE| 855:AOE| 1349:AOE|50| 1:1:c;2:5:f;2p:15:f;1p:10:c| CAPTAINPEACE| | 1:ability_retaliate;2:ability_retaliate_plus|-20|-35| n;n;s
+Specimen_DA_99| No Name|79|20| DA|1130|60| 312| 468| 312| 468|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| LEGEND| DA_99x[A-F][A-F]_*+DA_99x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DB_99| No Name|200|20| DB|1130|60| 312| 468| 312| 468|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| LEGEND| DB_99x[A-F][A-F]_*+DB_99x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DC_99| No Name|200|20| DC|1130|60| 312| 468| 312| 468|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| LEGEND| DC_99x[A-F][A-F]_*+DC_99x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DD_99| No Name|200|20| DD|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| LEGEND| DD_99x[A-F][A-F]_*+DD_99x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DE_99| No Name|200|20| DE|1130|60| 312| 468| 312| 468|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| LEGEND| DE_99x[A-F][A-F]_*+DE_99x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DF_99| Genimal|100|0| DF|2542|60| 370| 631| 370| 631|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| CAPTAINPEACE| | 1:ability_slash;2:ability_slash_plus|-20|-35| n;n;s
+Specimen_EA_99| Celsius Thermoid|235|0| EA|4755|60| 984:AOE| 2004:AOE| 984:AOE| 2004:AOE|105| 1:1:e;2:10:a;2p:50:a;1p:30:e| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|20|45| n;n;s
+Specimen_EB_99| Diablo|300|0| EB|3874|60| 1594| 2394| 1594| 2394|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EC_99| No Name|200|20| EC|1130|60| 312| 468| 312| 468|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| LEGEND| EC_99x[A-F][A-F]_*+EC_99x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_ED_99| Ctopy|280|0| ED|4497|60| 1034| 1577| 525:AOE| 788:AOE|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|25|45| n;n;s
+Specimen_EE_99| Irreality Animus|150|0| EE|4578|60| 1109| 1663| 554:AOE| 831:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| CAPTAINPEACE| | 1:ability_regen;2:ability_regen_plus|20|30| n;n;s
+Specimen_EF_99| Singularity Wizard|250|0| EF|4101|120| 752:AOE| 1128:AOE| 1370| 2000|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| CAPTAINPEACE| | 1:ability_strengthen;2:ability_strengthen_plus|24|33| n;n;s
+Specimen_FA_99| Archangel|260|0| FA|4076|60| 1241| 1862| 1241| 1862|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| CAPTAINPEACE| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_FB_99| No Name|200|20| FB|1130|60| 312| 468| 312| 468|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| LEGEND| FB_99x[A-F][A-F]_*+FB_99x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FC_99| Nimrod|250|20| FC|3000|60| 864| 1296| 864| 1296|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| LEGEND| FC_99x[A-F][A-F]_*+FC_99x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-24|-35| n;n;s
+Specimen_FD_99| No Name|200|20| FD|1130|60| 312| 468| 312| 468|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| LEGEND| FD_99x[A-F][A-F]_*+FD_99x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FE_99| Engineer|260|20| FE|2012|60| 718| 1077| 718| 1077|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| LEGEND| FE_99x[A-F][A-F]_*+FE_99x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_FF_99| Emotional Maskerade|295|0| FF|5330|60| 1441| 2631| 1032:AOE| 1811:AOE|84| 1:1:f;2:5:f;1p:10:f;2p:15:f| SEASONAL| | 1:ability_weaken;2:ability_weaken_plus|-24|-37| n;n;s
+Specimen_A_99| No Name|300|20| A|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| LEGEND| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_B_99| No Name|300|20| B|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| LEGEND| | 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_C_99| No Name|300|20| C|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| LEGEND| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_99| No Name|300|20| D|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| LEGEND| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_99| No Name|300|20| E|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| LEGEND| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_99| No Name|300|20| F|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| LEGEND| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AA_98| No Name|200|20| AA|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| AA_98x[A-F][A-F]_*+AA_98x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AB_98| No Name|200|20| AB|1130|60| 312| 468| 312| 468|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| LEGEND| AB_98x[A-F][A-F]_*+AB_98x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AC_98| No Name|200|20| AC|1130|60| 312| 468| 312| 468|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| LEGEND| AC_98x[A-F][A-F]_*+AC_98x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AD_98| No Name|200|20| AD|1130|60| 312| 468| 312| 468|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_98x[A-F][A-F]_*+AD_98x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AE_98| No Name|200|20| AE|1130|60| 312| 468| 312| 468|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| LEGEND| AE_98x[A-F][A-F]_*+AE_98x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AF_98| No Name|200|20| AF|1130|60| 312| 468| 312| 468|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| LEGEND| AF_98x[A-F][A-F]_*+AF_98x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_BA_98| No Name|200|20| BA|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_98x[A-F][A-F]_*+BA_98x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BB_98| No Name|200|20| BB|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| BB_98x[A-F][A-F]_*+BB_98x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BC_98| No Name|200|20| BC|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| LEGEND| BC_98x[A-F][A-F]_*+BC_98x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BD_98| No Name|200|20| BD|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_98x[A-F][A-F]_*+BD_98x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BE_98| No Name|200|20| BE|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_98x[A-F][A-F]_*+BE_98x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BF_98| No Name|200|20| BF|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| LEGEND| BF_98x[A-F][A-F]_*+BF_98x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_CA_98| No Name|200|20| CA|1130|60| 312| 468| 312| 468|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| LEGEND| CA_98x[A-F][A-F]_*+CA_98x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CB_98| No Name|200|20| CB|1130|60| 312| 468| 312| 468|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| LEGEND| CB_98x[A-F][A-F]_*+CB_98x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CC_98| No Name|200|20| CC|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| LEGEND| CC_98x[A-F][A-F]_*+CC_98x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CD_98| No Name|200|20| CD|1130|60| 312| 468| 312| 468|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| LEGEND| CD_98x[A-F][A-F]_*+CD_98x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CE_98| No Name|200|20| CE|1130|60| 312| 468| 312| 468|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| LEGEND| CE_98x[A-F][A-F]_*+CE_98x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CF_98| No Name|200|20| CF|1130|60| 312| 468| 312| 468|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| LEGEND| CF_98x[A-F][A-F]_*+CF_98x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_DA_98| No Name|79|20| DA|1130|60| 312| 468| 312| 468|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| LEGEND| DA_98x[A-F][A-F]_*+DA_98x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DB_98| No Name|200|20| DB|1130|60| 312| 468| 312| 468|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| LEGEND| DB_98x[A-F][A-F]_*+DB_98x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DC_98| No Name|200|20| DC|1130|60| 312| 468| 312| 468|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| LEGEND| DC_98x[A-F][A-F]_*+DC_98x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DD_98| No Name|200|20| DD|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| LEGEND| DD_98x[A-F][A-F]_*+DD_98x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DE_98| No Name|200|20| DE|1130|60| 312| 468| 312| 468|42| 1:1:d;2:5:e;2p:15:e;1p:10:d| LEGEND| DE_98x[A-F][A-F]_*+DE_98x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DF_98| No Name|200|20| DF|1130|60| 312| 468| 312| 468|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| LEGEND| DF_98x[A-F][A-F]_*+DF_98x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_EA_98| No Name|200|20| EA|1130|60| 312| 468| 312| 468|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| LEGEND| EA_98x[A-F][A-F]_*+EA_98x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EB_98| No Name|200|20| EB|1130|60| 312| 468| 312| 468|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| LEGEND| EB_98x[A-F][A-F]_*+EB_98x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EC_98| No Name|200|20| EC|1130|60| 312| 468| 312| 468|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| LEGEND| EC_98x[A-F][A-F]_*+EC_98x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_ED_98| No Name|200|20| ED|1130|60| 312| 468| 312| 468|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| ED_98x[A-F][A-F]_*+ED_98x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EE_98| No Name|200|20| EE|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| LEGEND| EE_98x[A-F][A-F]_*+EE_98x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EF_98| No Name|200|20| EF|1130|60| 312| 468| 312| 468|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| LEGEND| EF_98x[A-F][A-F]_*+EF_98x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_FA_98| No Name|200|20| FA|1130|60| 312| 468| 312| 468|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| LEGEND| FA_98x[A-F][A-F]_*+FA_98x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FB_98| No Name|200|20| FB|1130|60| 312| 468| 312| 468|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| LEGEND| FB_98x[A-F][A-F]_*+FB_98x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FC_98| No Name|200|20| FC|1130|60| 312| 468| 312| 468|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| LEGEND| FC_98x[A-F][A-F]_*+FC_98x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FD_98| No Name|200|20| FD|1130|60| 312| 468| 312| 468|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| LEGEND| FD_98x[A-F][A-F]_*+FD_98x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FE_98| No Name|200|20| FE|1130|60| 312| 468| 312| 468|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| LEGEND| FE_98x[A-F][A-F]_*+FE_98x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FF_98| No Name|200|0| FF|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| LEGEND| FF_98x[A-F][A-F]_*+FF_98x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_A_98| No Name|300|20| A|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| LEGEND| | 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_B_98| No Name|300|20| B|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| LEGEND| | 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_C_98| No Name|300|20| C|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| LEGEND| | 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_98| No Name|300|20| D|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| LEGEND| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_98| No Name|300|20| E|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| LEGEND| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_98| No Name|300|20| F|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| LEGEND| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_AA_14| No Name|200|0| AA|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| AA_14x[A-F][A-F]_*+AA_14x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AB_14| The Screencaster|180|0| AB|4557|60| 1047| 1544| 1047| 1544|84| 1:1:a;2:5:b;2p:15:b;1p:10:a| SEASONAL| | 1:ability_weaken;2:ability_weaken_plus|-25|-40| n;n;s
+Specimen_AC_14| Professor Chronomantik|280|20| AC|2541|60| 1041| 1649| 1041| 1649|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| HEROIC| AC_14x[A-F][A-F]_*+AC_14x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-10|-20| n;n;n;s
+Specimen_AD_14| Origamix|90|0| AD|354|60|584|870|584|870|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_14x[A-F][A-F]_*+AD_14x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|35| n;n;s
+Specimen_AE_14| Giganto-Moai|200|0| AE|4212|60| 1011| 1632| 594:AOE| 1011:AOE|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| SEASONAL| | 1:ability_strengthen;2:ability_strengthen_plus|20|40| n;n;s
+Specimen_AF_14| Black I.C.E.|100|20| AF|1351|60| 687| 975| 687| 975|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| LEGEND| AF_14x[A-F][A-F]_*+AF_14x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-10|-50| n;n;s
+Specimen_BA_14| No Name|200|0| BA|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_14x[A-F][A-F]_*+BA_14x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BB_14| No Name|200|0| BB|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| BB_14x[A-F][A-F]_*+BB_14x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BC_14| Perfitrouille|110|0| BC|1432|60| 834| 1518| 834| 1588|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| SEASONAL| | 1:ability_regen;2:ability_regen_plus|20|35| n;n;s
+Specimen_BD_14| Greensward Rager|215|20| BD|2386|60| 684| 1086| 684| 1086|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_14x[A-F][A-F]_*+BD_14x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-30|-50| n;n;s
+Specimen_BE_14| No Name|200|0| BE|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_14x[A-F][A-F]_*+BE_14x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BF_14| No Name|200|0| BF|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| LEGEND| BF_14x[A-F][A-F]_*+BF_14x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_CA_14| Breakmaster|210|0| CA|2466|60| 1233| 2024| 870:AOE| 1477:AOE|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| GACHA| | 1:ability_retaliate;2:ability_retaliate_plus|-10|-20| n;n;s
+Specimen_CB_14| Fleet Captain Blackbeard|290|20| CB|2511|60| 748| 1731| 748| 1265:AOE|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| HEROIC| CB_14x[A-F][A-F]_*+CB_14x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-25|-40| n;n;n;s
+Specimen_CC_14| Blue King|320|0| CC|2882|60| 944| 1441| 633:AOE| 1014:AOE|45| 1:1:c;2:5:c;1p:10:c;2p:15:c| GACHA| | 1:ability_strengthen;2:ability_strengthen_plus|40|80| n;n;s
+Specimen_CD_14| Don Gamberetti|260|20| CD|1972|60| 1277| 1972| 1277| 1972|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| HEROIC| CD_14x[A-F][A-F]_*+CD_14x[A-F]_*| 1:ability_shield;2:ability_shield_plus|30|45| n;n;n;s
+Specimen_CE_14| No Name|200|0| CE|1130|60| 312| 468| 312| 468|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| LEGEND| CE_14x[A-F][A-F]_*+CE_14x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CF_14| No Name|200|0| CF|1130|60| 312| 468| 312| 468|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| LEGEND| CF_14x[A-F][A-F]_*+CF_14x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_DA_14| B.U.N. Overmind|135|0| DA|2999|60| 930| 1755| 930| 1755|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| SEASONAL| | 1:ability_strengthen;2:ability_strengthen_plus|15|25| n;n;s
+Specimen_DB_14| The Crawling Madness|280|0| DB|3987|60| 954| 1778| 954| 986:AOE|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| SEASONAL| | 1:ability_slash;2:ability_slash_plus|-15|-40| n;n;s
+Specimen_DC_14| Jurassic Terror|290|0| DC|3877|60| 1527| 2047| 1527| 2047|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| CAPTAINPEACE| | 1:ability_slash;2:ability_slash_plus|-30|-60| n;n;s
+Specimen_DD_14| Bestial Overlord|280|20| DD|2441|60| 977| 1488| 695:AOE| 1182:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| LEGEND| DD_14x[A-F][A-F]_*+DD_14x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-20|-40| n;n;s
+Specimen_DE_14| Supermassive Infinity|265|0| DE|4666|60| 1277| 1994| 1277| 1994|45| 1:1:d;2:5:e;2p:15:e;1p:10:d| CAPTAINPEACE| DE_14x[A-F][A-F]_*+DE_14x[A-F]_*| 1:ability_regen;2:ability_regen_plus|30|60| n;n;s
+Specimen_DF_14| No Name|200|0| DF|1130|60| 312| 468| 312| 468|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| LEGEND| DF_14x[A-F][A-F]_*+DF_14x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_EA_14| No Name|200|0| EA|1130|60| 312| 468| 312| 468|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| LEGEND| EA_14x[A-F][A-F]_*+EA_14x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EB_14| No Name|200|0| EB|1130|60| 312| 468| 312| 468|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| LEGEND| EB_14x[A-F][A-F]_*+EB_14x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EC_14| No Name|200|0| EC|1130|60| 312| 468| 312| 468|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| LEGEND| EC_14x[A-F][A-F]_*+EC_14x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_ED_14| Hydrydra|290|20| ED|2855|60| 1477| 1933| 966:AOE| 1477:AOE|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| ED_14x[A-F][A-F]_*+ED_14x[A-F]_*| 1:ability_shield;2:ability_shield_plus|25|30| n;n;s
+Specimen_EE_14| No Name|200|0| EE|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| LEGEND| EE_14x[A-F][A-F]_*+EE_14x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EF_14| K'Yu T'ypaÃ¯|110|0| EF|2114|60| 755| 1088| 411:AOE| 766:AOE|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| SEASONAL| | 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FA_14| No Name|200|0| FA|1130|60| 312| 468| 312| 468|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| LEGEND| FA_14x[A-F][A-F]_*+FA_14x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FB_14|Zagam, Great King of Greed|245|0| FB|6666| 60| 1666| 2351| 1666|2351| 340| 1:1:f;2:5:b;2p:15:b;1p:10:f| CAPTAINPEACE|| 1:ability_weaken;2:ability_weaken_plus|-15| -25| n;n;s
+Specimen_FC_14| No Name|200|0| FC|1130|60| 312| 468| 312| 468|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| LEGEND| FC_14x[A-F][A-F]_*+FC_14x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FD_14| Vanir Queen Freyja|245|0| FD|4088|60| 1241| 2447| 1241| 2447|84| 1:1:f;2:5:d;2p:15:d;1p:10:f| SEASONAL| | 1:ability_regen;2:ability_regen_plus|30|50| n;n;s
+Specimen_FE_14| Seraphic Core|235|15| FE|2074|60| 580:AOE| 944:AOE| 948| 1460|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| LEGEND| FE_14x[A-F][A-F]_*+FE_14x[A-F]_*| 1:ability_regen;2:ability_regen_plus|20|50| n;n;s
+Specimen_FF_14| Twilight Prophet|280|0| FF|1130|60| 814| 3017| 1331| 2024:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| SEASONAL| | 1:ability_shield;2:ability_shield_plus|25|40| n;n;s
+Specimen_A_14| Automaton|165|20| A|1688|60| 744| 1111| 531:AOE| 821:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| A_14x[A-F][A-F]_*+A_14x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-30|-40| n;n;s
+Specimen_B_14| Spectroplasm|185|20| B|1951|60| 721| 1029| 561:AOE| 721:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| B_14x[A-F][A-F]_*+B_14x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-30|-40| n;n;s
+Specimen_C_14| Gladiator|230|20| C|2244|60| 1124| 1443| 833:AOE| 1124:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| LEGEND| C_14x[A-F][A-F]_*+C_14x[A-F]_*| 1:ability_shield;2:ability_shield_plus|30|45| n;n;s
+Specimen_D_14| No Name|300|0| D|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| LEGEND| | 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_14| No Name|300|0| E|1130|60| 312| 468| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| LEGEND| | 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_14| Magician|170|20| F|1691|60| 784| 1134| 531:AOE| 784:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| LEGEND| F_14x[A-F][A-F]_*+F_14x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|25|35| n;n;s
+Specimen_AA_15| No Name|200|20| AA|1130|60|312|468| 156:AOE| 234:AOE|42| 1:1:a;2:5:a;1p:10:a;2p:15:a| LEGEND| AA_15x[A-F][A-F]_*+AA_15x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AB_15| No Name|200|20| AB|1130|60|312|468| 312| 468|42| 1:1:a;2:5:b;2p:15:b;1p:10:a| LEGEND| AB_15x[A-F][A-F]_*+AB_15x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AC_15| No Name|200|20| AC|1130|60|312|468| 312| 468|42| 1:1:a;2:5:c;2p:15:c;1p:10:a| LEGEND| AC_15x[A-F][A-F]_*+AC_15x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AD_15| No Name|200|20| AD|1130|60|312|468| 312| 468|42| 1:1:a;2:5:d;2p:15:d;1p:10:a| LEGEND| AD_15x[A-F][A-F]_*+AD_15x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AE_15| No Name|200|20| AE|1130|60|312|468| 312| 468|42| 1:1:a;2:5:e;2p:15:e;1p:10:a| LEGEND| AE_15x[A-F][A-F]_*+AE_15x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_AF_15| No Name|200|20| AF|1130|60|312|468| 312| 468|42| 1:1:a;2:5:f;2p:15:f;1p:10:a| LEGEND| AF_15x[A-F][A-F]_*+AF_15x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_BA_15| No Name|200|20| BA|1130|60|312|468| 312| 468|42| 1:1:b;2:5:a;2p:15:a;1p:10:b| LEGEND| BA_15x[A-F][A-F]_*+BA_15x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BB_15| No Name|200|20| BB|1130|60|312|468| 156:AOE| 234:AOE|42| 1:1:b;2:5:b;1p:10:b;2p:15:b| LEGEND| BB_15x[A-F][A-F]_*+BB_15x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BC_15| No Name|200|20| BC|1130|60|312|468| 312| 468|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| LEGEND| BC_15x[A-F][A-F]_*+BC_15x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BD_15| No Name|200|20| BD|1130|60|312|468| 312| 468|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_15x[A-F][A-F]_*+BD_15x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BE_15| No Name|200|20| BE|1130|60|312|468| 312| 468|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_15x[A-F][A-F]_*+BE_15x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BF_15| No Name|200|20| BF|1130|60|312|468| 312| 468|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| LEGEND| BF_15x[A-F][A-F]_*+BF_15x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_CA_15| No Name|200|20| CA|1130|60|312|468| 312| 468|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| LEGEND| CA_15x[A-F][A-F]_*+CA_15x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CB_15| No Name|200|20| CB|1130|60|312|468| 312| 468|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| LEGEND| CB_15x[A-F][A-F]_*+CB_15x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CC_15| No Name|200|20| CC|1130|60|312|468| 156:AOE| 234:AOE|42| 1:1:c;2:5:c;1p:10:c;2p:15:c| LEGEND| CC_15x[A-F][A-F]_*+CC_15x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CD_15| No Name|200|20| CD|1130|60|312|468| 312| 468|42| 1:1:c;2:5:d;2p:15:d;1p:10:c| LEGEND| CD_15x[A-F][A-F]_*+CD_15x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CE_15| No Name|200|20| CE|1130|60|312|468| 312| 468|42| 1:1:c;2:5:e;2p:15:e;1p:10:c| LEGEND| CE_15x[A-F][A-F]_*+CE_15x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_CF_15| No Name|200|20| CF|1130|60|312|468| 312| 468|42| 1:1:c;2:5:f;2p:15:f;1p:10:c| LEGEND| CF_15x[A-F][A-F]_*+CF_15x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_DA_15| No Name|79|20| DA|1130|60|312|468| 312| 468|42| 1:1:d;2:5:a;2p:15:a;1p:10:d| LEGEND| DA_15x[A-F][A-F]_*+DA_15x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DB_15| No Name|200|20| DB|1130|60|312|468| 312| 468|42| 1:1:d;2:5:b;2p:15:b;1p:10:d| LEGEND| DB_15x[A-F][A-F]_*+DB_15x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DC_15| No Name|200|20| DC|1130|60|312|468| 312| 468|42| 1:1:d;2:5:c;2p:15:c;1p:10:d| LEGEND| DC_15x[A-F][A-F]_*+DC_15x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DD_15| No Name|200|20| DD|1130|60|312|468| 156:AOE| 234:AOE|42| 1:1:d;2:5:d;1p:10:d;2p:15:d| LEGEND| DD_15x[A-F][A-F]_*+DD_15x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_DE_15| Telluric Starweaver|280|0| DE|5011|60|1843|2621| 1843| 2621|84| 1:1:d;2:5:e;2p:15:e;1p:10:d| SEASONAL| | 1:ability_shield;2:ability_shield_plus|40|60| n;n;s
+Specimen_DF_15| No Name|200|20| DF|1130|60|312|468| 312| 468|42| 1:1:d;2:5:f;2p:15:f;1p:10:d| LEGEND| DF_15x[A-F][A-F]_*+DF_15x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_EA_15| No Name|200|20| EA|1130|60|312|468| 312| 468|42| 1:1:e;2:5:a;2p:15:a;1p:10:e| LEGEND| EA_15x[A-F][A-F]_*+EA_15x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EB_15| No Name|200|20| EB|1130|60|312|468| 312| 468|42| 1:1:e;2:5:b;2p:15:b;1p:10:e| LEGEND| EB_15x[A-F][A-F]_*+EB_15x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EC_15| No Name|200|20| EC|1130|60|312|468| 312| 468|42| 1:1:e;2:5:c;2p:15:c;1p:10:e| LEGEND| EC_15x[A-F][A-F]_*+EC_15x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_ED_15| No Name|200|20| ED|1130|60|312|468| 312| 468|42| 1:1:e;2:5:d;2p:15:d;1p:10:e| LEGEND| ED_15x[A-F][A-F]_*+ED_15x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EE_15| No Name|200|20| EE|1130|60|312|468| 156:AOE| 234:AOE|42| 1:1:e;2:5:e;1p:10:e;2p:15:e| LEGEND| EE_15x[A-F][A-F]_*+EE_15x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_EF_15| No Name|200|20| EF|1130|60|312|468| 312| 468|42| 1:1:e;2:5:f;2p:15:f;1p:10:e| LEGEND| EF_15x[A-F][A-F]_*+EF_15x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_FA_15| No Name|200|20| FA|1130|60|312|468| 312| 468|42| 1:1:f;2:5:a;2p:15:a;1p:10:f| LEGEND| FA_15x[A-F][A-F]_*+FA_15x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FB_15| No Name|200|20| FB|1130|60|312|468| 312| 468|42| 1:1:f;2:5:b;2p:15:b;1p:10:f| LEGEND| FB_15x[A-F][A-F]_*+FB_15x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FC_15| No Name|200|20| FC|1130|60|312|468| 312| 468|42| 1:1:f;2:5:c;2p:15:c;1p:10:f| LEGEND| FC_15x[A-F][A-F]_*+FC_15x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FD_15| No Name|200|20| FD|1130|60|312|468| 312| 468|42| 1:1:f;2:5:d;2p:15:d;1p:10:f| LEGEND| FD_15x[A-F][A-F]_*+FD_15x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FE_15| No Name|200|20| FE|1130|60|312|468| 312| 468|42| 1:1:f;2:5:e;2p:15:e;1p:10:f| LEGEND| FE_15x[A-F][A-F]_*+FE_15x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_FF_15| No Name|200|0| FF|1130|60|312|468| 156:AOE| 234:AOE|42| 1:1:f;2:5:f;1p:10:f;2p:15:f| LEGEND| FF_15x[A-F][A-F]_*+FF_15x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
+Specimen_A_15| No Name|300|20| A|1130|60|312|468| 342:AOE| 513:AOE|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| LEGEND| A_15x[A-F][A-F]_*+A_15x[A-F]_*| 1:ability_shield;2:ability_shield_plus|20|30| n;n;s
+Specimen_B_15| No Name|300|20| B|1130|60|312|468| 342:AOE| 513:AOE|42| 1:1:b;2:5:neutre;1p:10:b;2p:15:neutre| LEGEND| B_15x[A-F][A-F]_*+B_15x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_C_15| No Name|300|20| C|1130|60|312|468| 342:AOE| 513:AOE|42| 1:1:c;2:5:neutre;1p:10:c;2p:15:neutre| LEGEND| C_15x[A-F][A-F]_*+C_15x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-15|-25| n;n;s
+Specimen_D_15| No Name|300|20| D|1130|60|312|468| 342:AOE| 513:AOE|42| 1:1:d;2:5:neutre;1p:10:d;2p:15:neutre| LEGEND| D_15x[A-F][A-F]_*+D_15x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-20|-30| n;n;s
+Specimen_E_15| No Name|300|20| E|1130|60|312|468| 342:AOE| 513:AOE|42| 1:1:e;2:5:neutre;1p:10:e;2p:15:neutre| LEGEND| E_15x[A-F][A-F]_*+E_15x[A-F]_*| 1:ability_strengthen;2:ability_strengthen_plus|20|30| n;n;s
+Specimen_F_15| No Name|300|20| F|1130|60|312|468| 342:AOE| 513:AOE|42| 1:1:f;2:5:neutre;1p:10:f;2p:15:neutre| LEGEND| F_15x[A-F][A-F]_*+F_15x[A-F]_*| 1:ability_weaken;2:ability_weaken_plus|-20|-30| n;n;s
