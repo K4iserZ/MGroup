@@ -158,32 +158,76 @@
 
         <!-- INFO PAGE -->
         <div id="info" class="page-content">
-            <h2 style="color: #e94560; margin-bottom: 2rem; font-size: 2rem;">Information</h2>
+            <h2 style="color: #e94560; margin-bottom: 2rem; font-size: 2rem;">ℹ️ Information & Help</h2>
             <div class="info-content">
-                <h2>How it works?</h2>
-                <p>This site displays all Mutants crafting incentives with schedules and dates based on your local timezone.</p>
+                <h2 style="color: #3498db; margin-top: 0;">📖 Welcome to MggGroup Tools</h2>
+                <p>Your comprehensive companion for the Mutants game. This site provides real-time tracking of crafting incentives, raid predictions, and access to the complete mutants database—all synchronized to your local timezone for seamless gameplay.</p>
                 
-                <h2 style="margin-top: 2rem;">Timezone Configuration</h2>
-                <p>You can use the timezone selector in the header to:</p>
-                <ul>
-                    <li><strong>Auto-detect:</strong> Automatically detects your timezone based on your location</li>
-                    <li><strong>Manual:</strong> Select your country or region from the list</li>
+                <h2 style="margin-top: 2.5rem; color: #2ecc71;">🧬 Mutants Database</h2>
+                <p>Browse and search hundreds of unique mutant creatures. Each mutant features:</p>
+                <ul style="margin-left: 1.5rem; color: #d6c9ff;">
+                    <li><strong>Generation Classification:</strong> From Gen A (basic) through Gen F (elite) and beyond</li>
+                    <li><strong>Combat Stats:</strong> Speed, attack power, life points, and ability percentages</li>
+                    <li><strong>Special Abilities:</strong> Unique powers that define battle strategies</li>
+                    <li><strong>DNA & Banking Info:</strong> Genetic markers and genetic material storage</li>
+                    <li><strong>Evolution Data:</strong> Upgrade paths and unlock requirements</li>
+                </ul>
+                <p style="color: #bdc3c7; margin-top: 1rem;">💡 <strong>Tip:</strong> Use the search bar to find mutants by name, or filter by generation to discover creatures at your level.</p>
+
+                <h2 style="margin-top: 2.5rem; color: #9b59b6;">🧪 Raid Predictor</h2>
+                <p>Plan your raid strategy with our advanced prediction system. The predictor:</p>
+                <ul style="margin-left: 1.5rem; color: #d6c9ff;">
+                    <li><strong>Shows Current Raid:</strong> Real-time detection of the active raid boss and countdown</li>
+                    <li><strong>Predicts Future Raids:</strong> Based on historical patterns, predicts which specimens will appear next</li>
+                    <li><strong>Displays Rewards:</strong> View images and details of exclusive rewards for each raid</li>
+                    <li><strong>Event Cycle:</strong> Track the complete history of raid rotations since the game's inception</li>
+                    <li><strong>Multi-language Support:</strong> Raid information and descriptions in English and Spanish</li>
+                </ul>
+                <p style="color: #bdc3c7; margin-top: 1rem;">💡 <strong>Tip:</strong> Mark your calendar with upcoming raids to prepare your best team of mutants.</p>
+
+                <h2 style="margin-top: 2.5rem; color: #e94560;">🕳️ Black Hole Crafting Incentives</h2>
+                <p>Track limited-time bonus events that offer exclusive crafting materials and rewards. Each incentive:</p>
+                <ul style="margin-left: 1.5rem; color: #d6c9ff;">
+                    <li><strong>Has a Duration:</strong> Typically active for one month, with clear start and end dates</li>
+                    <li><strong>Provides Bonuses:</strong> Extra crafting tokens, rare materials, or exclusive mutant fragments</li>
+                    <li><strong>Countdown Display:</strong> Track remaining time until the incentive ends</li>
+                    <li><strong>Status Indicators:</strong> Visual badges show whether each incentive is Active, Upcoming, or Expired</li>
+                </ul>
+                <p style="color: #bdc3c7; margin-top: 1rem;">💡 <strong>Tip:</strong> Plan your crafting schedule around active incentives to maximize your rewards.</p>
+
+                <h2 style="margin-top: 2.5rem; color: #3498db;">🌍 Timezone Configuration</h2>
+                <p>All times on this site are automatically converted to your local timezone. You can configure this in the Crafting Incentives section:</p>
+                <ul style="margin-left: 1.5rem; color: #d6c9ff;">
+                    <li><strong>Auto-detect:</strong> Click "Auto-detect" to automatically determine your timezone based on your device settings</li>
+                    <li><strong>Manual Selection:</strong> Choose your country or specific timezone from the comprehensive list</li>
+                    <li><strong>Real-time Update:</strong> The site updates all countdowns and timeframes instantly after selecting</li>
                 </ul>
 
-                <div class="timezone-info">
-                    <p><strong>Current timezone:</strong></p>
-                    <p class="current-timezone" id="currentTimezoneInfo">Loading...</p>
+                <div class="timezone-info" style="border-left: 4px solid #3498db; margin: 2rem 0;">
+                    <p style="margin: 0;"><strong>Your Current Timezone:</strong></p>
+                    <p class="current-timezone" id="currentTimezoneInfo" style="margin: 0.5rem 0 0 0;">Loading...</p>
                 </div>
 
-                <h2 style="margin-top: 2rem;">Incentive Status</h2>
-                <ul>
-                    <li><strong style="color: #2ecc71;">Active:</strong> The incentive is currently in progress</li>
-                    <li><strong style="color: #3498db;">Upcoming:</strong> The incentive will begin in the future</li>
-                    <li><strong style="color: #e74c3c;">Expired:</strong> The incentive has already ended</li>
+                <h2 style="margin-top: 2.5rem; color: #2ecc71;">📊 Incentive Status Meanings</h2>
+                <ul style="margin-left: 1.5rem;">
+                    <li style="color: #2ecc71; margin: 0.8rem 0;"><strong>🟢 Active:</strong> The incentive is currently in progress. You can claim rewards right now!</li>
+                    <li style="color: #3498db; margin: 0.8rem 0;"><strong>🔵 Upcoming:</strong> The incentive will begin in the future. Plan ahead for maximum rewards.</li>
+                    <li style="color: #e74c3c; margin: 0.8rem 0;"><strong>🔴 Expired:</strong> The incentive has already ended. Wait for the next cycle.</li>
                 </ul>
 
-                <h2 style="margin-top: 2rem;">Base Timezone</h2>
-                <p>All base schedules are in <strong>Peru Timezone (UTC-5)</strong> and are automatically converted to your selected timezone.</p>
+                <h2 style="margin-top: 2.5rem; color: #e94560;">⚙️ Technical Details</h2>
+                <p><strong>Base Timezone:</strong> All event schedules originate from <span style="background: rgba(233, 69, 96, 0.2); padding: 0.3rem 0.6rem; border-radius: 4px;">Peru Timezone (UTC-5)</span> and are automatically converted to your selected timezone.</p>
+                <p style="color: #bdc3c7; margin-top: 1rem;"><strong>Real-time Sync:</strong> This site updates countdowns every second to ensure accuracy across all timezones. Refresh your browser if times seem incorrect.</p>
+
+                <h2 style="margin-top: 2.5rem; color: #9b59b6;">❓ FAQ</h2>
+                <p><strong>Q: Why do my times not match the game's times?</strong></p>
+                <p style="color: #bdc3c7; margin-top: 0.5rem;">A: Make sure your timezone is correctly set. Use "Auto-detect" in the Crafting Incentives section, or manually select your location from the timezone list.</p>
+                
+                <p style="margin-top: 1.2rem;"><strong>Q: Will the raids prediction always be accurate?</strong></p>
+                <p style="color: #bdc3c7; margin-top: 0.5rem;">A: The predictor is based on historical raid cycles and is highly accurate, but game developers may adjust the schedule. Always check the current raid display for real-time information.</p>
+                
+                <p style="margin-top: 1.2rem;"><strong>Q: Can I get notifications when incentives change?</strong></p>
+                <p style="color: #bdc3c7; margin-top: 0.5rem;">A: This version displays live updates. Bookmark this site and check regularly, or use your browser's notification features.</p>
             </div>
         </div>
 
@@ -201,7 +245,7 @@
 
             <div class="raid-tabs">
                 <button class="raid-tab active" data-tab="all">All Raids</button>
-                <button class="raid-tab" data-tab="history">Ciclo Histórico</button>
+                <button class="raid-tab" data-tab="history">Cicle</button>
             </div>
 
             <div class="raid-tab-content" id="raidTabContent">

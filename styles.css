@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+/* ============================================================
+   SECTION 1: GLOBAL STYLES & BODY
+   ============================================================
+   Base CSS reset, typography, background gradients, and layout foundation
+*/
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -11,7 +17,11 @@ body {
     min-height: 100vh;
 }
 
-/* HEADER Y NAVEGACIÓN */
+/* ============================================================
+   SECTION 2: HEADER & NAVIGATION
+   ============================================================
+   Sticky header, logo styling, navigation links, mobile hamburger menu
+*/
 header {
     background: linear-gradient(90deg, #0f3460 0%, #16213e 100%);
     padding: 0;
@@ -181,7 +191,11 @@ main {
     }
 }
 
-/* INCENTIVOS PAGE */
+/* ============================================================
+   SECTION 3: INCENTIVES PAGE STYLING
+   ============================================================
+   Incentive cards grid, bonus status indicators, animations
+*/
 .incentivos-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -533,21 +547,71 @@ main {
 .hero {
     text-align: center;
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
-    border-radius: 10px;
+    background: linear-gradient(135deg, #0a0e27 0%, #16213e 50%, #0a0e27 100%);
+    border-radius: 15px;
     margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    box-shadow: 
+        0 0 20px rgba(52, 152, 219, 0.2),
+        inset 0 0 30px rgba(52, 152, 219, 0.05),
+        0 0 40px rgba(233, 69, 96, 0.1);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(52, 152, 219, 0.03) 2px,
+            rgba(52, 152, 219, 0.03) 4px
+        );
+    pointer-events: none;
+    animation: scanlines 8s linear infinite;
+}
+
+@keyframes scanlines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
     color: #e94560;
     margin-bottom: 1rem;
+    font-weight: 900;
+    text-shadow: 
+        0 0 10px rgba(233, 69, 96, 0.8),
+        0 0 20px rgba(233, 69, 96, 0.5),
+        0 0 30px rgba(233, 69, 96, 0.3);
+    letter-spacing: 2px;
+    animation: glow-pulse 3s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes glow-pulse {
+    0%, 100% { text-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 20px rgba(233, 69, 96, 0.5), 0 0 30px rgba(233, 69, 96, 0.3); }
+    50% { text-shadow: 0 0 15px rgba(233, 69, 96, 1), 0 0 30px rgba(233, 69, 96, 0.7), 0 0 50px rgba(233, 69, 96, 0.4); }
 }
 
 .hero p {
     font-size: 1.1rem;
     color: #bdc3c7;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .btn-primary {
@@ -555,20 +619,40 @@ main {
     background: linear-gradient(90deg, #e94560 0%, #ff5a7e 100%);
     color: white;
     padding: 0.8rem 2rem;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
-    transition: all 0.3s;
-    border: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(233, 69, 96, 0.5);
     cursor: pointer;
     font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    box-shadow: 
+        0 0 15px rgba(233, 69, 96, 0.4),
+        inset 0 0 15px rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 0 25px rgba(233, 69, 96, 0.8),
+        0 10px 25px rgba(233, 69, 96, 0.4),
+        inset 0 0 15px rgba(255, 255, 255, 0.15);
+    border-color: rgba(233, 69, 96, 0.8);
 }
 
-/* RESPONSIVE */
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   SECTION 8: RESPONSIVE DESIGN & MEDIA QUERIES
+   ============================================================
+   Tablet (768px) and mobile (480px) breakpoints for all components
+*/
 @media (max-width: 768px) {
     .nav-toggle {
         display: flex;
@@ -657,7 +741,11 @@ main {
     font-weight: bold;
 }
 
-/* FOOTER */
+/* ============================================================
+   SECTION 6: FOOTER STYLING
+   ============================================================
+   Footer layout, links, responsive typography
+*/
 footer {
     background: linear-gradient(90deg, #0f3460 0%, #16213e 100%);
     border-top: 3px solid #e94560;
@@ -764,7 +852,11 @@ footer {
     }
 }
 
-/* MUTANTS SECTION STYLES */
+/* ============================================================
+   SECTION 4: MUTANTS PAGE STYLING
+   ============================================================
+   Mutant creature cards grid, search/filter inputs, modal displays
+*/
 .mutants-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -799,7 +891,11 @@ footer {
     pointer-events: none;
 }
 
-/* RAID TILES */
+/* ============================================================
+   SECTION 5: RAID PREDICTOR PAGE STYLING
+   ============================================================
+   Raid tiles grid, raid prediction panels, countdown displays, details inline
+*/
 .raid-all-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -1041,7 +1137,11 @@ footer {
     .raid-predictor-top { grid-template-columns: 1fr; }
 }
 
-/* MODAL STYLES */
+/* ============================================================
+   SECTION 7: MODALS & LIGHTBOX
+   ============================================================
+   Modal overlays, content panels, close buttons, lightbox image viewer
+*/
 .modal {
     position: fixed;
     top: 0;

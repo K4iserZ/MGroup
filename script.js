@@ -1,6 +1,30 @@
-// Incentives data (base: Peru Timezone - UTC-5)
-// The last incentive starts: 08/01/2026 20:00 Peru = 09/01/2026 01:00 UTC
-// Ends: 24/01/2026 07:00 Peru = 24/01/2026 12:00 UTC
+/* ======================================
+   SECTION 1: INITIALIZATION & URL ROUTING
+   ====================================== */
+
+// Initialize URL-based page routing
+function initializeURLRouting() {
+    const params = new URLSearchParams(window.location.search);
+    const pageParam = params.get('page');
+    if (pageParam) {
+        const validPages = ['home', 'mutants', 'raidpredictor', 'incentivos', 'info'];
+        if (validPages.includes(pageParam)) {
+            showPage(pageParam);
+        }
+    }
+}
+
+// Update URL when page changes
+function updateURLForPage(pageName) {
+    window.history.replaceState({}, '', `?page=${pageName}`);
+}
+
+/* ======================================
+   SECTION 2: INCENTIVES DATA
+   Base: Peru Timezone (UTC-5)
+   Last incentive: 08/01/2026 20:00 Peru → 09/01/2026 01:00 UTC
+   ====================================== */
+
 const incentivosData = [
     {
         nombre: "Triple XP 7d",
@@ -134,6 +158,27 @@ const incentivosData = [
 // Starts: 22/01/2026 19:00 Peru (UTC-5) = 23/01/2026 00:00 UTC
 // Ends: 24/01/2026 07:00 Peru = 24/01/2026 12:00 UTC
 // The #1 starts: 08/01/2026 20:00 Peru = 09/01/2026 01:00 UTC
+
+/* ======================================
+   SECTION 3: SPECIMEN CODE-TO-NAME MAPPING
+   Extracted from Stats.csv for raid display
+   ====================================== */
+
+const specimenCodeMap = {
+    'FB_12': 'Hadeath', 'AC_12': 'Phileas Derocas', 'EF_12': 'Dream Defender',
+    'CF_12': 'Inheritor of the 5 rings', 'FF_12': 'Gerard Steelgarden', 'F_13': 'Snowmage', 
+    'C_13': 'Cryonos', 'D_13': 'Easter Gunny', 'B_13': 'Jack O\'Lantern', 'A_13': 'Garuda', 
+    'E_13': 'Ceres', 'CB_14': 'Wrath', 'CE_13': 'Regulo&Juzya', 'AB_13': 'Enviro Mk III', 'CD_14': 'Captain Eagle'
+};
+
+function getSpecimenName(code) {
+    return specimenCodeMap[code] || code;
+}
+
+/* ======================================
+   SECTION 4: TIMEZONE & LOCALIZATION
+   ====================================== */
+
 const ultimoIncentivoPeru = new Date('2026-01-09T01:00:00Z');
 
 let selectedTimezone = 'auto';
@@ -396,6 +441,11 @@ function searchIncentivoDates(incentiveNameSearch) {
     }
 }
 
+// ============================================================
+// SECTION 5: PAGE ROUTING & NAVIGATION
+// ============================================================
+// Manages page navigation, URL updates, and active state tracking
+
 function showPage(pageName) {
     document.querySelectorAll('.page-content').forEach(page => {
         page.classList.remove('active');
@@ -406,6 +456,9 @@ function showPage(pageName) {
         link.classList.remove('active');
     });
     document.querySelector(`[data-page="${pageName}"]`).classList.add('active');
+
+    // Update URL for bookmarking/sharing
+    window.history.replaceState({}, '', `?page=${pageName}`);
 
     // Cerrar menú en mobile
     const navToggle = document.getElementById('navToggle');
@@ -430,6 +483,11 @@ document.getElementById('navToggle').addEventListener('click', function() {
     this.classList.toggle('active');
     document.getElementById('mainNav').classList.toggle('active');
 });
+
+// ============================================================
+// SECTION 6: TIMEZONE CONVERSION & LOCALIZATION  
+// ============================================================
+// Handles timezone conversion and user-facing text localization
 
 // Convertir fecha de Perú a zona horaria seleccionada
 function convertToTimezone(dateStr, timezone) {
@@ -514,6 +572,11 @@ function updateCurrentTimezoneInfo() {
     document.getElementById('currentTimezoneInfo').textContent = 
         `${currentTimezone} - ${localTimeStr}`;
 }
+
+// ============================================================
+// SECTION 7: INCENTIVES RENDERING & DISPLAY
+// ============================================================
+// Manages incentive card rendering, status calculation, and timezone-aware display
 
 // Renderizar incentivos
 function updateIncentivosDisplay() {
@@ -722,9 +785,10 @@ function loadMoreIncentivos() {
     updateIncentivosDisplay();
 }
 
-/* ======================================
-   MUTANTS FUNCTIONALITY
-   ====================================== */
+// ============================================================
+// SECTION 8: MUTANTS DATABASE & DISPLAY
+// ============================================================
+// Handles mutant creature data loading, parsing, filtering, and card rendering
 
 // Parse CSV y crear objeto de mutantes
 let mutantsData = [];
@@ -890,10 +954,11 @@ setInterval(() => {
     try { updateRaidCountdowns(); } catch(e) { /* ignore if not loaded yet */ }
 }, 1000);
 
-/* ======================================
-   RAID PREDICTOR - Fetch JSON + Prediction Logic
-   Vanilla JS modular functions, commented
-   ====================================== */
+// ============================================================
+// SECTION 9: RAID PREDICTOR & LOGIC
+// ============================================================
+// Handles raid data loading, prediction algorithm, and rendering
+// Manages raid history, event cycle calculations, and tile/details display
 
 let raidsCatalog = [];
 let raidsHistory = [];
@@ -1237,7 +1302,7 @@ function openRaidDetailsInline(raid, tileElement) {
                 <div class="raid-details-image">${image ? `<img src="${image}" alt="${raid.name}" onerror="this.style.display='none'">` : '<div style="padding:16px;color:#9b59b6">No image</div>'}</div>
                 <div class="raid-details-info" style="margin-top:12px;">
                     <div class="raid-details-name">${raid.name}</div>
-                    <div style="color:#95a5a6;margin-top:8px">Specimen: <strong style="color:#cfefff">${raid.specimen}</strong></div>
+                    <div style="color:#95a5a6;margin-top:8px">Specimen: <strong style="color:#cfefff">${getSpecimenName(raid.specimen)}</strong> <span style="color:#7f8c8d">(${raid.specimen})</span></div>
                     ${description ? `<div style="color:#d6c9ff;margin-top:12px;font-style:italic;font-size:1rem">"${description}"</div>` : ''}
                     ${additional ? `<div style="margin-top:10px;color:#dcd2ff;font-size:0.95rem">${additional}</div>` : ''}
                     <div style="margin-top:12px;color:#dcd2ff">ID: ${raid.id}</div>
@@ -1323,8 +1388,12 @@ function updateRaidCountdowns() {
     }
 }
 
+// SECTION 10: INITIALIZATION & STARTUP
 // Ensure the raids data is loaded at startup
 loadRaidsData();
+
+// Initialize URL routing for ?page=pageName support (Blogspot frames)
+initializeURLRouting();
 
 // Inicial
 populateSearchSelector();
