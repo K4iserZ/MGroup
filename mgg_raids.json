@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Dantes Inferno",
       "specimen": "FB_12",
-      "specimenName": "Hadeath",
+      "specimenName": "Maiden of Twilight",
       "image": "image/dungeons/raids/raid_inferno.webp",
       "description": "A blazing raid of pure fire and chaos.",
       "rewards": [
@@ -28,7 +28,7 @@
       "id": 3,
       "name": "Crucible of Insanity",
       "specimen": "EF_12",
-      "specimenName": "Dream Defender",
+      "specimenName": "X'astuth",
       "image": "image/dungeons/raids/raid_insanity.webp",
       "description": "A realm where reality bends and sanity crumbles.",
       "rewards": [
@@ -52,7 +52,7 @@
       "id": 5,
       "name": "Eternal Library",
       "specimen": "FF_12",
-      "specimenName": "Gerard Steelgarden",
+      "specimenName": "Timeless Archivist",
       "image": "image/dungeons/raids/raid_library.webp",
       "description": "Ancient knowledge guards the halls of forbidden wisdom.",
       "rewards": [
@@ -64,7 +64,7 @@
       "id": 6,
       "name": "Stage of Mytstical Songs",
       "specimen": "F_13",
-      "specimenName": "Snowmage",
+      "specimenName": "Väinämöinen",
       "image": "image/dungeons/raids/raid_kalevala.webp",
       "description": "Mythical forces awaken in the land of eternal songs.",
       "rewards": [
@@ -76,7 +76,7 @@
       "id": 7,
       "name": "Royal Skirmish",
       "specimen": "C_13",
-      "specimenName": "Cryonos",
+      "specimenName": "D'Arathomis",
       "image": "image/dungeons/raids/raid_dumas.webp",
       "description": "Adventure and intrigue in a tale of revenge and glory.",
       "rewards": [
@@ -88,7 +88,7 @@
       "id": 8,
       "name": "Cryptid Woods",
       "specimen": "D_13",
-      "specimenName": "Easter Gunny",
+      "specimenName": "Sasquatch",
       "image": "image/dungeons/raids/raid_cryptid.webp",
       "description": "Something lurks in the shadows—something not quite human.",
       "rewards": [
@@ -100,7 +100,7 @@
       "id": 9,
       "name": "Mall of the Unliving",
       "specimen": "B_13",
-      "specimenName": "Jack O'Lantern",
+      "specimenName": "GAR, Zombie Sovereign",
       "image": "image/dungeons/raids/raid_unliving.webp",
       "description": "The undead rise. Only the strongest will survive this nightmare.",
       "rewards": [
@@ -112,7 +112,7 @@
       "id": 10,
       "name": "The Robot factory",
       "specimen": "A_13",
-      "specimenName": "Garuda",
+      "specimenName": "Asimov",
       "image": "image/dungeons/raids/raid_Factory.webp",
       "description": "Industrial machines and synthetic horrors await your challenge.",
       "rewards": [
@@ -124,7 +124,7 @@
       "id": 11,
       "name": "Distant Observatory",
       "specimen": "E_13",
-      "specimenName": "Ceres",
+      "specimenName": "Stargazer",
       "image": "image/dungeons/raids/raid_asteroids.webp",
       "description": "Navigate through cosmic debris and celestial dangers.",
       "rewards": [
@@ -136,7 +136,7 @@
       "id": 12,
       "name": "Blackbeard's Cave",
       "specimen": "CB_14",
-      "specimenName": "Wrath",
+      "specimenName": "Fleet Captain Blackbeard",
       "image": "image/dungeons/raids/raid_pirates.webp",
       "description": "Treasure and treachery on the high seas of chaos.",
       "rewards": [
@@ -148,7 +148,7 @@
       "id": 13,
       "name": "Everlasting Sands",
       "specimen": "CE_13",
-      "specimenName": "Regulo&Juzya",
+      "specimenName": "Atlas",
       "image": "image/dungeons/raids/raid_everlastingsands.webp",
       "description": "Endless dunes hide ancient secrets and primal forces.",
       "rewards": [
@@ -160,7 +160,7 @@
       "id": 14,
       "name": "Architectural Chaos",
       "specimen": "AB_13",
-      "specimenName": "Enviro Mk III",
+      "specimenName": "The Architect",
       "image": "image/dungeons/raids/raid_architecture.webp",
       "description": "Intricate structures and impossible geometry test your limits.",
       "rewards": [
@@ -172,7 +172,7 @@
       "id": 15,
       "name": "Oceanic Vendetta",
       "specimen": "CD_14",
-      "specimenName": "Captain Eagle",
+      "specimenName": "Don Gamberetti",
       "image": "image/dungeons/raids/raid_mafia.webp",
       "description": "Organized chaos and criminal underworld shadows.",
       "rewards": [
