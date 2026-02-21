@@ -1166,8 +1166,8 @@ footer {
 }
 
 .mutant-details-modal {
-    max-width: 800px;
-    width: 90%;
+    max-width: 1000px;
+    width: 95%;
 }
 
 .modal-close {

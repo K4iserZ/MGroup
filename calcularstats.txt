@@ -1,0 +1,40 @@
+> Calculate Stats of the mutant the value of the variable use the Stats.csv file it's separated with "|":
+Example:
+Specimen|Name|Speed|odds|dna|Life|incubMin|atk1|atk1p|atk2|atk2p|bank|unlockattack|Type|reciper|abilities|abilityPct1|abilityPct2|orbSlots
+Specimen_A_01| Robot|250|40| A|1819|5| 274:AOE| 413:AOE| 549| 825|42| 1:1:a;2:5:neutre;1p:10:a;2p:15:neutre| | | 1:ability_shield;2:ability_shield_plus|20|30| n;s:20h
+
+Global Values:
+Adjust= 100
+Value of the Stars:
+Platinum=100
+Gold=75
+Silver=30
+Bronze=10
+Basic=0
+BonusReactor=Necesita Archivo gacha.csv
+BonusStar= 100 + Valor de la Estrella Seleccionada(Stars)
+
+
+1. Calculate the level of the Mutant (Min. value= 25):
+Level= 100+10*(FameLevelInsertedbyUser - 1)
+2. Calculate Life of the Mutant:
+LifeF=(Life*BonusStar*Level*Adjust)/1000000
+3. Calculate Attack1 and Attack2:
+Atk1F=(atk1p*BonusStar*Level*Adjust)/1000000
+Atk2F=(atk2p*BonusStar*Level*Adjust)/1000000
+4. Calcuate the ability of both Attacks (splitted)
+(Atk1)AbilityF= Atk1F*abilityPct2
+(Atk2)AbilityF2= Atk2F*abilityPct2
+5. Calculate the speed:
+SpeedF=10/(Speed/100)
+
+6. Final Values to show:
+Specimen and Name
+Type
+Level
+LifeF
+SpeedF
+Atk1F and (Atk1)AbilityF
+Atk2F and (Atk2)AbilityF
+Name of the ability (use column "abilities" i.e.: 1:ability_shield, just keep "Shield")
+
