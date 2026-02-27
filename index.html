@@ -24,6 +24,7 @@
             <nav id="mainNav">
                 <a href="#" class="nav-link active" data-page="home">Home</a>
                 <a href="#" class="nav-link" data-page="mutants">Mutants</a>
+                <a href="#" class="nav-link" data-page="compare">Compare Stats</a>
                 <a href="#" class="nav-link" data-page="raidpredictor">Raid Predictor</a>
                 <a href="#" class="nav-link" data-page="incentivos">Crafting Incentives</a>
                 <a href="#" class="nav-link" data-page="info">Information</a>
@@ -95,7 +96,37 @@
             </div>
         </div>
 
-        <!-- INCENTIVOS PAGE -->
+        <!-- COMPARE STATS PAGE -->
+        <div id="compare" class="page-content">
+            <div style="margin-bottom: 2rem;">
+                <h2 style="color: #e94560; margin-bottom: 1rem; font-size: 2rem;">⚖️ Compare Mutants</h2>
+                <p style="color: #bdc3c7; font-size: 1.05rem;">Compare stats between 2 to 4 mutants side by side. Select mutants below to get started.</p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 1.5rem; border-radius: 10px; border: 2px solid #3498db; margin-bottom: 2rem;">
+                <label style="color: #3498db; font-weight: bold; display: block; margin-bottom: 1rem;">📊 Select Mutants to Compare (2-4):</label>
+                <div id="compareSelectorsContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                    <!-- Selectors will be added here -->
+                </div>
+                <button id="addMutantCompare" class="btn-primary" style="margin-top: 1rem;">+ Add Mutant</button>
+                <button id="removeMutantCompare" class="btn-primary" style="margin-top: 1rem; background: #e74c3c; margin-left: 0.5rem;">- Remove Last</button>
+                <button id="clearCompare" class="btn-primary" style="margin-top: 1rem; background: #95a5a6; margin-left: 0.5rem;">Clear All</button>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 1.5rem; border-radius: 10px; border: 2px solid #3498db; margin-bottom: 2rem;">
+                <label style="color: #3498db; font-weight: bold; display: block; margin-bottom: 1rem;">⚙️ Comparison Settings:</label>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div>
+                        <label for="compareFameLevel" style="color: #3498db; font-weight: bold; display: block; margin-bottom: 0.5rem;">Fame Level (General for all)</label>
+                        <input type="number" id="compareFameLevel" value="25" min="25" max="90" style="background: #16213e; color: #ecf0f1; border: 2px solid #3498db; padding: 0.6rem 1rem; border-radius: 5px; font-size: 0.95rem; width: 100%; font-weight: 500;">
+                    </div>
+                </div>
+            </div>
+
+            <div id="compareResultsContainer">
+                <!-- Comparison results will be shown here -->
+            </div>
+        </div>
         <div id="incentivos" class="page-content">
             <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
                 <div style="flex: 1; min-width: 200px;">

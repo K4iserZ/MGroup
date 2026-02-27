@@ -1395,4 +1395,63 @@ footer {
     }
 }
 
+/* ============================================================
+   SECTION: COMPARE STATS
+   ============================================================
+   Styles for the comparison functionality
+*/
 
+.compare-selector {
+    transition: all 0.3s ease;
+}
+
+.compare-selector:hover {
+    border-color: #e94560 !important;
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
+}
+
+#compareResultsContainer {
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Search dropdown styles */
+#mutantSearchInput, [id^="mutantSearch"] {
+    transition: border-color 0.2s ease;
+}
+
+#mutantSearchInput:focus, [id^="mutantSearch"]:focus {
+    outline: none;
+    border-color: #e94560 !important;
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.3);
+}
+
+[id^="mutantDropdown"] > div {
+    transition: background 0.15s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1200px) {
+    #compareSelectorsContainer {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #compareSelectorsContainer {
+        grid-template-columns: 1fr !important;
+    }
+    
+    #compareResultsContainer {
+        overflow-x: auto;
+    }
+}
