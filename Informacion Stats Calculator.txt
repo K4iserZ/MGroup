@@ -7,6 +7,11 @@ Adjust= 100
 SpeedF=10/(Speed/100)
 BonusReactor=Necesita Archivo gacha
 BonusStar:100+Valor de la Estrella Seleccionada(Stars)
+DC_03
+For gacha:
+LifeF=(Life*(BonusStar-BonusGacha)*Level*Adjust)/1000000
+Atk1&Atk2F=((atk1p*BonusGacha+atk1p)BonusStar*Level*Adjust)/1000000
+
 Stars:
 enlace de imagen: https://s-ak.kobojo.com/mutants/assets/mobile/thumbnails/star_platinum.png
 base de la estrella poner debajo de la estrella: https://s-ak.kobojo.com/mutants/assets/mobile/hud/mutopedia/btn_black.png
