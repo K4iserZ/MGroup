@@ -637,7 +637,7 @@ Specimen_BB_14| No Name|200|0| BB|1130|60| 312| 468| 156:AOE| 234:AOE|42| 1:1:b;
 Specimen_BC_14| Perfitrouille|110|0| BC|1432|60| 834| 1518| 834| 1588|42| 1:1:b;2:5:c;2p:15:c;1p:10:b| SEASONAL| | 1:ability_regen;2:ability_regen_plus|20|35| n;n;s
 Specimen_BD_14| Greensward Rager|215|20| BD|2386|60| 684| 1086| 684| 1086|42| 1:1:b;2:5:d;2p:15:d;1p:10:b| LEGEND| BD_14x[A-F][A-F]_*+BD_14x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-30|-50| n;n;s
 Specimen_BE_14| No Name|200|0| BE|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:e;2p:15:e;1p:10:b| LEGEND| BE_14x[A-F][A-F]_*+BE_14x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
-Specimen_BF_14| No Name|200|0| BF|1130|60| 312| 468| 312| 468|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| LEGEND| BF_14x[A-F][A-F]_*+BF_14x[A-F]_*| 1:ability_regen;2:ability_regen_plus|25|35| n;n;s
+Specimen_BF_14| Irradiance|290|20| BF|1861|60| 1514| 2184| 1514| 2184|42| 1:1:b;2:5:f;2p:15:f;1p:10:b| LEGEND| BF_14x[A-F][A-F]_*+BF_14x[A-F]_*| 1:ability_slash;2:ability_slash_plus|-60|-100| n;n;s
 Specimen_CA_14| Breakmaster|210|0| CA|2466|60| 1233| 2024| 870:AOE| 1477:AOE|42| 1:1:c;2:5:a;2p:15:a;1p:10:c| GACHA| | 1:ability_retaliate;2:ability_retaliate_plus|-10|-20| n;n;s
 Specimen_CB_14| Fleet Captain Blackbeard|290|20| CB|2511|60| 748| 1731| 748| 1265:AOE|42| 1:1:c;2:5:b;2p:15:b;1p:10:c| HEROIC| CB_14x[A-F][A-F]_*+CB_14x[A-F]_*| 1:ability_retaliate;2:ability_retaliate_plus|-25|-40| n;n;n;s
 Specimen_CC_14| Blue King|320|0| CC|2882|60| 944| 1441| 633:AOE| 1014:AOE|45| 1:1:c;2:5:c;1p:10:c;2p:15:c| GACHA| | 1:ability_strengthen;2:ability_strengthen_plus|40|80| n;n;s

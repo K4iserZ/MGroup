@@ -1,0 +1,843 @@
+{
+  "basic": {
+    "attack": [
+      {
+        "id": "orb_basic_attack",
+        "category": "basic_attack",
+        "type": "",
+        "name": "Attack +2%",
+        "value": 2
+      },
+      {
+        "id": "orb_basic_attack_01",
+        "category": "basic_attack",
+        "type": "01",
+        "name": "Attack +5%",
+        "value": 5
+      },
+      {
+        "id": "orb_basic_attack_02",
+        "category": "basic_attack",
+        "type": "02",
+        "name": "Attack +10%",
+        "value": 10
+      },
+      {
+        "id": "orb_basic_attack_03",
+        "category": "basic_attack",
+        "type": "03",
+        "name": "Attack +12%",
+        "value": 12
+      },
+      {
+        "id": "orb_basic_attack_04",
+        "category": "basic_attack",
+        "type": "04",
+        "name": "Attack +14%",
+        "value": 14
+      },
+      {
+        "id": "orb_basic_attack_05",
+        "category": "basic_attack",
+        "type": "05",
+        "name": "Attack +16%",
+        "value": 16
+      },
+      {
+        "id": "orb_basic_attack_06",
+        "category": "basic_attack",
+        "type": "06",
+        "name": "Attack +17%",
+        "value": 17
+      },
+      {
+        "id": "orb_basic_attack_07",
+        "category": "basic_attack",
+        "type": "07",
+        "name": "Attack +18%",
+        "value": 18
+      },
+      {
+        "id": "orb_basic_attack_08",
+        "category": "basic_attack",
+        "type": "08",
+        "name": "Attack +19%",
+        "value": 19
+      },
+      {
+        "id": "orb_basic_attack_09",
+        "category": "basic_attack",
+        "type": "09",
+        "name": "Attack +20%",
+        "value": 20
+      }
+    ],
+    "critical": [
+       {
+        "id": "orb_basic_critical",
+        "category": "basic_critical",
+        "type": "",
+        "name": "Critical +2%",
+        "value": 2
+      },
+      {
+        "id": "orb_basic_critical_01",
+        "category": "basic_critical",
+        "type": "01",
+        "name": "Critical +5%",
+        "value": 5
+      },
+      {
+        "id": "orb_basic_critical_02",
+        "category": "basic_critical",
+        "type": "02",
+        "name": "Critical +11%",
+        "value": 11
+      },
+      {
+        "id": "orb_basic_critical_03",
+        "category": "basic_critical",
+        "type": "03",
+        "name": "Critical +13%",
+        "value": 13
+      },
+      {
+        "id": "orb_basic_critical_04",
+        "category": "basic_critical",
+        "type": "04",
+        "name": "Critical +15%",
+        "value": 15
+      },
+      {
+        "id": "orb_basic_critical_05",
+        "category": "basic_critical",
+        "type": "05",
+        "name": "Critical +17%",
+        "value": 17
+      },
+      {
+        "id": "orb_basic_critical_06",
+        "category": "basic_critical",
+        "type": "06",
+        "name": "Critical +18%",
+        "value": 18
+      }
+    ],
+    "life": [
+      {
+        "id": "orb_basic_life",
+        "category": "basic_life",
+        "type": "",
+        "name": "Life +2%",
+        "value": 2
+      },
+      {
+        "id": "orb_basic_life_01",
+        "category": "basic_life",
+        "type": "01",
+        "name": "Life +10%",
+        "value": 10
+      },
+      {
+        "id": "orb_basic_life_02",
+        "category": "basic_life",
+        "type": "02",
+        "name": "Life +15%",
+        "value": 15
+      },
+      {
+        "id": "orb_basic_life_03",
+        "category": "basic_life",
+        "type": "03",
+        "name": "Life +20%",
+        "value": 20
+      },
+      {
+        "id": "orb_basic_life_04",
+        "category": "basic_life",
+        "type": "04",
+        "name": "Life +25%",
+        "value": 25
+      },
+      {
+        "id": "orb_basic_life_05",
+        "category": "basic_life",
+        "type": "05",
+        "name": "Life +28%",
+        "value": 28
+      },
+      {
+        "id": "orb_basic_life_06",
+        "category": "basic_life",
+        "type": "06",
+        "name": "Life +30%",
+        "value": 30
+      },
+      {
+        "id": "orb_basic_life_07",
+        "category": "basic_life",
+        "type": "07",
+        "name": "Life +35%",
+        "value": 35
+      }
+    ],
+    "regenerate": [
+      {
+        "id": "orb_basic_regenerate",
+        "category": "basic_regenerate",
+        "type": "",
+        "name": "Drain life +2%",
+        "value": 2
+      },
+      {
+        "id": "orb_basic_regenerate_01",
+        "category": "basic_regenerate",
+        "type": "01",
+        "name": "Drain life +7%",
+        "value": 7
+      },
+      {
+        "id": "orb_basic_regenerate_02",
+        "category": "basic_regenerate",
+        "type": "02",
+        "name": "Drain life +15%",
+        "value": 15
+      },
+      {
+        "id": "orb_basic_regenerate_03",
+        "category": "basic_regenerate",
+        "type": "03",
+        "name": "Drain life +20%",
+        "value": 20
+      },
+      {
+        "id": "orb_basic_regenerate_04",
+        "category": "basic_regenerate",
+        "type": "04",
+        "name": "Drain life +25%",
+        "value": 25
+      },
+      {
+        "id": "orb_basic_regenerate_05",
+        "category": "basic_regenerate",
+        "type": "05",
+        "name": "Drain life +28%",
+        "value": 28
+      },
+      {
+        "id": "orb_basic_regenerate_06",
+        "category": "basic_regenerate",
+        "type": "06",
+        "name": "Drain life +30%",
+        "value": 30
+      },
+      {
+        "id": "orb_basic_regenerate_04_1",
+        "category": "basic_regenerate_04",
+        "type": "1",
+        "name": "Drain life +25%",
+        "value": 25
+      }
+    ],
+    "retaliate": [
+      {
+        "id": "orb_basic_retaliate",
+        "category": "basic_retaliate",
+        "type": "",
+        "name": "Retaliate +2%",
+        "value": 2
+      },
+      {
+        "id": "orb_basic_retaliate_01",
+        "category": "basic_retaliate",
+        "type": "01",
+        "name": "Retaliate +7%",
+        "value": 7
+      },
+      {
+        "id": "orb_basic_retaliate_02",
+        "category": "basic_retaliate",
+        "type": "02",
+        "name": "Retaliate +15%",
+        "value": 15
+      },
+      {
+        "id": "orb_basic_retaliate_03",
+        "category": "basic_retaliate",
+        "type": "03",
+        "name": "Retaliate +17%",
+        "value": 17
+      },
+      {
+        "id": "orb_basic_retaliate_04",
+        "category": "basic_retaliate",
+        "type": "04",
+        "name": "Retaliate +18%",
+        "value": 18
+      },
+      {
+        "id": "orb_basic_retaliate_05",
+        "category": "basic_retaliate",
+        "type": "05",
+        "name": "Retaliate +19%",
+        "value": 19
+      },
+      {
+        "id": "orb_basic_retaliate_06",
+        "category": "basic_retaliate",
+        "type": "06",
+        "name": "Retaliate +20%",
+        "value": 20
+      },
+      {
+        "id": "orb_basic_retaliate_04_1",
+        "category": "basic_retaliate_04",
+        "type": "1",
+        "name": "Retaliate +18%",
+        "value": 18
+      }
+    ],
+    "shield": [
+      {
+        "id": "orb_basic_shield",
+        "category": "basic_shield",
+        "type": "",
+        "name": "Shield +2%",
+        "value": 2
+      },
+      {
+        "id": "orb_basic_shield_01",
+        "category": "basic_shield",
+        "type": "01",
+        "name": "Shield +7%",
+        "value": 7
+      },
+      {
+        "id": "orb_basic_shield_02",
+        "category": "basic_shield",
+        "type": "02",
+        "name": "Shield +15%",
+        "value": 15
+      },
+      {
+        "id": "orb_basic_shield_03",
+        "category": "basic_shield",
+        "type": "03",
+        "name": "Shield +19%",
+        "value": 19
+      },
+      {
+        "id": "orb_basic_shield_04",
+        "category": "basic_shield",
+        "type": "04",
+        "name": "Shield +22%",
+        "value": 22
+      },
+      {
+        "id": "orb_basic_shield_05",
+        "category": "basic_shield",
+        "type": "05",
+        "name": "Shield +24%",
+        "value": 24
+      },
+      {
+        "id": "orb_basic_shield_06",
+        "category": "basic_shield",
+        "type": "06",
+        "name": "Shield +25%",
+        "value": 25
+      },
+      {
+        "id": "orb_basic_shield_04_1",
+        "category": "basic_shield_04",
+        "type": "1",
+        "name": "Shield +22%",
+        "value": 22
+      }
+    ],
+    "slash": [
+      {
+        "id": "orb_basic_slash",
+        "category": "basic_slash",
+        "type": "",
+        "name": "Wound +2%",
+        "value": 2
+      },
+      {
+        "id": "orb_basic_slash_01",
+        "category": "basic_slash",
+        "type": "01",
+        "name": "Wound +7%",
+        "value": 7
+      },
+      {
+        "id": "orb_basic_slash_02",
+        "category": "basic_slash",
+        "type": "02",
+        "name": "Wound +15%",
+        "value": 15
+      },
+      {
+        "id": "orb_basic_slash_03",
+        "category": "basic_slash",
+        "type": "03",
+        "name": "Wound +19%",
+        "value": 19
+      },
+      {
+        "id": "orb_basic_slash_04",
+        "category": "basic_slash",
+        "type": "04",
+        "name": "Wound +22%",
+        "value": 22
+      },
+      {
+        "id": "orb_basic_slash_05",
+        "category": "basic_slash",
+        "type": "05",
+        "name": "Wound +24%",
+        "value": 24
+      },
+      {
+        "id": "orb_basic_slash_06",
+        "category": "basic_slash",
+        "type": "06",
+        "name": "Wound +25%",
+        "value": 25
+      },
+      {
+        "id": "orb_basic_slash_04_1",
+        "category": "basic_slash_04",
+        "type": "1",
+        "name": "Wound +22%",
+        "value": 22
+      }
+    ],
+    "strengthen": [
+      {
+        "id": "orb_basic_strengthen",
+        "category": "basic_strengthen",
+        "type": "",
+        "name": "Boost +2%",
+        "value": 2
+      },
+      {
+        "id": "orb_basic_strengthen_01",
+        "category": "basic_strengthen",
+        "type": "01",
+        "name": "Boost +7%",
+        "value": 7
+      },
+      {
+        "id": "orb_basic_strengthen_02",
+        "category": "basic_strengthen",
+        "type": "02",
+        "name": "Boost +15%",
+        "value": 15
+      },
+      {
+        "id": "orb_basic_strengthen_03",
+        "category": "basic_strengthen",
+        "type": "03",
+        "name": "Boost +19%",
+        "value": 19
+      },
+      {
+        "id": "orb_basic_strengthen_04",
+        "category": "basic_strengthen",
+        "type": "04",
+        "name": "Boost +22%",
+        "value": 22
+      },
+      {
+        "id": "orb_basic_strengthen_05",
+        "category": "basic_strengthen",
+        "type": "05",
+        "name": "Boost +24%",
+        "value": 24
+      },
+      {
+        "id": "orb_basic_strengthen_06",
+        "category": "basic_strengthen",
+        "type": "06",
+        "name": "Boost +25%",
+        "value": 25
+      },
+      {
+        "id": "orb_basic_strengthen_04_1",
+        "category": "basic_strengthen_04",
+        "type": "1",
+        "name": "Boost +22%",
+        "value": 22
+      }
+    ],
+    "weaken": [
+      {
+        "id": "orb_basic_weaken",
+        "category": "basic_weaken",
+        "type": "",
+        "name": "Curse +2%",
+        "value": 2
+      },
+      {
+        "id": "orb_basic_weaken_01",
+        "category": "basic_weaken",
+        "type": "01",
+        "name": "Curse +7%",
+        "value": 7
+      },
+      {
+        "id": "orb_basic_weaken_02",
+        "category": "basic_weaken",
+        "type": "02",
+        "name": "Curse +15%",
+        "value": 15
+      },
+      {
+        "id": "orb_basic_weaken_03",
+        "category": "basic_weaken",
+        "type": "03",
+        "name": "Curse +19%",
+        "value": 19
+      },
+      {
+        "id": "orb_basic_weaken_04",
+        "category": "basic_weaken",
+        "type": "04",
+        "name": "Curse +22%",
+        "value": 22
+      },
+      {
+        "id": "orb_basic_weaken_05",
+        "category": "basic_weaken",
+        "type": "05",
+        "name": "Curse +24%",
+        "value": 24
+      },
+      {
+        "id": "orb_basic_weaken_06",
+        "category": "basic_weaken",
+        "type": "06",
+        "name": "Curse +25%",
+        "value": 25
+      },
+      {
+        "id": "orb_basic_weaken_04_1",
+        "category": "basic_weaken_04",
+        "type": "1",
+        "name": "Curse +22%",
+        "value": 22
+      }
+    ]
+  },
+  "special": {
+    "addregenerate": [
+      {
+        "id": "orb_special_addregenerate",
+        "category": "special",
+        "type": "addregenerate",
+        "name": "Drain life (2%)",
+        "value": 2
+      },
+      {
+        "id": "orb_special_addregenerate_01",
+        "category": "special_addregenerate",
+        "type": "01",
+        "name": "Drain life (5%)",
+        "value": 5
+      },
+      {
+        "id": "orb_special_addregenerate_02",
+        "category": "special_addregenerate",
+        "type": "02",
+        "name": "Drain life (14%)",
+        "value": 14
+      },
+      {
+        "id": "orb_special_addregenerate_03",
+        "category": "special_addregenerate",
+        "type": "03",
+        "name": "Drain life (22%)",
+        "value": 22
+      },
+      {
+        "id": "orb_special_addregenerate_04",
+        "category": "special_addregenerate",
+        "type": "04",
+        "name": "Drain life (29%)",
+        "value": 29
+      },
+      {
+        "id": "orb_special_addregenerate_05",
+        "category": "special_addregenerate",
+        "type": "05",
+        "name": "Drain life (35%)",
+        "value": 35
+      }
+    ],
+    "addretaliate": [
+      {
+        "id": "orb_special_addretaliate",
+        "category": "special",
+        "type": "addretaliate",
+        "name": "Retaliate (1%)",
+        "value": 1
+      },
+      {
+        "id": "orb_special_addretaliate_01",
+        "category": "special_addretaliate",
+        "type": "01",
+        "name": "Retaliate (2%)",
+        "value": 2
+      },
+      {
+        "id": "orb_special_addretaliate_02",
+        "category": "special_addretaliate",
+        "type": "02",
+        "name": "Retaliate (5%)",
+        "value": 5
+      },
+      {
+        "id": "orb_special_addretaliate_03",
+        "category": "special_addretaliate",
+        "type": "03",
+        "name": "Retaliate (13%)",
+        "value": 13
+      },
+      {
+        "id": "orb_special_addretaliate_04",
+        "category": "special_addretaliate",
+        "type": "04",
+        "name": "Retaliate (20%)",
+        "value": 20
+      },
+      {
+        "id": "orb_special_addretaliate_05",
+        "category": "special_addretaliate",
+        "type": "05",
+        "name": "Retaliate (25%)",
+        "value": 25
+      }
+    ],
+    "addshield": [
+      {
+        "id": "orb_special_addshield",
+        "category": "special",
+        "type": "addshield",
+        "name": "Shield (2%)",
+        "value": 2
+      },
+      {
+        "id": "orb_special_addshield_01",
+        "category": "special_addshield",
+        "type": "01",
+        "name": "Shield (5%)",
+        "value": 5
+      },
+      {
+        "id": "orb_special_addshield_02",
+        "category": "special_addshield",
+        "type": "02",
+        "name": "Shield (13%)",
+        "value": 13
+      },
+      {
+        "id": "orb_special_addshield_03",
+        "category": "special_addshield",
+        "type": "03",
+        "name": "Shield (20%)",
+        "value": 20
+      },
+      {
+        "id": "orb_special_addshield_04",
+        "category": "special_addshield",
+        "type": "04",
+        "name": "Shield (26%)",
+        "value": 26
+      },
+      {
+        "id": "orb_special_addshield_05",
+        "category": "special_addshield",
+        "type": "05",
+        "name": "Shield (30%)",
+        "value": 30
+      }
+    ],
+    "addslash": [
+      {
+        "id": "orb_special_addslash",
+        "category": "special",
+        "type": "addslash",
+        "name": "Wound (2%)",
+        "value": 2
+      },
+      {
+        "id": "orb_special_addslash_01",
+        "category": "special_addslash",
+        "type": "01",
+        "name": "Wound (5%)",
+        "value": 5
+      },
+      {
+        "id": "orb_special_addslash_02",
+        "category": "special_addslash",
+        "type": "02",
+        "name": "Wound (13%)",
+        "value": 13
+      },
+      {
+        "id": "orb_special_addslash_03",
+        "category": "special_addslash",
+        "type": "03",
+        "name": "Wound (20%)",
+        "value": 20
+      },
+      {
+        "id": "orb_special_addslash_04",
+        "category": "special_addslash",
+        "type": "04",
+        "name": "Wound (26%)",
+        "value": 26
+      },
+      {
+        "id": "orb_special_addslash_05",
+        "category": "special_addslash",
+        "type": "05",
+        "name": "Wound (30%)",
+        "value": 30
+      }
+    ],
+    "addstrengthen": [
+      {
+        "id": "orb_special_addstrengthen",
+        "category": "special",
+        "type": "addstrengthen",
+        "name": "Boost (2%)",
+        "value": 2
+      },
+      {
+        "id": "orb_special_addstrengthen_01",
+        "category": "special_addstrengthen",
+        "type": "01",
+        "name": "Boost (5%)",
+        "value": 5
+      },
+      {
+        "id": "orb_special_addstrengthen_02",
+        "category": "special_addstrengthen",
+        "type": "02",
+        "name": "Boost (13%)",
+        "value": 13
+      },
+      {
+        "id": "orb_special_addstrengthen_03",
+        "category": "special_addstrengthen",
+        "type": "03",
+        "name": "Boost (20%)",
+        "value": 20
+      },
+      {
+        "id": "orb_special_addstrengthen_04",
+        "category": "special_addstrengthen",
+        "type": "04",
+        "name": "Boost (26%)",
+        "value": 26
+      },
+      {
+        "id": "orb_special_addstrengthen_05",
+        "category": "special_addstrengthen",
+        "type": "05",
+        "name": "Boost (30%)",
+        "value": 30
+      }
+    ],
+    "addweaken": [
+      {
+        "id": "orb_special_addweaken",
+        "category": "special",
+        "type": "addweaken",
+        "name": "Curse (2%)",
+        "value": 2
+      },
+      {
+        "id": "orb_special_addweaken_01",
+        "category": "special_addweaken",
+        "type": "01",
+        "name": "Curse (5%)",
+        "value": 5
+      },
+      {
+        "id": "orb_special_addweaken_02",
+        "category": "special_addweaken",
+        "type": "02",
+        "name": "Curse (13%)",
+        "value": 13
+      },
+      {
+        "id": "orb_special_addweaken_03",
+        "category": "special_addweaken",
+        "type": "03",
+        "name": "Curse (20%)",
+        "value": 20
+      },
+      {
+        "id": "orb_special_addweaken_04",
+        "category": "special_addweaken",
+        "type": "04",
+        "name": "Curse (26%)",
+        "value": 26
+      },
+      {
+        "id": "orb_special_addweaken_05",
+        "category": "special_addweaken",
+        "type": "05",
+        "name": "Curse (30%)",
+        "value": 30
+      }
+    ],
+    "speed": [
+      {
+        "id": "orb_special_speed",
+        "category": "special",
+        "type": "",
+        "name": "Speed +2%",
+        "value": 2
+      },
+      {
+        "id": "orb_special_speed_01",
+        "category": "special_speed",
+        "type": "01",
+        "name": "Speed +5%",
+        "value": 5
+      },
+      {
+        "id": "orb_special_speed_02",
+        "category": "special_speed",
+        "type": "02",
+        "name": "Speed +10%",
+        "value": 10
+      },
+      {
+        "id": "orb_special_speed_03",
+        "category": "special_speed",
+        "type": "03",
+        "name": "Speed +15%",
+        "value": 15
+      },
+      {
+        "id": "orb_special_speed_04",
+        "category": "special_speed",
+        "type": "04",
+        "name": "Speed +18%",
+        "value": 18
+      },
+      {
+        "id": "orb_special_speed_05",
+        "category": "special_speed",
+        "type": "05",
+        "name": "Speed +20%",
+        "value": 20
+      }
+    ]
+  }
+}

@@ -2,6 +2,16 @@
 
 let mutantsData = [];
 let gachaData = {};
+let orbsData = [];
+
+async function loadOrbsData() {
+    try {
+        const res = await fetch('orbs_organized.json');
+        orbsData = await res.json();
+    } catch (err) {
+        console.error('Error loading orbs data:', err);
+    }
+}
 
 async function loadGachaData() {
     try {
@@ -37,6 +47,7 @@ function parseGachaCSV(csvText) {
 
 async function loadMutantsData() {
     try {
+        await loadOrbsData();
         const response = await fetch('Stats.csv');
         const csvText = await response.text();
         parseMutantsCSV(csvText);
@@ -161,6 +172,62 @@ const ICONS = {
     }
 };
 
+function generateGenesHtml(dnaStr) {
+    if (!dnaStr || dnaStr.trim() === '') {
+        return '';
+    }
+    
+    const dna = dnaStr.trim().toUpperCase();
+    // use an inline-flex container centered by a text-align parent so
+    // multiple genes (especially two) appear together and centered
+    let genesHtml = '<div style="text-align: center;"><div style="display: inline-flex; gap: 0.6rem; align-items: center;">';
+
+    for (let i = 0; i < dna.length; i++) {
+        const geneChar = dna[i];
+        const geneIcon = ICONS.gene[geneChar];
+        if (geneIcon) {
+            genesHtml += `<img src="${geneIcon}" alt="Gene ${geneChar}" style="width: 50px; height: 50px; object-fit: contain; display: block;" onerror="this.style.display='none';" title="Gene ${geneChar}">`;
+        }
+    }
+
+    genesHtml += '</div></div>';
+    return genesHtml;
+}
+
+function generateOrbSlotsHtml(orbSlotsStr, specimenId = '') {
+    if (!orbSlotsStr || orbSlotsStr.trim() === '') {
+        return '';
+    }
+    
+    const orbTypes = orbSlotsStr.split(';');
+    // container for slots (overlay dropdown will be appended here)
+    let orbHtml = `<div id="orbSlotsContainer_${specimenId}" style="margin-top: 1rem; position: relative;">
+        <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">`;
+    
+    orbTypes.forEach((orbType, idx) => {
+        const typeKey = orbType.charAt(0).toLowerCase();
+        const imageUrl = typeKey === 'n' 
+            ? 'https://s-ak.kobojo.com/mutants/assets/orb/orb_slot.png' 
+            : 'https://s-ak.kobojo.com/mutants/assets/orb/orb_slot_spe.png';
+        
+        if (typeKey === 'n') {
+            orbHtml += `<button id="orbSlot_${specimenId}_${idx}" class="orb-slot-btn" data-specimen="${specimenId}" data-slot="${idx}" data-kind="n" style="position: relative; background: none; border: 2px solid #3498db; border-radius: 6px; padding: 4px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#e94560'" onmouseout="this.style.borderColor='#3498db'">
+                <div id="orbOverlay_${specimenId}_${idx}" class="orb-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:none;"></div>
+                <img src="${imageUrl}" alt="Orb n" style="width: 40px; height: 40px; object-fit: contain; display: block; border-radius: 4px;" onerror="this.style.display='none';">
+            </button>`;
+        } else {
+            // render special slot as a clickable button too, mark as kind="s"
+            orbHtml += `<button id="orbSlot_${specimenId}_${idx}" class="orb-slot-btn" data-specimen="${specimenId}" data-slot="${idx}" data-kind="s" style="position: relative; background: none; border: 2px dashed #9b59b6; border-radius: 6px; padding: 4px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#8e44ad'" onmouseout="this.style.borderColor='#9b59b6'">
+                <div id="orbOverlay_${specimenId}_${idx}" class="orb-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:none;"></div>
+                <img src="${imageUrl}" alt="Orb s" style="width: 40px; height: 40px; object-fit: contain; display: block; border-radius: 4px;" onerror="this.style.display='none';">
+            </button>`;
+        }
+    });
+    
+    orbHtml += '</div></div>';
+    return orbHtml;
+}
+
 function calculateMutantStats(mutantData, fameLevel, starType = 'platinum', bonusGacha = 0, starValueOverride = null) {
     const globalAdjust = 100;
     const starValue = (starValueOverride !== null) ? starValueOverride : (starValues[starType] ?? starValues['platinum']);
@@ -194,6 +261,218 @@ function calculateMutantStats(mutantData, fameLevel, starType = 'platinum', bonu
     const atk2AbilityF = Math.round(Math.abs((atk2F / 100) * (abilityPct2)));
     const speedF = (speedValue > 0 ? 10 / (speedValue / 100) : 0).toFixed(2);
     return { specimen: mutantData.specimen, name: mutantData.name, type: mutantData.type, fameLevel: fameLevel, level: level, lifeF: lifeF, speedF: speedF, atk1F: atk1F, atk1AbilityF: atk1AbilityF, atk2F: atk2F, atk2AbilityF: atk2AbilityF, ability1Name: abilityNames['1'] || 'Unknown', ability2Name: abilityNames['2'] || 'Unknown', starType: starType };
+}
+
+function getBasicOrbs(types = []) {
+    if (!orbsData || !orbsData.basic) return [];
+    
+    // Get the first orb from each requested basic category (attack/critical by default)
+    const basicOrbs = [];
+    const allowed = types.length > 0 ? types : ['attack','critical'];
+    allowed.forEach(typeKey => {
+        const orbs = orbsData.basic[typeKey];
+        if (Array.isArray(orbs) && orbs.length > 0) {
+            basicOrbs.push(orbs[0]);
+        }
+    });
+    return basicOrbs;
+}
+
+function getAllOrbsByType(typeKey) {
+    if (!orbsData) return [];
+    if (orbsData.basic && orbsData.basic[typeKey]) return orbsData.basic[typeKey];
+    if (orbsData.special && orbsData.special[typeKey]) return orbsData.special[typeKey];
+    return [];
+}
+
+// helper to populate a dropdown with the two base types
+function populateBasicOrbOptions(specimenId, slotIndex, dropdown) {
+    dropdown.innerHTML = ''; // clear existing content
+
+    // delete orb button always visible in first list
+    const del = document.createElement('button');
+    del.style.cssText = 'display:flex;align-items:center;gap:0.6rem;background:rgba(231,76,60,0.1);border:1px solid #e74c3c;border-radius:6px;padding:0.6rem;width:100%;text-align:left;cursor:pointer;color:#e74c3c;font-weight:600;';
+    del.onmouseover = () => { del.style.background = 'rgba(231,76,60,0.15)'; };
+    del.onmouseout  = () => { del.style.background = 'rgba(231,76,60,0.1)'; };
+    del.onclick     = (e) => { e.stopPropagation(); removeOrbOverlay(specimenId, slotIndex); };
+    del.innerHTML   = '🗑️ Delete orb';
+    dropdown.appendChild(del);
+
+    // decide whether this slot is special
+    const slotEl = document.getElementById(`orbSlot_${specimenId}_${slotIndex}`);
+    const isSpecialSlot = slotEl && slotEl.dataset && slotEl.dataset.kind === 's';
+
+    if (isSpecialSlot) {
+        // list special categories directly (no basic orbs)
+        const keys = orbsData && orbsData.special ? Object.keys(orbsData.special) : [];
+        if (keys.length === 0) return;
+        keys.forEach((key) => {
+            const firstOrb = orbsData.special[key] && orbsData.special[key][0];
+            const orbImageUrl = firstOrb ? `https://s-ak.kobojo.com/mutants/assets/thumbnails/${firstOrb.id}.png` : '';
+            const b = document.createElement('button');
+            b.style.cssText = 'display:flex;align-items:center;gap:0.6rem;background:rgba(52,152,219,0.1);border:1px solid #3498db;border-radius:6px;padding:0.6rem;width:100%;text-align:left;cursor:pointer;';
+            b.onmouseover = () => { b.style.background = 'rgba(233,69,96,0.1)'; };
+            b.onmouseout = () => { b.style.background = 'rgba(52,152,219,0.1)'; };
+            b.onclick = (e) => { e.stopPropagation(); showOrbsByType(specimenId, slotIndex, key); };
+            b.innerHTML = `${orbImageUrl ? `<img src="${orbImageUrl}" alt="${key}" style="width:40px;height:40px;object-fit:contain;border-radius:4px;flex-shrink:0;" onerror="this.style.display='none';">` : ''}<span style="color:#ecf0f1; font-size:0.9rem; font-weight:500;">${key}</span>`;
+            dropdown.appendChild(b);
+        });
+        return;
+    }
+
+    // non-special slots: show basic orbs (attack/critical)
+    const basicOrbs = getBasicOrbs(['attack', 'critical','life','regenerate','retaliate','shield','slash','strengthen','weaken']);
+    if (basicOrbs.length === 0) return;
+    basicOrbs.forEach((orb) => {
+        const typeKey = Object.keys(orbsData.basic).find(key => orbsData.basic[key][0]?.id === orb.id);
+        const orbImageUrl = `https://s-ak.kobojo.com/mutants/assets/thumbnails/${orb.id}.png`;
+        const b = document.createElement('button');
+        b.style.cssText = 'display:flex;align-items:center;gap:0.6rem;background:rgba(52,152,219,0.1);border:1px solid #3498db;border-radius:6px;padding:0.6rem;width:100%;text-align:left;cursor:pointer;';
+        b.onmouseover = () => { b.style.background = 'rgba(233,69,96,0.1)'; };
+        b.onmouseout = () => { b.style.background = 'rgba(52,152,219,0.1)'; };
+        b.onclick = (e) => { e.stopPropagation(); showOrbsByType(specimenId, slotIndex, typeKey); };
+        b.innerHTML = `<img src="${orbImageUrl}" alt="${orb.name}" style="width:40px;height:40px;object-fit:contain;border-radius:4px;flex-shrink:0;" onerror="this.style.display='none';"><span style="color:#ecf0f1; font-size:0.9rem; font-weight:500;">${orb.name}</span>`;
+        dropdown.appendChild(b);
+    });
+}
+
+function showOrbDropdown(specimenId, slotIndex) {
+    const btn = document.getElementById(`orbSlot_${specimenId}_${slotIndex}`);
+    const container = document.getElementById(`orbSlotsContainer_${specimenId}`);
+    if (!btn || !container) return;
+
+    // toggle removal if already present
+    let dropdown = document.getElementById(`orbDropdown_${specimenId}_${slotIndex}`);
+    if (dropdown) { dropdown.remove(); return; }
+
+    dropdown = document.createElement('div');
+    dropdown.id = `orbDropdown_${specimenId}_${slotIndex}`;
+    dropdown.style.cssText = 'position:absolute; background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); border: 2px solid #e94560; border-radius: 8px; padding: 1rem; z-index: 10000; box-shadow: 0 8px 20px rgba(0,0,0,0.6); min-width: 240px; max-width: 320px;';
+
+    populateBasicOrbOptions(specimenId, slotIndex, dropdown);
+
+    container.appendChild(dropdown);
+
+    const containerRect = container.getBoundingClientRect();
+    const btnRect = btn.getBoundingClientRect();
+    const top = btnRect.bottom - containerRect.top + 4;
+    const left = btnRect.left - containerRect.left + btnRect.width / 2;
+    dropdown.style.top = `${top}px`;
+    dropdown.style.left = `${left}px`;
+    dropdown.style.transform = 'translateX(-50%)';
+
+    setTimeout(() => {
+        const closeDropdown = (e) => {
+            const dd = document.getElementById(`orbDropdown_${specimenId}_${slotIndex}`);
+            if (dd && !dd.contains(e.target) && e.target.id !== `orbSlot_${specimenId}_${slotIndex}`) {
+                dd.remove();
+                document.removeEventListener('click', closeDropdown);
+            }
+        };
+        document.addEventListener('click', closeDropdown);
+    }, 0);
+}
+
+function removeOrbOverlay(specimenId, slotIndex) {
+    const overlay = document.getElementById(`orbOverlay_${specimenId}_${slotIndex}`);
+    if (overlay) {
+        overlay.innerHTML = '';
+    }
+}
+
+function showSpecialCategories(specimenId, slotIndex) {
+    const dropdown = document.getElementById(`orbDropdown_${specimenId}_${slotIndex}`);
+    if (!dropdown || !orbsData || !orbsData.special) return;
+
+    dropdown.innerHTML = '';
+
+    const keys = Object.keys(orbsData.special);
+    if (keys.length === 0) return;
+
+    // add back button to return to initial list
+    const backBtn = document.createElement('button');
+    backBtn.style.cssText = 'display:flex;align-items:center;gap:0.6rem;background:rgba(52,152,219,0.1);border:1px solid #3498db;border-radius:6px;padding:0.6rem;width:100%;text-align:left;cursor:pointer;margin-bottom:0.6rem;';
+    backBtn.onmouseover = () => { backBtn.style.background = 'rgba(233,69,96,0.1)'; };
+    backBtn.onmouseout = () => { backBtn.style.background = 'rgba(52,152,219,0.1)'; };
+    backBtn.onclick = (e) => { e.stopPropagation(); populateBasicOrbOptions(specimenId, slotIndex, dropdown); };
+    backBtn.textContent = '← Back';
+    dropdown.appendChild(backBtn);
+
+    // list special categories using same style as basic options
+    keys.forEach((key) => {
+        const firstOrb = orbsData.special[key] && orbsData.special[key][0];
+        const orbImageUrl = firstOrb ? `https://s-ak.kobojo.com/mutants/assets/thumbnails/${firstOrb.id}.png` : '';
+        const b = document.createElement('button');
+        b.style.cssText = 'display:flex;align-items:center;gap:0.6rem;background:rgba(52,152,219,0.1);border:1px solid #3498db;border-radius:6px;padding:0.6rem;width:100%;text-align:left;cursor:pointer;';
+        b.onmouseover = () => { b.style.background = 'rgba(233,69,96,0.1)'; };
+        b.onmouseout = () => { b.style.background = 'rgba(52,152,219,0.1)'; };
+        b.onclick = (e) => { e.stopPropagation(); showOrbsByType(specimenId, slotIndex, key); };
+        b.innerHTML = `${orbImageUrl ? `<img src="${orbImageUrl}" alt="${key}" style="width:40px;height:40px;object-fit:contain;border-radius:4px;flex-shrink:0;" onerror="this.style.display='none';">` : ''}<span style="color:#ecf0f1; font-size:0.9rem; font-weight:500;">${key}</span>`;
+        dropdown.appendChild(b);
+    });
+}
+
+function showOrbsByType(specimenId, slotIndex, typeKey) {
+    const dropdown = document.getElementById(`orbDropdown_${specimenId}_${slotIndex}`);
+    if (!dropdown) return;
+
+    // Prefer special list when the type exists under special; otherwise fallback
+    let orbsByType = [];
+    if (orbsData && orbsData.special && orbsData.special[typeKey]) {
+        orbsByType = orbsData.special[typeKey];
+    } else {
+        orbsByType = getAllOrbsByType(typeKey);
+    }
+    
+    // back button only; styling stays same as basic options
+    const backBtn = document.createElement('button');
+    backBtn.style.cssText = 'display:flex;align-items:center;gap:0.6rem;background:rgba(52,152,219,0.1);border:1px solid #3498db;border-radius:6px;padding:0.6rem;width:100%;text-align:left;cursor:pointer;margin-bottom:0.6rem;';
+    backBtn.onmouseover = () => { backBtn.style.background = 'rgba(233,69,96,0.1)'; };
+    backBtn.onmouseout = () => { backBtn.style.background = 'rgba(52,152,219,0.1)'; };
+    backBtn.onclick = (e) => { e.stopPropagation(); populateBasicOrbOptions(specimenId, slotIndex, dropdown); };
+    backBtn.textContent = '← Back';
+
+    dropdown.innerHTML = '';
+    dropdown.appendChild(backBtn);
+
+    const list = document.createElement('div');
+    list.style.cssText = 'display:flex;flex-direction:column;gap:0.8rem;max-height:60vh;overflow-y:auto;';
+
+    orbsByType.forEach((orb) => {
+        const orbImageUrl = `https://s-ak.kobojo.com/mutants/assets/thumbnails/${orb.id}.png`;
+        const b = document.createElement('button');
+        b.style.cssText = 'display:flex;align-items:center;gap:0.6rem;background:rgba(52,152,219,0.1);border:1px solid #3498db;border-radius:6px;padding:0.6rem;width:100%;text-align:left;cursor:pointer;';
+        b.onmouseover = () => { b.style.background = 'rgba(233,69,96,0.1)'; };
+        b.onmouseout = () => { b.style.background = 'rgba(52,152,219,0.1)'; };
+        b.onclick = (e) => { e.stopPropagation(); selectOrb(specimenId, slotIndex, orb.id, orb.name); };
+        b.innerHTML = `<img src="${orbImageUrl}" alt="${orb.name}" style="width:40px;height:40px;object-fit:contain;border-radius:4px;flex-shrink:0;" onerror="this.style.display='none';"><span style="color:#ecf0f1; font-size:0.9rem; font-weight:500;">${orb.name}</span>`;
+        list.appendChild(b);
+    });
+    dropdown.appendChild(list);
+}
+
+function selectOrb(specimenId, slotIndex, orbId, orbName) {
+    // find the button corresponding to this slot and update its overlay
+    const orbBtn = document.getElementById(`orbSlot_${specimenId}_${slotIndex}`);
+    if (orbBtn) {
+        let overlay = document.getElementById(`orbOverlay_${specimenId}_${slotIndex}`);
+        if (!overlay) {
+            // should already exist from generation, but create just in case
+            overlay = document.createElement('div');
+            overlay.id = `orbOverlay_${specimenId}_${slotIndex}`;
+            overlay.className = 'orb-overlay';
+            overlay.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:none;';
+            orbBtn.appendChild(overlay);
+        }
+        const orbImageUrl = `https://s-ak.kobojo.com/mutants/assets/thumbnails/${orbId}.png`;
+        overlay.innerHTML = `<img src="${orbImageUrl}" alt="${orbName}" style="width: 50px; height: 50px; object-fit: contain; border-radius: 4px;" onerror="this.style.display='none';">`;
+    }
+
+    // Close dropdown
+    const dropdown = document.getElementById(`orbDropdown_${specimenId}_${slotIndex}`);
+    if (dropdown) {
+        dropdown.remove();
+    }
 }
 
 function openMutantModal(mutant) {
@@ -284,17 +563,34 @@ function openMutantModal(mutant) {
     gachaList.forEach((entry, idx) => { const key = `gacha_${idx}`; const label = starInfo[key].label; optionsHtml += `<option value="${key}">🎲 ${label}</option>`; });
     const imageUrl = getImageUrl(fullMutantData.specimen, initialSkin);
     // include placeholder for gacha icon
+    const genesHtml = generateGenesHtml(fullMutantData.dna);
+    const orbSlotsHtml = generateOrbSlotsHtml(fullMutantData.orbSlots, fullMutantData.specimen);
     content.innerHTML = `
         <div style="padding: 2rem;">
             <h2 style="color: #e94560; margin-bottom: 1.5rem; font-size: 1.8rem;">⚙️ ${mutant.name} - Stats Calculator</h2>
-            <div style="text-align: center; margin-bottom: 2rem; position: relative;">
+            <div style="text-align: center; position: relative;">
                 <img id="mutantImage" src="${imageUrl}" alt="${mutant.name}" style="max-height: 200px; max-width: 100%; border-radius: 8px; border: 2px solid #3498db; object-fit: contain;" onerror="this.parentElement.innerHTML='<div style=\"color: #95a5a6; font-size: 3rem;\"></div>
                 <img id="gachaIcon" src="" alt="" style="max-width:64px; position:absolute; bottom:4px; left:4px; display:none;">
+                ${genesHtml}
+                ${orbSlotsHtml}
             </div>
             <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 1.5rem; border-radius: 10px; border: 2px solid #3498db; margin-bottom: 2rem;"><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;"><div><label for="mutantLevel" style="color: #3498db; font-weight: bold; display: block; margin-bottom: 0.8rem; font-size: 1rem;">📊 Fame Level</label><input type="number" id="mutantLevel" value="25" min="25" max="90" style="background: #16213e; color: #ecf0f1; border: 2px solid #3498db; padding: 0.8rem 1rem; border-radius: 5px; font-size: 1rem; width: 100%; font-weight: 500;"></div><div><label for="mutantStar" style="color: #f39c12; font-weight: bold; display: block; margin-bottom: 0.8rem; font-size: 1rem;">🎭 Skin / Star</label><div style="display:flex; align-items:center;"><select id="mutantStar" style="background: #16213e; color: #ecf0f1; border: 2px solid #f39c12; padding: 0.8rem 1rem; border-radius: 5px; font-size: 1rem; width: 100%; font-weight: 500; cursor: pointer;">${optionsHtml}</select><img id="starIcon" src="" alt="" style="width:24px; height:24px; margin-left:8px; display:none;"><img id="gachaSelectIcon" src="" alt="" style="width:70px; height:70px; margin-left:8px; display:none;"></div></div></div></div><div id="statsDisplay"></div></div>
     `;
     modal.style.display = 'flex';
     renderStatsDisplay(fullMutantData, stats);
+    
+    // Add event listeners for orb slots
+    setTimeout(() => {
+        const orbSlotBtns = document.querySelectorAll(`[data-specimen="${fullMutantData.specimen}"]`);
+        orbSlotBtns.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const slotIndex = parseInt(btn.dataset.slot, 10);
+                showOrbDropdown(fullMutantData.specimen, isNaN(slotIndex) ? 0 : slotIndex);
+            });
+        });
+    }, 0);
+    
     const levelInput = document.getElementById('mutantLevel');
     const starSelect = document.getElementById('mutantStar');
     levelInput.addEventListener('input', function(e) {
@@ -427,6 +723,8 @@ function closeMutantModal() { const modal = document.getElementById('mutantModal
 // expose modal control functions globally for inline handlers
 window.closeMutantModal = closeMutantModal;
 window.openMutantModal = openMutantModal;
+window.selectOrb = selectOrb;
+window.showOrbsByType = showOrbsByType;
 
 window.addEventListener('click', (e) => { const modal = document.getElementById('mutantModal'); if (e.target === modal) closeMutantModal(); });
 
