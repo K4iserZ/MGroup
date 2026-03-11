@@ -88,7 +88,10 @@ function parseMutantsCSV(csvText) {
             abilities: values[15]?.trim() || '',
             abilityPct1: values[16]?.trim() || '',
             abilityPct2: values[17]?.trim() || '',
-            orbSlots: values[18]?.trim() || ''
+            orbSlots: values[18]?.trim() || '',
+            attack1p_name: values[19]?.trim() || '',
+            attack2p_name: values[20]?.trim() || '',
+            description: values[21]?.trim() || ''
         };
         mutantsData.push(mutant);
     }
@@ -180,7 +183,7 @@ function generateGenesHtml(dnaStr) {
     const dna = dnaStr.trim().toUpperCase();
     // use an inline-flex container centered by a text-align parent so
     // multiple genes (especially two) appear together and centered
-    let genesHtml = '<div style="text-align: center;"><div style="display: inline-flex; gap: 0.6rem; align-items: center;">';
+    let genesHtml = '<div style="text-align: center;"><div style="display: inline-flex; align-items: center;">';
 
     for (let i = 0; i < dna.length; i++) {
         const geneChar = dna[i];
@@ -201,7 +204,7 @@ function generateOrbSlotsHtml(orbSlotsStr, specimenId = '') {
     
     const orbTypes = orbSlotsStr.split(';');
     // container for slots (overlay dropdown will be appended here)
-    let orbHtml = `<div id="orbSlotsContainer_${specimenId}" style="margin-top: 1rem; position: relative;">
+    let orbHtml = `<div id="orbSlotsContainer_${specimenId}" style="position: relative;">
         <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">`;
     
     orbTypes.forEach((orbType, idx) => {
@@ -260,7 +263,7 @@ function calculateMutantStats(mutantData, fameLevel, starType = 'platinum', bonu
     const atk1AbilityF = Math.round(Math.abs((atk1F / 100) * (abilityPct2)));
     const atk2AbilityF = Math.round(Math.abs((atk2F / 100) * (abilityPct2)));
     const speedF = (speedValue > 0 ? 10 / (speedValue / 100) : 0).toFixed(2);
-    return { specimen: mutantData.specimen, name: mutantData.name, type: mutantData.type, fameLevel: fameLevel, level: level, lifeF: lifeF, speedF: speedF, atk1F: atk1F, atk1AbilityF: atk1AbilityF, atk2F: atk2F, atk2AbilityF: atk2AbilityF, ability1Name: abilityNames['1'] || 'Unknown', ability2Name: abilityNames['2'] || 'Unknown', starType: starType };
+    return { specimen: mutantData.specimen, name: mutantData.name, type: mutantData.type, fameLevel: fameLevel, level: level, lifeF: lifeF, speedF: speedF, atk1F: atk1F, atk1AbilityF: atk1AbilityF, atk2F: atk2F, atk2AbilityF: atk2AbilityF, ability1Name: abilityNames['1'] || 'Unknown', ability2Name: abilityNames['2'] || 'Unknown', starType: starType, attack1p_name: mutantData.attack1p_name || 'Attack 1', attack2p_name: mutantData.attack2p_name || 'Attack 2', description: mutantData.description || '' };
 }
 
 function getBasicOrbs(types = []) {
@@ -699,7 +702,7 @@ function renderStatsDisplay(mutantData, stats) {
                 
                 <!-- Attack 1 -->
                 <div style="padding: 1rem; border-right: 1px solid #3498db; border-bottom: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;">⚔️ Attack 1</p>
+                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;">⚔️ ${stats.attack1p_name}</p>
                     <p style="color: #f39c12; font-weight: bold; margin: 0; font-size: 0.9rem;">${stats.atk1F}</p>
                     <p style="color: #95a5a6; font-size: 0.75rem; margin: 0.3rem 0 0 0;">${stats.ability1Name}</p>
                     <p style="color: #f39c12; font-weight: bold; margin: 0.2rem 0 0 0; font-size: 0.9rem;">${stats.atk1AbilityF}</p>
@@ -707,7 +710,7 @@ function renderStatsDisplay(mutantData, stats) {
                 
                 <!-- Attack 2 -->
                 <div style="padding: 1rem; border-bottom: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;">⚔️ Attack 2</p>
+                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;">⚔️ ${stats.attack2p_name}</p>
                     <p style="color: #9b59b6; font-weight: bold; margin: 0; font-size: 0.9rem;">${stats.atk2F}</p>
                     <p style="color: #95a5a6; font-size: 0.75rem; margin: 0.3rem 0 0 0;">${stats.ability2Name}</p>
                     <p style="color: #9b59b6; font-weight: bold; margin: 0.2rem 0 0 0; font-size: 0.9rem;">${stats.atk2AbilityF}</p>
