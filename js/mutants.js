@@ -488,7 +488,7 @@ function openMutantModal(mutant) {
         modal.style.display = 'flex';
         return;
     }
-    const restrictedTypes = ['CAPTAINPEACE', 'SEASONAL', 'GAMES', 'GACHA'];
+    const restrictedTypes = ['CAPTAINPEACE', 'SEASONAL', 'VIDEOGAME', 'GACHA', 'ZODIAC'];
     const typeUpper = (fullMutantData.type || '').toUpperCase();
     const isRestrictedType = restrictedTypes.some(t => typeUpper.includes(t));
     const starInfo = { basic: { starValue: starValues['basic'], bonusGacha: 0, label: 'Basic' }, bronze: { starValue: starValues['bronze'], bonusGacha: 0, label: 'Bronze' }, silver: { starValue: starValues['silver'], bonusGacha: 0, label: 'Silver' }, gold: { starValue: starValues['gold'], bonusGacha: 0, label: 'Gold' }, platinum: { starValue: starValues['platinum'], bonusGacha: 0, label: 'Platinum' } };

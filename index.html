@@ -25,6 +25,7 @@
                 <a href="#" class="nav-link active" data-page="home">Home</a>
                 <a href="#" class="nav-link" data-page="mutants">Mutants</a>
                 <a href="#" class="nav-link" data-page="compare">Compare Stats</a>
+                <a href="#" class="nav-link" data-page="stats">Stats Calculator</a>
                 <a href="#" class="nav-link" data-page="raidpredictor">Raid Predictor</a>
                 <a href="#" class="nav-link" data-page="incentivos">Crafting Incentives</a>
                 <a href="#" class="nav-link" data-page="info">Information</a>
@@ -40,6 +41,7 @@
                     <p>Explore tools and trackers for Mutants: search the Mutants database, predict Raids, and track Crafting Incentives — all synced to your timezone.</p>
                     <div style="display:flex; gap:0.6rem; justify-content:center; margin-top:1rem; flex-wrap:wrap;">
                         <button class="btn-primary" onclick="showPage('mutants')">Discover Mutants</button>
+                        <button class="btn-primary" onclick="showPage('stats')">Stats Calculator</button>
                         <button class="btn-primary" onclick="showPage('raidpredictor')">Raid Predictor</button>
                         <button class="btn-primary" onclick="showPage('incentivos')">Crafting Incentives</button>
                         <button class="btn-primary" onclick="showPage('info')">Information</button>
@@ -127,6 +129,25 @@
                 <!-- Comparison results will be shown here -->
             </div>
         </div>
+
+        <!-- STATS CALCULATOR PAGE -->
+        <div id="stats" class="page-content">
+            <div style="margin-bottom: 2rem;">
+                <h2 style="color: #e94560; margin-bottom: 1rem; font-size: 2rem;">📊 Stats Calculator</h2>
+                <p style="color: #bdc3c7; font-size: 1.05rem;">Calculate and view stats for all mutants at a specific fame level. Select the level below to update all stats.</p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 1.5rem; border-radius: 10px; border: 2px solid #3498db; margin-bottom: 2rem;">
+                <label for="statsFameLevel" style="color: #3498db; font-weight: bold; display: block; margin-bottom: 0.5rem;">Fame Level (Minimum 25):</label>
+                <input type="number" id="statsFameLevel" value="25" min="25" max="90" style="background: #16213e; color: #ecf0f1; border: 2px solid #3498db; padding: 0.6rem 1rem; border-radius: 5px; font-size: 0.95rem; width: 200px; font-weight: 500;">
+                <button id="exportStatsBtn" class="btn-primary" style="margin-left: 1rem;">📥 Export to CSV</button>
+            </div>
+
+            <div id="statsTableContainer">
+                <!-- Stats table will be shown here -->
+            </div>
+        </div>
+
         <div id="incentivos" class="page-content">
             <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
                 <div style="flex: 1; min-width: 200px;">
@@ -204,6 +225,16 @@
                     <li><strong>Evolution Data:</strong> Upgrade paths and unlock requirements</li>
                 </ul>
                 <p style="color: #bdc3c7; margin-top: 1rem;">💡 <strong>Tip:</strong> Use the search bar to find mutants by name, or filter by generation to discover creatures at your level.</p>
+
+                <h2 style="margin-top: 2.5rem; color: #f39c12;">📊 Stats Calculator</h2>
+                <p>Calculate and compare stats for all mutants at any fame level. The calculator:</p>
+                <ul style="margin-left: 1.5rem; color: #d6c9ff;">
+                    <li><strong>Comprehensive Table:</strong> View stats for every mutant, including all versions (Platinum, Basic, and Gacha skins)</li>
+                    <li><strong>Custom Fame Levels:</strong> Input any fame level from 25 to 90 to see how stats scale</li>
+                    <li><strong>Detailed Columns:</strong> Includes Life, Speed, Attack powers, Ability percentages, and AOE indicators</li>
+                    <li><strong>Export Feature:</strong> Download the complete stats table as a CSV file with pipe separators for external analysis</li>
+                </ul>
+                <p style="color: #bdc3c7; margin-top: 1rem;">💡 <strong>Tip:</strong> Use the export button to save stats data for spreadsheet analysis or sharing with other players.</p>
 
                 <h2 style="margin-top: 2.5rem; color: #9b59b6;">🧪 Raid Predictor</h2>
                 <p>Plan your raid strategy with our advanced prediction system. The predictor:</p>

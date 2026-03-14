@@ -57,7 +57,9 @@ populateSearchSelector();
 updatePageText();
 updateIncentivosDisplay();
 updateCurrentTimezoneInfo();
-loadMutantsData();
+loadMutantsData().then(() => {
+    import('./stats.js').then(module => module.initStatsSection());
+});
 loadGachaData();
 
 setInterval(() => {
