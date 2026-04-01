@@ -1,6 +1,6 @@
 import { t, convertToTimezone, getIncentiveStatus, getTimeRemaining, ultimoIncentivoPeru, currentTimezone } from './utils.js';
 
-let loadedIncentives = 5; // managed locally in this module
+let loadedIncentives = 10; // managed locally in this module
 
 /* Incentives data and rendering */
 const incentivosData = [
@@ -48,16 +48,17 @@ function searchIncentivoDates(incentiveNameSearch) {
     const now = new Date();
     const results = [];
     const maxResults = 10;
-    const totalIncentivosToCheck = incentivosData.length * 5;
-    for (let totalIndex = 0; totalIndex < totalIncentivosToCheck && results.length < maxResults; totalIndex++) {
+    const maxIterations = 10000; // Límite muy alto para cálculos futuros
+    for (let totalIndex = 0; totalIndex < maxIterations && results.length < maxResults; totalIndex++) {
         const index = totalIndex % incentivosData.length;
         const incentivo = incentivosData[index];
         if (incentivo.nombre === incentiveNameSearch) {
             const endDate = new Date(startDate.getTime() + incentivo.duracion * 60000);
-            const startConverted = convertToTimezone(startDate.toISOString(), currentTimezone);
-            const endConverted = convertToTimezone(endDate.toISOString(), currentTimezone);
             const status = getIncentiveStatus(startDate, endDate, now);
-            if (status.status !== 'expired' || (status.status === 'expired' && results.length === 0)) {
+            // Solo incluir si no está expirado
+            if (status.status !== 'expired') {
+                const startConverted = convertToTimezone(startDate.toISOString(), currentTimezone);
+                const endConverted = convertToTimezone(endDate.toISOString(), currentTimezone);
                 results.push({ start: startConverted, end: endConverted, duration: incentivo.duracion, status: status });
             }
             startDate = new Date(endDate);
@@ -100,7 +101,12 @@ function updateIncentivosDisplay() {
     let lastExpiredIncentive = null;
     let renderedCount = 0;
     let hasRenderedExpired = false;
-    for (let totalIndex = 0; totalIndex < incentivosData.length * 5 && renderedCount < loadedIncentives; totalIndex++) {
+    const startCalc = Date.now();
+    for (let totalIndex = 0; renderedCount < loadedIncentives; totalIndex++) {
+        if (Date.now() - startCalc > 2000) { // 2s de bloqueo máximo para evitar freeze tras muy muchos ciclos
+            console.warn('Incentives rendering stopped after 2s to avoid infinite loop');
+            break;
+        }
         const index = totalIndex % incentivosData.length;
         const incentivo = incentivosData[index];
         const endDate = new Date(startDate.getTime() + incentivo.duracion * 60000);
@@ -138,7 +144,7 @@ function updateIncentivosDisplay() {
         }
         if (status.status === 'active' || status.status === 'upcoming') {
             const card = document.createElement('div');
-            card.className = `incentivo-card ${status.status === 'expired' ? 'expired' : ''}`;
+            card.className = `incentivo-card ${status.status}`;
             const imageUrl = `https://s-ak.kobojo.com/mutants/assets/thumbnails/${incentivo.codigo}.png`;
             card.innerHTML = `
                 <div class="status-badge status-${status.status}">${status.label}</div>
@@ -174,14 +180,14 @@ function updateIncentivosDisplay() {
                 ${t('load_more')}
             </button>
             <div class="load-more-status">
-                ${t('showing')} ${loadedIncentives} ${t('incentives_count')}
+                ${t('showing')} ${renderedCount} ${t('incentives_count')}
             </div>
         </div>
     `;
 }
 
 function loadMoreIncentivos() {
-    loadedIncentives += 4;
+    loadedIncentives += 10;
     updateIncentivosDisplay();
 }
 

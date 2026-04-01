@@ -1,56 +1,9 @@
 /* script.js moved to modular files in /js. Keep this file as a tiny compatibility stub. */
 
 console.info('script.js is now split into js/utils.js, js/incentives.js, js/mutants.js, js/raids.js and js/main.js');
-    container.innerHTML = '';
 
-    if (filtered.length === 0) {
-        container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: #95a5a6; padding: 2rem;">No mutants found</div>';
-        return;
-    }
-
-    filtered.forEach(mutant => {
-        const card = createMutantCard(mutant);
-        container.appendChild(card);
-    });
-}
-
-function createMutantCard(mutant) {
-    const card = document.createElement('div');
-    card.className = 'mutant-card';
-    
-    const imageUrl = `https://s-ak.kobojo.com/mutants/assets/thumbnails/${mutant.specimen.toLowerCase()}.png`;
-    
-    card.innerHTML = `
-        <div class="mutant-image">
-            <img src="${imageUrl}" alt="${mutant.name}" onerror="this.parentElement.innerHTML='<div class=\'mutant-image-fallback\'>🧬</div>'">
-        </div>
-        <div class="mutant-name">${mutant.name}</div>
-        <div class="mutant-specimen">${mutant.specimen}</div>
-        <div class="mutant-type">${mutant.dna || 'N/A'}</div>
-    `;
-    
-    card.addEventListener('click', () => openMutantModal(mutant));
-    
-    return card;
-}
-
-// Get mutant data from Stats.csv data
-function getMutantFromCsv(mutantName) {
-    if (!mutantsData || mutantsData.length === 0) return null;
-    
-    const mutant = mutantsData.find(m => m.name.toLowerCase() === mutantName.toLowerCase());
-    return mutant || null;
-}
-
-// Star values for bonus calculation
-// map of built‑in skin/star types to their bonus star value
-const starValues = {
-    'platinum': 100,
-    'gold': 75,
-    'silver': 30,
-    'bronze': 10,
-    'basic': 0
-};
+// Remove any global code that was accidentally left here
+// This file should not contain executable code
 
 
 // helper to convert numeric star count (0-4) into one of the built‑in keys
@@ -239,7 +192,7 @@ function openMutantModal(mutant) {
             <div style="text-align: center; margin-bottom: 2rem;">
                 <img id="mutantImage" src="${imageUrl}" alt="${mutant.name}" 
                      style="max-height: 200px; max-width: 100%; border-radius: 8px; border: 2px solid #3498db; object-fit: contain;" 
-                     onerror="this.parentElement.innerHTML='<div style=\"color: #95a5a6; font-size: 3rem;\"></div>
+                     onerror="this.parentElement.innerHTML='<div style=\"color: #95a5a6; font-size: 3rem;\'>🧬</div>'">
             </div>
             
             <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 1.5rem; border-radius: 10px; border: 2px solid #3498db; margin-bottom: 2rem;">

@@ -1,0 +1,46 @@
+MUTANT | ABILITY | abilityPct1 | abilityPct2 | SPEED | LIFE | ATK1 | ATK1+ | ATK2 | ATK2+
+AO27441 | Shield | 20 | 40 | 3.23 | 2950 | 780 | 1370 | 780 | 1370
+Abrafam Lincoln | Boost | 15 | 27 | 3.33 | 3733 | 1518 | 2227 | 1518 | 2227
+Alfie | Retaliate | 20 | 40 | 3.33 | 1722 | 887 | 1483 | 887 | 1483
+Azog | Retaliate | 15 | 20 | 4.00 | 1976 | 948 | 1468 | 948 | 1468
+Bio-Hedgehog | Shield | 26 | 44 | 3.57 | 2646 | 796 | 1188 | 796 | 1188
+Black I.C.E. | Retaliate | 10 | 65 | 10.00 | 1351 | 687 | 575 | 687 | 575
+Breakmaster | Retaliate | 10 | 20 | 4.55 | 2166 | 1233 | 2024 | 870:AOE | 1477:AOE
+Cézanne | Wound | 20 | 37 | 3.45 | 1917 | 700 | 1250 | 700 | 1250
+Challenger | Retaliate | 20 | 40 | 6.67 | 1297 | 595 | 844 | 595 | 844
+Commander Ender | Drain Life | 25 | 38 | 3.85 | 1846 | 869 | 1254 | 869 | 1254
+Commodore Le Shark | Shield | 28 | 34 | 3.45 | 2495 | 982 | 1453 | 982 | 1453
+Crawlorax|Boost|20|30|3.57|1813|813|1379|813|1379
+Deadnosaur|Wound|20|40|3.57|2032|715|1423|715|1423
+Draco Mage|Curse|15|22|4.00|2452|579|977|579|977
+Engineer|Retaliate|15|28|3.85|2012|718|1447|718|1447
+Exo Cookie|Wound|20|50|3.33|2230|696|1046|696|1046
+Genshiryoku|Wound|20|35|3.57|1613|822|1534|822|1534
+Grannyvore|Drain Life|25|38|3.70|2330|733|1151|733|1151
+Hephaestus|Retaliate|15|25|3.85|2514|898|1249|898|1249
+Hercules|Shield|20|33|3.33|2258|945|1569|635:AOE|929:AOE
+Hippopotank|Shield|15|22|3.45|2477|943|1549|943|1549
+Kontiki|Wound|20|90|3.70|2287|595|892|595|892
+Kraken|Drain Life|25|30|3.85|1405|1387|2081|1387|2081
+Kung Chow|Curse|17|24|4.17|2706|512|869|512|869
+Majin Zam|Curse|15|25|3.45|1982|971|1561|971|1561
+Omikami|Wound|30|50|3.85|1957|741|1052|741|1052
+Puppetron|Curse|13|20|4.76|1685|734|1128|734|1128
+RA-DK-Bot|Retaliate|15|25|3.57|2321|830|1376|830|1376
+Rocky Botboa|Shield|20|55|3.23|2931|732|1140|732|1140
+S-K-Venger|Shield|22|35|3.45|1925|1141|1795|1141|1795
+Shadow Shaman|Curse|15|40|5.26|1464|538|884|538|884
+Sir Puggington|Shield|20|35|3.45|3268|699|1049|699|1049
+Space Hunter|Boost|20|27|4.35|1802|691|1037|691|1037
+Space Pilgrim|Boost|15|32|5.88|1872|761|1244|761|984:AOE
+Starscream|Curse|20|30|4.00|1622|751|1374|751|1374
+The Chimera|Retaliate|15|25|3.70|1832|887|1626|887|1626
+The Keymaster|Retaliate|30|50|3.57|1860|898|1440|898|1440
+Thrann|Curse|22|25|4.00|1482|862|1482|862|1482
+Tricera Tank|Boost|20|40|3.23|1973|758|1237|758|1237
+Undead Soldier|Boost|20|30|3.70|1860|871|1246|871|1246
+Wicked Witch|Curse|15|22|4.17|1763|756|1234|756|1234
+Wrath|Shield|22|35|3.70|1463|1120|1690|1120|1690
+Wynn|Drain Life|27|41|3.33|2095|723|1285|723|1285
+Xeleroth|Curse|15|20|3.45|2345|949|1418|949|1418
+Z-0|Retaliate|16|27|3.85|2041|947|1322|947|1322
