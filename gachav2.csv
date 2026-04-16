@@ -176,6 +176,9 @@ easter,Specimen_EA_05,3,-11,0,basic
 easter,Specimen_EE_03,3,10,0,basic
 easter,Specimen_FD_05,3,10,0,basic
 easter,Specimen_BE_08,3,10,0,basic
+easter,Specimen_B_12,3,-5,0,basic
+easter,Specimen_BB_06,3,11,0,basic
+easter,Specimen_EB_03,3,15,0,basic
 easter,Specimen_FD_03,3,10,11,completion
 oktoberfest,Specimen_BC_09,3,0,0,basic
 oktoberfest,Specimen_AE_08,3,0,0,basic
@@ -192,6 +195,7 @@ spring,Specimen_FF_03,3,0,0,basic
 spring,Specimen_FE_13,0,1,0,basic
 spring,Specimen_BB_07,3,0,0,basic
 spring,Specimen_DF_02,3,15,0,basic
+spring,Specimen_DA_03,3,17,0,basic
 spring,Specimen_FD_03,3,10,11,completion
 summer,Specimen_ED_07,3,0,0,basic
 summer,Specimen_FE_13,0,-2,0,basic
@@ -203,6 +207,7 @@ labor,Specimen_FD_03,3,10,11,completion
 worker,Specimen_CF_09,3,-8,0,basic
 worker,Specimen_CD_10,3,2,0,basic
 worker,Specimen_CA_05,3,10,0,basic
+worker,Specimen_AB_03,3,10,0,basic
 worker,Specimen_FD_03,3,10,11,completion
 confrontation,Specimen_BF_05,4,0,0,basic
 confrontation,Specimen_FD_04,3,0,0,basic
@@ -264,9 +269,11 @@ wireframe,Specimen_FE_03,3,5,0,basic
 wireframe,Specimen_FD_03,3,10,11,completion
 aprilfools,Specimen_DC_09,3,5,0,basic
 aprilfools,Specimen_CB_09,3,8,0,basic
+aprilfools,Specimen_EB_10,3,-9,0,basic
 aprilfools,Specimen_FD_03,3,10,11,completion
 patrick,Specimen_BC_06,3,5,0,basic
 patrick,Specimen_BF_12,3,-8,0,basic
+patrick,Specimen_BD_11,3,-10,0,basic
 patrick,Specimen_FD_03,3,10,11,completion
 cybernetics,Specimen_CE_08,3,5,0,basic
 cybernetics,Specimen_DD_05,3,5,0,basic
@@ -294,6 +301,7 @@ carnival,Specimen_ED_11,3,-5,0,basic
 carnival,Specimen_ED_09,3,-5,0,basic
 carnival,Specimen_FD_03,3,10,11,completion
 europe,Specimen_FC_08,3,-5,0,basic
+europe,Specimen_EF_06,3,-5,0,basic
 europe,Specimen_FD_03,3,10,11,completion
 blueplanet,Specimen_EF_05,3,15,0,basic
 blueplanet,Specimen_FD_03,3,10,11,completion
