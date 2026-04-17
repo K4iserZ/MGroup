@@ -55,8 +55,8 @@ function initStatsSection() {
                 const stats = calculateMutantStats(mutant, fameLevel, version.starType, version.bonusGacha, version.starValue);
 
                 // Determine if attacks are AOE
-                const atk1IsAOE = (mutant.atk1 || '').toUpperCase().includes('AOE');
-                const atk2IsAOE = (mutant.atk2 || '').toUpperCase().includes('AOE');
+                const atk1IsAOE = (mutant.atk1p || '').toUpperCase().includes('AOE');
+                const atk2IsAOE = (mutant.atk2p || '').toUpperCase().includes('AOE');
                 let multiple = '';
                 if (atk1IsAOE && atk2IsAOE) multiple = '1p,2p';
                 else if (atk1IsAOE) multiple = '1p';
@@ -116,8 +116,8 @@ function initStatsSection() {
                 const stats = calculateMutantStats(mutant, fameLevel, version.starType, version.bonusGacha, version.starValue);
 
                 // Determine if attacks are AOE
-                const atk1IsAOE = (mutant.atk1 || '').toUpperCase().includes('AOE');
-                const atk2IsAOE = (mutant.atk2 || '').toUpperCase().includes('AOE');
+                const atk1IsAOE = (mutant.atk1p || '').toUpperCase().includes('AOE');
+                const atk2IsAOE = (mutant.atk2p || '').toUpperCase().includes('AOE');
                 let multiple = '';
                 if (atk1IsAOE && atk2IsAOE) multiple = '1p,2p';
                 else if (atk1IsAOE) multiple = '1p';

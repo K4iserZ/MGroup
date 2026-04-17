@@ -722,7 +722,7 @@ function renderStatsDisplay(mutantData, stats) {
                 
                 <!-- Attack 1 -->
                 <div style="padding: 1rem; border-right: 1px solid #3498db; border-bottom: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="image/gene/${atk1Icon}" alt="Attack 1" style="width:30px; vertical-align:middle;" onerror="this.style.display='none';"> ${stats.attack1p_name}</p>
+                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="image/gene/${atk1pIcon}" alt="Attack 1" style="width:30px; vertical-align:middle;" onerror="this.style.display='none';"> ${stats.attack1p_name}</p>
                     <p style="color: #f39c12; font-weight: bold; margin: 0; font-size: 0.9rem;">${stats.atk1F}</p>
                     <p style="color: #95a5a6; font-size: 0.75rem; margin: 0.3rem 0 0 0;">${stats.ability1Name}</p>
                     <p style="color: #f39c12; font-weight: bold; margin: 0.2rem 0 0 0; font-size: 0.9rem;">${stats.atk1AbilityF}</p>
@@ -730,7 +730,7 @@ function renderStatsDisplay(mutantData, stats) {
                 
                 <!-- Attack 2 -->
                 <div style="padding: 1rem; border-bottom: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="image/gene/${atk2Icon}" alt="Attack 2" style="width:30px; vertical-align:middle;" onerror="this.style.display='none';"> ${stats.attack2p_name}</p>
+                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="image/gene/${atk2pIcon}" alt="Attack 2" style="width:30px; vertical-align:middle;" onerror="this.style.display='none';"> ${stats.attack2p_name}</p>
                     <p style="color: #9b59b6; font-weight: bold; margin: 0; font-size: 0.9rem;">${stats.atk2F}</p>
                     <p style="color: #95a5a6; font-size: 0.75rem; margin: 0.3rem 0 0 0;">${stats.ability2Name}</p>
                     <p style="color: #9b59b6; font-weight: bold; margin: 0.2rem 0 0 0; font-size: 0.9rem;">${stats.atk2AbilityF}</p>
