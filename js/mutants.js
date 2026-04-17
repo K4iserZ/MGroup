@@ -4,6 +4,21 @@ let mutantsData = [];
 let gachaData = {};
 let orbsData = [];
 
+function parseUnlockAttack(unlockAttack) {
+    const genes = {};
+    if (!unlockAttack) return genes;
+    const parts = unlockAttack.split(';');
+    parts.forEach(part => {
+        const [attack, level, gen] = part.split(':');
+        genes[attack] = gen === 'neutre' ? 'n' : gen;
+    });
+    return genes;
+}
+
+function isAOE(atkValue) {
+    return atkValue && atkValue.includes(':AOE');
+}
+
 async function loadOrbsData() {
     try {
         const res = await fetch('orbs_organized.json');
@@ -660,6 +675,22 @@ function renderStatsDisplay(mutantData, stats) {
     if (mutantData.type) {
         typeIconUrl = `https://s-ak.kobojo.com/mutants/assets/mobile/hud/m_m_m/icon_${mutantData.type.toLowerCase()}.png`;
     }
+
+    // Parse unlockAttack for genes
+    const genes = parseUnlockAttack(mutantData.unlockattack);
+    const atk1IsAOE = isAOE(mutantData.atk1);
+    const atk2IsAOE = isAOE(mutantData.atk2);
+    const atk1pIsAOE = isAOE(mutantData.atk1p);
+    const atk2pIsAOE = isAOE(mutantData.atk2p);
+    const atk1Gen = genes['1'] || 'n';
+    const atk2Gen = genes['2'] || 'n';
+    const atk1pGen = genes['1p'] || 'n';
+    const atk2pGen = genes['2p'] || 'n';
+    const atk1Icon = atk1IsAOE ? `attack_${atk1Gen}_aoe.png` : `attack_${atk1Gen}.png`;
+    const atk2Icon = atk2IsAOE ? `attack_${atk2Gen}_aoe.png` : `attack_${atk2Gen}.png`;
+    const atk1pIcon = atk1pIsAOE ? `attack_${atk1pGen}_aoe.png` : `attack_${atk1pGen}.png`;
+    const atk2pIcon = atk2pIsAOE ? `attack_${atk2pGen}_aoe.png` : `attack_${atk2pGen}.png`;
+
     const statsHTML = `
         <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); border: 1px solid #3498db; border-radius: 8px; overflow: hidden;">
             <!-- Basic Info Row -->
@@ -674,18 +705,7 @@ function renderStatsDisplay(mutantData, stats) {
                 </div>
             </div>
             
-            <!-- Level and Star Row -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #3498db;">
-                <div style="padding: 1rem; border-right: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;">Level</p>
-                    <p style="color: #2ecc71; font-weight: bold; margin: 0;">${stats.fameLevel}</p>
-                </div>
-                <div style="padding: 1rem;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;">Skin / Star</p>
-                    <p style="color: #f39c12; font-weight: bold; margin: 0;">${stats.skinLabel || (stats.starType.charAt(0).toUpperCase() + stats.starType.slice(1))}</p>
-                </div>
-            </div>
-            
+
             <!-- Stats Grid -->
             <div style="display: grid; grid-template-columns: 1fr 1fr;">
                 <!-- Life -->
@@ -702,7 +722,7 @@ function renderStatsDisplay(mutantData, stats) {
                 
                 <!-- Attack 1 -->
                 <div style="padding: 1rem; border-right: 1px solid #3498db; border-bottom: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;">⚔️ ${stats.attack1p_name}</p>
+                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="image/gene/${atk1Icon}" alt="Attack 1" style="width:30px; vertical-align:middle;" onerror="this.style.display='none';"> ${stats.attack1p_name}</p>
                     <p style="color: #f39c12; font-weight: bold; margin: 0; font-size: 0.9rem;">${stats.atk1F}</p>
                     <p style="color: #95a5a6; font-size: 0.75rem; margin: 0.3rem 0 0 0;">${stats.ability1Name}</p>
                     <p style="color: #f39c12; font-weight: bold; margin: 0.2rem 0 0 0; font-size: 0.9rem;">${stats.atk1AbilityF}</p>
@@ -710,7 +730,7 @@ function renderStatsDisplay(mutantData, stats) {
                 
                 <!-- Attack 2 -->
                 <div style="padding: 1rem; border-bottom: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;">⚔️ ${stats.attack2p_name}</p>
+                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="image/gene/${atk2Icon}" alt="Attack 2" style="width:30px; vertical-align:middle;" onerror="this.style.display='none';"> ${stats.attack2p_name}</p>
                     <p style="color: #9b59b6; font-weight: bold; margin: 0; font-size: 0.9rem;">${stats.atk2F}</p>
                     <p style="color: #95a5a6; font-size: 0.75rem; margin: 0.3rem 0 0 0;">${stats.ability2Name}</p>
                     <p style="color: #9b59b6; font-weight: bold; margin: 0.2rem 0 0 0; font-size: 0.9rem;">${stats.atk2AbilityF}</p>
