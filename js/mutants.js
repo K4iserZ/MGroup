@@ -3,6 +3,7 @@
 let mutantsData = [];
 let gachaData = {};
 let orbsData = [];
+let abilitiesConfig = {};
 
 function parseUnlockAttack(unlockAttack) {
     const genes = {};
@@ -38,6 +39,31 @@ async function loadGachaData() {
     }
 }
 
+async function loadAbilitiesConfig() {
+    try {
+        const res = await fetch('filescsv/abilitiesconfig.csv');
+        const text = await res.text();
+        parseAbilitiesConfigCSV(text);
+    } catch (err) {
+        console.error('Error loading abilities config:', err);
+    }
+}
+
+function parseAbilitiesConfigCSV(csvText) {
+    const lines = csvText.split('\n');
+    if (lines.length < 2) return;
+    for (let i = 1; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!line) continue;
+        const parts = line.split('|');
+        if (parts.length >= 2) {
+            const specimen = parts[0].trim();
+            const appliesTo = parts[1].trim();
+            abilitiesConfig[specimen] = appliesTo;
+        }
+    }
+}
+
 function parseGachaCSV(csvText) {
     const lines = csvText.split('\n');
     if (lines.length < 2) return;
@@ -63,6 +89,7 @@ function parseGachaCSV(csvText) {
 async function loadMutantsData() {
     try {
         await loadOrbsData();
+        await loadAbilitiesConfig();
         const response = await fetch('Stats.csv');
         const csvText = await response.text();
         parseMutantsCSV(csvText);
@@ -246,6 +273,17 @@ function generateOrbSlotsHtml(orbSlotsStr, specimenId = '') {
     return orbHtml;
 }
 
+function getAbilityBaseKey(ability) {
+    if (!ability) return '';
+    const key = ability.trim().toLowerCase().replace(/^ability_/, '');
+    return key.split('_')[0] || '';
+}
+
+function getAbilityIconUrl(ability) {
+    const baseKey = getAbilityBaseKey(ability);
+    return baseKey ? `image/abilities/ability_${baseKey}_big.png` : '';
+}
+
 function calculateMutantStats(mutantData, fameLevel, starType = 'platinum', bonusGacha = 0, starValueOverride = null) {
     const globalAdjust = 100;
     const starValue = (starValueOverride !== null) ? starValueOverride : (starValues[starType] ?? starValues['platinum']);
@@ -254,13 +292,19 @@ function calculateMutantStats(mutantData, fameLevel, starType = 'platinum', bonu
     let level = 100 + 10 * (fameLevel - 1);
     const abilitiesStr = mutantData.abilities || '';
     const abilityNames = {};
+    const abilityIcons = {};
+    const appliesTo = abilitiesConfig[mutantData.specimen] || 'both';
     if (abilitiesStr) {
         const abilityParts = abilitiesStr.split(';');
         abilityParts.forEach(part => {
             const [num, ability] = part.split(':');
             if (num && ability) {
-                const abilityName = ability.replace('ability_', '').replace(/_/g, ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                const abilityKey = getAbilityBaseKey(ability);
+                const abilityName = abilityKey
+                    ? abilityKey.replace(/_/g, ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+                    : '';
                 abilityNames[num] = abilityName;
+                abilityIcons[num] = getAbilityIconUrl(ability);
             }
         });
     }
@@ -276,9 +320,29 @@ function calculateMutantStats(mutantData, fameLevel, starType = 'platinum', bonu
     const atk1F = Math.round(Math.abs(((atk1pValue * bonusGachaDecimal + atk1pValue) * bonusStar * level * globalAdjust) / 1000000));
     const atk2F = Math.round(Math.abs(((atk2pValue * bonusGachaDecimal + atk2pValue) * bonusStar * level * globalAdjust) / 1000000));
     const atk1AbilityF = Math.round(Math.abs((atk1F / 100) * (abilityPct2)));
-    const atk2AbilityF = Math.round(Math.abs((atk2F / 100) * (abilityPct2)));
+    const atk2AbilityF = appliesTo === 'both' ? Math.round(Math.abs((atk2F / 100) * (abilityPct2))) : 0;
     const speedF = (speedValue > 0 ? 10 / (speedValue / 100) : 0).toFixed(2);
-    return { specimen: mutantData.specimen, name: mutantData.name, type: mutantData.type, fameLevel: fameLevel, level: level, lifeF: lifeF, speedF: speedF, atk1F: atk1F, atk1AbilityF: atk1AbilityF, atk2F: atk2F, atk2AbilityF: atk2AbilityF, ability1Name: abilityNames['1'] || 'Unknown', ability2Name: abilityNames['2'] || 'Unknown', starType: starType, attack1p_name: mutantData.attack1p_name || 'Attack 1', attack2p_name: mutantData.attack2p_name || 'Attack 2', description: mutantData.description || '' };
+    return {
+        specimen: mutantData.specimen,
+        name: mutantData.name,
+        type: mutantData.type,
+        fameLevel: fameLevel,
+        level: level,
+        lifeF: lifeF,
+        speedF: speedF,
+        atk1F: atk1F,
+        atk1AbilityF: atk1AbilityF,
+        atk2F: atk2F,
+        atk2AbilityF: atk2AbilityF,
+        ability1Name: abilityNames['1'] || 'Unknown',
+        ability2Name: appliesTo === 'both' ? (abilityNames['2'] || 'Unknown') : '',
+        ability1Icon: abilityIcons['1'] || '',
+        ability2Icon: appliesTo === 'both' ? (abilityIcons['2'] || '') : '',
+        starType: starType,
+        attack1p_name: mutantData.attack1p_name || 'Attack 1',
+        attack2p_name: mutantData.attack2p_name || 'Attack 2',
+        description: mutantData.description || ''
+    };
 }
 
 function getBasicOrbs(types = []) {
@@ -724,16 +788,26 @@ function renderStatsDisplay(mutantData, stats) {
                 <div style="padding: 1rem; border-right: 1px solid #3498db; border-bottom: 1px solid #3498db;">
                     <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="image/gene/${atk1pIcon}" alt="Attack 1" style="width:30px; vertical-align:middle;" onerror="this.style.display='none';"> ${stats.attack1p_name}</p>
                     <p style="color: #f39c12; font-weight: bold; margin: 0; font-size: 0.9rem;">${stats.atk1F}</p>
-                    <p style="color: #95a5a6; font-size: 0.75rem; margin: 0.3rem 0 0 0;">${stats.ability1Name}</p>
-                    <p style="color: #f39c12; font-weight: bold; margin: 0.2rem 0 0 0; font-size: 0.9rem;">${stats.atk1AbilityF}</p>
+                    <div style="display:grid; gap:0.25rem; margin-top:0.6rem;">
+                        <div style="display:flex; align-items:center; gap:0.5rem;">
+                            <img src="${stats.ability1Icon}" alt="${stats.ability1Name}" style="width:28px; height:28px; object-fit:contain;" onerror="this.style.display='none';">
+                            <span style="color:#ecf0f1; font-size:0.85rem;">${stats.ability1Name}</span>
+                        </div>
+                        <span style="color:#f39c12; font-weight:bold; font-size:0.9rem;">${stats.atk1AbilityF}</span>
+                    </div>
                 </div>
                 
                 <!-- Attack 2 -->
                 <div style="padding: 1rem; border-bottom: 1px solid #3498db;">
                     <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="image/gene/${atk2pIcon}" alt="Attack 2" style="width:30px; vertical-align:middle;" onerror="this.style.display='none';"> ${stats.attack2p_name}</p>
                     <p style="color: #9b59b6; font-weight: bold; margin: 0; font-size: 0.9rem;">${stats.atk2F}</p>
-                    <p style="color: #95a5a6; font-size: 0.75rem; margin: 0.3rem 0 0 0;">${stats.ability2Name}</p>
-                    <p style="color: #9b59b6; font-weight: bold; margin: 0.2rem 0 0 0; font-size: 0.9rem;">${stats.atk2AbilityF}</p>
+                    ${stats.ability2Name ? `<div style="display:grid; gap:0.25rem; margin-top:0.6rem;">
+                        <div style="display:flex; align-items:center; gap:0.5rem;">
+                            <img src="${stats.ability2Icon}" alt="${stats.ability2Name}" style="width:28px; height:28px; object-fit:contain;" onerror="this.style.display='none';">
+                            <span style="color:#ecf0f1; font-size:0.85rem;">${stats.ability2Name}</span>
+                        </div>
+                        <span style="color:#9b59b6; font-weight:bold; font-size:0.9rem;">${stats.atk2AbilityF}</span>
+                    </div>` : ''}
                 </div>
             </div>
         </div>
@@ -751,4 +825,4 @@ window.showOrbsByType = showOrbsByType;
 
 window.addEventListener('click', (e) => { const modal = document.getElementById('mutantModal'); if (e.target === modal) closeMutantModal(); });
 
-export { loadGachaData, loadMutantsData, initMutantsSection, getMutantFromCsv, mutantsData, gachaData, closeMutantModal, openMutantModal, starValues, numericToStarKey, ICONS, calculateMutantStats };
+export { loadGachaData, loadMutantsData, initMutantsSection, getMutantFromCsv, mutantsData, gachaData, closeMutantModal, openMutantModal, starValues, numericToStarKey, ICONS, calculateMutantStats, generateGenesHtml, getAbilityIconUrl };

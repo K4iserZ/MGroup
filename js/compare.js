@@ -1,6 +1,31 @@
 /* Mutants comparison functionality */
 
-import { getMutantFromCsv, calculateMutantStats, mutantsData, gachaData, starValues, numericToStarKey, ICONS } from './mutants.js';
+import { getMutantFromCsv, calculateMutantStats, mutantsData, gachaData, starValues, numericToStarKey, ICONS, generateGenesHtml, getAbilityIconUrl } from './mutants.js';
+
+function getAttackGeneIcon(atkValue) {
+    if (!atkValue) return '';
+    const isAOE = atkValue.includes(':AOE');
+    const parts = atkValue.split(':');
+    const gene = parts[0].trim().toUpperCase();
+    const iconName = isAOE ? `attack_${gene}_aoe.png` : `attack_${gene}.png`;
+    return `<img src="image/gene/${iconName}" alt="${gene}" style="width:24px; height:24px; vertical-align:middle;" onerror="this.style.display='none';">`;
+}
+
+function getAbilityIconsHtml(ability1Name, ability2Name, ability1Icon, ability2Icon) {
+    let html = '';
+    if (ability1Icon) {
+        html += `<img src="${ability1Icon}" alt="${ability1Name}" style="width:20px; height:20px; vertical-align:middle; margin-right:4px;" onerror="this.style.display='none';">`;
+    }
+    html += ability1Name;
+    if (ability2Name) {
+        html += ' / ';
+        if (ability2Icon) {
+            html += `<img src="${ability2Icon}" alt="${ability2Name}" style="width:20px; height:20px; vertical-align:middle; margin-right:4px;" onerror="this.style.display='none';">`;
+        }
+        html += ability2Name;
+    }
+    return html;
+}
 
 let selectedMutants = [];
 let mutantStarTypes = [];
@@ -308,10 +333,10 @@ function renderComparison(mutantNames, fameLevel) {
     const statCategories = [
         { key: 'lifeF', label: 'Life', icon: ICONS.life, color: '#e94560' },
         { key: 'speedF', label: 'Speed', icon: ICONS.speed, color: '#3498db' },
-        { key: 'atk1F', label: 'Attack 1', icon: null, color: '#f39c12', emoji: '⚔️' },
-        { key: 'atk1AbilityF', label: 'Atk1 Ability', icon: null, color: '#f39c12', emoji: '✨' },
-        { key: 'atk2F', label: 'Attack 2', icon: null, color: '#9b59b6', emoji: '⚔️' },
-        { key: 'atk2AbilityF', label: 'Atk2 Ability', icon: null, color: '#9b59b6', emoji: '✨' }
+        { key: 'atk1F', label: 'Attack 1', icon: null, color: '#f39c12', emoji: '⚔️', geneIcon: (mutant) => getAttackGeneIcon(mutant.atk1p) },
+        { key: 'atk1AbilityF', label: 'Atk1 Ability', icon: null, color: '#f39c12', emoji: '✨', abilityIcon: (stat) => stat.ability1Icon ? `<img src="${stat.ability1Icon}" alt="${stat.ability1Name}" style="width:20px; height:20px; vertical-align:middle; margin-right:4px;" onerror="this.style.display='none';">` : '' },
+        { key: 'atk2F', label: 'Attack 2', icon: null, color: '#9b59b6', emoji: '⚔️', geneIcon: (mutant) => getAttackGeneIcon(mutant.atk2p) },
+        { key: 'atk2AbilityF', label: 'Atk2 Ability', icon: null, color: '#9b59b6', emoji: '✨', abilityIcon: (stat) => stat.ability2Icon ? `<img src="${stat.ability2Icon}" alt="${stat.ability2Name}" style="width:20px; height:20px; vertical-align:middle; margin-right:4px;" onerror="this.style.display='none';">` : '' }
     ];
 
     const colors = ['#3498db', '#2ecc71', '#f39c12', '#e74c3c'];
@@ -319,8 +344,8 @@ function renderComparison(mutantNames, fameLevel) {
     let html = `
         <div style="border: 2px solid #3498db; border-radius: 10px; overflow: hidden; background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);">
             <!-- Header with mutant names -->
-            <div style="display: grid; grid-template-columns: 200px ${mutants.map(() => '1fr').join(' ')}; gap: 0; border-bottom: 2px solid #3498db;">
-                <div style="padding: 1rem; background: #0f3460; display: flex; align-items: center; justify-content: center; border-right: 2px solid #3498db;">
+            <div style="display: grid; grid-template-columns: 150px ${mutants.map(() => '1fr').join(' ')}; gap: 0; border-bottom: 2px solid #3498db;">
+                <div style="padding: 0.75rem; background: #0f3460; display: flex; align-items: center; justify-content: center; border-right: 2px solid #3498db;">
                     <p style="color: #3498db; font-weight: bold; margin: 0;">Stat</p>
                 </div>
     `;
@@ -343,7 +368,7 @@ function renderComparison(mutantNames, fameLevel) {
         }
         
         html += `
-            <div style="padding: 1rem; background: #0f3460; border-right: 2px solid #3498db; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; border-right: ${idx < mutants.length - 1 ? '2px solid #3498db' : 'none'};">
+            <div style="padding: 0.75rem; background: #0f3460; border-right: 2px solid #3498db; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; border-right: ${idx < mutants.length - 1 ? '2px solid #3498db' : 'none'};">
                 <img src="${imageUrl}" alt="${stat.name}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid ${colors[idx]};" onerror="this.style.display='none';">
                 <p style="color: ${colors[idx]}; font-weight: bold; margin: 0; font-size: 0.9rem;">${stat.name}</p>
                 <p style="color: #95a5a6; font-size: 0.75rem; margin: 0;">${stat.type || 'N/A'}</p>
@@ -354,13 +379,29 @@ function renderComparison(mutantNames, fameLevel) {
 
     html += `</div>`;
 
+    // DNA row
+    html += `<div style="display: grid; grid-template-columns: 150px ${mutants.map(() => '1fr').join(' ')}; gap: 0; border-bottom: 1px solid #3498db;">`;
+    html += `
+        <div style="padding: 0.75rem; border-right: 2px solid #3498db; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: #95a5a6; font-size: 0.9rem;">DNA</span>
+        </div>
+    `;
+    mutants.forEach((mutant, idx) => {
+        html += `
+            <div style="padding: 0.75rem; border-right: ${idx < mutants.length - 1 ? '2px solid #3498db' : 'none'}; text-align: center;">
+                ${generateGenesHtml(mutant.dna)}
+            </div>
+        `;
+    });
+    html += `</div>`;
+
     // Comparison rows
     statCategories.forEach(cat => {
-        html += `<div style="display: grid; grid-template-columns: 200px ${mutants.map(() => '1fr').join(' ')}; gap: 0; border-bottom: 1px solid #3498db;">`;
+        html += `<div style="display: grid; grid-template-columns: 150px ${mutants.map(() => '1fr').join(' ')}; gap: 0; border-bottom: 1px solid #3498db;">`;
         
         // Label
         html += `
-            <div style="padding: 1rem; border-right: 2px solid #3498db; display: flex; align-items: center; gap: 0.5rem;">
+            <div style="padding: 0.75rem; border-right: 2px solid #3498db; display: flex; align-items: center; gap: 0.5rem;">
                 ${cat.icon ? `<img src="${cat.icon}" alt="${cat.label}" style="width: 20px; height: 20px;">` : ''}
                 ${cat.emoji ? `<span style="font-size: 1.2rem;">${cat.emoji}</span>` : ''}
                 <span style="color: #95a5a6; font-size: 0.9rem;">${cat.label}</span>
@@ -374,9 +415,14 @@ function renderComparison(mutantNames, fameLevel) {
         values.forEach((val, idx) => {
             const isMax = val === maxValue;
             const barWidth = maxValue > 0 ? (val / maxValue) * 100 : 0;
+            let extraIcon = '';
+            if (cat.abilityIcon) {
+                const stat = stats[idx];
+                extraIcon = cat.abilityIcon(stat);
+            }
             html += `
-                <div style="padding: 1rem; border-right: ${idx < stats.length - 1 ? '2px solid #3498db' : 'none'}; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <p style="color: ${colors[idx]}; font-weight: bold; font-size: 1.1rem; margin: 0; ${isMax ? 'text-shadow: 0 0 10px ' + colors[idx] : ''}">${val}</p>
+                <div style="padding: 0.75rem; border-right: ${idx < stats.length - 1 ? '2px solid #3498db' : 'none'}; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <p style="color: ${colors[idx]}; font-weight: bold; font-size: 1.1rem; margin: 0; ${isMax ? 'text-shadow: 0 0 10px ' + colors[idx] : ''}">${extraIcon}${val}</p>
                     <div style="background: rgba(52, 152, 219, 0.2); height: 6px; border-radius: 3px; overflow: hidden;">
                         <div style="background: ${colors[idx]}; height: 100%; width: ${barWidth}%; transition: width 0.3s ease;"></div>
                     </div>

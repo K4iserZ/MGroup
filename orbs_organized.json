@@ -232,9 +232,9 @@
         "value": 30
       },
       {
-        "id": "orb_basic_regenerate_04_1",
-        "category": "basic_regenerate_04",
-        "type": "1",
+        "id": "orb_basic_regenerate_07",
+        "category": "basic_regenerate",
+        "type": "07",
         "name": "Drain life +25%",
         "value": 25
       }
@@ -290,9 +290,9 @@
         "value": 20
       },
       {
-        "id": "orb_basic_retaliate_04_1",
-        "category": "basic_retaliate_04",
-        "type": "1",
+        "id": "orb_basic_retaliate_07",
+        "category": "basic_retaliate",
+        "type": "07",
         "name": "Retaliate +18%",
         "value": 18
       }
@@ -348,9 +348,9 @@
         "value": 25
       },
       {
-        "id": "orb_basic_shield_04_1",
-        "category": "basic_shield_04",
-        "type": "1",
+        "id": "orb_basic_shield_07",
+        "category": "basic_shield",
+        "type": "07",
         "name": "Shield +22%",
         "value": 22
       }
@@ -406,9 +406,9 @@
         "value": 25
       },
       {
-        "id": "orb_basic_slash_04_1",
-        "category": "basic_slash_04",
-        "type": "1",
+        "id": "orb_basic_slash_07",
+        "category": "basic_slash",
+        "type": "07",
         "name": "Wound +22%",
         "value": 22
       }
@@ -464,9 +464,9 @@
         "value": 25
       },
       {
-        "id": "orb_basic_strengthen_04_1",
-        "category": "basic_strengthen_04",
-        "type": "1",
+        "id": "orb_basic_strengthen_07",
+        "category": "basic_strengthen",
+        "type": "07",
         "name": "Boost +22%",
         "value": 22
       }
@@ -522,9 +522,9 @@
         "value": 25
       },
       {
-        "id": "orb_basic_weaken_04_1",
-        "category": "basic_weaken_04",
-        "type": "1",
+        "id": "orb_basic_weaken_07",
+        "category": "basic_weaken",
+        "type": "07",
         "name": "Curse +22%",
         "value": 22
       }
