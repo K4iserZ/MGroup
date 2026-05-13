@@ -304,6 +304,7 @@ europe,Specimen_FC_08,3,-5,0,basic
 europe,Specimen_EF_06,3,-5,0,basic
 europe,Specimen_FD_03,3,10,11,completion
 blueplanet,Specimen_EF_05,3,15,0,basic
+blueplanet,Specimen_AE_05,3,15,0,basic
 blueplanet,Specimen_FD_03,3,10,11,completion
 jefferson,Specimen_BF_08,3,5,0,basic
 jefferson,Specimen_FD_03,3,10,11,completion
@@ -336,3 +337,5 @@ xmas25,Specimen_F_12,3,8,0,basic
 xmas25,Specimen_FD_03,3,10,11,completion
 xinnian,Specimen_AD_02,3,24,0,basic
 xinnian,Specimen_FD_03,3,10,11,completion
+honeybee,Specimen_AB_11,3,10,0,basic
+honeybee,Specimen_FD_03,3,10,11,completion
