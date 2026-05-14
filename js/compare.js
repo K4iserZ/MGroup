@@ -1,14 +1,16 @@
 /* Mutants comparison functionality */
 
-import { getMutantFromCsv, calculateMutantStats, mutantsData, gachaData, starValues, numericToStarKey, ICONS, generateGenesHtml, getAbilityIconUrl } from './mutants.js';
+import { getMutantFromCsv, calculateMutantStats, mutantsData, gachaData, starValues, numericToStarKey, ICONS, generateGenesHtml, getAbilityIconUrl, parseUnlockAttack, isAOE } from './mutants.js';
 
-function getAttackGeneIcon(atkValue) {
-    if (!atkValue) return '';
-    const isAOE = atkValue.includes(':AOE');
-    const parts = atkValue.split(':');
-    const gene = parts[0].trim().toUpperCase();
-    const iconName = isAOE ? `attack_${gene}_aoe.png` : `attack_${gene}.png`;
-    return `<img src="image/gene/${iconName}" alt="${gene}" style="width:24px; height:24px; vertical-align:middle;" onerror="this.style.display='none';">`;
+function getAttackGeneIcon(mutant, attackType) {
+    if (!mutant) return '';
+    const genes = parseUnlockAttack(mutant.unlockattack);
+    const geneKey = attackType === 1 ? '1' : '2';
+    const gene = genes[geneKey] || 'n';
+    const atkValue = attackType === 1 ? mutant.atk1 : mutant.atk2;
+    const isAttackAOE = isAOE(atkValue);
+    const iconName = isAttackAOE ? `attack_${gene}_aoe.png` : `attack_${gene}.png`;
+    return `<img src="image/gene/${iconName}" alt="${gene}" style="width:20px; height:20px; vertical-align:middle; margin-right:4px;" onerror="this.style.display='none';">`;
 }
 
 function getAbilityIconsHtml(ability1Name, ability2Name, ability1Icon, ability2Icon) {
@@ -333,9 +335,9 @@ function renderComparison(mutantNames, fameLevel) {
     const statCategories = [
         { key: 'lifeF', label: 'Life', icon: ICONS.life, color: '#e94560' },
         { key: 'speedF', label: 'Speed', icon: ICONS.speed, color: '#3498db' },
-        { key: 'atk1F', label: 'Attack 1', icon: null, color: '#f39c12', emoji: '⚔️', geneIcon: (mutant) => getAttackGeneIcon(mutant.atk1p) },
+        { key: 'atk1F', label: 'Attack 1', icon: null, color: '#f39c12', emoji: '⚔️', geneIcon: (mutant) => getAttackGeneIcon(mutant, 1) },
         { key: 'atk1AbilityF', label: 'Atk1 Ability', icon: null, color: '#f39c12', emoji: '✨', abilityIcon: (stat) => stat.ability1Icon ? `<img src="${stat.ability1Icon}" alt="${stat.ability1Name}" style="width:20px; height:20px; vertical-align:middle; margin-right:4px;" onerror="this.style.display='none';">` : '' },
-        { key: 'atk2F', label: 'Attack 2', icon: null, color: '#9b59b6', emoji: '⚔️', geneIcon: (mutant) => getAttackGeneIcon(mutant.atk2p) },
+        { key: 'atk2F', label: 'Attack 2', icon: null, color: '#9b59b6', emoji: '⚔️', geneIcon: (mutant) => getAttackGeneIcon(mutant, 2) },
         { key: 'atk2AbilityF', label: 'Atk2 Ability', icon: null, color: '#9b59b6', emoji: '✨', abilityIcon: (stat) => stat.ability2Icon ? `<img src="${stat.ability2Icon}" alt="${stat.ability2Name}" style="width:20px; height:20px; vertical-align:middle; margin-right:4px;" onerror="this.style.display='none';">` : '' }
     ];
 
@@ -419,6 +421,10 @@ function renderComparison(mutantNames, fameLevel) {
             if (cat.abilityIcon) {
                 const stat = stats[idx];
                 extraIcon = cat.abilityIcon(stat);
+            }
+            if (cat.geneIcon) {
+                const mutant = mutants[idx];
+                extraIcon = cat.geneIcon(mutant);
             }
             html += `
                 <div style="padding: 0.75rem; border-right: ${idx < stats.length - 1 ? '2px solid #3498db' : 'none'}; display: flex; flex-direction: column; gap: 0.5rem;">

@@ -195,6 +195,11 @@ function getMutantFromCsv(mutantName) {
 const starValues = { 'platinum': 100, 'gold': 75, 'silver': 30, 'bronze': 10, 'basic': 0 };
 const numericToStarKey = { 0: 'basic', 1: 'bronze', 2: 'silver', 3: 'gold', 4: 'platinum' };
 
+// Mapeo de excepciones para nombres de abilities
+const abilityKeyMapping = {
+    'regen': 'regenerate'
+};
+
 // icon URLs for stats and other UI elements
 const ICONS = {
     life: 'https://s-ak.kobojo.com/mutants/assets/mobile/hud/common_files/icon_hp.png',
@@ -276,7 +281,9 @@ function generateOrbSlotsHtml(orbSlotsStr, specimenId = '') {
 function getAbilityBaseKey(ability) {
     if (!ability) return '';
     const key = ability.trim().toLowerCase().replace(/^ability_/, '');
-    return key.split('_')[0] || '';
+    const baseKey = key.split('_')[0] || '';
+    // Aplicar mapeo de excepciones si existe
+    return abilityKeyMapping[baseKey] || baseKey;
 }
 
 function getAbilityIconUrl(ability) {
@@ -825,4 +832,4 @@ window.showOrbsByType = showOrbsByType;
 
 window.addEventListener('click', (e) => { const modal = document.getElementById('mutantModal'); if (e.target === modal) closeMutantModal(); });
 
-export { loadGachaData, loadMutantsData, initMutantsSection, getMutantFromCsv, mutantsData, gachaData, closeMutantModal, openMutantModal, starValues, numericToStarKey, ICONS, calculateMutantStats, generateGenesHtml, getAbilityIconUrl };
+export { loadGachaData, loadMutantsData, initMutantsSection, getMutantFromCsv, mutantsData, gachaData, closeMutantModal, openMutantModal, starValues, numericToStarKey, ICONS, calculateMutantStats, generateGenesHtml, getAbilityIconUrl, parseUnlockAttack, isAOE };

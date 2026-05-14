@@ -122,6 +122,70 @@ nav a.active {
     background: rgba(233, 69, 96, 0.2);
 }
 
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-group-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ecf0f1;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+    user-select: none;
+    background: none;
+    border: none;
+    font: inherit;
+}
+
+.nav-group-label:hover,
+.nav-dropdown:hover > .nav-group-label,
+.nav-dropdown:focus-within > .nav-group-label {
+    background: rgba(233, 69, 96, 0.1);
+}
+
+.nav-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: #0f3460;
+    border: 1px solid rgba(233, 69, 96, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu {
+    display: block;
+}
+
+.nav-submenu .nav-link {
+    padding: 0.8rem 1rem;
+    border: none;
+    width: 100%;
+}
+
+.nav-submenu .nav-link::after {
+    display: none;
+}
+
+.nav-submenu .nav-link:hover {
+    background: rgba(233, 69, 96, 0.12);
+}
+
+.nav-submenu .nav-link.active {
+    background: rgba(233, 69, 96, 0.18);
+}
+
+
 nav a.active::after {
     width: 100%;
 }
@@ -558,6 +622,65 @@ main {
         inset 0 0 30px rgba(52, 152, 219, 0.05),
         0 0 40px rgba(233, 69, 96, 0.1);
 }
+
+.home-tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    justify-items: center;
+}
+
+.tool-card {
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    border: 2px solid rgba(52, 152, 219, 0.4);
+    border-radius: 18px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    min-height: 240px;
+    width: 100%;
+    max-width: 320px;
+}
+
+.tool-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+    border-color: rgba(46, 204, 113, 0.7);
+}
+
+.tool-card h3 {
+    margin: 1rem 0 0.75rem;
+    color: #e94560;
+}
+
+.tool-card p {
+    color: #bdc3c7;
+    line-height: 1.7;
+}
+
+.tool-icon {
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 2rem;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
 
 .hero::before {
     content: '';

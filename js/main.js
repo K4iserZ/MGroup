@@ -15,6 +15,10 @@ function showPage(pageName) {
     const navToggle = document.getElementById('navToggle');
     const nav = document.getElementById('mainNav');
     if (navToggle && navToggle.classList.contains('active')) { navToggle.classList.remove('active'); if (nav) nav.classList.remove('active'); }
+    const dropdown = document.querySelector('.nav-dropdown');
+    if (dropdown && dropdown.contains(document.activeElement)) {
+        document.activeElement.blur();
+    }
 }
 
 // Expose functions used by inline handlers
