@@ -1,0 +1,14 @@
+A_AOE: https://i.imgur.com/sIcJZzv.png
+A: https://i.imgur.com/rMC3BeM.png
+neutre_AOE: https://i.imgur.com/2YSPY07.png
+neutre: https://i.imgur.com/w6Brqxu.png
+B_AOE: https://i.imgur.com/W5XiML2.png
+B: https://i.imgur.com/7S29w5Q.png
+C_AOE: https://i.imgur.com/xUhwO0U.png
+C: https://i.imgur.com/fqF3cB7.png
+D_AOE: https://i.imgur.com/P79cYIn.png
+D: https://i.imgur.com/ML7kYuK.png
+E_AOE: https://i.imgur.com/wOMwEhZ.png
+E: https://i.imgur.com/j42y4DA.png
+F_AOE: https://i.imgur.com/c2geO8E.png
+F: https://i.imgur.com/6YzwR72.png
