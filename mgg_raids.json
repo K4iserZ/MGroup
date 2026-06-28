@@ -179,6 +179,18 @@
         {"image": "image/rewards/reward_chest.png", "name": "Crime Chest"},
         {"image": "image/rewards/reward_ring.png", "name": "Power Ring"}
       ]
+    },
+    {
+      "id": 16,
+      "name": "Abyss",
+      "specimen": "CD_14",
+      "specimenName": "Kereon of the Abyss",
+      "image": "image/dungeons/raids/raid_abyss.webp",
+      "description": "Organized chaos and criminal underworld shadows.",
+      "rewards": [
+        {"image": "image/rewards/reward_chest.png", "name": "Crime Chest"},
+        {"image": "image/rewards/reward_ring.png", "name": "Power Ring"}
+      ]
     }
   ],
 
