@@ -4,6 +4,7 @@ let mutantsData = [];
 let gachaData = {};
 let orbsData = [];
 let abilitiesConfig = {};
+let selectedMutantDetail = null;
 
 function parseUnlockAttack(unlockAttack) {
     const genes = {};
@@ -142,25 +143,105 @@ function parseMutantsCSV(csvText) {
 function initMutantsSection() {
     const searchInput = document.getElementById('mutantSearchInput');
     const genFilter = document.getElementById('genFilter');
+    const backToListBtn = document.getElementById('backToMutantsListBtn');
+    const clearSelectionBtn = document.getElementById('clearMutantSelectionBtn');
+    const fameLevelInput = document.getElementById('mutantFameLevel');
     if (!searchInput) return;
     searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const selectedGen = genFilter.value;
+        const searchTerm = e.target.value.toLowerCase().trim();
+        const selectedGen = genFilter?.value || '';
+        if (selectedMutantDetail && searchTerm) {
+            const match = findMutantMatch(searchTerm, selectedGen);
+            if (match) {
+                openMutantModal(match);
+            }
+            return;
+        }
         filterAndDisplayMutants(searchTerm, selectedGen);
     });
     if (genFilter) {
         genFilter.addEventListener('change', (e) => {
-            const searchTerm = searchInput.value.toLowerCase();
+            const searchTerm = searchInput.value.toLowerCase().trim();
             const selectedGen = e.target.value;
+            if (selectedMutantDetail && searchTerm) {
+                const match = findMutantMatch(searchTerm, selectedGen);
+                if (match) {
+                    openMutantModal(match);
+                }
+                return;
+            }
             filterAndDisplayMutants(searchTerm, selectedGen);
+        });
+    }
+    if (backToListBtn) {
+        backToListBtn.addEventListener('click', showMutantsList);
+    }
+    if (clearSelectionBtn) {
+        clearSelectionBtn.addEventListener('click', showMutantsList);
+    }
+    // Add listener for Fame Level changes
+    if (fameLevelInput) {
+        fameLevelInput.addEventListener('input', () => {
+            if (selectedMutantDetail) {
+                updateDetailPanelStats();
+            }
         });
     }
     filterAndDisplayMutants('', '');
 }
 
+function findMutantMatch(searchTerm, selectedGen = '') {
+    const normalizedTerm = searchTerm.toLowerCase().trim();
+    if (!normalizedTerm) return null;
+    const candidates = mutantsData.filter(mutant => {
+        if (selectedGen && !mutant.dna.startsWith(selectedGen)) return false;
+        return mutant.name.toLowerCase().includes(normalizedTerm) || mutant.specimen.toLowerCase().includes(normalizedTerm);
+    });
+    return candidates[0] || null;
+}
+
+function showMutantsList() {
+    const container = document.getElementById('mutantsContainer');
+    const detailPanel = document.getElementById('mutantsDetailPanel');
+    const searchInput = document.getElementById('mutantSearchInput');
+    const genFilter = document.getElementById('genFilter');
+    if (container) {
+        container.style.display = 'grid';
+    }
+    if (detailPanel) {
+        detailPanel.style.display = 'none';
+    }
+    selectedMutantDetail = null;
+    window.selectedMutantSkinType = 'basic';
+    window.selectedMutantIsRestricted = false;
+    const searchTerm = searchInput?.value.toLowerCase().trim() || '';
+    const selectedGen = genFilter?.value || '';
+    filterAndDisplayMutants(searchTerm, selectedGen);
+}
+
+function updateDetailPanelStats() {
+    if (!selectedMutantDetail) return;
+    const fameLevelInput = document.getElementById('mutantFameLevel');
+    const fameLevel = parseInt(fameLevelInput?.value) || 25;
+    const skinType = window.selectedMutantSkinType || 'basic';
+    const isRestricted = window.selectedMutantIsRestricted || false;
+    const starInfo = getStarInfo(selectedMutantDetail.specimen, isRestricted);
+    const info = starInfo[skinType] || {};
+    const bonus = info.bonusGacha || 0;
+    const starVal = info.starValue || 0;
+    const stats = calculateMutantStats(selectedMutantDetail, fameLevel, skinType, bonus, starVal);
+    stats.skinLabel = starInfo[skinType]?.label || skinType;
+    renderStatsDisplay(selectedMutantDetail, stats);
+}
+
 function filterAndDisplayMutants(searchTerm, selectedGen = '') {
     const container = document.getElementById('mutantsContainer');
+    const detailPanel = document.getElementById('mutantsDetailPanel');
     if (!container) return;
+    if (detailPanel) {
+        detailPanel.style.display = 'none';
+    }
+    container.style.display = 'grid';
     let filtered = mutantsData;
     if (selectedGen) filtered = filtered.filter(m => m.dna.startsWith(selectedGen));
     if (searchTerm) filtered = filtered.filter(m => m.name.toLowerCase().includes(searchTerm) || m.specimen.toLowerCase().includes(searchTerm));
@@ -190,6 +271,40 @@ function getMutantFromCsv(mutantName) {
     if (!mutantsData || mutantsData.length === 0) return null;
     const mutant = mutantsData.find(m => m.name.toLowerCase() === mutantName.toLowerCase());
     return mutant || null;
+}
+
+function getStarInfo(specimenId, isRestrictedType = false) {
+    const starInfo = {};
+    
+    // Siempre incluir basic
+    starInfo.basic = { starValue: starValues['basic'], bonusGacha: 0, label: 'Basic', image: 'image/icon/btn_black.png' };
+    
+    // Solo incluir bronze/silver/gold/platinum si NO es tipo restringido
+    if (!isRestrictedType) {
+        starInfo.bronze = { starValue: starValues['bronze'], bonusGacha: 0, label: 'Bronze', image: ICONS.stars['bronze'] };
+        starInfo.silver = { starValue: starValues['silver'], bonusGacha: 0, label: 'Silver', image: ICONS.stars['silver'] };
+        starInfo.gold = { starValue: starValues['gold'], bonusGacha: 0, label: 'Gold', image: ICONS.stars['gold'] };
+        starInfo.platinum = { starValue: starValues['platinum'], bonusGacha: 0, label: 'Platinum', image: ICONS.stars['platinum'] };
+    }
+    
+    // Siempre agregar gacha options
+    const gachaList = gachaData[specimenId] || [];
+    gachaList.forEach((entry, idx) => {
+        const key = `gacha_${idx}`;
+        const starKey = numericToStarKey[entry.stars] || 'basic';
+        const starVal = starValues[starKey] || 0;
+        const label = `Gacha ${entry.gachaId} (${entry.stars}★, bonus ${entry.bonus})`;
+        starInfo[key] = {
+            starValue: starVal,
+            bonusGacha: entry.bonus || 0,
+            label,
+            imageSuffix: entry.gachaId,
+            gachaIcon: `https://s-ak.kobojo.com/mutants/assets/gachacontent/icon_${entry.gachaId}.png`,
+            image: `https://s-ak.kobojo.com/mutants/assets/gachacontent/icon_${entry.gachaId}.png`
+        };
+    });
+    
+    return starInfo;
 }
 
 const starValues = { 'platinum': 100, 'gold': 75, 'silver': 30, 'bronze': 10, 'basic': 0 };
@@ -565,107 +680,103 @@ function selectOrb(specimenId, slotIndex, orbId, orbName) {
 }
 
 function openMutantModal(mutant) {
-    const modal = document.getElementById('mutantModal');
-    const content = document.getElementById('mutantDetailsContent');
+    const container = document.getElementById('mutantsContainer');
+    const detailPanel = document.getElementById('mutantsDetailPanel');
+    const content = document.getElementById('mutantsDetailContent');
     const fullMutantData = getMutantFromCsv(mutant.name);
     if (!fullMutantData) {
-        content.innerHTML = `
-            <div style="text-align: center; padding: 2rem;"><h2 style="color: #e94560;">⚠️ Error</h2><p style="color: #bdc3c7;">No se encontraron datos para: ${mutant.name}</p></div>`;
-        modal.style.display = 'flex';
+        if (content) {
+            content.innerHTML = `
+                <div style="text-align: center; padding: 2rem;"><h2 style="color: #e94560;">⚠️ Error</h2><p style="color: #bdc3c7;">No se encontraron datos para: ${mutant.name}</p></div>`;
+        }
+        if (container) container.style.display = 'none';
+        if (detailPanel) detailPanel.style.display = 'flex';
+        selectedMutantDetail = null;
         return;
     }
+    selectedMutantDetail = fullMutantData;
+    if (container) container.style.display = 'none';
+    if (detailPanel) detailPanel.style.display = 'flex';
     const restrictedTypes = ['CAPTAINPEACE', 'SEASONAL', 'VIDEOGAME', 'GACHA', 'ZODIAC'];
     const typeUpper = (fullMutantData.type || '').toUpperCase();
     const isRestrictedType = restrictedTypes.some(t => typeUpper.includes(t));
-    const starInfo = { basic: { starValue: starValues['basic'], bonusGacha: 0, label: 'Basic' }, bronze: { starValue: starValues['bronze'], bonusGacha: 0, label: 'Bronze' }, silver: { starValue: starValues['silver'], bonusGacha: 0, label: 'Silver' }, gold: { starValue: starValues['gold'], bonusGacha: 0, label: 'Gold' }, platinum: { starValue: starValues['platinum'], bonusGacha: 0, label: 'Platinum' } };
-    const gachaList = gachaData[fullMutantData.specimen] || [];
-    gachaList.forEach((entry, idx) => {
-        const key = `gacha_${idx}`;
-        const starKey = numericToStarKey[entry.stars] || 'basic';
-        const starVal = starValues[starKey] || 0;
-        const label = `Gacha ${entry.gachaId} (${entry.stars}★, bonus ${entry.bonus})`;
-        starInfo[key] = {
-            starValue: starVal,
-            bonusGacha: entry.bonus || 0,
-            label,
-            imageSuffix: entry.gachaId,
-            // gacha icon based on skin id
-            gachaIcon: `https://s-ak.kobojo.com/mutants/assets/gachacontent/icon_${entry.gachaId}.png`
-        };
-    });
+    window.selectedMutantIsRestricted = isRestrictedType;
     const initialSkin = 'basic';
     const initialBonusGacha = 0;
     const initialStarValue = starValues[initialSkin];
     const stats = calculateMutantStats(fullMutantData, 25, initialSkin, initialBonusGacha, initialStarValue);
-    stats.skinLabel = starInfo[initialSkin]?.label || initialSkin;
-    // set initial gacha, star, and type icons if needed
-    setTimeout(() => {
-        const info = starInfo[initialSkin] || {};
-        // old absolute icon, hide
-        const gachaImg = document.getElementById('gachaIcon');
-        if (gachaImg) {
-            gachaImg.style.display = 'none';
-        }
-        // select icon
-        const gachaSelectImg = document.getElementById('gachaSelectIcon');
-        if (gachaSelectImg) {
-            if (info.gachaIcon) {
-                gachaSelectImg.src = info.gachaIcon;
-                gachaSelectImg.style.display = 'inline-block';
-            } else {
-                gachaSelectImg.style.display = 'none';
-            }
-        }
-        const starImg = document.getElementById('starIcon');
-        if (starImg) {
-            if (ICONS.stars[initialSkin] && ICONS.stars[initialSkin] !== '') {
-                starImg.src = ICONS.stars[initialSkin];
-                starImg.style.display = 'inline-block';
-            } else {
-                starImg.style.display = 'none';
-            }
-        }
-        const typeImg = document.getElementById('typeIconDisplay');
-        if (typeImg) {
-            if (typeIconUrl) {
-                typeImg.src = typeIconUrl;
-                typeImg.style.display = 'inline-block';
-            } else {
-                typeImg.style.display = 'none';
-            }
-        }
-    }, 0);
+    
     const getImageUrl = (specimen, skinType) => {
+        const starInfoLocal = getStarInfo(specimen, isRestrictedType);
         const specLower = specimen.toLowerCase();
-        if (starInfo[skinType] && starInfo[skinType].imageSuffix) return `https://s-ak.kobojo.com/mutants/assets/thumbnails/${specLower}_${starInfo[skinType].imageSuffix}.png`;
+        if (starInfoLocal[skinType] && starInfoLocal[skinType].imageSuffix) return `https://s-ak.kobojo.com/mutants/assets/thumbnails/${specLower}_${starInfoLocal[skinType].imageSuffix}.png`;
         if (skinType === 'basic') return `https://s-ak.kobojo.com/mutants/assets/thumbnails/${specLower}.png`;
         else return `https://s-ak.kobojo.com/mutants/assets/thumbnails/${specLower}_${skinType}.png`;
     };
-    // build star/skin dropdown using plain text (icons not supported in <option>)
-    let optionsHtml = `<option value="basic" selected>Basic (+0)</option>`;
-    if (!isRestrictedType) {
-        optionsHtml += `<option value="bronze">Bronze (+10)</option>`;
-        optionsHtml += `<option value="silver">Silver (+30)</option>`;
-        optionsHtml += `<option value="gold">Gold (+75)</option>`;
-        optionsHtml += `<option value="platinum">Platinum (+100)</option>`;
-    }
-    gachaList.forEach((entry, idx) => { const key = `gacha_${idx}`; const label = starInfo[key].label; optionsHtml += `<option value="${key}">🎲 ${label}</option>`; });
+    
     const imageUrl = getImageUrl(fullMutantData.specimen, initialSkin);
-    // include placeholder for gacha icon
     const genesHtml = generateGenesHtml(fullMutantData.dna);
     const orbSlotsHtml = generateOrbSlotsHtml(fullMutantData.orbSlots, fullMutantData.specimen);
-    content.innerHTML = `
-        <div style="padding: 2rem;">
-            <h2 style="color: #e94560; margin-bottom: 1.5rem; font-size: 1.8rem;">⚙️ ${mutant.name} - Stats Calculator</h2>
-            <div style="text-align: center; position: relative;">
-                <img id="mutantImage" src="${imageUrl}" alt="${mutant.name}" style="max-height: 200px; max-width: 100%; border-radius: 8px; border: 2px solid #3498db; object-fit: contain;" onerror="this.parentElement.innerHTML='<div style=\"color: #95a5a6; font-size: 3rem;\"></div>
-                <img id="gachaIcon" src="" alt="" style="max-width:64px; position:absolute; bottom:4px; left:4px; display:none;">
-                ${genesHtml}
-                ${orbSlotsHtml}
-            </div>
-            <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 1.5rem; border-radius: 10px; border: 2px solid #3498db; margin-bottom: 2rem;"><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;"><div><label for="mutantLevel" style="color: #3498db; font-weight: bold; display: block; margin-bottom: 0.8rem; font-size: 1rem;">📊 Fame Level</label><input type="number" id="mutantLevel" value="25" min="25" max="90" style="background: #16213e; color: #ecf0f1; border: 2px solid #3498db; padding: 0.8rem 1rem; border-radius: 5px; font-size: 1rem; width: 100%; font-weight: 500;"></div><div><label for="mutantStar" style="color: #f39c12; font-weight: bold; display: block; margin-bottom: 0.8rem; font-size: 1rem;">🎭 Skin / Star</label><div style="display:flex; align-items:center;"><select id="mutantStar" style="background: #16213e; color: #ecf0f1; border: 2px solid #f39c12; padding: 0.8rem 1rem; border-radius: 5px; font-size: 1rem; width: 100%; font-weight: 500; cursor: pointer;">${optionsHtml}</select><img id="starIcon" src="" alt="" style="width:24px; height:24px; margin-left:8px; display:none;"><img id="gachaSelectIcon" src="" alt="" style="width:70px; height:70px; margin-left:8px; display:none;"></div></div></div></div><div id="statsDisplay"></div></div>
+    
+    // Build skin selector as a dropdown combobox with images
+    const starInfoObj = getStarInfo(fullMutantData.specimen, isRestrictedType);
+    const selectedSkinInfo = starInfoObj[initialSkin];
+    let skinSelectorHtml = `
+        <div style="position: relative;">
+            <button id="mutantSkinToggle" type="button" style="background: linear-gradient(135deg, rgba(22,33,62,0.95) 0%, rgba(15,52,96,0.95) 100%); border: 2px solid #f39c12; padding: 0.6rem 1rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.8rem; width: 100%; transition: all 0.2s;" title="${selectedSkinInfo.label}">
+                <img src="${selectedSkinInfo.image}" alt="${selectedSkinInfo.label}" style="width: 40px; height: 40px; object-fit: contain; border-radius: 6px;" onerror="this.style.display='none';">
+                <span style="color: #ecf0f1; font-weight: 500; flex: 1; text-align: left;">${selectedSkinInfo.label}</span>
+                <span style="color: #f39c12; font-size: 1.2rem;">▼</span>
+            </button>
+            <div id="mutantSkinDropdown" style="position: absolute; top: 100%; left: 0; right: 0; background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); border: 2px solid #f39c12; border-top: none; border-radius: 0 0 8px 8px; margin-top: -2px; max-height: 300px; overflow-y: auto; z-index: 1000; display: none; box-shadow: 0 8px 20px rgba(0,0,0,0.6);">
     `;
-    modal.style.display = 'flex';
+    Object.entries(starInfoObj).forEach(([key, info]) => {
+        skinSelectorHtml += `
+                <button type="button" data-skin-type="${key}" class="skin-dropdown-option" style="display: flex; align-items: center; gap: 0.8rem; width: 100%; padding: 0.8rem 1rem; background: none; border: none; cursor: pointer; color: #ecf0f1; text-align: left; transition: background 0.2s;" onmouseover="this.style.background='rgba(233,69,96,0.2)'" onmouseout="this.style.background='none'">
+                    <img src="${info.image}" alt="${info.label}" style="width: 40px; height: 40px; object-fit: contain; border-radius: 6px;" onerror="this.style.display='none';">
+                    <span style="flex: 1; font-weight: 500;">${info.label}</span>
+                </button>
+        `;
+    });
+    skinSelectorHtml += `
+            </div>
+        </div>
+    `;
+    
+    content.innerHTML = `
+        <div style="padding: 1rem; width: 100%;">
+            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5rem; align-items: start;">
+                <!-- LEFT COLUMN: Image, Genes, Orbs -->
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <h2 style="color: #e94560; margin: 0 0 0.5rem 0; font-size: 1.6rem;">⚙️ ${mutant.name}</h2>
+                    <div style="background: linear-gradient(135deg, rgba(22,33,62,0.95) 0%, rgba(15,52,96,0.95) 100%); border: 1px solid rgba(52, 152, 219, 0.35); border-radius: 10px; padding: 1rem; box-shadow: 0 8px 25px rgba(0,0,0,0.2);">
+                        <div style="text-align: center; margin-bottom: 0.8rem;">
+                            <img id="mutantImage" src="${imageUrl}" alt="${mutant.name}" style="max-height: 200px; max-width: 100%; border-radius: 8px; border: 2px solid #3498db; object-fit: contain;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.8rem; align-items: center;">
+                            ${genesHtml}
+                            <div style="width: 100%;">
+                                ${orbSlotsHtml}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Skin Selector, Stats -->
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="background: linear-gradient(135deg, rgba(22,33,62,0.95) 0%, rgba(15,52,96,0.95) 100%); border: 1px solid rgba(52, 152, 219, 0.35); border-radius: 10px; padding: 1rem; box-shadow: 0 8px 25px rgba(0,0,0,0.2);">
+                        <label style="color: #f39c12; font-weight: bold; display: block; margin-bottom: 0.8rem; font-size: 0.9rem;">🎭 Skin / Star:</label>
+                        ${skinSelectorHtml}
+                    </div>
+                    <div id="statsDisplay" style="flex: 1;"></div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Store the selected skin type for updates
+    window.selectedMutantSkinType = initialSkin;
+    if (detailPanel) detailPanel.style.display = 'flex';
     renderStatsDisplay(fullMutantData, stats);
     
     // Add event listeners for orb slots
@@ -678,63 +789,63 @@ function openMutantModal(mutant) {
                 showOrbDropdown(fullMutantData.specimen, isNaN(slotIndex) ? 0 : slotIndex);
             });
         });
+        
+        // Add event listeners for skin selector dropdown
+        const skinToggle = document.getElementById('mutantSkinToggle');
+        const skinDropdown = document.getElementById('mutantSkinDropdown');
+        const skinOptions = document.querySelectorAll('.skin-dropdown-option');
+        
+        // Toggle dropdown on button click
+        if (skinToggle) {
+            skinToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                skinDropdown.style.display = skinDropdown.style.display === 'none' ? 'flex' : 'none';
+                skinDropdown.style.flexDirection = 'column';
+            });
+        }
+        
+        // Handle skin selection
+        skinOptions.forEach((option) => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const skinType = option.dataset.skinType;
+                window.selectedMutantSkinType = skinType;
+                
+                // Get the skin info and update button
+                const starInfoObj = getStarInfo(fullMutantData.specimen, isRestrictedType);
+                const info = starInfoObj[skinType];
+                
+                if (skinToggle && info) {
+                    skinToggle.innerHTML = `
+                        <img src="${info.image}" alt="${info.label}" style="width: 40px; height: 40px; object-fit: contain; border-radius: 6px;" onerror="this.style.display='none';">
+                        <span style="color: #ecf0f1; font-weight: 500; flex: 1; text-align: left;">${info.label}</span>
+                        <span style="color: #f39c12; font-size: 1.2rem;">▼</span>
+                    `;
+                }
+                
+                // Close dropdown
+                skinDropdown.style.display = 'none';
+                
+                // Update image
+                const newImageUrl = getImageUrl(fullMutantData.specimen, skinType);
+                const imgElement = document.getElementById('mutantImage');
+                if (imgElement) { 
+                    imgElement.src = newImageUrl; 
+                    imgElement.onerror = function() { this.parentElement.innerHTML = '<div style="color: #95a5a6; font-size: 3rem;">🧬</div>'; }; 
+                }
+                
+                // Update stats
+                updateDetailPanelStats();
+            });
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (skinDropdown && !skinDropdown.contains(e.target) && e.target !== skinToggle) {
+                skinDropdown.style.display = 'none';
+            }
+        });
     }, 0);
-    
-    const levelInput = document.getElementById('mutantLevel');
-    const starSelect = document.getElementById('mutantStar');
-    levelInput.addEventListener('input', function(e) {
-        const newFameLevel = parseInt(e.target.value) || 25;
-        const skinType = starSelect.value;
-        const info = starInfo[skinType] || {};
-        const bonus = info.bonusGacha || 0;
-        const starVal = info.starValue || 0;
-        const newStats = calculateMutantStats(fullMutantData, newFameLevel, skinType, bonus, starVal);
-        newStats.skinLabel = starInfo[skinType]?.label || skinType;
-        renderStatsDisplay(fullMutantData, newStats);
-    });
-    starSelect.addEventListener('change', function(e) {
-        const fameLevel = parseInt(levelInput.value) || 25;
-        const skinType = e.target.value;
-        const info = starInfo[skinType] || {};
-        const bonus = info.bonusGacha || 0;
-        const starVal = info.starValue || 0;
-        const newStats = calculateMutantStats(fullMutantData, fameLevel, skinType, bonus, starVal);
-        newStats.skinLabel = starInfo[skinType]?.label || skinType;
-        renderStatsDisplay(fullMutantData, newStats);
-        const newImageUrl = getImageUrl(fullMutantData.specimen, skinType);
-        const imgElement = document.getElementById('mutantImage');
-        if (imgElement) { imgElement.src = newImageUrl; imgElement.onerror = function() { this.parentElement.innerHTML = '<div style="color: #95a5a6; font-size: 3rem;">🧬</div>'; }; }
-        // update select gacha icon if available
-        const gachaSelectImg = document.getElementById('gachaSelectIcon');
-        if (gachaSelectImg) {
-            if (info.gachaIcon) {
-                gachaSelectImg.src = info.gachaIcon;
-                gachaSelectImg.style.display = 'inline-block';
-            } else {
-                gachaSelectImg.style.display = 'none';
-            }
-        }
-        // update star icon next to select
-        const starImg = document.getElementById('starIcon');
-        if (starImg) {
-            if (ICONS.stars[skinType] && ICONS.stars[skinType] !== '') {
-                starImg.src = ICONS.stars[skinType];
-                starImg.style.display = 'inline-block';
-            } else {
-                starImg.style.display = 'none';
-            }
-        }
-        // type icon does not change with skin, but ensure it remains correct
-        const typeImg = document.getElementById('typeIconDisplay');
-        if (typeImg) {
-            if (typeIconUrl) {
-                typeImg.src = typeIconUrl;
-                typeImg.style.display = 'inline-block';
-            } else {
-                typeImg.style.display = 'none';
-            }
-        }
-    });
 
 }
 
@@ -763,58 +874,41 @@ function renderStatsDisplay(mutantData, stats) {
     const atk2pIcon = atk2pIsAOE ? `attack_${atk2pGen}_aoe.png` : `attack_${atk2pGen}.png`;
 
     const statsHTML = `
-        <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); border: 1px solid #3498db; border-radius: 8px; overflow: hidden;">
-            <!-- Basic Info Row -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #3498db;">
-                <div style="padding: 1rem; border-right: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;">Specimen</p>
-                    <p style="color: #2ecc71; font-weight: bold; margin: 0;">${stats.specimen}</p>
+        <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); border: 1px solid #3498db; border-radius: 10px; overflow: hidden; padding: 0.9rem; box-shadow: 0 8px 25px rgba(0,0,0,0.2);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.6rem; auto-rows: max-content;">
+                <div style="padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);">
+                    <p style="color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;">Specimen</p>
+                    <p style="color: #2ecc71; font-weight: bold; margin: 0; font-size: 0.9rem;">${stats.specimen}</p>
                 </div>
-                <div style="padding: 1rem;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;">Type</p>
-                    <p style="color: #ecf0f1; font-weight: bold; margin: 0;"><img src="https://s-ak.kobojo.com/mutants/assets/mobile/hud/m_m_m/icon_${stats.type.toLowerCase()}.png" alt="${stats.type}" style="width:40px; vertical-align:middle; margin-right:6px;" onerror="this.style.display='none';">${stats.type}</p>
+                <div style="padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);">
+                    <p style="color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;\">Type</p>
+                    <p style="color: #ecf0f1; font-weight: bold; margin: 0; font-size: 0.9rem;\"><img src=\"https://s-ak.kobojo.com/mutants/assets/mobile/hud/m_m_m/icon_${stats.type.toLowerCase()}.png\" alt=\"${stats.type}\" style=\"width:24px; vertical-align:middle; margin-right:4px;\" onerror=\"this.style.display='none';\">${stats.type}</p>
                 </div>
-            </div>
-            
-
-            <!-- Stats Grid -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr;">
-                <!-- Life -->
-                <div style="padding: 1rem; border-right: 1px solid #3498db; border-bottom: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="${ICONS.life}" alt="Life" style="width:24px; vertical-align:middle; margin-right:6px;">Life</p>
-                    <p style="color: #e94560; font-weight: bold; font-size: 1.1rem; margin: 0;">${stats.lifeF}</p>
+                <div style="padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);\">
+                    <p style=\"color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;\"><img src=\"${ICONS.life}\" alt=\"Life\" style=\"width:25px; vertical-align:middle; margin-right:3px;\">Life</p>
+                    <p style=\"color: #e94560; font-weight: bold; font-size: 1rem; margin: 0;\">${stats.lifeF}</p>
                 </div>
-                
-                <!-- Speed -->
-                <div style="padding: 1rem; border-bottom: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="${ICONS.speed}" alt="Speed" style="width:24px; vertical-align:middle; margin-right:6px;">Speed</p>
-                    <p style="color: #3498db; font-weight: bold; font-size: 1.1rem; margin: 0;">${stats.speedF}</p>
+                <div style=\"padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);\">
+                    <p style=\"color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;\"><img src=\"${ICONS.speed}\" alt=\"Speed\" style=\"width:25px; vertical-align:middle; margin-right:3px;\">Speed</p>
+                    <p style=\"color: #3498db; font-weight: bold; font-size: 1rem; margin: 0;\">${stats.speedF}</p>
                 </div>
-                
-                <!-- Attack 1 -->
-                <div style="padding: 1rem; border-right: 1px solid #3498db; border-bottom: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="image/gene/${atk1pIcon}" alt="Attack 1" style="width:30px; vertical-align:middle;" onerror="this.style.display='none';"> ${stats.attack1p_name}</p>
-                    <p style="color: #f39c12; font-weight: bold; margin: 0; font-size: 0.9rem;">${stats.atk1F}</p>
-                    <div style="display:grid; gap:0.25rem; margin-top:0.6rem;">
-                        <div style="display:flex; align-items:center; gap:0.5rem;">
-                            <img src="${stats.ability1Icon}" alt="${stats.ability1Name}" style="width:28px; height:28px; object-fit:contain;" onerror="this.style.display='none';">
-                            <span style="color:#ecf0f1; font-size:0.85rem;">${stats.ability1Name}</span>
-                        </div>
-                        <span style="color:#f39c12; font-weight:bold; font-size:0.9rem;">${stats.atk1AbilityF}</span>
+                <div style=\"padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);\">
+                    <p style=\"color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;\"><img src=\"image/gene/${atk1pIcon}\" alt=\"Attack 1\" style=\"width:35px; vertical-align:middle; margin-right:2px;\" onerror=\"this.style.display='none';\">${stats.attack1p_name}</p>
+                    <p style=\"color: #f39c12; font-weight: bold; margin: 0.2rem 0; font-size: 0.9rem;\">${stats.atk1F}</p>
+                    <div style=\"display:flex; align-items:center; gap:0.3rem; font-size: 0.7rem; margin-top: 0.3rem;\">
+                        <img src=\"${stats.ability1Icon}\" alt=\"${stats.ability1Name}\" style=\"width:16px; height:16px; object-fit:contain;\" onerror=\"this.style.display='none';\">
+                        <span style=\"color:#ecf0f1;\">${stats.ability1Name}</span>
                     </div>
+                    <div style=\"color:#f39c12; font-weight:bold; font-size:0.8rem; margin-top:0.2rem;\">${stats.atk1AbilityF}</div>
                 </div>
-                
-                <!-- Attack 2 -->
-                <div style="padding: 1rem; border-bottom: 1px solid #3498db;">
-                    <p style="color: #95a5a6; font-size: 0.85rem; margin: 0 0 0.4rem 0;"><img src="image/gene/${atk2pIcon}" alt="Attack 2" style="width:30px; vertical-align:middle;" onerror="this.style.display='none';"> ${stats.attack2p_name}</p>
-                    <p style="color: #9b59b6; font-weight: bold; margin: 0; font-size: 0.9rem;">${stats.atk2F}</p>
-                    ${stats.ability2Name ? `<div style="display:grid; gap:0.25rem; margin-top:0.6rem;">
-                        <div style="display:flex; align-items:center; gap:0.5rem;">
-                            <img src="${stats.ability2Icon}" alt="${stats.ability2Name}" style="width:28px; height:28px; object-fit:contain;" onerror="this.style.display='none';">
-                            <span style="color:#ecf0f1; font-size:0.85rem;">${stats.ability2Name}</span>
-                        </div>
-                        <span style="color:#9b59b6; font-weight:bold; font-size:0.9rem;">${stats.atk2AbilityF}</span>
+                <div style=\"padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);\">
+                    <p style=\"color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;\"><img src=\"image/gene/${atk2pIcon}\" alt=\"Attack 2\" style=\"width:35px; vertical-align:middle; margin-right:2px;\" onerror=\"this.style.display='none';\">${stats.attack2p_name}</p>
+                    <p style=\"color: #9b59b6; font-weight: bold; margin: 0.2rem 0; font-size: 0.9rem;\">${stats.atk2F}</p>
+                    ${stats.ability2Name ? `<div style=\"display:flex; align-items:center; gap:0.3rem; font-size: 0.7rem; margin-top: 0.3rem;\">
+                        <img src=\"${stats.ability2Icon}\" alt=\"${stats.ability2Name}\" style=\"width:16px; height:16px; object-fit:contain;\" onerror=\"this.style.display='none';\">
+                        <span style=\"color:#ecf0f1;\">${stats.ability2Name}</span>
                     </div>` : ''}
+                    ${stats.ability2Name ? `<div style=\"color:#9b59b6; font-weight:bold; font-size:0.8rem; margin-top:0.2rem;\">${stats.atk2AbilityF}</div>` : ''}
                 </div>
             </div>
         </div>
@@ -822,7 +916,7 @@ function renderStatsDisplay(mutantData, stats) {
     statsDisplay.innerHTML = statsHTML;
 }
 
-function closeMutantModal() { const modal = document.getElementById('mutantModal'); if (modal) modal.style.display = 'none'; }
+function closeMutantModal() { showMutantsList(); }
 
 // expose modal control functions globally for inline handlers
 window.closeMutantModal = closeMutantModal;

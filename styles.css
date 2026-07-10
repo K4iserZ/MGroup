@@ -1140,6 +1140,35 @@ footer {
     transform: scale(1.05);
 }
 
+.mutants-detail-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.mutants-detail-toolbar {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.mutants-detail-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mutants-detail-content > div {
+    width: 100%;
+    max-width: 900px;
+}
+
 /* RAID PREDICTOR STYLES - Cyberpunk genetic lab theme */
 .raid-predictor-top {
     display: grid;

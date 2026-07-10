@@ -107,11 +107,23 @@
                             <option value="F">Gen F</option>
                         </select>
                     </div>
+                    <div style="flex: 0 0 auto;">
+                        <label for="mutantFameLevel" style="color: #3498db; font-weight: bold; display: block; margin-bottom: 0.5rem;">📊 Fame Level:</label>
+                        <input type="number" id="mutantFameLevel" value="25" min="25" max="90" style="background: #16213e; color: #ecf0f1; border: 2px solid #3498db; padding: 0.6rem 1rem; border-radius: 5px; font-size: 0.95rem; width: 100%; font-weight: 500;">
+                    </div>
                 </div>
             </div>
 
             <div id="mutantsContainer" class="mutants-grid">
                 <!-- Se llenará con JavaScript -->
+            </div>
+
+            <div id="mutantsDetailPanel" class="mutants-detail-panel" style="display: none;">
+                <div class="mutants-detail-toolbar">
+                    <button id="backToMutantsListBtn" class="btn-primary" type="button">← Back to list</button>
+                    <button id="clearMutantSelectionBtn" class="btn-primary" type="button" style="background: #e74c3c;">Clear selection</button>
+                </div>
+                <div id="mutantsDetailContent" class="mutants-detail-content"></div>
             </div>
         </div>
 
