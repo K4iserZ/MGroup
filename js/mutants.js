@@ -6,6 +6,13 @@ let orbsData = [];
 let abilitiesConfig = {};
 let selectedMutantDetail = null;
 
+function extractNumber(value) {
+    if (!value) return 0;
+    const str = String(value).trim();
+    const match = str.match(/^(\d+)/);
+    return parseInt(match ? match[1] : str, 10) || 0;
+}
+
 function parseUnlockAttack(unlockAttack) {
     const genes = {};
     if (!unlockAttack) return genes;
@@ -15,6 +22,52 @@ function parseUnlockAttack(unlockAttack) {
         genes[attack] = gen === 'neutre' ? 'n' : gen;
     });
     return genes;
+}
+
+function parseUnlockAttackEvents(unlockAttack) {
+    if (!unlockAttack) return [];
+    return unlockAttack
+        .split(';')
+        .filter(Boolean)
+        .map(part => {
+            const [attack, level, gen] = part.split(':');
+            return {
+                attack: attack?.trim() || '',
+                level: parseInt(level, 10) || 0,
+                gene: gen === 'neutre' ? 'n' : (gen || 'n')
+            };
+        })
+        .sort((a, b) => a.level - b.level);
+}
+
+function getAttackEvolutionState(mutantData, normalizedLevel, attackType) {
+    const unlockEvents = parseUnlockAttackEvents(mutantData.unlockattack);
+    const unlocked = unlockEvents.filter(event => event.level <= normalizedLevel);
+    const fieldMap = { 1: 'atk1', 2: 'atk2', '1p': 'atk1p', '2p': 'atk2p' };
+    const baseKey = attackType === 1 ? '1' : '2';
+    const upgradeKey = attackType === 1 ? '1p' : '2p';
+    const state = {
+        unlocked: false,
+        selectedKey: null,
+        value: null,
+        event: null,
+        gene: 'n'
+    };
+
+    const baseUnlocked = unlocked.some(event => event.attack === baseKey);
+    const upgradeUnlocked = unlocked.some(event => event.attack === upgradeKey);
+    state.unlocked = baseUnlocked || upgradeUnlocked;
+    state.selectedKey = upgradeUnlocked ? upgradeKey : (baseUnlocked ? baseKey : null);
+
+    if (state.selectedKey) {
+        const field = fieldMap[state.selectedKey];
+        const event = unlocked.slice().reverse().find(item => item.attack === state.selectedKey) || null;
+        state.event = event;
+        state.gene = event?.gene || parseUnlockAttack(mutantData.unlockattack)[state.selectedKey] || 'n';
+        state.value = extractNumber(mutantData[field]);
+    }
+
+    return state;
 }
 
 function isAOE(atkValue) {
@@ -222,7 +275,7 @@ function showMutantsList() {
 function updateDetailPanelStats() {
     if (!selectedMutantDetail) return;
     const fameLevelInput = document.getElementById('mutantFameLevel');
-    const fameLevel = parseInt(fameLevelInput?.value) || 25;
+    const fameLevel = Math.max(1, parseInt(fameLevelInput?.value, 10) || 25);
     const skinType = window.selectedMutantSkinType || 'basic';
     const isRestricted = window.selectedMutantIsRestricted || false;
     const starInfo = getStarInfo(selectedMutantDetail.specimen, isRestricted);
@@ -410,12 +463,15 @@ function calculateMutantStats(mutantData, fameLevel, starType = 'platinum', bonu
     const globalAdjust = 100;
     const starValue = (starValueOverride !== null) ? starValueOverride : (starValues[starType] ?? starValues['platinum']);
     const bonusStar = 100 + starValue;
-    fameLevel = Math.max(25, parseInt(fameLevel) || 25);
-    let level = 100 + 10 * (fameLevel - 1);
+    const normalizedFameLevel = Math.max(1, parseInt(fameLevel, 10) || 25);
+    let level = 100 + 10 * (normalizedFameLevel - 1);
     const abilitiesStr = mutantData.abilities || '';
     const abilityNames = {};
     const abilityIcons = {};
     const appliesTo = abilitiesConfig[mutantData.specimen] || 'both';
+    const unlockEvents = parseUnlockAttackEvents(mutantData.unlockattack);
+    const unlocked = unlockEvents.filter(event => event.level <= normalizedFameLevel);
+
     if (abilitiesStr) {
         const abilityParts = abilitiesStr.split(';');
         abilityParts.forEach(part => {
@@ -430,17 +486,18 @@ function calculateMutantStats(mutantData, fameLevel, starType = 'platinum', bonu
             }
         });
     }
-    const extractNumber = (val) => { if (!val) return 0; const str = String(val).trim(); const match = str.match(/^(\d+)/); return parseInt(match ? match[1] : str) || 0; };
-    const atk1pValue = extractNumber(mutantData.atk1p);
-    const atk2pValue = extractNumber(mutantData.atk2p);
+
+    const attack1State = getAttackEvolutionState(mutantData, normalizedFameLevel, 1);
+    const attack2State = getAttackEvolutionState(mutantData, normalizedFameLevel, 2);
     const lifeValue = parseInt(mutantData.life) || 0;
     const speedValue = parseInt(mutantData.speed) || 0;
-    const abilityPct1 = (parseInt(mutantData.abilityPct1) || 0);
     const abilityPct2 = (parseInt(mutantData.abilityPct2) || 0);
     const lifeF = Math.round((lifeValue * (bonusStar - bonusGacha) * level * globalAdjust) / 1000000);
     const bonusGachaDecimal = bonusGacha / 100;
-    const atk1F = Math.round(Math.abs(((atk1pValue * bonusGachaDecimal + atk1pValue) * bonusStar * level * globalAdjust) / 1000000));
-    const atk2F = Math.round(Math.abs(((atk2pValue * bonusGachaDecimal + atk2pValue) * bonusStar * level * globalAdjust) / 1000000));
+    const atk1Value = attack1State.value === null ? 0 : attack1State.value;
+    const atk2Value = attack2State.value === null ? 0 : attack2State.value;
+    const atk1F = attack1State.value === null ? 0 : Math.round(Math.abs(((atk1Value * bonusGachaDecimal + atk1Value) * bonusStar * level * globalAdjust) / 1000000));
+    const atk2F = attack2State.value === null ? 0 : Math.round(Math.abs(((atk2Value * bonusGachaDecimal + atk2Value) * bonusStar * level * globalAdjust) / 1000000));
     const atk1AbilityF = Math.round(Math.abs((atk1F / 100) * (abilityPct2)));
     const atk2AbilityF = appliesTo === 'both' ? Math.round(Math.abs((atk2F / 100) * (abilityPct2))) : 0;
     const speedF = (speedValue > 0 ? 10 / (speedValue / 100) : 0).toFixed(2);
@@ -448,7 +505,7 @@ function calculateMutantStats(mutantData, fameLevel, starType = 'platinum', bonu
         specimen: mutantData.specimen,
         name: mutantData.name,
         type: mutantData.type,
-        fameLevel: fameLevel,
+        fameLevel: normalizedFameLevel,
         level: level,
         lifeF: lifeF,
         speedF: speedF,
@@ -461,6 +518,10 @@ function calculateMutantStats(mutantData, fameLevel, starType = 'platinum', bonu
         ability1Icon: abilityIcons['1'] || '',
         ability2Icon: appliesTo === 'both' ? (abilityIcons['2'] || '') : '',
         starType: starType,
+        unlockEvents,
+        unlocked,
+        attack1State,
+        attack2State,
         attack1p_name: mutantData.attack1p_name || 'Attack 1',
         attack2p_name: mutantData.attack2p_name || 'Attack 2',
         description: mutantData.description || ''

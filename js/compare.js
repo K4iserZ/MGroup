@@ -290,7 +290,7 @@ function clearAllSelectors() {
 }
 
 function updateComparison() {
-    const fameLevel = parseInt(document.getElementById('compareFameLevel').value) || 25;
+    const fameLevel = Math.max(1, parseInt(document.getElementById('compareFameLevel').value, 10) || 25);
 
     const validMutants = selectedMutants.filter(m => m !== null && m !== '');
     

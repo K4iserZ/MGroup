@@ -10,7 +10,7 @@ function initStatsSection() {
     if (!fameInput || !tableContainer) return;
 
     function updateStatsTable() {
-        const fameLevel = parseInt(fameInput.value) || 25;
+        const fameLevel = Math.max(1, parseInt(fameInput.value, 10) || 25);
         let tableHTML = `
             <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 1.5rem; border-radius: 10px; border: 2px solid #3498db;">
                 <table style="width: 100%; border-collapse: collapse; color: #ecf0f1;">
@@ -90,7 +90,7 @@ function initStatsSection() {
     }
 
     function exportStatsToCSV() {
-        const fameLevel = parseInt(fameInput.value) || 25;
+        const fameLevel = Math.max(1, parseInt(fameInput.value, 10) || 25);
         let csvContent = 'Specimen|Name|Type|Life|Speed|Atk1|Atk2|Ability Atk1%|Ability Atk2%|Name of Ability|Multiple\n';
 
         mutantsData.forEach(mutant => {
