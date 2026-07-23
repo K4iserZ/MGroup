@@ -1,3 +1,5 @@
+import { applyOrbEffectsToStats, getAllowedBasicOrbTypes, buildSpecialOrbOptions, buildBasicOrbOptions, normalizeAbilityType, buildAbilityDisplayEntries } from './orbLogic.js';
+
 const starValues = { platinum: 100, gold: 75, silver: 30, bronze: 10, basic: 0 };
 const numericToStarKey = { 0: 'basic', 1: 'bronze', 2: 'silver', 3: 'gold', 4: 'platinum' };
 const abilityKeyMapping = { regen: 'regenerate' };
@@ -20,6 +22,8 @@ const ICONS = {
 let mutantsData = [];
 let gachaData = {};
 let abilitiesConfig = {};
+let orbData = null;
+let selectedOrbControls = null;
 
 function parseUnlockAttack(unlockAttack) {
     const genes = {};
@@ -133,6 +137,40 @@ function getAbilityBaseKey(ability) {
     const key = ability.trim().toLowerCase().replace(/^ability_/, '');
     const baseKey = key.split('_')[0] || '';
     return abilityKeyMapping[baseKey] || baseKey;
+}
+
+function getMutantBaseAbilityType(mutantData) {
+    if (!mutantData?.abilities) return '';
+    const abilityEntries = mutantData.abilities.split(';').map(entry => entry.trim()).filter(Boolean);
+    const normalizedTypes = [];
+
+    for (const entry of abilityEntries) {
+        const [_, ability] = entry.split(':');
+        const normalizedType = normalizeAbilityType(ability);
+        if (normalizedType && !normalizedTypes.includes(normalizedType)) {
+            normalizedTypes.push(normalizedType);
+        }
+    }
+
+    return normalizedTypes[0] || '';
+}
+
+function getOrbSlotConfig(mutantData) {
+    const rawSlots = mutantData?.orbSlots || '';
+    const slotEntries = rawSlots
+        .split(';')
+        .map(entry => String(entry).trim())
+        .filter(Boolean);
+
+    const basicCount = slotEntries.filter(entry => String(entry).charAt(0).toLowerCase() === 'n').length;
+    const specialCount = slotEntries.filter(entry => String(entry).charAt(0).toLowerCase() !== 'n').length;
+
+    return {
+        total: slotEntries.length,
+        basicCount,
+        specialCount,
+        hasSpecial: specialCount > 0
+    };
 }
 
 function getAbilityIconUrl(ability) {
@@ -294,33 +332,120 @@ function calculateEvolutionStats(mutantData, level, skinType = 'basic', bonusGac
     };
 }
 
+function parseOrbValue(value) {
+    if (!value || value === 'none') return null;
+    try {
+        return JSON.parse(value);
+    } catch (error) {
+        return null;
+    }
+}
+
+function getSelectedOrbs() {
+    if (!selectedOrbControls) return [];
+    const { specialOrbSelect, basicOrbSelects } = selectedOrbControls;
+    const selected = [];
+    const specialSelection = parseOrbValue(specialOrbSelect?.value);
+    if (specialSelection) {
+        selected.push(specialSelection);
+    }
+    const activeBasicSelects = (basicOrbSelects || []).slice(0, selectedOrbControls.visibleBasicCount || basicOrbSelects.length);
+    activeBasicSelects.forEach(select => {
+        const selection = parseOrbValue(select?.value);
+        if (selection) {
+            selected.push(selection);
+        }
+    });
+    return selected;
+}
+
+function getSelectedOrbValues() {
+    if (!selectedOrbControls) return { specialValue: 'none', basicValues: [] };
+    const { specialOrbSelect, basicOrbSelects } = selectedOrbControls;
+    const basicValues = (basicOrbSelects || []).slice(0, selectedOrbControls.visibleBasicCount || basicOrbSelects.length).map(select => select?.value || 'none');
+    return {
+        specialValue: specialOrbSelect?.value || 'none',
+        basicValues
+    };
+}
+
 function init() {
     const specimenInput = document.getElementById('specimenInput');
     const specimenList = document.getElementById('specimenList');
     const levelInput = document.getElementById('levelInput');
     const skinSelect = document.getElementById('skinSelect');
+    const specialOrbSelect = document.getElementById('specialOrbSelect');
+    const specialOrbLabel = document.getElementById('specialOrbLabel');
+    const basicOrbLabels = [
+        document.getElementById('basicOrbLabel1'),
+        document.getElementById('basicOrbLabel2'),
+        document.getElementById('basicOrbLabel3')
+    ].filter(Boolean);
+    const basicOrbSelects = [
+        document.getElementById('basicOrbSelect1'),
+        document.getElementById('basicOrbSelect2'),
+        document.getElementById('basicOrbSelect3')
+    ].filter(Boolean);
     const status = document.getElementById('status');
     const results = document.getElementById('results');
+    selectedOrbControls = { specialOrbSelect, specialOrbLabel, basicOrbSelects, basicOrbLabels, visibleBasicCount: basicOrbSelects.length, visibleSpecial: true };
+
+    async function fetchTextFromCandidates(candidates) {
+        for (const candidate of candidates) {
+            try {
+                const response = await fetch(candidate);
+                if (!response.ok) continue;
+                return await response.text();
+            } catch (error) {
+                console.warn(`Failed to load ${candidate}`, error);
+            }
+        }
+        throw new Error(`Unable to load any candidate: ${candidates.join(', ')}`);
+    }
 
     async function loadData() {
         try {
-            const [statsRes, gachaRes, abilitiesRes] = await Promise.all([
-                fetch('../../Stats.csv'),
-                fetch('../../gachav2.csv'),
-                fetch('../../filescsv/abilitiesconfig.csv')
+            const baseCandidates = [
+                '../../Stats.csv',
+                '../Stats.csv',
+                '/Stats.csv',
+                'Stats.csv'
+            ];
+            const gachaCandidates = [
+                '../../gachav2.csv',
+                '../gachav2.csv',
+                '/gachav2.csv',
+                'gachav2.csv'
+            ];
+            const abilitiesCandidates = [
+                '../../filescsv/abilitiesconfig.csv',
+                '../filescsv/abilitiesconfig.csv',
+                '/filescsv/abilitiesconfig.csv',
+                'filescsv/abilitiesconfig.csv'
+            ];
+            const orbsCandidates = [
+                '../../orbs_organized.json',
+                '../orbs_organized.json',
+                '/orbs_organized.json',
+                'orbs_organized.json'
+            ];
+
+            const [statsText, gachaText, abilitiesText, orbsText] = await Promise.all([
+                fetchTextFromCandidates(baseCandidates),
+                fetchTextFromCandidates(gachaCandidates),
+                fetchTextFromCandidates(abilitiesCandidates),
+                fetchTextFromCandidates(orbsCandidates)
             ]);
-            const [statsText, gachaText, abilitiesText] = await Promise.all([
-                statsRes.text(),
-                gachaRes.text(),
-                abilitiesRes.text()
-            ]);
+
             parseMutantsCSV(statsText);
             parseGachaCSV(gachaText);
             parseAbilitiesConfigCSV(abilitiesText);
+            orbData = JSON.parse(orbsText);
             populateSpecimenOptions(specimenList, specimenInput);
             populateSkinOptions(mutantsData[0]?.specimen || '', skinSelect);
+            populateOrbControls(mutantsData[0]);
             renderSelection();
-            status.textContent = `Loaded ${mutantsData.length} specimens and ${Object.keys(gachaData).length} gacha entries.`;
+            status.textContent = `Loaded ${mutantsData.length} specimens, ${Object.keys(gachaData).length} gacha entries and ${Object.keys(orbData?.basic || {}).length} orb groups.`;
         } catch (error) {
             console.error(error);
             status.textContent = 'Unable to load data.';
@@ -359,12 +484,75 @@ function init() {
         const restrictedTypes = ['CAPTAINPEACE', 'SEASONAL', 'VIDEOGAME', 'GACHA', 'ZODIAC'];
         const isRestrictedType = restrictedTypes.some(type => (mutant.type || '').toUpperCase().includes(type));
         const starInfo = getStarInfo(specimenId, isRestrictedType);
+        const previousValue = select.value || 'basic';
         select.innerHTML = '';
         Object.entries(starInfo).forEach(([key, info]) => {
             const option = document.createElement('option');
             option.value = key;
             option.textContent = info.label;
             select.appendChild(option);
+        });
+
+        const nextValue = starInfo[previousValue] ? previousValue : Object.keys(starInfo)[0] || 'basic';
+        select.value = nextValue;
+    }
+
+    function populateOrbControls(mutant = null) {
+        if (!orbData) return;
+        const selectedMutant = mutant || getSelectedMutant(specimenInput.value);
+        const slotConfig = getOrbSlotConfig(selectedMutant);
+        const specialOptions = buildSpecialOrbOptions(orbData);
+        const selectedValues = getSelectedOrbValues();
+        const selectedSpecialValue = specialOptions.some(option => option.value === selectedValues.specialValue)
+            ? selectedValues.specialValue
+            : 'none';
+        const baseAbilityType = getMutantBaseAbilityType(selectedMutant);
+
+        const shouldShowSpecial = slotConfig.hasSpecial;
+        selectedOrbControls.visibleBasicCount = slotConfig.basicCount;
+        selectedOrbControls.visibleSpecial = shouldShowSpecial;
+
+        specialOrbLabel.style.display = shouldShowSpecial ? '' : 'none';
+        specialOrbSelect.style.display = shouldShowSpecial ? '' : 'none';
+        specialOrbSelect.disabled = !shouldShowSpecial;
+
+        specialOrbSelect.innerHTML = '';
+        specialOptions.forEach(optionData => {
+            const option = document.createElement('option');
+            option.value = optionData.value;
+            option.textContent = optionData.label;
+            specialOrbSelect.appendChild(option);
+        });
+        specialOrbSelect.value = shouldShowSpecial ? selectedSpecialValue : 'none';
+
+        const specialSelection = parseOrbValue(specialOrbSelect.value);
+        basicOrbLabels.forEach((label, index) => {
+            const isVisible = index < slotConfig.basicCount;
+            label.style.display = isVisible ? '' : 'none';
+        });
+        basicOrbSelects.forEach((select, index) => {
+            const isVisible = index < slotConfig.basicCount;
+            select.style.display = isVisible ? '' : 'none';
+            select.disabled = !isVisible;
+            if (!isVisible) {
+                select.value = 'none';
+                return;
+            }
+
+            const options = buildBasicOrbOptions(orbData, specialSelection?.orb?.type || '', baseAbilityType);
+            const previousValue = selectedValues.basicValues[index] || 'none';
+            const selectedValue = options.some(option => option.value === previousValue)
+                ? previousValue
+                : 'none';
+
+            select.innerHTML = '';
+            options.forEach(optionData => {
+                const option = document.createElement('option');
+                option.value = optionData.value;
+                option.textContent = optionData.label;
+                select.appendChild(option);
+            });
+            select.value = selectedValue;
         });
     }
 
@@ -380,14 +568,22 @@ function init() {
         const starInfo = getStarInfo(specimenId, false);
         const info = starInfo[skinType] || starInfo.basic;
         const stats = calculateEvolutionStats(mutant, level, skinType, info.bonusGacha || 0, info.starValue ?? null);
-        renderResults(mutant, stats, level, skinType, info);
+        const orbAdjustedStats = { ...stats, ...applyOrbEffectsToStats(stats, getSelectedOrbs(), { baseAbilityType: getMutantBaseAbilityType(mutant) }) };
+        const derivedAbilityStats = {
+            atk1AbilityF: orbAdjustedStats.atk1TotalAbilityF ?? orbAdjustedStats.atk1AbilityF,
+            atk2AbilityF: orbAdjustedStats.atk2TotalAbilityF ?? orbAdjustedStats.atk2AbilityF
+        };
+        renderResults(mutant, { ...orbAdjustedStats, ...derivedAbilityStats }, level, skinType, info);
         populateSkinOptions(specimenId, skinSelect);
+        populateOrbControls(mutant);
     }
 
     specimenInput.addEventListener('input', renderSelection);
     specimenInput.addEventListener('change', renderSelection);
     levelInput.addEventListener('input', renderSelection);
     skinSelect.addEventListener('change', renderSelection);
+    specialOrbSelect.addEventListener('change', renderSelection);
+    basicOrbSelects.forEach(select => select.addEventListener('change', renderSelection));
 
     loadData();
 }
@@ -419,6 +615,13 @@ function renderResults(mutant, stats, level, skinType, skinInfo) {
         `;
     }).join('');
 
+    const orbDetails = (() => {
+        const selected = getSelectedOrbs();
+        if (!selected.length) return 'No orbs selected';
+        return selected.map(entry => entry.orb?.name || 'Orb').join(' • ');
+    })();
+
+    const selectedOrbs = getSelectedOrbs();
     const attackItems = [
         {
             title: attack1Label,
@@ -459,6 +662,16 @@ function renderResults(mutant, stats, level, skinType, skinInfo) {
         `;
     }).join('');
 
+    const abilitySummary = (attackId) => {
+        const baseAbilityType = getMutantBaseAbilityType(mutant);
+        const specialSelection = selectedOrbs.find(entry => entry.kind === 'special');
+        const specialType = specialSelection?.orb?.type || '';
+        const baseValue = attackId === 1 ? Number(stats.atk1BaseAbilityF || 0) : Number(stats.atk2BaseAbilityF || 0);
+        const addedValue = attackId === 1 ? Number(stats.atk1AddedAbilityF || 0) : Number(stats.atk2AddedAbilityF || 0);
+        const entries = buildAbilityDisplayEntries(baseAbilityType, specialType, baseValue, addedValue);
+        return entries.map(entry => `${entry.label}: ${Math.trunc(entry.value)}`).join(' | ');
+    };
+
     results.innerHTML = `
         <div class="card">
             <div style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:center;">
@@ -467,6 +680,14 @@ function renderResults(mutant, stats, level, skinType, skinInfo) {
                     <div class="muted">DNA: ${mutant.dna || '—'} • Skin: ${skinInfo.label}</div>
                 </div>
                 <div class="pill">Level ${level} • Supports levels 1–25</div>
+            </div>
+
+            <div class="muted small" style="margin-top:0.6rem;">Orb preview: ${orbDetails}</div>
+
+            <div style="margin-top: 0.8rem; display:flex; flex-wrap:wrap; gap:0.5rem;">
+                <span class="pill">Attack/Life multiplier from basic orbs</span>
+                <span class="pill">Ability multiplier from allowed basic orbs</span>
+                <span class="pill">Special speed orbs modify speed directly</span>
             </div>
 
             <div class="stats-grid">
@@ -487,12 +708,12 @@ function renderResults(mutant, stats, level, skinType, skinInfo) {
                     <div class="stat-value">${stats.atk2F.toLocaleString()}</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-label">Ability 1%</div>
-                    <div class="stat-value">${stats.atk1AbilityF.toLocaleString()}</div>
+                    <div class="stat-label">Ability 1</div>
+                    <div class="stat-value">${abilitySummary(1)}</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-label">Ability 2%</div>
-                    <div class="stat-value">${stats.atk2AbilityF.toLocaleString()}</div>
+                    <div class="stat-label">Ability 2</div>
+                    <div class="stat-value">${abilitySummary(2)}</div>
                 </div>
             </div>
 

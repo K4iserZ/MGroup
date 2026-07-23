@@ -1,5 +1,7 @@
 /* Mutants data, parsing, and UI */
 
+import { getAllowedBasicOrbTypes, getBasicOrbCategoryGroups, normalizeAbilityType, applyOrbEffectsToStats, formatAbilityLabel } from './orbRules.js';
+
 let mutantsData = [];
 let gachaData = {};
 let orbsData = [];
@@ -272,6 +274,32 @@ function showMutantsList() {
     filterAndDisplayMutants(searchTerm, selectedGen);
 }
 
+function getMutantBySpecimen(specimenId) {
+    if (!specimenId || !mutantsData.length) return null;
+    return mutantsData.find(m => m.specimen.toLowerCase() === specimenId.toLowerCase()) || null;
+}
+
+function collectSelectedOrbs(specimenId) {
+    if (!specimenId) return [];
+    return Array.from(document.querySelectorAll(`[data-specimen="${specimenId}"]`))
+        .filter(btn => btn.dataset.selectedOrbName)
+        .map(btn => {
+            const typeKey = btn.dataset.kind === 's'
+                ? (btn.dataset.selectedSpecialType || '')
+                : (btn.dataset.selectedOrbType || '');
+            return {
+                kind: btn.dataset.kind === 's' ? 'special' : 'basic',
+                orb: {
+                    id: btn.dataset.selectedOrbId || '',
+                    name: btn.dataset.selectedOrbName || '',
+                    type: typeKey,
+                    value: Number(btn.dataset.selectedOrbValue || 0),
+                    category: btn.dataset.kind === 's' ? typeKey : `basic_${typeKey}`
+                }
+            };
+        });
+}
+
 function updateDetailPanelStats() {
     if (!selectedMutantDetail) return;
     const fameLevelInput = document.getElementById('mutantFameLevel');
@@ -283,8 +311,14 @@ function updateDetailPanelStats() {
     const bonus = info.bonusGacha || 0;
     const starVal = info.starValue || 0;
     const stats = calculateMutantStats(selectedMutantDetail, fameLevel, skinType, bonus, starVal);
-    stats.skinLabel = starInfo[skinType]?.label || skinType;
-    renderStatsDisplay(selectedMutantDetail, stats);
+    const selectedOrbs = collectSelectedOrbs(selectedMutantDetail.specimen);
+    const baseAbilityType = getMutantBaseAbilityType(selectedMutantDetail);
+    const specialOrbType = getActiveSpecialOrbType(selectedMutantDetail.specimen);
+    const orbAdjustedStats = applyOrbEffectsToStats(stats, selectedOrbs, { baseAbilityType });
+    orbAdjustedStats.skinLabel = starInfo[skinType]?.label || skinType;
+    orbAdjustedStats.baseAbilityType = baseAbilityType;
+    orbAdjustedStats.specialOrbType = specialOrbType;
+    renderStatsDisplay(selectedMutantDetail, orbAdjustedStats);
 }
 
 function filterAndDisplayMutants(searchTerm, selectedGen = '') {
@@ -418,7 +452,6 @@ function generateOrbSlotsHtml(orbSlotsStr, specimenId = '') {
     }
     
     const orbTypes = orbSlotsStr.split(';');
-    // container for slots (overlay dropdown will be appended here)
     let orbHtml = `<div id="orbSlotsContainer_${specimenId}" style="position: relative;">
         <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">`;
     
@@ -431,19 +464,89 @@ function generateOrbSlotsHtml(orbSlotsStr, specimenId = '') {
         if (typeKey === 'n') {
             orbHtml += `<button id="orbSlot_${specimenId}_${idx}" class="orb-slot-btn" data-specimen="${specimenId}" data-slot="${idx}" data-kind="n" style="position: relative; background: none; border: 2px solid #3498db; border-radius: 6px; padding: 4px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#e94560'" onmouseout="this.style.borderColor='#3498db'">
                 <div id="orbOverlay_${specimenId}_${idx}" class="orb-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:none;"></div>
-                <img src="${imageUrl}" alt="Orb n" style="width: 40px; height: 40px; object-fit: contain; display: block; border-radius: 4px;" onerror="this.style.display='none';">
+                <img src="${imageUrl}" alt="Orb n" style="width: 55px; height: 55px; object-fit: contain; display: block; border-radius: 4px;" onerror="this.style.display='none';">
             </button>`;
         } else {
-            // render special slot as a clickable button too, mark as kind="s"
             orbHtml += `<button id="orbSlot_${specimenId}_${idx}" class="orb-slot-btn" data-specimen="${specimenId}" data-slot="${idx}" data-kind="s" style="position: relative; background: none; border: 2px dashed #9b59b6; border-radius: 6px; padding: 4px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#8e44ad'" onmouseout="this.style.borderColor='#9b59b6'">
                 <div id="orbOverlay_${specimenId}_${idx}" class="orb-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:none;"></div>
-                <img src="${imageUrl}" alt="Orb s" style="width: 40px; height: 40px; object-fit: contain; display: block; border-radius: 4px;" onerror="this.style.display='none';">
+                <img src="${imageUrl}" alt="Orb s" style="width: 55px; height: 55px; object-fit: contain; display: block; border-radius: 4px;" onerror="this.style.display='none';">
             </button>`;
         }
     });
     
     orbHtml += '</div></div>';
     return orbHtml;
+}
+
+function getMutantBaseAbilityType(mutantData) {
+    if (!mutantData?.abilities) return '';
+    const normalizedTypes = [];
+    mutantData.abilities.split(';').map(entry => entry.trim()).filter(Boolean).forEach(entry => {
+        const [, ability] = entry.split(':');
+        const normalizedType = normalizeAbilityType(ability);
+        if (normalizedType && !normalizedTypes.includes(normalizedType)) {
+            normalizedTypes.push(normalizedType);
+        }
+    });
+    return normalizedTypes[0] || '';
+}
+
+function getOrbSlotConfig(mutantData) {
+    const rawSlots = mutantData?.orbSlots || '';
+    const slotEntries = rawSlots.split(';').map(entry => String(entry).trim()).filter(Boolean);
+    const basicCount = slotEntries.filter(entry => String(entry).charAt(0).toLowerCase() === 'n').length;
+    const specialCount = slotEntries.length - basicCount;
+    return {
+        total: slotEntries.length,
+        basicCount,
+        specialCount,
+        hasSpecial: specialCount > 0
+    };
+}
+
+function getActiveSpecialOrbType(specimenId) {
+    if (!specimenId) return '';
+    const selectedSlot = Array.from(document.querySelectorAll(`[data-specimen="${specimenId}"][data-kind="s"]`)).find((btn) => {
+        return Boolean(btn.dataset.selectedSpecialType);
+    });
+    return selectedSlot?.dataset.selectedSpecialType || '';
+}
+
+function getSelectedOrbPreviewItems(specimenId) {
+    if (!specimenId) return [];
+    return Array.from(document.querySelectorAll(`[data-specimen="${specimenId}"]`))
+        .map(btn => ({
+            slot: btn.dataset.slot || '',
+            kind: btn.dataset.kind || '',
+            name: btn.dataset.selectedOrbName || '',
+            orbId: btn.dataset.selectedOrbId || ''
+        }))
+        .filter(item => item.name);
+}
+
+function buildOrbPreviewHtml(mutantData) {
+    if (!mutantData) return '';
+    const slotConfig = getOrbSlotConfig(mutantData);
+    const selectedItems = getSelectedOrbPreviewItems(mutantData.specimen || '');
+    const selectedSummary = selectedItems.length > 0
+        ? selectedItems.map(item => `<span style="display:inline-flex; align-items:center; gap:0.35rem; color:#ecf0f1; font-size:0.78rem;">${item.kind === 's' ? '★' : '●'} ${item.name}</span>`).join('')
+        : '<span style="color:#95a5a6; font-size:0.78rem;">No orbs selected yet</span>';
+
+    return `
+        <div style="background: linear-gradient(135deg, rgba(22,33,62,0.95) 0%, rgba(15,52,96,0.95) 100%); border: 1px solid rgba(52, 152, 219, 0.35); border-radius: 10px; padding: 0.75rem 0.9rem; box-shadow: 0 8px 25px rgba(0,0,0,0.2);">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:0.6rem; margin-bottom:0.45rem; flex-wrap:wrap;">
+                <div style="color:#f39c12; font-weight:700; font-size:0.85rem;">Orb selection</div>
+                <div style="color:#95a5a6; font-size:0.75rem;">${slotConfig.basicCount} basic • ${slotConfig.specialCount} special</div>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:0.4rem; align-items:center; min-height:1.2rem;">${selectedSummary}</div>
+        </div>
+    `;
+}
+
+function refreshOrbPreview(specimenId) {
+    const preview = document.getElementById('mutantOrbPreview');
+    if (!preview || !selectedMutantDetail) return;
+    preview.innerHTML = buildOrbPreviewHtml(selectedMutantDetail);
 }
 
 function getAbilityBaseKey(ability) {
@@ -528,16 +631,19 @@ function calculateMutantStats(mutantData, fameLevel, starType = 'platinum', bonu
     };
 }
 
-function getBasicOrbs(types = []) {
+function getAllowedBasicOrbTypesForMutant(mutantData) {
+    const baseAbilityType = getMutantBaseAbilityType(mutantData);
+    return getAllowedBasicOrbTypes('', baseAbilityType);
+}
+
+function getBasicOrbs(mutantData, types = []) {
     if (!orbsData || !orbsData.basic) return [];
-    
-    // Get the first orb from each requested basic category (attack/critical by default)
+    const allowed = (types.length > 0 ? types : getAllowedBasicOrbTypesForMutant(mutantData)).filter(Boolean);
     const basicOrbs = [];
-    const allowed = types.length > 0 ? types : ['attack','critical'];
     allowed.forEach(typeKey => {
         const orbs = orbsData.basic[typeKey];
         if (Array.isArray(orbs) && orbs.length > 0) {
-            basicOrbs.push(orbs[0]);
+            basicOrbs.push(...orbs);
         }
     });
     return basicOrbs;
@@ -552,7 +658,11 @@ function getAllOrbsByType(typeKey) {
 
 // helper to populate a dropdown with the two base types
 function populateBasicOrbOptions(specimenId, slotIndex, dropdown) {
-    dropdown.innerHTML = ''; // clear existing content
+    dropdown.innerHTML = '';
+    const mutantData = getMutantBySpecimen(specimenId);
+    const slotEl = document.getElementById(`orbSlot_${specimenId}_${slotIndex}`);
+    const isSpecialSlot = slotEl && slotEl.dataset && slotEl.dataset.kind === 's';
+    const specialType = isSpecialSlot ? (slotEl.dataset.selectedSpecialType || '') : getActiveSpecialOrbType(specimenId);
 
     // delete orb button always visible in first list
     const del = document.createElement('button');
@@ -563,15 +673,14 @@ function populateBasicOrbOptions(specimenId, slotIndex, dropdown) {
     del.innerHTML   = '🗑️ Delete orb';
     dropdown.appendChild(del);
 
-    // decide whether this slot is special
-    const slotEl = document.getElementById(`orbSlot_${specimenId}_${slotIndex}`);
-    const isSpecialSlot = slotEl && slotEl.dataset && slotEl.dataset.kind === 's';
-
     if (isSpecialSlot) {
-        // list special categories directly (no basic orbs)
         const keys = orbsData && orbsData.special ? Object.keys(orbsData.special) : [];
+        const baseAbility = getMutantBaseAbilityType(mutantData);
         if (keys.length === 0) return;
         keys.forEach((key) => {
+            // exclude special orb that matches the specimen's own base ability
+            const keyAbility = String(key).replace(/^add/, '');
+            if (baseAbility && keyAbility === baseAbility) return;
             const firstOrb = orbsData.special[key] && orbsData.special[key][0];
             const orbImageUrl = firstOrb ? `https://s-ak.kobojo.com/mutants/assets/thumbnails/${firstOrb.id}.png` : '';
             const b = document.createElement('button');
@@ -579,25 +688,23 @@ function populateBasicOrbOptions(specimenId, slotIndex, dropdown) {
             b.onmouseover = () => { b.style.background = 'rgba(233,69,96,0.1)'; };
             b.onmouseout = () => { b.style.background = 'rgba(52,152,219,0.1)'; };
             b.onclick = (e) => { e.stopPropagation(); showOrbsByType(specimenId, slotIndex, key); };
-            b.innerHTML = `${orbImageUrl ? `<img src="${orbImageUrl}" alt="${key}" style="width:40px;height:40px;object-fit:contain;border-radius:4px;flex-shrink:0;" onerror="this.style.display='none';">` : ''}<span style="color:#ecf0f1; font-size:0.9rem; font-weight:500;">${key}</span>`;
+            b.innerHTML = `${orbImageUrl ? `<img src="${orbImageUrl}" alt="${key}" style="width:50px;height:50px;object-fit:contain;border-radius:4px;flex-shrink:0;" onerror="this.style.display='none';">` : ''}<span style="color:#ecf0f1; font-size:0.9rem; font-weight:500;">${key}</span>`;
             dropdown.appendChild(b);
         });
         return;
     }
 
-    // non-special slots: show basic orbs (attack/critical)
-    const basicOrbs = getBasicOrbs(['attack', 'critical','life','regenerate','retaliate','shield','slash','strengthen','weaken']);
-    if (basicOrbs.length === 0) return;
-    basicOrbs.forEach((orb) => {
-        const typeKey = Object.keys(orbsData.basic).find(key => orbsData.basic[key][0]?.id === orb.id);
-        const orbImageUrl = `https://s-ak.kobojo.com/mutants/assets/thumbnails/${orb.id}.png`;
-        const b = document.createElement('button');
-        b.style.cssText = 'display:flex;align-items:center;gap:0.6rem;background:rgba(52,152,219,0.1);border:1px solid #3498db;border-radius:6px;padding:0.6rem;width:100%;text-align:left;cursor:pointer;';
-        b.onmouseover = () => { b.style.background = 'rgba(233,69,96,0.1)'; };
-        b.onmouseout = () => { b.style.background = 'rgba(52,152,219,0.1)'; };
-        b.onclick = (e) => { e.stopPropagation(); showOrbsByType(specimenId, slotIndex, typeKey); };
-        b.innerHTML = `<img src="${orbImageUrl}" alt="${orb.name}" style="width:40px;height:40px;object-fit:contain;border-radius:4px;flex-shrink:0;" onerror="this.style.display='none';"><span style="color:#ecf0f1; font-size:0.9rem; font-weight:500;">${orb.name}</span>`;
-        dropdown.appendChild(b);
+    const categoryGroups = getBasicOrbCategoryGroups(orbsData, specialType, getMutantBaseAbilityType(mutantData));
+    if (categoryGroups.length === 0) return;
+
+    categoryGroups.forEach((group) => {
+        const groupButton = document.createElement('button');
+        groupButton.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:0.6rem;background:rgba(52,152,219,0.1);border:1px solid #3498db;border-radius:6px;padding:0.6rem;width:100%;text-align:left;cursor:pointer;color:#ecf0f1;';
+        groupButton.onmouseover = () => { groupButton.style.background = 'rgba(233,69,96,0.1)'; };
+        groupButton.onmouseout = () => { groupButton.style.background = 'rgba(52,152,219,0.1)'; };
+        groupButton.onclick = (e) => { e.stopPropagation(); showOrbsByType(specimenId, slotIndex, group.typeKey); };
+        groupButton.innerHTML = `<span style="font-weight:600;">${group.label}</span><span style="color:#95a5a6; font-size:0.8rem;">${group.orbs.length} levels</span>`;
+        dropdown.appendChild(groupButton);
     });
 }
 
@@ -643,6 +750,16 @@ function removeOrbOverlay(specimenId, slotIndex) {
     if (overlay) {
         overlay.innerHTML = '';
     }
+    const orbBtn = document.getElementById(`orbSlot_${specimenId}_${slotIndex}`);
+    if (orbBtn) {
+        orbBtn.removeAttribute('data-selected-orb-name');
+        orbBtn.removeAttribute('data-selected-orb-id');
+        orbBtn.removeAttribute('data-selected-orb-type');
+        orbBtn.removeAttribute('data-selected-orb-value');
+        orbBtn.removeAttribute('data-selected-special-type');
+    }
+    refreshOrbPreview(specimenId);
+    updateDetailPanelStats();
 }
 
 function showSpecialCategories(specimenId, slotIndex) {
@@ -652,6 +769,7 @@ function showSpecialCategories(specimenId, slotIndex) {
     dropdown.innerHTML = '';
 
     const keys = Object.keys(orbsData.special);
+    const baseAbility = getMutantBaseAbilityType(getMutantBySpecimen(specimenId));
     if (keys.length === 0) return;
 
     // add back button to return to initial list
@@ -665,6 +783,8 @@ function showSpecialCategories(specimenId, slotIndex) {
 
     // list special categories using same style as basic options
     keys.forEach((key) => {
+        const keyAbility = String(key).replace(/^add/, '');
+        if (baseAbility && keyAbility === baseAbility) return;
         const firstOrb = orbsData.special[key] && orbsData.special[key][0];
         const orbImageUrl = firstOrb ? `https://s-ak.kobojo.com/mutants/assets/thumbnails/${firstOrb.id}.png` : '';
         const b = document.createElement('button');
@@ -681,10 +801,15 @@ function showOrbsByType(specimenId, slotIndex, typeKey) {
     const dropdown = document.getElementById(`orbDropdown_${specimenId}_${slotIndex}`);
     if (!dropdown) return;
 
-    // Prefer special list when the type exists under special; otherwise fallback
+    const slotEl = document.getElementById(`orbSlot_${specimenId}_${slotIndex}`);
+    const isSpecialSlot = slotEl && slotEl.dataset && slotEl.dataset.kind === 's';
+    const specialType = isSpecialSlot ? (slotEl.dataset.selectedSpecialType || '') : getActiveSpecialOrbType(specimenId);
+
     let orbsByType = [];
     if (orbsData && orbsData.special && orbsData.special[typeKey]) {
         orbsByType = orbsData.special[typeKey];
+    } else if (orbsData && orbsData.basic && orbsData.basic[typeKey]) {
+        orbsByType = getBasicOrbCategoryGroups(orbsData, specialType, getMutantBaseAbilityType(getMutantBySpecimen(specimenId))).find(group => group.typeKey === typeKey)?.orbs || [];
     } else {
         orbsByType = getAllOrbsByType(typeKey);
     }
@@ -709,20 +834,22 @@ function showOrbsByType(specimenId, slotIndex, typeKey) {
         b.style.cssText = 'display:flex;align-items:center;gap:0.6rem;background:rgba(52,152,219,0.1);border:1px solid #3498db;border-radius:6px;padding:0.6rem;width:100%;text-align:left;cursor:pointer;';
         b.onmouseover = () => { b.style.background = 'rgba(233,69,96,0.1)'; };
         b.onmouseout = () => { b.style.background = 'rgba(52,152,219,0.1)'; };
-        b.onclick = (e) => { e.stopPropagation(); selectOrb(specimenId, slotIndex, orb.id, orb.name); };
+        b.onclick = (e) => { e.stopPropagation(); selectOrb(specimenId, slotIndex, orb, typeKey); };
         b.innerHTML = `<img src="${orbImageUrl}" alt="${orb.name}" style="width:40px;height:40px;object-fit:contain;border-radius:4px;flex-shrink:0;" onerror="this.style.display='none';"><span style="color:#ecf0f1; font-size:0.9rem; font-weight:500;">${orb.name}</span>`;
         list.appendChild(b);
     });
     dropdown.appendChild(list);
 }
 
-function selectOrb(specimenId, slotIndex, orbId, orbName) {
-    // find the button corresponding to this slot and update its overlay
+function selectOrb(specimenId, slotIndex, orb, typeKey = '') {
+    const orbId = orb?.id || '';
+    const orbName = orb?.name || '';
+    const orbValue = Number(orb?.value ?? 0);
+    const resolvedTypeKey = typeKey || orb?.type || '';
     const orbBtn = document.getElementById(`orbSlot_${specimenId}_${slotIndex}`);
     if (orbBtn) {
         let overlay = document.getElementById(`orbOverlay_${specimenId}_${slotIndex}`);
         if (!overlay) {
-            // should already exist from generation, but create just in case
             overlay = document.createElement('div');
             overlay.id = `orbOverlay_${specimenId}_${slotIndex}`;
             overlay.className = 'orb-overlay';
@@ -730,14 +857,24 @@ function selectOrb(specimenId, slotIndex, orbId, orbName) {
             orbBtn.appendChild(overlay);
         }
         const orbImageUrl = `https://s-ak.kobojo.com/mutants/assets/thumbnails/${orbId}.png`;
-        overlay.innerHTML = `<img src="${orbImageUrl}" alt="${orbName}" style="width: 50px; height: 50px; object-fit: contain; border-radius: 4px;" onerror="this.style.display='none';">`;
+        overlay.innerHTML = `<img src="${orbImageUrl}" alt="${orbName}" style="width: 75px; height: 75px; object-fit: contain; border-radius: 4px;" onerror="this.style.display='none';">`;
+        orbBtn.setAttribute('data-selected-orb-name', orbName);
+        orbBtn.setAttribute('data-selected-orb-id', orbId);
+        orbBtn.setAttribute('data-selected-orb-value', String(orbValue));
+        orbBtn.setAttribute('data-selected-orb-type', resolvedTypeKey);
+        if (orbBtn.dataset.kind === 's') {
+            orbBtn.setAttribute('data-selected-special-type', resolvedTypeKey);
+        } else {
+            orbBtn.removeAttribute('data-selected-special-type');
+        }
     }
 
-    // Close dropdown
     const dropdown = document.getElementById(`orbDropdown_${specimenId}_${slotIndex}`);
     if (dropdown) {
         dropdown.remove();
     }
+    refreshOrbPreview(specimenId);
+    updateDetailPanelStats();
 }
 
 function openMutantModal(mutant) {
@@ -765,7 +902,6 @@ function openMutantModal(mutant) {
     const initialSkin = 'basic';
     const initialBonusGacha = 0;
     const initialStarValue = starValues[initialSkin];
-    const stats = calculateMutantStats(fullMutantData, 25, initialSkin, initialBonusGacha, initialStarValue);
     
     const getImageUrl = (specimen, skinType) => {
         const starInfoLocal = getStarInfo(specimen, isRestrictedType);
@@ -778,6 +914,7 @@ function openMutantModal(mutant) {
     const imageUrl = getImageUrl(fullMutantData.specimen, initialSkin);
     const genesHtml = generateGenesHtml(fullMutantData.dna);
     const orbSlotsHtml = generateOrbSlotsHtml(fullMutantData.orbSlots, fullMutantData.specimen);
+    const orbPreviewHtml = buildOrbPreviewHtml(fullMutantData);
     
     // Build skin selector as a dropdown combobox with images
     const starInfoObj = getStarInfo(fullMutantData.specimen, isRestrictedType);
@@ -830,6 +967,7 @@ function openMutantModal(mutant) {
                         ${skinSelectorHtml}
                     </div>
                     <div id="statsDisplay" style="flex: 1;"></div>
+                    <div id="mutantOrbPreview">${orbPreviewHtml}</div>
                 </div>
             </div>
         </div>
@@ -838,7 +976,8 @@ function openMutantModal(mutant) {
     // Store the selected skin type for updates
     window.selectedMutantSkinType = initialSkin;
     if (detailPanel) detailPanel.style.display = 'flex';
-    renderStatsDisplay(fullMutantData, stats);
+    updateDetailPanelStats();
+    refreshOrbPreview(fullMutantData.specimen);
     
     // Add event listeners for orb slots
     setTimeout(() => {
@@ -910,6 +1049,47 @@ function openMutantModal(mutant) {
 
 }
 
+function buildAbilityBreakdownHtml(stats, attackKey, abilityName, abilityIcon) {
+    const specialType = stats.specialOrbType || '';
+    const addedAbilityType = specialType && specialType !== 'speed' ? specialType.replace(/^add/, '') : '';
+    const addedAbilityIcon = addedAbilityType ? getAbilityIconUrl(`ability_${addedAbilityType}`) : '';
+
+    const baseValue = Math.round(Number(stats[`${attackKey}BaseAbilityF`] ?? 0));
+    const addedValue = Math.round(Number(stats[`${attackKey}AddedAbilityF`] ?? 0));
+
+    const lines = [];
+
+    // Base ability line (show if mutant has a named ability or base value)
+    if ((abilityName && abilityName !== 'Unknown') || baseValue > 0) {
+        const icon = abilityIcon || '';
+        const label = abilityName && abilityName !== 'Unknown' ? abilityName : formatAbilityLabel(abilityName || '');
+        lines.push({ icon, label, value: baseValue });
+    }
+
+    // Added ability line (from special orb or basic ability orbs)
+    if (addedValue > 0 && addedAbilityType) {
+        const label = formatAbilityLabel(addedAbilityType);
+        lines.push({ icon: addedAbilityIcon, label, value: addedValue });
+    }
+
+    // If no base but there is an added ability value and no named ability, still show added
+    if (lines.length === 0 && addedValue > 0) {
+        const label = addedAbilityType ? formatAbilityLabel(addedAbilityType) : 'Ability';
+        lines.push({ icon: addedAbilityIcon, label, value: addedValue });
+    }
+
+    if (lines.length === 0) return '';
+
+    const html = lines.map(line => `
+        <div style="display:flex; align-items:center; gap:0.4rem; font-size: 0.85rem; margin-top: 0.3rem;">
+            ${line.icon ? `<img src="${line.icon}" alt="${line.label}" style="width:18px; height:18px; object-fit:contain;" onerror="this.style.display='none';">` : ''}
+            <span style="color:#ecf0f1; font-weight:600;">${line.label}</span>
+            <span style="color:#ecf0f1; font-weight:bold; margin-left:auto;">${line.value}</span>
+        </div>`).join('');
+
+    return html;
+}
+
 function renderStatsDisplay(mutantData, stats) {
     const statsDisplay = document.getElementById('statsDisplay');
     if (!statsDisplay) return;
@@ -956,20 +1136,24 @@ function renderStatsDisplay(mutantData, stats) {
                 <div style=\"padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);\">
                     <p style=\"color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;\"><img src=\"image/gene/${atk1pIcon}\" alt=\"Attack 1\" style=\"width:35px; vertical-align:middle; margin-right:2px;\" onerror=\"this.style.display='none';\">${stats.attack1p_name}</p>
                     <p style=\"color: #f39c12; font-weight: bold; margin: 0.2rem 0; font-size: 0.9rem;\">${stats.atk1F}</p>
-                    <div style=\"display:flex; align-items:center; gap:0.3rem; font-size: 0.7rem; margin-top: 0.3rem;\">
-                        <img src=\"${stats.ability1Icon}\" alt=\"${stats.ability1Name}\" style=\"width:16px; height:16px; object-fit:contain;\" onerror=\"this.style.display='none';\">
-                        <span style=\"color:#ecf0f1;\">${stats.ability1Name}</span>
-                    </div>
-                    <div style=\"color:#f39c12; font-weight:bold; font-size:0.8rem; margin-top:0.2rem;\">${stats.atk1AbilityF}</div>
+                    ${buildAbilityBreakdownHtml(stats, 'atk1', stats.ability1Name, stats.ability1Icon)}
                 </div>
                 <div style=\"padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);\">
                     <p style=\"color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;\"><img src=\"image/gene/${atk2pIcon}\" alt=\"Attack 2\" style=\"width:35px; vertical-align:middle; margin-right:2px;\" onerror=\"this.style.display='none';\">${stats.attack2p_name}</p>
                     <p style=\"color: #9b59b6; font-weight: bold; margin: 0.2rem 0; font-size: 0.9rem;\">${stats.atk2F}</p>
-                    ${stats.ability2Name ? `<div style=\"display:flex; align-items:center; gap:0.3rem; font-size: 0.7rem; margin-top: 0.3rem;\">
-                        <img src=\"${stats.ability2Icon}\" alt=\"${stats.ability2Name}\" style=\"width:16px; height:16px; object-fit:contain;\" onerror=\"this.style.display='none';\">
-                        <span style=\"color:#ecf0f1;\">${stats.ability2Name}</span>
-                    </div>` : ''}
-                    ${stats.ability2Name ? `<div style=\"color:#9b59b6; font-weight:bold; font-size:0.8rem; margin-top:0.2rem;\">${stats.atk2AbilityF}</div>` : ''}
+                    ${
+    (
+        stats.ability2Name ||
+        Number(stats.atk2AddedAbilityF) > 0
+    )
+        ? buildAbilityBreakdownHtml(
+            stats,
+            'atk2',
+            stats.ability2Name,
+            stats.ability2Icon
+        )
+        : ''
+}
                 </div>
             </div>
         </div>

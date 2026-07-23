@@ -179,6 +179,20 @@
         "type": "07",
         "name": "Life +35%",
         "value": 35
+      },
+      {
+        "id": "orb_basic_life_08",
+        "category": "basic_life",
+        "type": "08",
+        "name": "Life +40%",
+        "value": 40
+      },
+      {
+        "id": "orb_basic_life_09",
+        "category": "basic_life",
+        "type": "09",
+        "name": "Life +45%",
+        "value": 45
       }
     ],
     "regenerate": [
@@ -467,8 +481,8 @@
         "id": "orb_basic_strengthen_07",
         "category": "basic_strengthen",
         "type": "07",
-        "name": "Boost +22%",
-        "value": 22
+        "name": "Boost +26%",
+        "value": 26
       }
     ],
     "weaken": [
@@ -525,8 +539,8 @@
         "id": "orb_basic_weaken_07",
         "category": "basic_weaken",
         "type": "07",
-        "name": "Curse +22%",
-        "value": 22
+        "name": "Curse +26%",
+        "value": 65
       }
     ]
   },
