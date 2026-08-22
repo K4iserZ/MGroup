@@ -1,12 +1,28 @@
 /* Mutants data, parsing, and UI */
 
-import { getAllowedBasicOrbTypes, getBasicOrbCategoryGroups, normalizeAbilityType, applyOrbEffectsToStats, formatAbilityLabel } from './orbRules.js';
+import { getAllowedBasicOrbTypes, getBasicOrbCategoryGroups, normalizeAbilityType, applyOrbEffectsToStats, formatAbilityLabel} from './orbRules.js';
 
 let mutantsData = [];
 let gachaData = {};
 let orbsData = [];
 let abilitiesConfig = {};
 let selectedMutantDetail = null;
+
+function formatDisplayNumber(value) {
+    if (value === null || value === undefined || value === '') return value;
+
+    const input = String(value).trim();
+    if (!input) return value;
+
+    const sanitized = input.replace(/,/g, '');
+    const match = sanitized.match(/^([+-]?)(\d+)(?:\.(\d+))?$/);
+    if (!match) return value;
+
+    const [, sign, integerPart, decimalPart] = match;
+    const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+    return `${sign}${formattedInteger}${decimalPart !== undefined ? `.${decimalPart}` : ''}`;
+}
 
 function extractNumber(value) {
     if (!value) return 0;
@@ -895,7 +911,7 @@ function openMutantModal(mutant) {
     selectedMutantDetail = fullMutantData;
     if (container) container.style.display = 'none';
     if (detailPanel) detailPanel.style.display = 'flex';
-    const restrictedTypes = ['CAPTAINPEACE', 'SEASONAL', 'VIDEOGAME', 'GACHA', 'ZODIAC'];
+    const restrictedTypes = ['CAPTAINPEACE', 'SEASONAL', 'VIDEOGAME', 'GACHA', 'ZODIAC','COMMUNITY'];
     const typeUpper = (fullMutantData.type || '').toUpperCase();
     const isRestrictedType = restrictedTypes.some(t => typeUpper.includes(t));
     window.selectedMutantIsRestricted = isRestrictedType;
@@ -1084,7 +1100,7 @@ function buildAbilityBreakdownHtml(stats, attackKey, abilityName, abilityIcon) {
         <div style="display:flex; align-items:center; gap:0.4rem; font-size: 0.85rem; margin-top: 0.3rem;">
             ${line.icon ? `<img src="${line.icon}" alt="${line.label}" style="width:18px; height:18px; object-fit:contain;" onerror="this.style.display='none';">` : ''}
             <span style="color:#ecf0f1; font-weight:600;">${line.label}</span>
-            <span style="color:#ecf0f1; font-weight:bold; margin-left:auto;">${line.value}</span>
+            <span style="color:#ecf0f1; font-weight:bold; margin-left:auto;">${formatDisplayNumber(line.value)}</span>
         </div>`).join('');
 
     return html;
@@ -1127,33 +1143,22 @@ function renderStatsDisplay(mutantData, stats) {
                 </div>
                 <div style="padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);\">
                     <p style=\"color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;\"><img src=\"${ICONS.life}\" alt=\"Life\" style=\"width:25px; vertical-align:middle; margin-right:3px;\">Life</p>
-                    <p style=\"color: #e94560; font-weight: bold; font-size: 1rem; margin: 0;\">${stats.lifeF}</p>
+                    <p style=\"color: #e94560; font-weight: bold; font-size: 1rem; margin: 0;\">${formatDisplayNumber(stats.lifeF)}</p>
                 </div>
                 <div style=\"padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);\">
                     <p style=\"color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;\"><img src=\"${ICONS.speed}\" alt=\"Speed\" style=\"width:25px; vertical-align:middle; margin-right:3px;\">Speed</p>
-                    <p style=\"color: #3498db; font-weight: bold; font-size: 1rem; margin: 0;\">${stats.speedF}</p>
+                    <p style=\"color: #3498db; font-weight: bold; font-size: 1rem; margin: 0;\">${formatDisplayNumber(stats.speedF)}</p>
                 </div>
                 <div style=\"padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);\">
                     <p style=\"color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;\"><img src=\"image/gene/${atk1pIcon}\" alt=\"Attack 1\" style=\"width:35px; vertical-align:middle; margin-right:2px;\" onerror=\"this.style.display='none';\">${stats.attack1p_name}</p>
-                    <p style=\"color: #f39c12; font-weight: bold; margin: 0.2rem 0; font-size: 0.9rem;\">${stats.atk1F}</p>
+                    <p style=\"color: #f39c12; font-weight: bold; margin: 0.2rem 0; font-size: 0.9rem;\">${formatDisplayNumber(stats.atk1F)}</p>
                     ${buildAbilityBreakdownHtml(stats, 'atk1', stats.ability1Name, stats.ability1Icon)}
                 </div>
-                <div style=\"padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);\">
-                    <p style=\"color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;\"><img src=\"image/gene/${atk2pIcon}\" alt=\"Attack 2\" style=\"width:35px; vertical-align:middle; margin-right:2px;\" onerror=\"this.style.display='none';\">${stats.attack2p_name}</p>
-                    <p style=\"color: #9b59b6; font-weight: bold; margin: 0.2rem 0; font-size: 0.9rem;\">${stats.atk2F}</p>
-                    ${
-    (
-        stats.ability2Name ||
-        Number(stats.atk2AddedAbilityF) > 0
-    )
-        ? buildAbilityBreakdownHtml(
-            stats,
-            'atk2',
-            stats.ability2Name,
-            stats.ability2Icon
-        )
-        : ''
-}
+                <div style="padding: 0.7rem; border: 1px solid rgba(52,152,219,0.25); border-radius: 6px; background: rgba(9,18,34,0.5);">
+                    <p style="color: #95a5a6; font-size: 0.75rem; margin: 0 0 0.3rem 0; font-weight: 600;"><img src="image/gene/${atk2pIcon}" alt="Attack 2" style="width:35px; vertical-align:middle; margin-right:2px;" onerror="this.style.display='none';">${stats.attack2p_name}</p>
+                    <p style="color: #f39c12; font-weight: bold; margin: 0.2rem 0; font-size: 0.9rem;">${formatDisplayNumber(stats.atk2F)}</p>
+                    ${buildAbilityBreakdownHtml(stats, 'atk2', stats.ability2Name, stats.ability2Icon)}
+                </div>
                 </div>
             </div>
         </div>
@@ -1171,4 +1176,4 @@ window.showOrbsByType = showOrbsByType;
 
 window.addEventListener('click', (e) => { const modal = document.getElementById('mutantModal'); if (e.target === modal) closeMutantModal(); });
 
-export { loadGachaData, loadMutantsData, initMutantsSection, getMutantFromCsv, mutantsData, gachaData, closeMutantModal, openMutantModal, starValues, numericToStarKey, ICONS, calculateMutantStats, generateGenesHtml, getAbilityIconUrl, parseUnlockAttack, isAOE };
+export { loadGachaData, loadMutantsData, initMutantsSection, getMutantFromCsv, mutantsData, gachaData, closeMutantModal, openMutantModal, starValues, numericToStarKey, ICONS, calculateMutantStats, generateGenesHtml, getAbilityIconUrl, parseUnlockAttack, isAOE, formatDisplayNumber };

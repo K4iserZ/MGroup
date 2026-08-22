@@ -1,6 +1,6 @@
 // Stats Calculator functionality
 
-import { calculateMutantStats, mutantsData, gachaData, starValues, numericToStarKey } from './mutants.js';
+import { calculateMutantStats, mutantsData, gachaData, starValues, numericToStarKey, formatDisplayNumber } from './mutants.js';
 
 function initStatsSection() {
     const fameInput = document.getElementById('statsFameLevel');
@@ -67,12 +67,12 @@ function initStatsSection() {
                         <td style="padding: 0.5rem;">${mutant.specimen}</td>
                         <td style="padding: 0.5rem;">${mutant.name} (${version.label})</td>
                         <td style="padding: 0.5rem;">${mutant.type || 'N/A'}</td>
-                        <td style="padding: 0.5rem; text-align: center;">${stats.lifeF.toLocaleString()}</td>
-                        <td style="padding: 0.5rem; text-align: center;">${stats.speedF}</td>
-                        <td style="padding: 0.5rem; text-align: center;">${stats.atk1F.toLocaleString()}</td>
-                        <td style="padding: 0.5rem; text-align: center;">${stats.atk2F.toLocaleString()}</td>
-                        <td style="padding: 0.5rem; text-align: center;">${stats.atk1AbilityF.toLocaleString()}</td>
-                        <td style="padding: 0.5rem; text-align: center;">${stats.atk2AbilityF.toLocaleString()}</td>
+                        <td style="padding: 0.5rem; text-align: center;">${formatDisplayNumber(stats.lifeF)}</td>
+                        <td style="padding: 0.5rem; text-align: center;">${formatDisplayNumber(stats.speedF)}</td>
+                        <td style="padding: 0.5rem; text-align: center;">${formatDisplayNumber(stats.atk1F)}</td>
+                        <td style="padding: 0.5rem; text-align: center;">${formatDisplayNumber(stats.atk2F)}</td>
+                        <td style="padding: 0.5rem; text-align: center;">${formatDisplayNumber(stats.atk1AbilityF)}</td>
+                        <td style="padding: 0.5rem; text-align: center;">${formatDisplayNumber(stats.atk2AbilityF)}</td>
                         <td style="padding: 0.5rem;">${stats.ability1Name} / ${stats.ability2Name}</td>
                         <td style="padding: 0.5rem; text-align: center;">${multiple}</td>
                     </tr>

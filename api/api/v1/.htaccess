@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Bloquear acceso directo a la carpeta data
+RewriteRule ^data/ - [F,L]
+
+# Enviar las rutas de la API a index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^ index.php [QSA,L]

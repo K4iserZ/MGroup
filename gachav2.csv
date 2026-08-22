@@ -255,6 +255,7 @@ opalescent,Specimen_FD_03,3,10,11,completion
 school,Specimen_BF_07,3,5,0,basic
 school,Specimen_EE_10,3,8,0,basic
 school,Specimen_DD_08,3,8,0,basic
+school,Specimen_CC_05,3,12,0,basic
 school,Specimen_FD_03,3,10,11,completion
 autumn,Specimen_DD_10,3,5,0,basic
 autumn,Specimen_FE_13,0,4,0,basic
@@ -343,3 +344,15 @@ honeybee,Specimen_AB_11,3,10,0,basic
 honeybee,Specimen_FD_03,3,10,11,completion
 independence,Specimen_CC_06,3,10,0,basic
 independence,Specimen_FD_03,3,10,11,completion
+hexcity,Specimen_AA_04,3,13,0,basic
+hexcity,Specimen_EC_08,3,13,0,basic
+hexcity,Specimen_EF_11,3,13,0,basic
+hexcity,Specimen_BE_11,3,13,0,basic
+hexcity,Specimen_EB_07,3,13,0,basic
+hexcity,Specimen_FD_03,3,10,11,completion
+gemstones,Specimen_AF_04,3,15,32,basic
+gemstones,Specimen_AD_04,3,15,23,basic
+gemstones,Specimen_FA_07,2,25,20,basic
+gemstones,Specimen_AD_07,3,10,15,basic
+gemstones,Specimen_FF_10,4,10,10,basic
+gemstones,Specimen_EF_15,4,0,11,completion

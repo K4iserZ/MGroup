@@ -1,6 +1,6 @@
 /* Mutants comparison functionality */
 
-import { getMutantFromCsv, calculateMutantStats, mutantsData, gachaData, starValues, numericToStarKey, ICONS, generateGenesHtml, getAbilityIconUrl, parseUnlockAttack, isAOE } from './mutants.js';
+import { getMutantFromCsv, calculateMutantStats, mutantsData, gachaData, starValues, numericToStarKey, ICONS, generateGenesHtml, getAbilityIconUrl, parseUnlockAttack, isAOE, formatDisplayNumber } from './mutants.js';
 
 function getAttackGeneIcon(mutant, attackType) {
     if (!mutant) return '';
@@ -428,7 +428,7 @@ function renderComparison(mutantNames, fameLevel) {
             }
             html += `
                 <div style="padding: 0.75rem; border-right: ${idx < stats.length - 1 ? '2px solid #3498db' : 'none'}; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <p style="color: ${colors[idx]}; font-weight: bold; font-size: 1.1rem; margin: 0; ${isMax ? 'text-shadow: 0 0 10px ' + colors[idx] : ''}">${extraIcon}${val}</p>
+                    <p style="color: ${colors[idx]}; font-weight: bold; font-size: 1.1rem; margin: 0; ${isMax ? 'text-shadow: 0 0 10px ' + colors[idx] : ''}">${extraIcon}${formatDisplayNumber(val)}</p>
                     <div style="background: rgba(52, 152, 219, 0.2); height: 6px; border-radius: 3px; overflow: hidden;">
                         <div style="background: ${colors[idx]}; height: 100%; width: ${barWidth}%; transition: width 0.3s ease;"></div>
                     </div>
