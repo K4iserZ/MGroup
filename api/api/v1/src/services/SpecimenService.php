@@ -2,6 +2,9 @@
 
 namespace App\Services;
 
+use App\DTO\SpecimenPublicDTO;
+use App\DTO\SpecimenSummaryDTO;
+
 class SpecimenService
 {
     private array $specimens;
@@ -30,25 +33,25 @@ class SpecimenService
     }
 
     /**
-     * Obtiene todos los especímenes.
+     * Devuelve la lista ligera para las tarjetas del frontend.
+     * @return SpecimenSummaryDTO[]
      */
-    public function getAll(): array
+    public function getSummaries(): array
     {
-        return $this->specimens;
+        return array_map(
+            fn(array $item) => SpecimenSummaryDTO::fromArray($item),
+            $this->specimens
+        );
     }
 
     /**
-     * Busca un espécimen por su ID.
+     * Devuelve los datos detallados del espécimen expuesto al público.
      */
-    public function getBySpecimen(string $specimen): ?array
+    public function getPublicBySpecimen(string $specimen): ?SpecimenPublicDTO
     {
         foreach ($this->specimens as $item) {
-
-            if (
-                isset($item['Specimen']) &&
-                $item['Specimen'] === $specimen
-            ) {
-                return $item;
+            if (isset($item['Specimen']) && $item['Specimen'] === $specimen) {
+                return SpecimenPublicDTO::fromArray($item);
             }
         }
 

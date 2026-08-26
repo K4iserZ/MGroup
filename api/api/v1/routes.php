@@ -4,16 +4,14 @@ use App\Controllers\SpecimenController;
 use App\Services\SpecimenService;
 
 $method = $_SERVER['REQUEST_METHOD'];
-
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
 
 /**
  * --------------------------------------------------------------------------
  * GET /api/v1/specimens
  * --------------------------------------------------------------------------
  *
- * Devuelve todos los especímenes utilizando SpecimenPublicDTO.
+ * Devuelve la lista ligera de especímenes utilizando SpecimenSummaryDTO.
  *
  * Prueba:
  * http://localhost:8000/api/v1/specimens
@@ -30,13 +28,12 @@ if ($method === 'GET' && $uri === '/api/v1/specimens') {
     exit;
 }
 
-
 /**
  * --------------------------------------------------------------------------
- * GET /api/v1/specimens/{Specimen}
+ * GET /api/v1/specimens/{specimen}
  * --------------------------------------------------------------------------
  *
- * Devuelve un espécimen concreto utilizando SpecimenPublicDTO.
+ * Devuelve un espécimen concreto con sus detalles mediante SpecimenPublicDTO.
  *
  * Ejemplo:
  * http://localhost:8000/api/v1/specimens/Specimen_A_01
@@ -57,10 +54,9 @@ if (
     exit;
 }
 
-
 /**
  * --------------------------------------------------------------------------
- * 404
+ * 404 - Not Found
  * --------------------------------------------------------------------------
  */
 http_response_code(404);

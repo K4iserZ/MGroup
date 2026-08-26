@@ -1,8 +1,8 @@
 import csv
 import json
 
-archivo_csv = "Stats.csv"
-archivo_json = "stats.json"
+archivo_csv = "gachav2.csv"
+archivo_json = "gachav2.json"
 
 data = []
 

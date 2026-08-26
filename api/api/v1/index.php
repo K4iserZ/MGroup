@@ -15,4 +15,5 @@ require_once __DIR__ . '/src/DTO/SpecimenDTO.php';
 require_once __DIR__ . '/src/DTO/SpecimenPublicDTO.php';
 require_once __DIR__ . '/src/services/SpecimenService.php';
 require_once __DIR__ . '/src/controllers/SpecimenController.php';
+require_once __DIR__ . '/src/DTO/SpecimenSummaryDTO.php';
 require_once __DIR__ . '/routes.php';
