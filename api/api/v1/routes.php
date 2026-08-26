@@ -2,7 +2,9 @@
 
 use App\Controllers\SpecimenController;
 use App\Controllers\GachaController;
+use App\Controllers\OfferController;
 use App\Services\GachaService;
+use App\Services\OfferService;
 use App\Services\SpecimenService;
 
 $method = $_SERVER['REQUEST_METHOD'];
@@ -25,6 +27,26 @@ if ($method === 'GET' && $uri === '/api/v1/gacha') {
     );
 
     $controller->index();
+
+    exit;
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * GET /api/v1/offers/specimen/{id}
+ * --------------------------------------------------------------------------
+ *
+ * Busca ofertas que contienen el specimen indicado en articles[].typeId.
+ */
+if (
+    $method === 'GET' &&
+    preg_match('#^/api/v1/offers/specimen/([^/]+)$#', $uri, $matches)
+) {
+    $controller = new OfferController(
+        new OfferService()
+    );
+
+    $controller->findBySpecimen(urldecode($matches[1]));
 
     exit;
 }

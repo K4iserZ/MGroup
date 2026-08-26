@@ -18,4 +18,7 @@ require_once __DIR__ . '/src/controllers/SpecimenController.php';
 require_once __DIR__ . '/src/DTO/SpecimenSummaryDTO.php';
 require_once __DIR__ . '/src/services/GachaService.php';
 require_once __DIR__ . '/src/controllers/GachaController.php';
+require_once __DIR__ . '/src/DTO/OfferPublicDTO.php';
+require_once __DIR__ . '/src/services/OfferService.php';
+require_once __DIR__ . '/src/controllers/OfferController.php';
 require_once __DIR__ . '/routes.php';
