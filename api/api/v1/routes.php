@@ -1,10 +1,33 @@
 <?php
 
 use App\Controllers\SpecimenController;
+use App\Controllers\GachaController;
+use App\Services\GachaService;
 use App\Services\SpecimenService;
 
 $method = $_SERVER['REQUEST_METHOD'];
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+/**
+ * --------------------------------------------------------------------------
+ * GET /api/v1/gacha
+ * --------------------------------------------------------------------------
+ *
+ * Devuelve el JSON de gacha sin transformar su estructura.
+ *
+ * Prueba:
+ * http://localhost:8000/api/v1/gacha
+ */
+if ($method === 'GET' && $uri === '/api/v1/gacha') {
+
+    $controller = new GachaController(
+        new GachaService()
+    );
+
+    $controller->index();
+
+    exit;
+}
 
 /**
  * --------------------------------------------------------------------------

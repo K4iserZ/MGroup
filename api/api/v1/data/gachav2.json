@@ -1,0 +1,1073 @@
+[
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "girl,Specimen_AA_01,0,10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "girl,Specimen_CD_01,0,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "girl,Specimen_CB_01,0,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "girl,Specimen_F_01,1,-10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "girl,Specimen_FB_01,1,-10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "girl,Specimen_CF_01,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gothic,Specimen_CE_01,0,10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gothic,Specimen_BF_01,0,-10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gothic,Specimen_DC_01,0,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gothic,Specimen_E_01,1,10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gothic,Specimen_FD_01,2,-10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gothic,Specimen_DC_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "steampunk,Specimen_BF_02,0,10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "steampunk,Specimen_EC_01,0,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "steampunk,Specimen_AB_01,1,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "steampunk,Specimen_C_01,2,10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "steampunk,Specimen_AC_02,3,10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "steampunk,Specimen_AD_01,3,-10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "heroes,Specimen_FC_02,0,-10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "heroes,Specimen_AE_01,1,-10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "heroes,Specimen_BB_01,2,-10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "heroes,Specimen_CA_01,3,-10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "heroes,Specimen_FA_01,3,-10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "heroes,Specimen_EF_02,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "japan,Specimen_CC_01,1,-10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "japan,Specimen_A_01,2,-10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "japan,Specimen_DF_01,3,-10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "japan,Specimen_BA_02,3,10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "japan,Specimen_CB_02,3,-10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "japan,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "starwars,Specimen_AF_04,1,-10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "starwars,Specimen_CC_03,2,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "starwars,Specimen_CD_01,3,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "starwars,Specimen_EC_01,3,10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "starwars,Specimen_BC_01,3,-10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "starwars,Specimen_BF_04,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gachaboss,Specimen_FF_01,1,-10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gachaboss,Specimen_D_01,2,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gachaboss,Specimen_FB_03,3,-10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gachaboss,Specimen_DB_01,3,10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gachaboss,Specimen_EA_01,3,-10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gachaboss,Specimen_AB_05,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "villains,Specimen_DA_01,1,10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "villains,Specimen_B_01,2,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "villains,Specimen_AB_02,3,-10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "villains,Specimen_EC_03,3,10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "villains,Specimen_BA_03,3,-10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "villains,Specimen_CE_05,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympians,Specimen_CC_04,0,10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympians,Specimen_AC_01,1,-10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympians,Specimen_BC_02,2,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympians,Specimen_BB_03,3,10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympians,Specimen_CE_03,3,-10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympians,Specimen_EC_06,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "movies,Specimen_ED_03,1,-10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "movies,Specimen_EB_04,2,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "movies,Specimen_CB_03,3,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "movies,Specimen_BD_03,3,10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "movies,Specimen_CC_02,3,10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "movies,Specimen_FA_06,4,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "elements,Specimen_EF_01,1,-10,30,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "elements,Specimen_EB_02,2,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "elements,Specimen_BD_04,3,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "elements,Specimen_EB_05,3,10,21,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "elements,Specimen_DF_04,3,10,9,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "elements,Specimen_EB_06,4,10,7,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "soldiers,Specimen_AB_04,2,10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "soldiers,Specimen_CF_02,3,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "soldiers,Specimen_BC_04,0,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "soldiers,Specimen_AD_05,3,10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "soldiers,Specimen_CD_06,4,10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "soldiers,Specimen_BD_07,4,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "lucha,Specimen_CF_03,3,-10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "lucha,Specimen_DE_04,2,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "lucha,Specimen_DC_05,3,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "lucha,Specimen_FE_04,4,10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "lucha,Specimen_BE_05,4,10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "lucha,Specimen_AC_07,4,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "fantasy,Specimen_FC_04,2,-10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "fantasy,Specimen_FC_05,2,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "fantasy,Specimen_DB_06,3,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "fantasy,Specimen_AC_03,4,10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "fantasy,Specimen_BD_05,4,10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "fantasy,Specimen_FC_09,4,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_BA_01,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_AD_02,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_EA_02,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_DE_02,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_FF_02,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_FE_02,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_BC_07,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_EF_10,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_EE_02,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_DB_07,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_CB_04,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_FF_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_DB_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_BB_04,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_DF_07,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_BA_07,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_BB_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_DA_10,3,-10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_DA_02,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_BE_07,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_FB_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_BA_04,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "halloween,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_ED_01,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_FC_01,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_FF_04,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_AF_03,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_FB_06,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_FB_10,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_AF_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_AF_99,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_EF_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_DE_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_A_05,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_DF_04,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_DC_06,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_DC_10,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_BC_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_BD_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_CD_03,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_DA_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_AD_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_AE_03,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_AB_06,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_EE_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_FA_05,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_FE_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_DA_05,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_FE_13,0,-8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_AC_11,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_DE_03,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_DF_05,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_EC_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_BD_10,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_FD_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_BD_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_AE_07,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_AA_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_AE_11,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_BA_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_DC_11,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_FF_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_DA_04,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "winter,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "camo,Specimen_AA_02,0,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "camo,Specimen_ED_08,0,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "camo,Specimen_DD_07,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "camo,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "tcg,Specimen_DE_11,4,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "tcg,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_CC_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_FD_02,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_AA_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_FA_02,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_ED_10,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_BA_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_DD_01,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_CF_05,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_AD_06,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_DF_10,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_AE_09,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_BC_10,3,9,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_CE_11,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "valentines,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_FD_07,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_FE_07,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_ED_06,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_EF_04,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_BB_05,3,7,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_EA_05,3,-11,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_EE_03,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_FD_05,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_BE_08,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_B_12,3,-5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_BB_06,3,11,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_EB_03,3,15,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "easter,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "oktoberfest,Specimen_BC_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "oktoberfest,Specimen_AE_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "oktoberfest,Specimen_EA_07,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "oktoberfest,Specimen_CD_08,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "oktoberfest,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "thanksgiving,Specimen_DF_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "thanksgiving,Specimen_EA_06,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "thanksgiving,Specimen_DE_07,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "thanksgiving,Specimen_CB_10,3,-5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "thanksgiving,Specimen_BD_01,3,-5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "thanksgiving,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "spring,Specimen_FF_03,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "spring,Specimen_FE_13,0,1,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "spring,Specimen_BB_07,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "spring,Specimen_DF_02,3,15,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "spring,Specimen_DA_03,3,17,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "spring,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "summer,Specimen_ED_07,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "summer,Specimen_FE_13,0,-2,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "summer,Specimen_BA_05,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "summer,Specimen_BE_03,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "summer,Specimen_EB_11,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "summer,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "labor,Specimen_CC_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "labor,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "worker,Specimen_CF_09,3,-8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "worker,Specimen_CD_10,3,2,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "worker,Specimen_CA_05,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "worker,Specimen_AB_03,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "worker,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "confrontation,Specimen_BF_05,4,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "confrontation,Specimen_FD_04,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "confrontation,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "music,Specimen_AA_03,2,10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "music,Specimen_BF_06,2,-10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "music,Specimen_EE_04,3,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "music,Specimen_FB_05,4,-10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "music,Specimen_DE_05,4,10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "music,Specimen_DA_09,4,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "western,Specimen_FF_06,3,15,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "western,Specimen_FC_07,3,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "western,Specimen_AA_06,4,-10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "western,Specimen_DB_04,0,10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "western,Specimen_CF_06,0,-10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "western,Specimen_BF_10,4,-10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "beach,Specimen_FE_08,3,10,29,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "beach,Specimen_EE_07,4,10,22,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "beach,Specimen_BB_08,2,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "beach,Specimen_AB_07,0,-10,18,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "beach,Specimen_AF_08,3,10,11,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "beach,Specimen_CA_11,4,0,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "vegetal,Specimen_BB_02,3,10,32,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "vegetal,Specimen_DC_08,2,-10,23,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "vegetal,Specimen_AF_01,4,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "vegetal,Specimen_DE_09,3,-10,15,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "vegetal,Specimen_CA_06,3,10,10,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "vegetal,Specimen_DF_12,4,0,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympics,Specimen_FA_08,2,-10,32,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympics,Specimen_CA_02,4,20,23,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympics,Specimen_FD_06,3,10,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympics,Specimen_CA_07,2,15,15,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympics,Specimen_CA_08,3,-10,10,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "olympics,Specimen_CA_14,4,0,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "nebula,Specimen_DB_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "nebula,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "solarflare,Specimen_CF_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "solarflare,Specimen_ED_05,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "solarflare,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "purgatory,Specimen_DF_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "purgatory,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "opalescent,Specimen_AF_07,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "opalescent,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "school,Specimen_BF_07,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "school,Specimen_EE_10,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "school,Specimen_DD_08,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "school,Specimen_CC_05,3,12,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "school,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "autumn,Specimen_DD_10,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "autumn,Specimen_FE_13,0,4,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "autumn,Specimen_CB_08,3,-2,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "autumn,Specimen_CE_06,3,6,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "autumn,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "seasons,Specimen_FE_13,0,12,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "seasons,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "wireframe,Specimen_AA_07,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "wireframe,Specimen_AC_05,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "wireframe,Specimen_EE_09,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "wireframe,Specimen_FE_03,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "wireframe,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "aprilfools,Specimen_DC_09,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "aprilfools,Specimen_CB_09,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "aprilfools,Specimen_EB_10,3,-9,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "aprilfools,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "patrick,Specimen_BC_06,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "patrick,Specimen_BF_12,3,-8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "patrick,Specimen_BD_11,3,-10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "patrick,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "cybernetics,Specimen_CE_08,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "cybernetics,Specimen_DD_05,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "cybernetics,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_CE_07,3,-5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_FD_09,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_AF_06,0,30,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_BA_10,3,-5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_BD_06,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_AB_05,0,30,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_FA_10,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_AA_11,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_DA_11,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_BF_05,3,-2,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_CD_09,3,4,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_DB_10,3,-7,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "anniversary,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "kings,Specimen_AC_08,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "kings,Specimen_CC_10,3,0,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "kings,Specimen_EC_05,3,20,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "kings,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "verdant,Specimen_BB_07,3,-10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "verdant,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "carnival,Specimen_ED_11,3,-5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "carnival,Specimen_ED_09,3,-5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "carnival,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "europe,Specimen_FC_08,3,-5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "europe,Specimen_EF_06,3,-5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "europe,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "blueplanet,Specimen_EF_05,3,15,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "blueplanet,Specimen_AE_05,3,15,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "blueplanet,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "jefferson,Specimen_BF_08,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "jefferson,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "revolution,Specimen_AC_09,3,5,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "revolution,Specimen_EC_10,3,4,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "revolution,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "masks,Specimen_BC_11,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "masks,Specimen_BE_09,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "masks,Specimen_EB_09,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "masks,Specimen_EE_06,3,15,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "masks,Specimen_FE_10,3,9,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "masks,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "chess,Specimen_CF_04,2,-10,32,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "chess,Specimen_FE_06,3,10,23,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "chess,Specimen_BA_06,2,-20,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "chess,Specimen_AC_04,0,15,15,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "chess,Specimen_E_03,4,10,10,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "chess,Specimen_CC_14,4,0,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "science,Specimen_AB_10,3,-10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "science,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "cyberweek,Specimen_EA_06,3,12,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "cyberweek,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "advent,Specimen_FC_10,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "advent,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "xmas25,Specimen_DD_04,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "xmas25,Specimen_CD_11,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "xmas25,Specimen_FA_09,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "xmas25,Specimen_DD_09,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "xmas25,Specimen_AB_08,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "xmas25,Specimen_F_12,3,8,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "xmas25,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "xinnian,Specimen_AD_02,3,24,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "xinnian,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "honeybee,Specimen_AB_11,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "honeybee,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "independence,Specimen_CC_06,3,10,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "independence,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "hexcity,Specimen_AA_04,3,13,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "hexcity,Specimen_EC_08,3,13,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "hexcity,Specimen_EF_11,3,13,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "hexcity,Specimen_BE_11,3,13,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "hexcity,Specimen_EB_07,3,13,0,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "hexcity,Specimen_FD_03,3,10,11,completion"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gemstones,Specimen_AF_04,3,15,32,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gemstones,Specimen_AD_04,3,15,23,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gemstones,Specimen_FA_07,2,25,20,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gemstones,Specimen_AD_07,3,10,15,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gemstones,Specimen_FF_10,4,10,10,basic"
+    },
+    {
+        "gacha_id,specimen_id,stars,bonus,odds,source": "gemstones,Specimen_EF_15,4,0,11,completion"
+    }
+]
