@@ -1,6 +1,6 @@
 import { initializeURLRouting, detectTimezone, updatePageText, updateCurrentTimezoneInfo, setTimezone, currentTimezone } from './utils.js';
 import { populateSearchSelector, searchIncentivoDates, updateIncentivosDisplay, loadMoreIncentivos } from './incentives.js';
-import { loadGachaData, loadMutantsData } from './mutants.js';
+import { loadGachaData, loadMutantSummaries } from './mutants.js';
 import { loadRaidsData, updateRaidCountdowns } from './raids.js';
 
 // Page navigation
@@ -8,6 +8,7 @@ function showPage(pageName) {
     document.querySelectorAll('.page-content').forEach(page => page.classList.remove('active'));
     const target = document.getElementById(pageName);
     if (target) target.classList.add('active');
+    if (pageName === 'mutants') loadMutantsPage();
     document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
     const navLink = document.querySelector(`[data-page="${pageName}"]`);
     if (navLink) navLink.classList.add('active');
@@ -30,6 +31,19 @@ window.searchIncentivoDates = searchIncentivoDates;
 // Navigation event listeners
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function(e) { e.preventDefault(); const pageName = this.getAttribute('data-page'); showPage(pageName); });
+});
+let mutantsPageLoadPromise = null;
+function loadMutantsPage() {
+    if (!mutantsPageLoadPromise) {
+        mutantsPageLoadPromise = loadMutantSummaries().catch(error => {
+            mutantsPageLoadPromise = null;
+            console.error('Error loading mutant summaries:', error);
+        });
+    }
+    return mutantsPageLoadPromise;
+}
+document.querySelectorAll('[data-page="mutants"]').forEach(link => {
+    link.addEventListener('click', loadMutantsPage);
 });
 const navToggle = document.getElementById('navToggle'); if (navToggle) navToggle.addEventListener('click', function() { this.classList.toggle('active'); document.getElementById('mainNav').classList.toggle('active'); });
 
@@ -61,9 +75,9 @@ populateSearchSelector();
 updatePageText();
 updateIncentivosDisplay();
 updateCurrentTimezoneInfo();
-loadMutantsData().then(() => {
-    import('./stats.js').then(module => module.initStatsSection());
-});
+if (new URLSearchParams(window.location.search).get('page') === 'mutants') {
+    loadMutantsPage();
+}
 loadGachaData();
 
 setInterval(() => {

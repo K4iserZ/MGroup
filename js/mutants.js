@@ -7,6 +7,7 @@ let gachaData = {};
 let orbsData = [];
 let abilitiesConfig = {};
 let selectedMutantDetail = null;
+const SPECIMENS_API_URL = 'https://mgroup.alwaysdata.net/api/v1/specimens';
 
 function formatDisplayNumber(value) {
     if (value === null || value === undefined || value === '') return value;
@@ -171,6 +172,118 @@ async function loadMutantsData() {
         initCompareSection();
     } catch (error) {
         console.error('Error loading mutants data:', error);
+    }
+}
+
+async function loadMutantSummaries() {
+    const response = await fetch(SPECIMENS_API_URL);
+    if (!response.ok) throw new Error(`Error loading specimen summaries: ${response.status}`);
+
+    const summaries = await response.json();
+    if (!Array.isArray(summaries)) throw new Error('Invalid specimen summaries response');
+
+    mutantsData.length = 0;
+    mutantsData.push(...summaries);
+    initMutantsSection();
+}
+
+function mapSpecimenDetails(data) {
+    return {
+        specimen: data.specimen || '', name: data.name || '',
+        speed: Number(data.spX100) || 0, odds: Number(data.odds) || 0,
+        dna: data.dna || '', life: Number(data.lifePoint) || 0,
+        incubMin: Number(data.incubMin) || 0, atk1: data.atk1 || '',
+        atk1p: data.atk1p || '', atk2: data.atk2 || '', atk2p: data.atk2p || '',
+        bank: Number(data.bank) || 0, unlockattack: data.unlockAttack || '',
+        type: data.type || '', recipe: data.recipes || '', abilities: data.abilities || '',
+        abilityPct1: String(data.abilityPct1 ?? ''), abilityPct2: String(data.abilityPct2 ?? ''),
+        orbSlots: data.orbSlots || '', attack1p_name: data.attack1pName || '',
+        attack2p_name: data.attack2pName || '', description: data.description || ''
+    };
+}
+
+async function loadMutantDetails(specimen) {
+    const response = await fetch(`${SPECIMENS_API_URL}/${encodeURIComponent(specimen)}`);
+    if (!response.ok) throw new Error(`Error loading specimen details: ${response.status}`);
+    return mapSpecimenDetails(await response.json());
+}
+
+function escapeHtml(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+async function loadMutantOfferHistory(specimen) {
+    const response = await fetch(`https://mgroup.alwaysdata.net/api/v1/offers/specimen/${encodeURIComponent(specimen)}`);
+    if (!response.ok) throw new Error(`Error loading offer history: ${response.status}`);
+    return response.json();
+}
+
+function renderOfferHistory(data) {
+    const offers = Array.isArray(data?.offers) ? data.offers : [];
+    if (offers.length === 0) return '<p style="color:#95a5a6; margin:0;">No store history available.</p>';
+
+    return offers.map(offer => {
+        const history = Array.isArray(offer.history) ? offer.history : [];
+        const historyRows = history.length > 0
+            ? history.map(entry => `
+                <tr style="border-bottom:1px solid rgba(52,152,219,0.2);">
+                    <td style="padding:0.55rem; color:#ecf0f1;">${escapeHtml(entry.fecha || '-')}</td>
+                    <td style="padding:0.55rem; color:#ecf0f1;">${escapeHtml(entry.cost_type || '-')}</td>
+                    <td style="padding:0.55rem; color:#f39c12;">${escapeHtml(entry.cost_amount || '-')}</td>
+                </tr>`).join('')
+            : '<tr><td colspan="3" style="padding:0.55rem; color:#95a5a6;">No price history available.</td></tr>';
+
+        return `
+            <div style="margin-top:0.9rem; padding:0.8rem; border:1px solid rgba(52,152,219,0.25); border-radius:7px; background:rgba(9,18,34,0.45);">
+                <div style="display:flex; justify-content:space-between; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.45rem;">
+                    <strong style="color:#ecf0f1;">${escapeHtml(offer.name || 'Unnamed offer')}</strong>
+                    <span style="color:#95a5a6; font-size:0.8rem;">${escapeHtml(offer.offer_id || '')}</span>
+                </div>
+                <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                        <thead><tr style="border-bottom:1px solid #3498db;">
+                            <th style="padding:0.55rem; text-align:left; color:#3498db;">Date</th>
+                            <th style="padding:0.55rem; text-align:left; color:#3498db;">Cost type</th>
+                            <th style="padding:0.55rem; text-align:left; color:#3498db;">Amount</th>
+                        </tr></thead>
+                        <tbody>${historyRows}</tbody>
+                    </table>
+                </div>
+            </div>`;
+    }).join('');
+}
+
+async function expandMutantInformation(mutantData, button, panel) {
+    if (panel.style.display !== 'none') {
+        panel.style.display = 'none';
+        button.textContent = 'More Information';
+        return;
+    }
+
+    panel.style.display = 'block';
+    button.textContent = 'Hide Information';
+    panel.innerHTML = '<p style="color:#95a5a6; margin:0;">Loading information...</p>';
+
+    try {
+        const offerData = await loadMutantOfferHistory(mutantData.specimen);
+        const description = mutantData.description || 'No biography or description available.';
+        panel.innerHTML = `
+            <section style="margin-bottom:1.2rem;">
+                <h3 style="color:#f39c12; margin:0 0 0.5rem;">Biography / Description</h3>
+                <p style="color:#ecf0f1; line-height:1.55; margin:0; white-space:pre-line;">${escapeHtml(description)}</p>
+            </section>
+            <section>
+                <h3 style="color:#f39c12; margin:0;">Store History</h3>
+                ${renderOfferHistory(offerData)}
+            </section>`;
+    } catch (error) {
+        console.error('Error loading mutant information:', error);
+        panel.innerHTML = '<p style="color:#e74c3c; margin:0;">Unable to load store history.</p>';
     }
 }
 
@@ -893,11 +1006,17 @@ function selectOrb(specimenId, slotIndex, orb, typeKey = '') {
     updateDetailPanelStats();
 }
 
-function openMutantModal(mutant) {
+async function openMutantModal(mutant) {
     const container = document.getElementById('mutantsContainer');
     const detailPanel = document.getElementById('mutantsDetailPanel');
     const content = document.getElementById('mutantsDetailContent');
-    const fullMutantData = getMutantFromCsv(mutant.name);
+    let fullMutantData;
+    try {
+        await Promise.all([loadOrbsData(), loadAbilitiesConfig()]);
+        fullMutantData = await loadMutantDetails(mutant.specimen);
+    } catch (error) {
+        console.error('Error loading mutant details:', error);
+    }
     if (!fullMutantData) {
         if (content) {
             content.innerHTML = `
@@ -986,6 +1105,8 @@ function openMutantModal(mutant) {
                     <div id="mutantOrbPreview">${orbPreviewHtml}</div>
                 </div>
             </div>
+            <button id="mutantMoreInformationBtn" type="button" style="position:sticky; bottom:1rem; display:block; margin:1.25rem 0 0 auto; background:#f39c12; color:#16213e; border:0; border-radius:8px; padding:0.7rem 1rem; font-weight:700; cursor:pointer; box-shadow:0 5px 15px rgba(0,0,0,0.35);">More Information</button>
+            <div id="mutantMoreInformationPanel" style="display:none; margin-top:1rem; padding:1rem; background:linear-gradient(135deg, rgba(22,33,62,0.95) 0%, rgba(15,52,96,0.95) 100%); border:1px solid rgba(52,152,219,0.35); border-radius:10px;"></div>
         </div>
     `;
     
@@ -1010,6 +1131,14 @@ function openMutantModal(mutant) {
         const skinToggle = document.getElementById('mutantSkinToggle');
         const skinDropdown = document.getElementById('mutantSkinDropdown');
         const skinOptions = document.querySelectorAll('.skin-dropdown-option');
+        const moreInformationBtn = document.getElementById('mutantMoreInformationBtn');
+        const moreInformationPanel = document.getElementById('mutantMoreInformationPanel');
+
+        if (moreInformationBtn && moreInformationPanel) {
+            moreInformationBtn.addEventListener('click', () => {
+                expandMutantInformation(fullMutantData, moreInformationBtn, moreInformationPanel);
+            });
+        }
         
         // Toggle dropdown on button click
         if (skinToggle) {
@@ -1176,4 +1305,4 @@ window.showOrbsByType = showOrbsByType;
 
 window.addEventListener('click', (e) => { const modal = document.getElementById('mutantModal'); if (e.target === modal) closeMutantModal(); });
 
-export { loadGachaData, loadMutantsData, initMutantsSection, getMutantFromCsv, mutantsData, gachaData, closeMutantModal, openMutantModal, starValues, numericToStarKey, ICONS, calculateMutantStats, generateGenesHtml, getAbilityIconUrl, parseUnlockAttack, isAOE, formatDisplayNumber };
+export { loadGachaData, loadMutantsData, loadMutantSummaries, initMutantsSection, getMutantFromCsv, mutantsData, gachaData, closeMutantModal, openMutantModal, starValues, numericToStarKey, ICONS, calculateMutantStats, generateGenesHtml, getAbilityIconUrl, parseUnlockAttack, isAOE, formatDisplayNumber };
